@@ -28,6 +28,9 @@ php artisan nova-lang:publish de,ru --force
 ```
 
 ## Status 
-- English **[en]** - completed
-- Russian **[ru]** - completed
-
+- **en** - completed
+- **ru** - completed
+- **de** - incompleted, need review
+- **nl** - incompleted, need review
+- **tr** - incompleted, need review
+- **uk** - incompleted, need review
