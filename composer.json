@@ -1,0 +1,23 @@
+{
+    "name": "coderello/laravel-nova-lang",
+    "description": "Language support for Laravel Nova.",
+    "keywords": ["laravel", "nova", "language", "lang", "support"],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": "5.5.*|5.6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coderello\\LaravelNovaLang\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Coderello\\LaravelNovaLang\\Providers\\LaravelNovaLangServiceProvider"
+            ]
+        }
+    }
+}
