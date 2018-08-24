@@ -34,3 +34,7 @@ php artisan nova-lang:publish de,ru --force
 - **nl** - incompleted, need review
 - **tr** - incompleted, need review
 - **uk** - incompleted, need review
+- **ar** - incompleted, need review
+- **es** - incompleted, need review
+- **fr** - incompleted, need review
+- **pl** - incompleted, need review
