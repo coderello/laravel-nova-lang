@@ -41,3 +41,4 @@ php artisan nova-lang:publish de,ru --force
 - **zh-CN** - completed, thanks to [jcc](https://github.com/jcc)!
 - **ro** - completed, thanks to [BTeodorWork](https://github.com/BTeodorWork)!
 - **cn** - completed, thanks to [Pierolin](https://github.com/Pierolin)!
+- **zh-TW** - completed, thanks to [CasperLaiTW](https://github.com/CasperLaiTW)!
