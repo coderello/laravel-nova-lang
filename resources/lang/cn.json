@@ -107,7 +107,7 @@
     "Antarctica": "南极洲",
     "Antigua And Barbuda": "安提瓜和巴布达",
     "Argentina": "阿根廷",
-    "Armenia": "亚美尼亚"
+    "Armenia": "亚美尼亚",
     "Aruba": "阿鲁巴",
     "Australia": "澳大利亚",
     "Austria": "奥地利",
@@ -138,7 +138,7 @@
     "Cape Verde": "佛得角",
     "Cayman Islands": "开曼群岛",
     "Central African Republic": "中非共和国",
-    "Chad": "乍得"
+    "Chad": "乍得",
     "Chile": "智利",
     "China": "中国",
     "Christmas Island": "圣诞岛",
@@ -167,7 +167,7 @@
     "Ethiopia": "埃塞俄比亚",
     "Falkland Islands (Malvinas)": "福克兰群岛（马尔维纳斯群岛）",
     "Faroe Islands": "法罗群岛",
-    "Fiji": "斐济"
+    "Fiji": "斐济",
     "Finland": "芬兰",
     "France": "法国",
     "French Guiana": "法属圭亚那",
@@ -187,7 +187,7 @@
     "Guatemala": "危地马拉",
     "Guernsey": "根西岛",
     "Guinea": "几内亚",
-    "Guinea-Bissau": "几内亚比绍"
+    "Guinea-Bissau": "几内亚比绍",
     "Guyana": "圭亚那",
     "Haiti": "海地",
     "Heard Island & Mcdonald Islands": "赫德岛和麦当劳群岛",
@@ -206,7 +206,7 @@
     "Italy": "意大利",
     "Jamaica": "牙买加",
     "Japan": "日本",
-    "Jersey": "泽西"
+    "Jersey": "泽西",
     "Jordan": "约旦",
     "Kazakhstan": "哈萨克斯坦",
     "Kenya": "肯尼亚",
@@ -215,16 +215,16 @@
     "Kuwait": "科威特",
     "Kyrgyzstan": "吉尔吉斯斯坦",
     "Lao People\\'s Democratic Republic": "老挝人民民主共和国",
-    "Latvia": "拉脱维亚"
+    "Latvia": "拉脱维亚",
     "Lebanon": "黎巴嫩",
     "Lesotho": "莱索托",
     "Liberia": "利比里亚",
     "Libyan Arab Jamahiriya": "阿拉伯利比亚民众国",
-    "Liechtenstein": "列支敦士登"
-    "Lithuania": "立陶宛"
+    "Liechtenstein": "列支敦士登",
+    "Lithuania": "立陶宛",
     "Luxembourg": "卢森堡",
     "Macao": "澳门",
-    "Macedonia": "马其顿"
+    "Macedonia": "马其顿",
     "Madagascar": "马达加斯加",
     "Malawi": "马拉维",
     "Malaysia": "马来西亚",
@@ -239,37 +239,37 @@
     "Mexico": "墨西哥",
     "Micronesia, Federated States Of": "密克罗尼西亚联邦",
     "Moldova": "摩尔多瓦",
-    "Monaco": "摩纳哥"
+    "Monaco": "摩纳哥",
     "Mongolia": "蒙古",
     "Montenegro": "黑山",
-    "Montserrat": "蒙特塞拉特"
-    "Morocco": "摩洛哥"
+    "Montserrat": "蒙特塞拉特",
+    "Morocco": "摩洛哥",
     "Mozambique": "莫桑比克",
     "Myanmar": "缅甸",
     "Namibia": "纳米比亚",
     "Nauru": "瑙鲁",
-    "Nepal": "尼泊尔"
+    "Nepal": "尼泊尔",
     "Netherlands": "荷兰",
     "Netherlands Antilles": "荷属安的列斯",
     "New Caledonia": "新喀里多尼亚",
     "New Zealand": "新西兰",
     "Nicaragua": "尼加拉瓜",
     "Niger": "尼日尔",
-    "Nigeria": "尼日利亚"
-    "Niue": "纽埃"
+    "Nigeria": "尼日利亚",
+    "Niue": "纽埃",
     "Norfolk Island": "诺福克岛",
     "Northern Mariana Islands": "北马里亚纳群岛",
     "Norway": "挪威",
     "Oman": "阿曼",
     "Pakistan": "巴基斯坦",
-    "Palau": "帕劳"
+    "Palau": "帕劳",
     "Palestinian Territory, Occupied": "被占领的巴勒斯坦领土",
     "Panama": "巴拿马",
     "Papua New Guinea": "巴布亚新几内亚",
     "Paraguay": "巴拉圭",
     "Peru": "秘鲁",
     "Philippines": "菲律宾",
-    "Pitcairn": "皮特凯恩"
+    "Pitcairn": "皮特凯恩",
     "Poland": "波兰",
     "Portugal": "葡萄牙",
     "Puerto Rico": "波多黎各",
@@ -277,7 +277,7 @@
     "Reunion": "留尼旺",
     "Romania": "罗马尼亚",
     "Russian Federation": "俄罗斯联邦",
-    "Rwanda": "卢旺达"
+    "Rwanda": "卢旺达",
     "Saint Barthelemy": "圣巴泰勒米",
     "Saint Helena": "圣赫勒拿",
     "Saint Kitts And Nevis": "圣基茨和尼维斯",
@@ -330,8 +330,8 @@
     "United States": "美国",
     "United States Outlying Islands": "美国离岛",
     "Uruguay": "乌拉圭",
-    "Uzbekistan": "乌兹别克斯坦"
-    "Vanuatu": "瓦努阿图"
+    "Uzbekistan": "乌兹别克斯坦",
+    "Vanuatu": "瓦努阿图",
     "Venezuela": "委内瑞拉",
     "Viet Nam": "越南",
     "Virgin Islands, British": "维尔京群岛,英国",
