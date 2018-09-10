@@ -27,18 +27,22 @@ Publish translations with overriding of existing ones:
 php artisan nova-lang:publish de,ru --force
 ```
 
-## Status 
-- **en** - completed
-- **ru** - completed
-- **de** - incompleted, need review
-- **nl** - incompleted, need review
-- **tr** - incompleted, need review
-- **uk** - incompleted, need review
-- **ar** - incompleted, need review
-- **es** - completed, thanks to [ajmariduena](https://github.com/ajmariduena)!
-- **fr** - incompleted, need review
-- **pl** - incompleted, need review
-- **zh-CN** - completed, thanks to [jcc](https://github.com/jcc)!
-- **ro** - completed, thanks to [BTeodorWork](https://github.com/BTeodorWork)!
-- **cn** - completed, thanks to [Pierolin](https://github.com/Pierolin) and [jiayx](https://github.com/jiayx)!
-- **zh-TW** - completed, thanks to [CasperLaiTW](https://github.com/CasperLaiTW)!
+## Available Languages
+
+| Language | Code | Status | Thanks to |
+| --- | --- | --- | --- |
+| English | en | completed | [taylorotwell](https://github.com/taylorotwell) |
+| Rusian | ru | completed | [hivokas](https://github.com/hivokas) |
+| German | de | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Dutch | nl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Turkish | tr | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Ukrainian | uk | completed | [hivokas](https://github.com/hivokas) |
+| Arabic | ar | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena) |
+| French | fr | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Polish | pl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Polish | pl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Chinese (Simplified) | zh-CN | completed | [jcc](https://github.com/jcc) |
+| Romanian | ro | completed | [BTeodorWork](https://github.com/BTeodorWork) |
+| Chinese | cn | completed | [Pierolin](https://github.com/Pierolin) |
+| Chinese (Taiwan) | zh-TW | completed | [CasperLaiTW](https://github.com/CasperLaiTW) |
