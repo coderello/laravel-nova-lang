@@ -1,8 +1,8 @@
-## Laravel Nova Lang
+<p align="center"><img alt="Laraflash" src="logo.png" width="450"></p>
 
-This package provides the language support for **Laravel Nova**.
+<p align="center">This package provides the language support for <b>Laravel Nova</b>.</p>
 
-Feel free to submit your language or update an existing one by sending a PR to help other people.
+<p align="center">Feel free to submit your language or update an existing one by sending a PR to help other people.</p>
 
 ## Installation
 
