@@ -39,7 +39,7 @@ php artisan nova-lang:publish de,ru --force
 | Ukrainian | uk | completed | [hivokas](https://github.com/hivokas) |
 | Arabic | ar | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
 | Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena) |
-| French | fr | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| French | fr | completed | [Marceau Ka](https://github.com/MarceauKa) |
 | Polish | pl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
 | Polish | pl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
 | Chinese (Simplified) | zh-CN | completed | [jcc](https://github.com/jcc) |

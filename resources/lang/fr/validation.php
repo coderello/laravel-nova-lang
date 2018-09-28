@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'This :attribute is already attached.',
-    'relatable' => 'This :attribute may not be associated with this resource.',
+    'attached' => ':attribute est déjà attaché.',
+    'relatable' => ':attribute ne peut pas être associé avec cette ressource.',
 
 ];
