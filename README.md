@@ -32,16 +32,16 @@ php artisan nova-lang:publish de,ru --force
 | Language | Code | Status | Thanks to |
 | --- | --- | --- | --- |
 | English | en | completed | [taylorotwell](https://github.com/taylorotwell) |
-| Rusian | ru | completed | [hivokas](https://github.com/hivokas) |
-| German | de | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
-| Dutch | nl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
-| Turkish | tr | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
-| Ukrainian | uk | completed | [hivokas](https://github.com/hivokas) |
-| Arabic | ar | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Russian | ru | completed | [hivokas](https://github.com/hivokas) |
+| German | de | machine translation, needs verification | [coderello](https://github.com/coderello) |
+| Dutch | nl | machine translation, needs verification | [coderello](https://github.com/coderello) |
+| Turkish | tr | machine translation, needs verification | [coderello](https://github.com/coderello) |
+| Ukrainian | uk | completed | [coderello](https://github.com/coderello) |
+| Arabic | ar | machine translation, needs verification | [coderello](https://github.com/coderello) |
 | Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena) |
 | French | fr | completed | [Marceau Ka](https://github.com/MarceauKa) |
-| Polish | pl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
-| Polish | pl | machine translation, needs verification | [hivokas](https://github.com/hivokas) |
+| Polish | pl | machine translation, needs verification | [coderello](https://github.com/coderello) |
+| Polish | pl | machine translation, needs verification | [coderello](https://github.com/coderello) |
 | Chinese (Simplified) | zh-CN | completed | [jcc](https://github.com/jcc) |
 | Romanian | ro | completed | [BTeodorWork](https://github.com/BTeodorWork) |
 | Chinese | cn | completed | [Pierolin](https://github.com/Pierolin) |
