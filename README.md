@@ -46,3 +46,4 @@ php artisan nova-lang:publish de,ru --force
 | Chinese | cn | completed | [Pierolin](https://github.com/Pierolin) |
 | Chinese (Taiwan) | zh-TW | completed | [CasperLaiTW](https://github.com/CasperLaiTW) |
 | Georgian | ka | completed | [akalongman](https://github.com/akalongman) |
+| Brazilian Portuguese | pt-BR | completed | [eduardokum](https://github.com/eduardokum) |
