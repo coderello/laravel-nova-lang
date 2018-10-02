@@ -34,12 +34,12 @@ php artisan nova-lang:publish de,ru --force
 | English | en | completed | [taylorotwell](https://github.com/taylorotwell) |
 | Russian | ru | completed | [hivokas](https://github.com/hivokas) |
 | German | de | completed | [pille1842](https://github.com/pille1842) |
-| Dutch | nl | completed | [happyDemon](https://github.com/happyDemon) |
+| Dutch | nl | completed | [happyDemon](https://github.com/happyDemon), [sebastiaanspeck](https://github.com/sebastiaanspeck) |
 | Turkish | tr | machine translation, needs verification | [coderello](https://github.com/coderello) |
 | Ukrainian | uk | completed | [coderello](https://github.com/coderello) |
 | Arabic | ar | completed | [saleem-hadad](https://github.com/saleem-hadad) |
-| Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena) |
-| French | fr | completed | [Marceau Ka](https://github.com/MarceauKa) |
+| Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena), [Arryan](https://github.com/Arryan) |
+| French | fr | completed | [Marceau Ka](https://github.com/MarceauKa), [Arryan](https://github.com/Arryan) |
 | Polish | pl | completed | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
 | Chinese (Simplified) | zh-CN | completed | [jcc](https://github.com/jcc) |
 | Romanian | ro | completed | [BTeodorWork](https://github.com/BTeodorWork) |
