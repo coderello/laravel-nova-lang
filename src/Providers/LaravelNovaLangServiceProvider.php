@@ -14,7 +14,9 @@ class LaravelNovaLangServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'nova');
+
+        $this->loadJsonTranslationsFrom(__DIR__.'/../../resources/lang');
     }
 
     /**
@@ -25,6 +27,7 @@ class LaravelNovaLangServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('command.publish.nova-lang', NovaLangPublish::class);
+
         $this->commands([
             'command.publish.nova-lang',
         ]);
