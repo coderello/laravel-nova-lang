@@ -37,7 +37,7 @@ php artisan nova-lang:publish de,ru --force
 | Dutch | nl | completed | [happyDemon](https://github.com/happyDemon), [sebastiaanspeck](https://github.com/sebastiaanspeck) |
 | Turkish | tr | machine translation, needs verification | [coderello](https://github.com/coderello) |
 | Ukrainian | uk | completed | [coderello](https://github.com/coderello) |
-| Arabic | ar | completed | [saleem-hadad](https://github.com/saleem-hadad) |
+| Arabic | ar | completed | [saleem-hadad](https://github.com/saleem-hadad), [Arryan](https://github.com/Arryan) |
 | Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena), [Arryan](https://github.com/Arryan) |
 | French | fr | completed | [Marceau Ka](https://github.com/MarceauKa), [Arryan](https://github.com/Arryan) |
 | Polish | pl | completed | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
