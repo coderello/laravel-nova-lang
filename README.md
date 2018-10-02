@@ -41,7 +41,6 @@ php artisan nova-lang:publish de,ru --force
 | Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena) |
 | French | fr | completed | [Marceau Ka](https://github.com/MarceauKa) |
 | Polish | pl | machine translation, needs verification | [coderello](https://github.com/coderello) |
-| Polish | pl | machine translation, needs verification | [coderello](https://github.com/coderello) |
 | Chinese (Simplified) | zh-CN | completed | [jcc](https://github.com/jcc) |
 | Romanian | ro | completed | [BTeodorWork](https://github.com/BTeodorWork) |
 | Chinese | cn | completed | [Pierolin](https://github.com/Pierolin) |
