@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'Atribut već priložen.',
-    'relatable' => 'Atribut možda nije povezan sa resursom.',
+    'attached' => 'Ovaj :attribute je vac priložen.',
+    'relatable' => 'Ovaj :attribute možda nije povezan sa resursom.',
 
 ];
