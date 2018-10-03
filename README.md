@@ -50,3 +50,4 @@ php artisan nova-lang:publish de,ru --force
 | Italian | it | completed | [dejdav](https://github.com/dejdav), [manuelcoppotelli](https://github.com/manuelcoppotelli) |
 | Indonesian | id | completed | [dvlwj](https://github.com/dvlwj) |
 | Hungarian | hu | completed | [milli05](https://github.com/milli05) |
+| Danish | da | completed | [olivernybroe](https://github.com/olivernybroe) |
