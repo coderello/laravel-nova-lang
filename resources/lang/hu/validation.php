@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'Az alábbi elem már be lett : :attribute.',
+    'attached' => 'Az alábbi elem már be lett csatolva: :attribute.',
     'relatable' => 'Az alábbi elem nem csatolható az eszközhöz: :attribute.',
 
 ];
