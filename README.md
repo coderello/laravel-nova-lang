@@ -35,7 +35,7 @@ php artisan nova-lang:publish de,ru --force
 | Russian | ru | completed | [hivokas](https://github.com/hivokas) |
 | German | de | completed | [pille1842](https://github.com/pille1842) |
 | Dutch | nl | completed | [happyDemon](https://github.com/happyDemon), [sebastiaanspeck](https://github.com/sebastiaanspeck), [jschram](https://github.com/jschram) |
-| Turkish | tr | machine translation, needs verification | [coderello](https://github.com/coderello) |
+| Turkish | tr | completed | [bureken](https://github.com/bureken), [dilekuzulmez](https://github.com/dilekuzulmez) |
 | Ukrainian | uk | completed | [coderello](https://github.com/coderello) |
 | Arabic | ar | completed | [saleem-hadad](https://github.com/saleem-hadad), [Arryan](https://github.com/Arryan) |
 | Spanish | es | completed | [ajmariduena](https://github.com/ajmariduena), [Arryan](https://github.com/Arryan), [xcodinas](https://github.com/xcodinas) |
@@ -48,3 +48,4 @@ php artisan nova-lang:publish de,ru --force
 | Georgian | ka | completed | [akalongman](https://github.com/akalongman) |
 | Brazilian Portuguese | pt-BR | completed | [eduardokum](https://github.com/eduardokum) |
 | Italian | it | completed | [dejdav](https://github.com/dejdav) |
+| Indonesian | id | completed | [dvlwj](https://github.com/dvlwj) |
