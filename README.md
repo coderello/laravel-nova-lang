@@ -48,3 +48,4 @@ php artisan nova-lang:publish de,ru --force
 | Georgian | ka | completed | [akalongman](https://github.com/akalongman) |
 | Brazilian Portuguese | pt-BR | completed | [eduardokum](https://github.com/eduardokum) |
 | Italian | it | completed | [dejdav](https://github.com/dejdav) |
+| Indonesian | id | completed | [dvlwj](https://github.com/dvlwj) |
