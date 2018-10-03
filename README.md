@@ -49,3 +49,4 @@ php artisan nova-lang:publish de,ru --force
 | Brazilian Portuguese | pt-BR | completed | [eduardokum](https://github.com/eduardokum) |
 | Italian | it | completed | [dejdav](https://github.com/dejdav) |
 | Indonesian | id | completed | [dvlwj](https://github.com/dvlwj) |
+| Hungarian | hu | completed | [milli05](https://github.com/milli05) |
