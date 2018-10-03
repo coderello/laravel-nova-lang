@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'This :attribute is already attached.',
-    'relatable' => 'This :attribute may not be associated with this resource.',
+    'attached' => 'Az alábbi elem már be lett : :attribute.',
+    'relatable' => 'Az alábbi elem nem csatolható az eszközhöz: :attribute.',
 
 ];
