@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'Diese(r/s) :attribute è già connesso.',
-    'relatable' => 'Diese(r/s) :attribute non può essere collegato con questa risorsa.',
+    'attached' => 'Questo :attribute è già collegato.',
+    'relatable' => 'Questo :attribute non può essere collegato con questa risorsa.',
 
 ];
