@@ -52,3 +52,4 @@ php artisan nova-lang:publish de,ru --force
 | Hungarian | hu | completed | [milli05](https://github.com/milli05) |
 | Danish | da | completed | [olivernybroe](https://github.com/olivernybroe) |
 | Serbian | sr | completed | [marjanovicsteva](https://github.com/marjanovicsteva) |
+| Filipino | fil | completed | [granaderos](https://github.com/granaderos) |
