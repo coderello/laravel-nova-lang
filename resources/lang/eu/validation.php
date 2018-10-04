@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'atxikituta' => ':attribute hau atxikitua izan da dagoeneko.',
-    'erlazionatuta' => 'Baliteke :attribute baliabide honi erlazionatuta ez egotea.',
+    'attached' => ':attribute hau atxikitua izan da dagoeneko.',
+    'relatable' => 'Baliteke :attribute baliabide honi erlazionatuta ez egotea.',
 
 ];
