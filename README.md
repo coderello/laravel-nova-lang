@@ -55,3 +55,4 @@ php artisan nova-lang:publish de,ru --force
 | Filipino | fil | completed | [granaderos](https://github.com/granaderos) |
 | Portuguese | pt | completed | [Pedrocssg](https://github.com/Pedrocssg) |
 | Basque | eu | completed | [JonPaternain](https://github.com/JonPaternain) |
+| Lithuanian | lt | completed | [minved](https://github.com/minved) |
