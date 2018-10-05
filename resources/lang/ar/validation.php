@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'This :attribute is already attached.',
-    'relatable' => 'This :attribute may not be associated with this resource.',
+    'attached'  => 'الحقل :attribute تم ربطه مسبقاً',
+    'relatable' => 'لايمكن ربط الحقل :attribute مع المصدر المحدد',
 
 ];

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'Bu :attribute zaten eklenmiş.',
-    'relatable' => 'Bu :attribute bu kaynak ile ilişkili olmayabilir.',
+    'attached' => 'Denne :attribute er allerede forbundet.',
+    'relatable' => 'Denne :attribute kan ikke være forbundet med denne resource.',
 
 ];
