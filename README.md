@@ -59,3 +59,4 @@ php artisan nova-lang:publish de,ru --force
 | Finnish | fi | completed | [Krisseck](https://github.com/Krisseck) |
 | Lithuanian | lt | completed | [minved](https://github.com/minved) |
 | Hindi | hi | completed | [bantya](https://github.com/bantya) |
+| Bulgarian | bg | completed | [BKirev](https://github.com/BKirev) |
