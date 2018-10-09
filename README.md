@@ -33,7 +33,7 @@ php artisan nova-lang:publish de,ru --force
 | --- | --- | --- | --- |
 | English | en | completed | [taylorotwell](https://github.com/taylorotwell) |
 | Russian | ru | completed | [hivokas](https://github.com/hivokas), [estim](https://github.com/estim) |
-| German | de | completed | [pille1842](https://github.com/pille1842) |
+| German | de | completed | [pille1842](https://github.com/pille1842), [dakira](https://github.com/dakira) |
 | Dutch | nl | completed | [happyDemon](https://github.com/happyDemon), [sebastiaanspeck](https://github.com/sebastiaanspeck), [jschram](https://github.com/jschram) |
 | Turkish | tr | completed | [bureken](https://github.com/bureken), [dilekuzulmez](https://github.com/dilekuzulmez) |
 | Ukrainian | uk | completed | [coderello](https://github.com/coderello) |
