@@ -111,7 +111,7 @@ class NovaLangPublish extends Command
 
     protected function directoryFrom(): string
     {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
+        return __DIR__.'/../../resources/lang';
     }
 
     protected function directoryTo(): string
