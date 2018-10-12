@@ -61,3 +61,4 @@ php artisan nova-lang:publish de,ru --force
 | Hindi | hi | completed | [bantya](https://github.com/bantya) |
 | Bulgarian | bg | completed | [BKirev](https://github.com/BKirev) |
 | Slovenian | sl | completed | [morpheus7CS](https://github.com/morpheus7CS) |
+| Slovak | sk | completed | [hejty](https://github.com/hejty) |
