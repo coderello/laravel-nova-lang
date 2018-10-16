@@ -62,3 +62,4 @@ php artisan nova-lang:publish de,ru --force
 | Bulgarian | bg | completed | [BKirev](https://github.com/BKirev) |
 | Slovenian | sl | completed | [morpheus7CS](https://github.com/morpheus7CS) |
 | Slovak | sk | completed | [hejty](https://github.com/hejty) |
+| Czech | cs | completed | [walaski](https://github.com/walaskir) |
