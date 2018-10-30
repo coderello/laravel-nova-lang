@@ -65,3 +65,4 @@ php artisan nova-lang:publish de,ru --force
 | Czech | cs | completed | [walaski](https://github.com/walaskir) |
 | Croatian | hr | completed | [walaski](https://github.com/defart) |
 | Catalan | ca | completed | [joebordes](https://github.com/joebordes) |
+| Tagalog | tl | completed | [rcjavier](https://github.com/rcjavier) |
