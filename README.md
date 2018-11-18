@@ -42,7 +42,7 @@ php artisan nova-lang:publish de,ru --force
 | French | fr | completed | [Marceau Ka](https://github.com/MarceauKa), [Arryan](https://github.com/Arryan) |
 | Polish | pl | completed | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
 | Chinese (Simplified) | zh-CN | completed | [jcc](https://github.com/jcc) |
-| Romanian | ro | completed | [BTeodorWork](https://github.com/BTeodorWork) |
+| Romanian | ro | completed | [BTeodorWork](https://github.com/BTeodorWork), [alexgiuvara](https://github.com/alexgiuvara) |
 | Chinese | cn | completed | [Pierolin](https://github.com/Pierolin) |
 | Chinese (Taiwan) | zh-TW | completed | [CasperLaiTW](https://github.com/CasperLaiTW) |
 | Georgian | ka | completed | [akalongman](https://github.com/akalongman) |
