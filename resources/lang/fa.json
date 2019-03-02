@@ -1,6 +1,6 @@
 {
     "Actions": "عملیات",
-    "Details": "جزییات",
+    "Details": "جزئیات",
     "If you did not request a password reset, no further action is required.": "درصورتی که شما در خواست بازیابی کلمه عبور نداده اید، هیج عملیات دیگری نیاز نیست",
     "Reset Password": "بازیابی کلمه عبور",
     "Sorry! You are not authorized to perform this action.": "متاسفانه شما اجازه انجام این عملیات را ندارید",
@@ -79,13 +79,13 @@
     "Something went wrong.": "مشکلی رخ داده است.",
     "The action ran successfully!": "عملیات با موفقیت انجام شد!",
     "The government won't let us show you what's behind these doors": "شما اجازه ندارید پشت این درها را ببینید",
-    "This image": "این عکس",
+    "This image": "این تصویر",
     "Update": "بروزرسانی",
     "Update & Continue Editing": "بروز رسانی و ادامه ویرایش",
     "View": "نمایش",
     "We're lost in space. The page you were trying to view does not exist.": "ما در فضا گم شدیم. فایل نمایش وجود ندارد.",
     "Show Content": "نمایش محتوا",
-    "Hide Content": "مخفی کردن محتوا",
+    "Hide Content": "پنهان کردن محتوا",
     "Whoops": "اوپس",
     "Whoops!": "اوپس!",
     "With Trashed": "همراه با حذف شده ها",
@@ -370,5 +370,7 @@
     "Nova User": "کاربر نوا",
     "no file selected": "هیچ فایلی انتخاب نشده است.",
     "Sorry, your session has expired.": "با عرض پوزش، جلسه شما منقضی شده است.",
-    "Reload": "بارگیری مجدد"
+    "Reload": "بارگیری مجدد",
+    "The :resource was deleted!": "منبع :resource حذف شد!",
+    "The :resource was restored!": "منبع :resource بازیابی شد!"
 }
