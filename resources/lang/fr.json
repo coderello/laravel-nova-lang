@@ -361,7 +361,7 @@
     "resource": "ressource",
     "resources": "ressources",
     "Choose date": "Choisissez une date",
-    "The :resource was updated!": "La ressource :resource a été enregistré",
+    "The :resource was updated!": "La ressource :resource a été enregistrée",
     "The resource was updated!": "Ressource enregistrée",
     "Increase": "Augmentation",
     "Constant": "Constant",
@@ -371,5 +371,6 @@
     "of": "de",
     "no file selected": "Pas de fichier sélectionné",
     "Sorry, your session has expired.": "Désolé, votre session a expiré.",
-    "Reload": "Recharger"
+    "Reload": "Recharger",
+    "The :resource was deleted!": "La ressource :resource a été supprimée"
 }
