@@ -74,6 +74,7 @@
     "Run Action": "Exécuter action",
     "Select Action": "Sélectionner Action",
     "Search": "Rechercher",
+    "Press / to search": "Appuyer / pour rechercher",
     "Select All": "Sélectionner tout",
     "Select All Matching": "Sélectionner tout ci-dessous",
     "Something went wrong.": "Un problème est survenu.",
@@ -363,6 +364,8 @@
     "Choose date": "Choisissez une date",
     "The :resource was updated!": "La ressource :resource a été enregistrée",
     "The resource was updated!": "Ressource enregistrée",
+    "The :resource was deleted!": "La ressource :resource a été supprimée!",
+    "The :resource was restored!": "La ressource :resource a été restaurée!",
     "Increase": "Augmentation",
     "Constant": "Constant",
     "Decrease": "Diminution",
@@ -372,5 +375,14 @@
     "no file selected": "Pas de fichier sélectionné",
     "Sorry, your session has expired.": "Désolé, votre session a expiré.",
     "Reload": "Recharger",
-    "The :resource was deleted!": "La ressource :resource a été supprimée"
+    "Key": "Clé",
+    "Value": "Valeur",
+    "Add row": "Ajouter une ligne",
+    "Attach :resource": "Attache :resource",
+    "Create :resource": "Créer :resource",
+    "Choose :resource": "Choisir :resource",
+    "New :resource": "Nouveau",
+    "Edit :resource": "Modifier :resource",
+    "Update :resource": "Enregistrer :resource",
+    "Choose :field": "Choisir :field"
 }
