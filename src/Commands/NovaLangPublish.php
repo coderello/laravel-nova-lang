@@ -15,7 +15,8 @@ class NovaLangPublish extends Command
      * @var string
      */
     protected $signature = 'nova-lang:publish
-                            {locales : Comma separated list of languages}
+                            {locales? : Comma-separated list of languages}
+                            {--all : Publish all languages}
                             {--force : Override existing files}';
 
     /**
@@ -50,8 +51,22 @@ class NovaLangPublish extends Command
     public function handle()
     {
         $availableLocales = $this->getAvailableLocales();
+        
+        $requestedLocales = $this->getRequestedLocales();
+        
+        if (!$requestedLocales->count()) {
+            $this->error('You must either specify one or more locales, or use the --all option.');
+            return;
+        }
 
-        $this->getRequestedLocales()->each(function (string $locale) use ($availableLocales) {
+        $requestedLocales->each(function (string $locale) use ($availableLocales) {
+            
+            if ($locale == 'en' && $this->isForce()) {
+                if (!$this->confirm(sprintf('Are you sure you want to republish translations for [en] locale? This will overwrite the latest file from laravel/nova.'))) {
+                    return;
+                }
+            }
+            
             if (! $availableLocales->contains($locale)) {
                 $this->error(sprintf('Unfortunately, translations for [%s] locale don\'t exist. Feel free to send a PR to add them and help other people :)', $locale));
 
@@ -86,7 +101,11 @@ class NovaLangPublish extends Command
 
     protected function getRequestedLocales(): Collection
     {
-        return collect(explode(',', $this->argument('locales')));
+        if ($this->isAll()) {
+            return $this->getAvailableLocales();
+        }
+        
+        return collect(explode(',', $this->argument('locales')))->filter();
     }
 
     protected function getAvailableLocales(): Collection
@@ -107,6 +126,11 @@ class NovaLangPublish extends Command
     protected function isForce(): bool
     {
         return $this->option('force');
+    }
+
+    protected function isAll(): bool
+    {
+        return $this->option('all');
     }
 
     protected function directoryFrom(): string

@@ -11,7 +11,7 @@ composer require coderello/laravel-nova-lang
 ```
 
 ## Usage
-
+### Publish Command
 Publish translations for one language:
 ```bash
 php artisan nova-lang:publish de
@@ -22,9 +22,27 @@ Publish translations for multiple languages:
 php artisan nova-lang:publish de,ru
 ```
 
-Publish translations with overriding of existing ones:
+Publish translations for all languages:
+```bash
+php artisan nova-lang:publish --all
+```
+
+Publish translations and override existing files:
 ```bash
 php artisan nova-lang:publish de,ru --force
+```
+### Missing Command
+
+This command is to assist contributors to find any untranslated keys for their chosen language. A stub JSON file will be created at `storage_path('app/nova-lang/{locale}.missing.json')`. You can copy the keys into the language file in your own fork of the repository, translate them and create a pull request.
+
+Output missing translation keys for one or more languages:
+```bash
+php artisan nova-lang:missing de,ru
+```
+
+Output missing translation keys for all languages:
+```bash
+php artisan nova-lang:missing --all
 ```
 
 ## Available Languages

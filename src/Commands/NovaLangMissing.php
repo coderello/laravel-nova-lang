@@ -15,7 +15,8 @@ class NovaLangMissing extends Command
      * @var string
      */
     protected $signature = 'nova-lang:missing
-                            {locales : Comma separated list of languages}';
+                            {locales? : Comma-separated list of languages}
+                            {--all : Output all languages}';
 
     /**
      * The console command description.
@@ -57,14 +58,21 @@ class NovaLangMissing extends Command
             return;
         }
         
-        $outputDirectory = storage_path('app/nova-lang/');
+        $outputDirectory = storage_path('app/nova-lang');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
         
         $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
         
         $availableLocales = $this->getAvailableLocales();
+        
+        $requestedLocales = $this->getRequestedLocales();
+        
+        if (!$requestedLocales->count()) {
+            $this->error('You must either specify one or more locales, or use the --all option.');
+            return;
+        }
 
-        $this->getRequestedLocales()->each(function (string $locale) use ($availableLocales, $sourceKeys, $outputDirectory) {
+        $requestedLocales->each(function (string $locale) use ($availableLocales, $sourceKeys, $outputDirectory) {
             
             if (! $availableLocales->contains($locale)) {
                 $this->warn(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
@@ -93,15 +101,26 @@ class NovaLangMissing extends Command
             
             $outputFile = $outputDirectory.'/'.$locale.'.missing.json';
             
-            $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
-            
-            $this->info(sprintf('%d missing translation keys for [%s] locale have been output to [%s].', count($missingKeys), $locale, $outputFile));
+            if (count($outputKeys)) {
+                $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+
+                $this->info(sprintf('%d missing translation keys for [%s] locale have been output to [%s].', count($missingKeys), $locale, $outputFile));
+            } elseif ($this->filesystem->exists($outputFile)) {
+                    $this->warn(sprintf('[%s] locale has no missing translation keys. The existing output file at [%s] was deleted.', $locale, $outputFile));
+                    $this->filesystem->delete($outputFile);
+            } else {
+                $this->warn(sprintf('[%s] locale has no missing translation keys. No output file was created.', $locale));
+            }
         });
     }
 
     protected function getRequestedLocales(): Collection
     {
-        return collect(explode(',', $this->argument('locales')));
+        if ($this->isAll()) {
+            return $this->getAvailableLocales();
+        }
+        
+        return collect(explode(',', $this->argument('locales')))->filter();
     }
 
     protected function getAvailableLocales(): Collection
@@ -117,6 +136,11 @@ class NovaLangMissing extends Command
             });
 
         return $localesByDirectories->intersect($localesByFiles)->values();
+    }
+
+    protected function isAll(): bool
+    {
+        return $this->option('all');
     }
 
     protected function directoryFrom(): string
