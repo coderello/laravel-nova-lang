@@ -47,6 +47,12 @@ class NovaLangStats extends Command
      */
     public function handle()
     {
+        if (!config('app.debug')) {
+            $this->error('This command will only run in debug mode.');
+
+            return;
+        }
+        
         $sourceDirectory = $this->directoryNovaSource().'/en';
         $sourceFile = $sourceDirectory.'.json';
         
@@ -99,7 +105,9 @@ class NovaLangStats extends Command
 
         });
         
-        $contributors = $contributors->sortByDesc('complete');
+        $contributors = $contributors->sort(function($a, $b) {
+            return $a['complete'] === $b['complete'] ? $a['name'] <=> $b['name'] : 0 - ($a['complete'] <=> $b['complete']);
+        });
         
         $outputFile = $outputDirectory.'/contributors.json';
         

@@ -49,6 +49,12 @@ class NovaLangMissing extends Command
      */
     public function handle()
     {
+        if (!config('app.debug')) {
+            $this->error('This command will only run in debug mode.');
+
+            return;
+        }
+        
         $sourceDirectory = $this->directoryNovaSource().'/en';
         $sourceFile = $sourceDirectory.'.json';
         
