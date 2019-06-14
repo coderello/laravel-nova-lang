@@ -53,7 +53,7 @@ class NovaLangPublish extends Command
 
         $this->getRequestedLocales()->each(function (string $locale) use ($availableLocales) {
             if (! $availableLocales->contains($locale)) {
-                $this->error(sprintf('Unfortunately, translations for [%s] locale doesn\'t exist. Feel free to send a PR to add them and help other people :)', $locale));
+                $this->error(sprintf('Unfortunately, translations for [%s] locale don\'t exist. Feel free to send a PR to add them and help other people :)', $locale));
 
                 return;
             }
