@@ -58,7 +58,7 @@ class NovaLangMissing extends Command
             return;
         }
         
-        $outputDirectory = storage_path('app/nova-lang');
+        $outputDirectory = storage_path('app/nova-lang/missing');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
         
         $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
@@ -99,7 +99,7 @@ class NovaLangMissing extends Command
             
             $outputKeys = array_fill_keys($missingKeys, '');
             
-            $outputFile = $outputDirectory.'/'.$locale.'.missing.json';
+            $outputFile = $outputDirectory.'/'.$locale.'.json';
             
             if (count($outputKeys)) {
                 $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
