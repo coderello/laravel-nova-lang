@@ -38,7 +38,9 @@ You must have the `app.debug` config option set to true for these commands to be
 
 #### Missing Command
 
-This command is to assist contributors to find any untranslated keys for their chosen language. A stub JSON file will be created at `storage_path('app/nova-lang/missing/{locale}.json')`. You can copy those keys into the `resources/lang/{locale}.json` language file in your own fork of the repository, translate them and create a pull request.
+This command is to assist contributors to find any untranslated keys for their chosen language.
+
+A stub JSON file will be created at `storage_path('app/nova-lang/missing/{locale}.json')`. You can copy those keys into the `resources/lang/{locale}.json` language file in your own fork of the repository, translate them and create a pull request.
 
 Output missing translation keys for one or more languages:
 ```bash
@@ -52,7 +54,9 @@ php artisan nova-lang:missing --all
 
 #### Stats Command
 
-This command is to assist maintainers to record the completeness of each language and contributors. A `README.excerpt.md` and `contributors.json` file will be created at `storage_path('app/nova-lang')`. You can copy those files into your own fork of the repository and create a pull request.
+This command is to assist maintainers to update the completeness of each language and list of contributors in this README file.
+
+A `README.excerpt.md` and `contributors.json` file will be created at `storage_path('app/nova-lang')`. You can copy those files into your own fork of the repository and create a pull request.
 
 Output list of languages, lines translated and contributors:
 ```bash
