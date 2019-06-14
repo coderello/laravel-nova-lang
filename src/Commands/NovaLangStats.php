@@ -116,7 +116,7 @@ class NovaLangStats extends Command
                 return sprintf('[%s](https://github.com/%s)', $contributor, $contributor);
             }, array_keys($localeStat['contributors'])));
             
-            return sprintf('| %s | %s | %d (%s) | %s |', $localeStat['name'], $locale, $localeStat['complete'], $percent, $contributors);
+            return sprintf('| %s | [%s](resources/lang/%s.json) | %d (%s) | %s |', $localeStat['name'], $locale, $locale, $localeStat['complete'], $percent, $contributors);
         });
                 
         $outputFile = $outputDirectory.'/README.excerpt.md';
