@@ -381,7 +381,7 @@
     "Attach :resource": "Asociar :resource",
     "Create :resource": "Crear :resource",
     "Choose :resource": "Elejir :resource",
-    "New :resource": "Nuevo :resource",
+    "New :resource": "Crear :resource",
     "Edit :resource": "Editar :resource",
     "Update :resource": "Actualizar :resource",
     "Choose :field": "Elejir :field"
