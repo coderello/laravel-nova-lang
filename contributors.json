@@ -1,0 +1,275 @@
+{
+    "fr": {
+        "name": "French",
+        "complete": 383,
+        "contributors": {
+            "Arryan": 1,
+            "MarceauKa": 1
+        }
+    },
+    "en": {
+        "name": "English",
+        "complete": 374,
+        "contributors": {
+            "taylorotwell": 2,
+            "bonzai": 1,
+            "davidhemphill": 1,
+            "themsaid": 1
+        }
+    },
+    "fa": {
+        "name": "Farsi",
+        "complete": 374,
+        "contributors": {
+            "mziraki": 1
+        }
+    },
+    "pt-BR": {
+        "name": "Brazilian Portuguese",
+        "complete": 372,
+        "contributors": {
+            "chbbc": 1,
+            "eduardokum": 1
+        }
+    },
+    "ru": {
+        "name": "Russian",
+        "complete": 366,
+        "contributors": {
+            "Sanasol": 1,
+            "deadem": 1,
+            "estim": 1,
+            "hivokas": 1
+        }
+    },
+    "de": {
+        "name": "German",
+        "complete": 362,
+        "contributors": {
+            "dakira": 1,
+            "pille1842": 1
+        }
+    },
+    "es": {
+        "name": "Spanish",
+        "complete": 340,
+        "contributors": {
+            "Arryan": 1,
+            "ajmariduena": 1,
+            "joebordes": 1,
+            "rodrigore": 1,
+            "xcodinas": 1
+        }
+    },
+    "ar": {
+        "name": "Arabic",
+        "complete": 338,
+        "contributors": {
+            "Arryan": 1,
+            "saleem-hadad": 1
+        }
+    },
+    "eu": {
+        "name": "Basque",
+        "complete": 338,
+        "contributors": {
+            "JonPaternain": 1
+        }
+    },
+    "bg": {
+        "name": "Bulgarian",
+        "complete": 338,
+        "contributors": {
+            "BKirev": 1
+        }
+    },
+    "ca": {
+        "name": "Catalan",
+        "complete": 338,
+        "contributors": {
+            "joebordes": 1
+        }
+    },
+    "hr": {
+        "name": "Croatian",
+        "complete": 338,
+        "contributors": {
+            "walaski": 1
+        }
+    },
+    "da": {
+        "name": "Danish",
+        "complete": 338,
+        "contributors": {
+            "olivernybroe": 1
+        }
+    },
+    "fil": {
+        "name": "Filipino",
+        "complete": 338,
+        "contributors": {
+            "granaderos": 1
+        }
+    },
+    "fi": {
+        "name": "Finnish",
+        "complete": 338,
+        "contributors": {
+            "Krisseck": 1
+        }
+    },
+    "ka": {
+        "name": "Georgian",
+        "complete": 338,
+        "contributors": {
+            "akalongman": 1
+        }
+    },
+    "hi": {
+        "name": "Hindi",
+        "complete": 338,
+        "contributors": {
+            "bantya": 1
+        }
+    },
+    "hu": {
+        "name": "Hungarian",
+        "complete": 338,
+        "contributors": {
+            "milli05": 1
+        }
+    },
+    "id": {
+        "name": "Indonesian",
+        "complete": 338,
+        "contributors": {
+            "dvlwj": 1
+        }
+    },
+    "it": {
+        "name": "Italian",
+        "complete": 338,
+        "contributors": {
+            "dejdav": 1,
+            "manuelcoppotelli": 1
+        }
+    },
+    "lt": {
+        "name": "Lithuanian",
+        "complete": 338,
+        "contributors": {
+            "minved": 1
+        }
+    },
+    "pt": {
+        "name": "Portuguese",
+        "complete": 338,
+        "contributors": {
+            "Pedrocssg": 1
+        }
+    },
+    "sr": {
+        "name": "Serbian",
+        "complete": 338,
+        "contributors": {
+            "marjanovicsteva": 1
+        }
+    },
+    "sl": {
+        "name": "Slovenian",
+        "complete": 338,
+        "contributors": {
+            "morpheus7CS": 1
+        }
+    },
+    "sv": {
+        "name": "Swedish",
+        "complete": 338,
+        "contributors": {
+            "tanjemark": 1
+        }
+    },
+    "tl": {
+        "name": "Tagalog",
+        "complete": 338,
+        "contributors": {
+            "rcjavier": 1
+        }
+    },
+    "uk": {
+        "name": "Ukrainian",
+        "complete": 338,
+        "contributors": {
+            "coderello": 1
+        }
+    },
+    "sk": {
+        "name": "Slovak",
+        "complete": 337,
+        "contributors": {
+            "hejty": 1
+        }
+    },
+    "cn": {
+        "name": "Chinese",
+        "complete": 336,
+        "contributors": {
+            "Pierolin": 1
+        }
+    },
+    "zh-CN": {
+        "name": "Chinese (Simplified)",
+        "complete": 336,
+        "contributors": {
+            "jcc": 1
+        }
+    },
+    "zh-TW": {
+        "name": "Chinese (Traditional)",
+        "complete": 336,
+        "contributors": {
+            "CasperLaiTW": 1
+        }
+    },
+    "cs": {
+        "name": "Czech",
+        "complete": 336,
+        "contributors": {
+            "walaski": 1
+        }
+    },
+    "nl": {
+        "name": "Dutch",
+        "complete": 336,
+        "contributors": {
+            "happyDemon": 1,
+            "jschram": 1,
+            "sebastiaanspeck": 1
+        }
+    },
+    "pl": {
+        "name": "Polish",
+        "complete": 336,
+        "contributors": {
+            "Strus": 1,
+            "marekfilip": 1,
+            "wiktor-k": 1
+        }
+    },
+    "ro": {
+        "name": "Romanian",
+        "complete": 336,
+        "contributors": {
+            "BTeodorWork": 1,
+            "alexgiuvara": 1
+        }
+    },
+    "tr": {
+        "name": "Turkish",
+        "complete": 336,
+        "contributors": {
+            "bureken": 1,
+            "dilekuzulmez": 1
+        }
+    }
+}
