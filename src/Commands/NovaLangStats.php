@@ -90,7 +90,7 @@ class NovaLangStats extends Command
             ]);
 
             if ($blameContributors = $blame->get($locale)) {
-                $localeStat['contributors'] = $blameContributors;
+                $localeStat['contributors'] = array_merge($localeStat['contributors'], $blameContributors);
             }
 
             $localeStat['complete'] = $sourceCount - count($missingKeys);
@@ -102,7 +102,7 @@ class NovaLangStats extends Command
                 return $a['lines'] === $b['lines'] ? $a['name'] <=> $b['name'] : 0 - ($a['lines'] <=> $b['lines']);
             })->map(function($contributor) {
                 return $contributor['lines'];
-            })->keys()->all();
+            })->all();
 
             $contributors->put($locale, $localeStat);
 
@@ -124,6 +124,9 @@ class NovaLangStats extends Command
             $percent = round(($localeStat['complete'] / $sourceCount) * 100, 1).'%';
 
             $contributors = implode(', ', array_map(function($contributor) {
+                if ($contributor == '(deleted)') {
+                    return $contributor;
+                }
                 return sprintf('[%s](https://github.com/%s)', $contributor, $contributor);
             }, array_keys($localeStat['contributors'])));
 
@@ -172,6 +175,7 @@ class NovaLangStats extends Command
         $contributions = ['en' => ['taylorotwell' => 10001, 'bonzai' => 10000, 'davidhemphill' => 10000, 'themsaid' => 10000]];
 
         if (!$token) {
+            $this->error('To download newer contributions from GitHub, ensure the GITHUB_TOKEN_NOVALANG env key is set to a personal access token. Falling back to existing contributors list.');
             return $contributions;
         }
 
