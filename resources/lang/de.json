@@ -385,5 +385,10 @@
     "Update :resource": ":resource aktualisieren",
     "Choose :field": ":field auswählen",
     "Download": "Herunterladen",
-    "Per Page": "Pro Seite"
+    "Per Page": "Pro Seite",
+    "Action": "Aktion",
+    "Changes": "Geändert",
+    "Original": "Original",
+    "This resource no longer exists": "Diese Ressource existiert nicht mehr.",
+    ":resource Details": ":resource Details"
 }
