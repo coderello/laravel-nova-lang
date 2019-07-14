@@ -54,39 +54,49 @@ class NovaLangMissing extends Command
 
             return;
         }
-        
+
         $sourceDirectory = $this->directoryNovaSource().'/en';
         $sourceFile = $sourceDirectory.'.json';
-        
+
         if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
             $this->error('The source language files were not found in the vendor/laravel/nova directory.');
 
             return;
         }
-        
+
         $outputDirectory = storage_path('app/nova-lang/missing');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
-        
+
         $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
-        
+
+        if (!in_array(':resource Details', $sourceKeys)) { // Temporary fix until laravel/nova#463 is merged
+            $sourceKeys = array_unique(array_merge($sourceKeys, [
+                'Action',
+                'Changes',
+                'Original',
+                'This resource no longer exists',
+                ':resource Details',
+            ]));
+        }
+
         $availableLocales = $this->getAvailableLocales();
-        
+
         $requestedLocales = $this->getRequestedLocales();
-        
+
         if (!$requestedLocales->count()) {
             $this->error('You must either specify one or more locales, or use the --all option.');
             return;
         }
 
         $requestedLocales->each(function (string $locale) use ($availableLocales, $sourceKeys, $outputDirectory) {
-            
+
             if (! $availableLocales->contains($locale)) {
                 $this->warn(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
 
                 if (!$this->confirm(sprintf('Do you wish to create the file for [%s]?', $locale))) {
                     return;
                 }
-                
+
                 $missingKeys = $sourceKeys;
             }
             else {
@@ -95,18 +105,18 @@ class NovaLangMissing extends Command
                 $inputFile = $inputDirectory.'.json';
 
                 $localeKeys = array_keys(json_decode($this->filesystem->get($inputFile), true));
-                
+
                 $localeKeys = array_map(function($key) {
                     return str_replace('\\\'', '\'', $key);
                 }, $localeKeys);
-                
+
                 $missingKeys = array_diff($sourceKeys, $localeKeys);
             }
-            
+
             $outputKeys = array_fill_keys($missingKeys, '');
-            
+
             $outputFile = $outputDirectory.'/'.$locale.'.json';
-            
+
             if (count($outputKeys)) {
                 $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
@@ -125,7 +135,7 @@ class NovaLangMissing extends Command
         if ($this->isAll()) {
             return $this->getAvailableLocales();
         }
-        
+
         return collect(explode(',', $this->argument('locales')))->filter();
     }
 
