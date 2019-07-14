@@ -2,7 +2,8 @@
 
 <p align="center">This package provides the language support for <b>Laravel Nova</b>.</p>
 
-<p align="center">Feel free to submit your language or update an existing one by sending a PR to help other people. If you want to contribute, please ensure you read the [contributing guidelines](CONTRIBUTING.md) first.</p>
+Feel free to submit your language or update an existing one by sending a PR to help other people.  
+If you want to contribute, please ensure you read the [contributing guidelines](CONTRIBUTING.md) first.
 
 ## Installation
 
