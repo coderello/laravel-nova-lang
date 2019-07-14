@@ -8,8 +8,7 @@
             "eduardokum": 364,
             "saulo-silva": 33,
             "chbbc": 29,
-            "IgorDePaula": 5,
-            "hivokas": 3
+            "IgorDePaula": 5
         }
     },
     "en": {
@@ -21,8 +20,7 @@
             "davidhemphill": 10000,
             "themsaid": 10000,
             "mziraki": 37,
-            "kitbs": 15,
-            "hivokas": 3
+            "kitbs": 15
         }
     },
     "de": {
@@ -32,7 +30,6 @@
             "pille1842": 71,
             "shieraki": 27,
             "kitbs": 20,
-            "hivokas": 3,
             "dakira": 2
         }
     },
@@ -41,8 +38,7 @@
         "complete": 387,
         "contributors": {
             "jcc": 362,
-            "zacksleo": 42,
-            "hivokas": 3
+            "zacksleo": 42
         }
     },
     "zh-TW": {
@@ -50,8 +46,7 @@
         "complete": 387,
         "contributors": {
             "CasperLaiTW": 362,
-            "zacksleo": 42,
-            "hivokas": 3
+            "zacksleo": 42
         }
     },
     "fr": {
@@ -61,7 +56,6 @@
             "MarceauKa": 165,
             "InfinityWebMe": 28,
             "Arryan": 4,
-            "hivokas": 3,
             "KillianH": 2
         }
     },
@@ -72,7 +66,6 @@
             "joebordes": 51,
             "ajmariduena": 18,
             "Arryan": 3,
-            "hivokas": 3,
             "xcodinas": 2,
             "dgtal": 1,
             "rodrigore": 1
@@ -90,10 +83,9 @@
         "name": "Russian",
         "complete": 371,
         "contributors": {
+            "hivokas": 363,
             "S-anasol": 32,
             "deadem": 12,
-            "hivokas": 3,
-            "Sanasol": 1,
             "estim": 1
         }
     },
@@ -101,8 +93,7 @@
         "name": "Portuguese",
         "complete": 370,
         "contributors": {
-            "Pedrocssg": 347,
-            "hivokas": 3
+            "Pedrocssg": 347
         }
     },
     "it": {
@@ -111,7 +102,6 @@
         "contributors": {
             "(deleted)": 364,
             "manuelcoppotelli": 13,
-            "hivokas": 3,
             "dejdav": 1
         }
     },
@@ -119,24 +109,21 @@
         "name": "Catalan",
         "complete": 349,
         "contributors": {
-            "joebordes": 364,
-            "hivokas": 3
+            "joebordes": 364
         }
     },
     "eu": {
         "name": "Basque",
         "complete": 348,
         "contributors": {
-            "JonPaternain": 364,
-            "hivokas": 3
+            "JonPaternain": 364
         }
     },
     "sv": {
         "name": "Swedish",
         "complete": 347,
         "contributors": {
-            "tanjemark": 364,
-            "hivokas": 3
+            "tanjemark": 364
         }
     },
     "hr": {
@@ -144,7 +131,6 @@
         "complete": 346,
         "contributors": {
             "defart": 364,
-            "hivokas": 3,
             "walaski": 1
         }
     },
@@ -153,7 +139,6 @@
         "complete": 346,
         "contributors": {
             "walaskir": 362,
-            "hivokas": 3,
             "walaski": 1
         }
     },
@@ -161,8 +146,7 @@
         "name": "Danish",
         "complete": 346,
         "contributors": {
-            "olivernybroe": 364,
-            "hivokas": 3
+            "olivernybroe": 364
         }
     },
     "nl": {
@@ -172,7 +156,6 @@
             "happyDemon": 43,
             "jschram": 36,
             "sebastiaanspeck": 35,
-            "hivokas": 3,
             "daniel-de-wit": 1
         }
     },
@@ -180,72 +163,70 @@
         "name": "Filipino",
         "complete": 346,
         "contributors": {
-            "granaderos": 362,
-            "hivokas": 3
+            "granaderos": 362
         }
     },
     "fi": {
         "name": "Finnish",
         "complete": 346,
         "contributors": {
-            "Krisseck": 364,
-            "hivokas": 3
+            "Krisseck": 364
         }
     },
     "ka": {
         "name": "Georgian",
         "complete": 346,
         "contributors": {
-            "akalongman": 364,
-            "hivokas": 3
+            "akalongman": 364
         }
     },
     "hi": {
         "name": "Hindi",
         "complete": 346,
         "contributors": {
-            "bantya": 364,
-            "hivokas": 3
+            "bantya": 364
         }
     },
     "hu": {
         "name": "Hungarian",
         "complete": 346,
         "contributors": {
-            "milli05": 364,
-            "hivokas": 3
+            "milli05": 364
         }
     },
     "id": {
         "name": "Indonesian",
         "complete": 346,
         "contributors": {
-            "dvlwj": 364,
-            "hivokas": 3
+            "dvlwj": 364
         }
     },
     "sr": {
-        "name": "Serbian",
+        "name": "Serbian (Cyrillic)",
         "complete": 346,
         "contributors": {
-            "marjanovicsteva": 366,
-            "hivokas": 3
+            "marjanovicsteva": 366
         }
+    },
+    "sr-Latn": {
+        "name": "Serbian (Latin)",
+        "contributors": {
+            "marjanovicsteva": 366
+        },
+        "complete": 346
     },
     "sk": {
         "name": "Slovak",
         "complete": 346,
         "contributors": {
-            "hejty": 364,
-            "hivokas": 3
+            "hejty": 364
         }
     },
     "sl": {
         "name": "Slovenian",
         "complete": 346,
         "contributors": {
-            "morpheus7CS": 364,
-            "hivokas": 3
+            "morpheus7CS": 364
         }
     },
     "tr": {
@@ -254,7 +235,6 @@
         "contributors": {
             "bureken": 58,
             "sineld": 7,
-            "hivokas": 3,
             "dilekuzulmez": 2
         }
     },
@@ -271,16 +251,14 @@
         "name": "Bulgarian",
         "complete": 345,
         "contributors": {
-            "BKirev": 360,
-            "hivokas": 3
+            "BKirev": 360
         }
     },
     "lt": {
         "name": "Lithuanian",
         "complete": 345,
         "contributors": {
-            "minved": 364,
-            "hivokas": 3
+            "minved": 364
         }
     },
     "pl": {
@@ -289,16 +267,7 @@
         "contributors": {
             "Strus": 39,
             "marekfilip": 19,
-            "hivokas": 3,
             "wiktor-k": 2
-        }
-    },
-    "tl": {
-        "name": "Tagalog",
-        "complete": 345,
-        "contributors": {
-            "rcjavier": 364,
-            "hivokas": 3
         }
     },
     "ar": {
@@ -306,8 +275,7 @@
         "complete": 344,
         "contributors": {
             "saleem-hadad": 56,
-            "Arryan": 3,
-            "hivokas": 3
+            "Arryan": 3
         }
     },
     "ro": {
@@ -315,8 +283,14 @@
         "complete": 344,
         "contributors": {
             "BTeodorWork": 362,
-            "hivokas": 3,
             "alexgiuvara": 2
+        }
+    },
+    "tl": {
+        "name": "Tagalog",
+        "complete": 344,
+        "contributors": {
+            "rcjavier": 364
         }
     }
 }

@@ -101,7 +101,18 @@ class NovaLangStats extends Command
             ]);
 
             if ($blameContributors = $blame->get($locale)) {
-                $localeStat['contributors'] = array_merge($localeStat['contributors'], $blameContributors);
+                foreach ($blameContributors as $contributor => $lines) {
+                    if (!($contributor == 'hivokas' && $lines == 3)) {
+                        if (!isset($localeStat['contributors'][$contributor])) {
+                            $localeStat['contributors'][$contributor] = $lines;
+                        }
+                        else {
+                            if ($lines > $localeStat['contributors'][$contributor]) {
+                                $localeStat['contributors'][$contributor] = $lines;
+                            }
+                        }
+                    }
+                }
             }
 
             $localeStat['complete'] = $sourceCount - count($missingKeys);
