@@ -385,5 +385,10 @@
     "Update :resource": "Update :resource",
     "Choose :field": "Choose :field",
     "Download": "Download",
-    "Per Page": "Per Page"
+    "Per Page": "Per Page",
+    "Action": "Action",
+    "Changes": "Changes",
+    "Original": "Original",
+    "This resource no longer exists": "This resource no longer exists",
+    ":resource Details": ":resource Details"
 }
