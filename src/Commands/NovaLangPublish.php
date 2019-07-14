@@ -51,22 +51,22 @@ class NovaLangPublish extends Command
     public function handle()
     {
         $availableLocales = $this->getAvailableLocales();
-        
+
         $requestedLocales = $this->getRequestedLocales();
-        
+
         if (!$requestedLocales->count()) {
             $this->error('You must either specify one or more locales, or use the --all option.');
             return;
         }
 
         $requestedLocales->each(function (string $locale) use ($availableLocales) {
-            
+
             if ($locale == 'en' && $this->isForce()) {
                 if (!$this->confirm(sprintf('Are you sure you want to republish translations for [en] locale? This will overwrite the latest file from laravel/nova.'))) {
                     return;
                 }
             }
-            
+
             if (! $availableLocales->contains($locale)) {
                 $this->error(sprintf('Unfortunately, translations for [%s] locale don\'t exist. Feel free to send a PR to add them and help other people :)', $locale));
 
@@ -104,7 +104,7 @@ class NovaLangPublish extends Command
         if ($this->isAll()) {
             return $this->getAvailableLocales();
         }
-        
+
         return collect(explode(',', $this->argument('locales')))->filter();
     }
 
