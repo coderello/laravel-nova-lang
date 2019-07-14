@@ -25,6 +25,17 @@
             "hivokas": 3
         }
     },
+    "de": {
+        "name": "German",
+        "complete": 392,
+        "contributors": {
+            "pille1842": 71,
+            "shieraki": 27,
+            "kitbs": 20,
+            "hivokas": 3,
+            "dakira": 2
+        }
+    },
     "zh-CN": {
         "name": "Chinese (Simplified)",
         "complete": 387,
@@ -52,17 +63,6 @@
             "Arryan": 4,
             "hivokas": 3,
             "KillianH": 2
-        }
-    },
-    "de": {
-        "name": "German",
-        "complete": 387,
-        "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 20,
-            "hivokas": 3,
-            "dakira": 2
         }
     },
     "es": {
