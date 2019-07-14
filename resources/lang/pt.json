@@ -363,5 +363,10 @@
     "Reload": "Recarregar",
     "Value": "Valor",
     "Download": "Baixar",
-    "Per Page": "Por página"
+    "Per Page": "Por página",
+    "Action": "Ação",
+    "Changes": "Alterados",
+    "Original": "Originais",
+    "This resource no longer exists": "Este recurso não existe mais",
+    ":resource Details": "Detalhes de :resource"
 }
