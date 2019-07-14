@@ -61,6 +61,7 @@
     "New": "Új",
     "Next": "Következő",
     "Only Trashed": "Csak a töröltek",
+    "Per Page": "Per oldal",
     "Please select a resource to perform this action on.": "Válassza ki melyik eszközön hajtsuk végre a műveletet.",
     "Preview": "Előnézet",
     "Previous": "Előző",
@@ -343,6 +344,5 @@
     "Yes": "Igen",
     "No": "Nem",
     "Action Status": "Állapot",
-    "Download": "Letöltés",
-    "Per Page": "Per oldal"
+    "Download": "Letöltés"
 }

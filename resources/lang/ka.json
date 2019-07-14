@@ -61,6 +61,7 @@
     "New": "ახალი",
     "Next": "შემდეგი",
     "Only Trashed": "მხოლოდ წაშლილები",
+    "Per Page": "გვერდზე",
     "Please select a resource to perform this action on.": "გთხოვთ აირჩიოთ რესურსი რომელზეც გსურთ მოქმედების განხორციელება.",
     "Preview": "დათვალიერება",
     "Previous": "წინა",
@@ -343,6 +344,5 @@
     "Yes": "კი",
     "No": "არა",
     "Action Status": "სტატუსი",
-    "Download": "ჩამოტვირთვა",
-    "Per Page": "გვერდზე"
+    "Download": "ჩამოტვირთვა"
 }

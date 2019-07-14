@@ -61,6 +61,7 @@
     "New": "Nov",
     "Next": "Naslednji",
     "Only Trashed": "Samo izbrisani",
+    "Per Page": "Na stran",
     "Please select a resource to perform this action on.": "Izberite vir, na katerem želite izvesti dejanje.",
     "Preview": "Predogled",
     "Previous": "Prejšnji",
@@ -343,6 +344,5 @@
     "Yes": "Da",
     "No": "Ne",
     "Action Status": "Stanje",
-    "Download": "Prenesi",
-    "Per Page": "Na stran"
+    "Download": "Prenesi"
 }

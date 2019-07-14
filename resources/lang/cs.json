@@ -61,6 +61,7 @@
     "New": "Nový",
     "Next": "Další",
     "Only Trashed": "Pouze odstraněné",
+    "Per Page": "Na stránku",
     "Please select a resource to perform this action on.": "Vyberte prosím zdroj, na kterém se má spustit akce.",
     "Preview": "Náhled",
     "Previous": "Předešlé",
@@ -343,6 +344,5 @@
     "Yes": "Ano",
     "No": "Ne",
     "Action Status": "Postavení",
-    "Download": "Stažení",
-    "Per Page": "Na stránku"
+    "Download": "Stažení"
 }

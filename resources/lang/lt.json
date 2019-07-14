@@ -61,6 +61,7 @@
     "New": "Naujas",
     "Next": "Kitas",
     "Only Trashed": "Tik ištrinti",
+    "Per Page": "Puslapyje",
     "Please select a resource to perform this action on.": "Pasirinkitę resursą.",
     "Preview": "Peržiūra",
     "Previous": "Ankstesnis",
@@ -342,6 +343,5 @@
     "Zimbabwe": "Zimbabvė",
     "Yes": "Taip",
     "No": "Ne",
-    "Action Status": "Būsena",
-    "Per Page": "Puslapyje"
+    "Action Status": "Būsena"
 }

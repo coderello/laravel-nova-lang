@@ -61,6 +61,7 @@
     "New": "Berria",
     "Next": "Hurrengoa",
     "Only Trashed": "Ezabatuta",
+    "Per Page": "Orrialdeko",
     "Please select a resource to perform this action on.": "Aukeratu baliabidea ekintzarako.",
     "Preview": "Aurrerapena",
     "Previous": "Aurrekoa",
@@ -345,6 +346,5 @@
     "Action Name": "Izena",
     "Action Target": "Xede",
     "Action Status": "Egoera",
-    "Download": "Deskarga",
-    "Per Page": "Orrialdeko"
+    "Download": "Deskarga"
 }

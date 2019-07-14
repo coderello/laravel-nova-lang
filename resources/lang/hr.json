@@ -61,6 +61,7 @@
     "New": "Novo",
     "Next": "Dalje",
     "Only Trashed": "Samo obrisano",
+    "Per Page": "Po stranici",
     "Please select a resource to perform this action on.": "Molimo izaberite resurs na kojem ćete izvršiti ovaj postupak.",
     "Preview": "Pregled",
     "Previous": "Prošli",
@@ -343,6 +344,5 @@
     "Yes": "Da",
     "No": "Ne",
     "Action Status": "Status",
-    "Download": "Preuzimanje",
-    "Per Page": "Po stranici"
+    "Download": "Preuzimanje"
 }

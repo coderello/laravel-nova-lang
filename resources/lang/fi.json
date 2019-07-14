@@ -61,6 +61,7 @@
     "New": "Uusi",
     "Next": "Seuraava",
     "Only Trashed": "Vain poistetut",
+    "Per Page": "Per sivu",
     "Please select a resource to perform this action on.": "Ole hyvä ja valitse resurssi missä haluat ajaa toiminnon.",
     "Preview": "Esikatselu",
     "Previous": "Edellinen",
@@ -343,6 +344,5 @@
     "Yes": "Kyllä",
     "No": "Ei",
     "Action Status": "Tila",
-    "Download": "Lataa",
-    "Per Page": "Per sivu"
+    "Download": "Lataa"
 }

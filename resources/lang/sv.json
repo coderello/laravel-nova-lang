@@ -61,6 +61,7 @@
     "New": "Ny",
     "Next": "Nästa",
     "Only Trashed": "Endast raderad",
+    "Per Page": "Per sida",
     "Please select a resource to perform this action on.": "Välj en resurs att utföra den här åtgärden på.",
     "Preview": "Förhandsvisa",
     "Previous": "Föregående",
@@ -344,6 +345,5 @@
     "Yes": "Ja",
     "No": "Nej",
     "Action Status": "Status",
-    "Download": "Ladda ner",
-    "Per Page": "Per sida"
+    "Download": "Ladda ner"
 }

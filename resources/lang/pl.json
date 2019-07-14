@@ -61,6 +61,7 @@
     "New": "Nowy",
     "Next": "Dalej",
     "Only Trashed": "Tylko śmieci",
+    "Per Page": "Na stronie",
     "Please select a resource to perform this action on.": "Proszę, wybierz zasób, na którym chcesz wykonać tę akcję.",
     "Preview": "Podgląd",
     "Previous": "Poprzednie",
@@ -342,6 +343,5 @@
     "Zimbabwe": "Zimbabwe",
     "Yes": "Tak",
     "No": "Nie",
-    "Action Status": "Status",
-    "Per Page": "Na stronie"
+    "Action Status": "Status"
 }

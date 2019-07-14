@@ -62,6 +62,7 @@
     "New": "جدید",
     "Next": "بعدی",
     "Only Trashed": "فقط حذف شده ها",
+    "Per Page": "در هر صفحه",
     "Please select a resource to perform this action on.": "برای انجام این عملیات، لطفا یک منبع را انتخاب کنید",
     "Preview": "پیش نمایش",
     "Previous": "قبلی",
@@ -371,6 +372,5 @@
     "Nova User": "کاربر نوا",
     "no file selected": "هیچ فایلی انتخاب نشده است.",
     "Sorry, your session has expired.": "با عرض پوزش، جلسه شما منقضی شده است.",
-    "Reload": "بارگیری مجدد",
-    "Per Page": "در هر صفحه"
+    "Reload": "بارگیری مجدد"
 }

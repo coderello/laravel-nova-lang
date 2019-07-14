@@ -61,6 +61,7 @@
     "New": "Baru",
     "Next": "Berikutnya",
     "Only Trashed": "Hanya sampah",
+    "Per Page": "Per halaman",
     "Please select a resource to perform this action on.": "Mohon pilih sebuah sumber untuk melakukan aksi ini.",
     "Preview": "Tinjau",
     "Previous": "Sebelumnya",
@@ -343,6 +344,5 @@
     "Yes": "Ya",
     "No": "Tidak",
     "Action Status": "Status",
-    "Download": "Unduh",
-    "Per Page": "Per halaman"
+    "Download": "Unduh"
 }

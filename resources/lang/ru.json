@@ -62,6 +62,7 @@
     "New": "Новый",
     "Next": "Следующий",
     "Only Trashed": "Только удалённые",
+    "Per Page": "На страницу",
     "Please select a resource to perform this action on.": "Пожалуйста, выберите ресурс для которого хотите выполнить действие.",
     "Preview": "Предпросмотр",
     "Previous": "Предыдущий",
@@ -368,6 +369,5 @@
     "Reset Password Notification": "Оповещение о сбросе пароля",
     "Nova User": "Пользователь Nova",
     "no file selected": "файл не выбран",
-    "Download": "Скачать",
-    "Per Page": "На страницу"
+    "Download": "Скачать"
 }

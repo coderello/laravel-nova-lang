@@ -62,6 +62,7 @@
     "New": "Nuevo",
     "Next": "Siguiente",
     "Only Trashed": "Solo eliminados",
+    "Per Page": "Por página",
     "Please select a resource to perform this action on.": "Por favor, selecciona un recurso para ejecutar esta acción.",
     "Preview": "Vista previa",
     "Previous": "Anterior",
@@ -379,6 +380,5 @@
     "Edit :resource": "Editar :resource",
     "Update :resource": "Actualizar :resource",
     "Choose :field": "Elegir :field",
-    "Download": "Descargar",
-    "Per Page": "Por página"
+    "Download": "Descargar"
 }

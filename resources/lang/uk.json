@@ -61,6 +61,7 @@
     "New": "Новий",
     "Next": "Далі",
     "Only Trashed": "Тільки Мотлох",
+    "Per Page": "На сторінці",
     "Please select a resource to perform this action on.": "Будь ласка, виберіть ресурс для виконання цієї дії.",
     "Preview": "Попередній перегляд",
     "Previous": "Попередні",
@@ -343,6 +344,5 @@
     "Yes": "Так",
     "No": "Ні",
     "Action Status": "Статус",
-    "Download": "Завантажити",
-    "Per Page": "На сторінці"
+    "Download": "Завантажити"
 }

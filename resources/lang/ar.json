@@ -61,6 +61,7 @@
     "New": "جديد",
     "Next": "التالي",
     "Only Trashed": "المحذوف فقط",
+    "Per Page": "في كل صفحة:",
     "Please select a resource to perform this action on.": "يرجى تحديد الموارد لتنفيذ هذا الإجراء.",
     "Preview": "معاينة",
     "Previous": "السابق",
@@ -341,6 +342,5 @@
     "Zambia": "زامبيا",
     "Zimbabwe": "زيمبابوي",
     "Yes": "نعم",
-    "No": "لا",
-    "Per Page": "في كل صفحة:"
+    "No": "لا"
 }

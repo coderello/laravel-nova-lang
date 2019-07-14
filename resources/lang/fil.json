@@ -61,6 +61,7 @@
     "New": "Bago",
     "Next": "Susunod",
     "Only Trashed": "Mga basura lamang",
+    "Per Page": "Bawat pahina",
     "Please select a resource to perform this action on.": "Pakiusap pumili ng mapagkukunan para gawin ang aksyon na ito.",
     "Preview": "Prebiyu",
     "Previous": "Vorherige",
@@ -343,6 +344,5 @@
     "Yes": "Oo",
     "No": "Hindi",
     "Action Status": "Katayuan",
-    "Download": "I-download",
-    "Per Page": "Bawat pahina"
+    "Download": "I-download"
 }

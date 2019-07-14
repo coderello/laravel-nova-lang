@@ -61,6 +61,7 @@
     "New": "Yeni",
     "Next": "Sonraki",
     "Only Trashed": "Sadece Çöpe Atılanlar",
+    "Per Page": "Sayfa başına",
     "Please select a resource to perform this action on.": "Lütfen bu eylemi gerçekleştirmek için bir kaynak seçiniz.",
     "Preview": "Önizleme",
     "Previous": "Önceki",
@@ -343,6 +344,5 @@
     "Yes": "Evet",
     "No": "Hayır",
     "Action Status": "Durum",
-    "Download": "İndir",
-    "Per Page": "Sayfa başına"
+    "Download": "İndir"
 }

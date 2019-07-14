@@ -61,6 +61,7 @@
     "New": "Nuovo",
     "Next": "Prossimo",
     "Only Trashed": "Solo cancellati",
+    "Per Page": "Per pagina",
     "Please select a resource to perform this action on.": "Per favore scegli una risorsa.",
     "Preview": "Anteprima",
     "Previous": "Precedente",
@@ -347,6 +348,5 @@
     "Action Status": "Stato",
     "Reload": "Ricaricare",
     "Key": "Chiave",
-    "Download": "Scaricare",
-    "Per Page": "Per pagina"
+    "Download": "Scaricare"
 }

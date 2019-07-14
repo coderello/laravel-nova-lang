@@ -60,8 +60,8 @@
     "Lens": "Lents",
     "New": "Nou",
     "Next": "Següent",
-    "Trashed": "Suprimits",
     "Only Trashed": "Només els suprimits",
+    "Per Page": "Per pàgina",
     "Please select a resource to perform this action on.": "Seleccioneu un recurs per dur a terme aquesta acció.",
     "Preview": "Vista prèvia",
     "Previous": "Anterior",
@@ -81,6 +81,7 @@
     "Whoops": "Vaja",
     "Whoops!": "¡Vaja!",
     "With Trashed": "Amb els suprimits",
+    "Trashed": "Suprimits",
     "Write": "Escriu",
     "could not be found.": "no s'ha pogut trobar.",
     "total": "total",
@@ -346,6 +347,5 @@
     "No": "No",
     "Action Status": "Estat",
     "Nova User": "Usuari Nova",
-    "Download": "Descarregar",
-    "Per Page": "Per pàgina"
+    "Download": "Descarregar"
 }

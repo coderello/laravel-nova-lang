@@ -61,6 +61,7 @@
     "New": "Ново",
     "Next": "Следващо",
     "Only Trashed": "Само Trashed",
+    "Per Page": "На страница",
     "Please select a resource to perform this action on.": "Моля, изберете ресурс, върху който да извършите това действие.",
     "Preview": "Предварителен преглед",
     "Previous": "Предишно",
@@ -342,6 +343,5 @@
     "Zimbabwe": "Зимбабве",
     "Yes": "Да",
     "No": "Не",
-    "Action Status": "Статус",
-    "Per Page": "На страница"
+    "Action Status": "Статус"
 }

@@ -61,6 +61,7 @@
     "New": "Nový",
     "Next": "Ďalší",
     "Only Trashed": "Len vymazané",
+    "Per Page": "Na stránku",
     "Please select a resource to perform this action on.": "Prosím vyberte zdroj, na ktorý sa má spustiť akcia.",
     "Preview": "Náhľad",
     "Previous": "Prechádzajúci",
@@ -343,6 +344,5 @@
     "Yes": "Áno",
     "No": "Nie",
     "Action Status": "Postavenie",
-    "Download": "Stiahnuť",
-    "Per Page": "Na stránku"
+    "Download": "Stiahnuť"
 }

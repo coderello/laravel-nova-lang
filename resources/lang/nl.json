@@ -61,6 +61,7 @@
     "New": "Nieuw",
     "Next": "Volgende",
     "Only Trashed": "Alleen verwijderden",
+    "Per Page": "Per pagina",
     "Please select a resource to perform this action on.": "Selecteer een bron om deze actie op uit te voeren.",
     "Preview": "Voorbeeld",
     "Previous": "Vorige",
@@ -343,6 +344,5 @@
     "Yes": "Ja",
     "No": "Nee",
     "Action Status": "Status",
-    "Download": "Downloaden",
-    "Per Page": "Per pagina"
+    "Download": "Downloaden"
 }

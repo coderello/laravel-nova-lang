@@ -61,6 +61,7 @@
     "New": "Ny",
     "Next": "Næste",
     "Only Trashed": "Kun slettede",
+    "Per Page": "Per side",
     "Please select a resource to perform this action on.": "Vælg venligst en ressource at udfører denne handling på.",
     "Preview": "Forhåndsvisning",
     "Previous": "Forrige",
@@ -343,6 +344,5 @@
     "Yes": "Ja",
     "No": "Nej",
     "Action Status": "Status",
-    "Download": "Downloade",
-    "Per Page": "Per side"
+    "Download": "Downloade"
 }

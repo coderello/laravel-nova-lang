@@ -60,6 +60,7 @@
     "Lens": "Obiectiv",
     "New": "Nou",
     "Next": "Înainte",
+    "Per Page": "Per pagină",
     "Please select a resource to perform this action on.": "Selectați o resursă pentru a efectua această acțiune.",
     "Preview": "Previzualizează",
     "Previous": "Înapoi",
@@ -341,6 +342,5 @@
     "Yes": "Da",
     "No": "Nu",
     "Action Status": "Starea",
-    "Download": "Descarca",
-    "Per Page": "Per pagină"
+    "Download": "Descarca"
 }
