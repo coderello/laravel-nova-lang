@@ -12,6 +12,19 @@
             "hivokas": 3
         }
     },
+    "en": {
+        "name": "English",
+        "complete": 392,
+        "contributors": {
+            "taylorotwell": 10001,
+            "bonzai": 10000,
+            "davidhemphill": 10000,
+            "themsaid": 10000,
+            "mziraki": 37,
+            "kitbs": 15,
+            "hivokas": 3
+        }
+    },
     "zh-CN": {
         "name": "Chinese (Simplified)",
         "complete": 387,
@@ -27,19 +40,6 @@
         "contributors": {
             "CasperLaiTW": 362,
             "zacksleo": 42,
-            "hivokas": 3
-        }
-    },
-    "en": {
-        "name": "English",
-        "complete": 387,
-        "contributors": {
-            "taylorotwell": 10001,
-            "bonzai": 10000,
-            "davidhemphill": 10000,
-            "themsaid": 10000,
-            "mziraki": 37,
-            "kitbs": 15,
             "hivokas": 3
         }
     },
