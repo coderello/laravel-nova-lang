@@ -380,5 +380,15 @@
     "Edit :resource": "Editar :resource",
     "Update :resource": "Actualizar :resource",
     "Choose :field": "Elegir :field",
-    "Download": "Descargar"
+    "Download": "Descargar",
+    "No Data": "Sin Datos",
+    "No Current Data": "Sin Datos Actuales",
+    "No Prior Data": "Sin Datos Previos",
+    "No Increase": "No Incrementar",
+    "Hide Content": "Ocultar Contenido",
+    "Action": "Acción",
+    "Changes": "Cambios",
+    "Original": "Original",
+    "This resource no longer exists": "Este recurso ya no existe",
+    ":resource Details": "Detalles de :resource"
 }

@@ -76,7 +76,7 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 | Chinese (Simplified) | [zh-CN](resources/lang/zh-CN.json) | 387 (98.7%) | [jcc](https://github.com/jcc), [zacksleo](https://github.com/zacksleo) |
 | Chinese (Traditional) | [zh-TW](resources/lang/zh-TW.json) | 387 (98.7%) | [CasperLaiTW](https://github.com/CasperLaiTW), [zacksleo](https://github.com/zacksleo) |
 | French | [fr](resources/lang/fr.json) | 387 (98.7%) | [MarceauKa](https://github.com/MarceauKa), [InfinityWebMe](https://github.com/InfinityWebMe), [Arryan](https://github.com/Arryan), [KillianH](https://github.com/KillianH) |
-| Spanish | [es](resources/lang/es.json) | 382 (97.4%) | [joebordes](https://github.com/joebordes), [ajmariduena](https://github.com/ajmariduena), [Arryan](https://github.com/Arryan), [xcodinas](https://github.com/xcodinas), [dgtal](https://github.com/dgtal), [rodrigore](https://github.com/rodrigore) |
+| Spanish | [es](resources/lang/es.json) | 382 (97.4%) | [joebordes](https://github.com/joebordes), [ajmariduena](https://github.com/ajmariduena), [Arryan](https://github.com/Arryan), [xcodinas](https://github.com/xcodinas), [dgtal](https://github.com/dgtal), [rodrigore](https://github.com/rodrigore), [iksaku](https://github.com/iksaku) |
 | Farsi | [fa](resources/lang/fa.json) | 374 (95.4%) | [alirezamirsepassi](https://github.com/alirezamirsepassi), [mziraki](https://github.com/mziraki) |
 | Russian | [ru](resources/lang/ru.json) | 371 (94.6%) | [hivokas](https://github.com/hivokas), [S-anasol](https://github.com/S-anasol), [deadem](https://github.com/deadem), [estim](https://github.com/estim) |
 | Portuguese | [pt](resources/lang/pt.json) | 370 (94.4%) | [Pedrocssg](https://github.com/Pedrocssg) |
