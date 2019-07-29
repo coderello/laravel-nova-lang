@@ -1,0 +1,6 @@
+site:
+  show: true
+  title: 'Laravel Nova Lang'
+  description: 'Language support for Laravel Nova. Feel free to submit your language or update an existing one!'
+  package_repository: 'packagist'
+  package_name: 'coderello/laravel-nova-lang'
