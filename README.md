@@ -103,6 +103,6 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 | Bulgarian | [bg](resources/lang/bg.json) | 345 (88%) | [BKirev](https://github.com/BKirev) |
 | Lithuanian | [lt](resources/lang/lt.json) | 345 (88%) | [minved](https://github.com/minved) |
 | Polish | [pl](resources/lang/pl.json) | 345 (88%) | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
-| Arabic | [ar](resources/lang/ar.json) | 344 (87.8%) | [saleem-hadad](https://github.com/saleem-hadad), [Arryan](https://github.com/Arryan) |
+| Arabic | [ar](resources/lang/ar.json) | 392 (100%) | [danyelkeddah](https://github.com/danyelkeddah), [saleem-hadad](https://github.com/saleem-hadad), [Arryan](https://github.com/Arryan) |
 | Romanian | [ro](resources/lang/ro.json) | 344 (87.8%) | [BTeodorWork](https://github.com/BTeodorWork), [alexgiuvara](https://github.com/alexgiuvara) |
 | Tagalog | [tl](resources/lang/tl.json) | 344 (87.8%) | [rcjavier](https://github.com/rcjavier) |
