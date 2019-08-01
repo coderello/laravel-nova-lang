@@ -70,6 +70,7 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 
 | Language | Code | Lines translated | Thanks to |
 | --- | --- | --- | --- |
+| Arabic | [ar](resources/lang/ar.json) | 392 (100%) | [saleem-hadad](https://github.com/saleem-hadad), [danyelkeddah](https://github.com/danyelkeddah), [Arryan](https://github.com/Arryan) |
 | Brazilian Portuguese | [pt-BR](resources/lang/pt-BR.json) | 392 (100%) | [henryavila](https://github.com/henryavila), [pedrofurtado](https://github.com/pedrofurtado), [eduardokum](https://github.com/eduardokum), [saulo-silva](https://github.com/saulo-silva), [chbbc](https://github.com/chbbc), [IgorDePaula](https://github.com/IgorDePaula) |
 | English | [en](resources/lang/en.json) | 392 (100%) | [taylorotwell](https://github.com/taylorotwell), [bonzai](https://github.com/bonzai), [davidhemphill](https://github.com/davidhemphill), [themsaid](https://github.com/themsaid), [mziraki](https://github.com/mziraki), [kitbs](https://github.com/kitbs) |
 | German | [de](resources/lang/de.json) | 392 (100%) | [pille1842](https://github.com/pille1842), [shieraki](https://github.com/shieraki), [kitbs](https://github.com/kitbs), [dakira](https://github.com/dakira) |
@@ -103,6 +104,5 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 | Bulgarian | [bg](resources/lang/bg.json) | 345 (88%) | [BKirev](https://github.com/BKirev) |
 | Lithuanian | [lt](resources/lang/lt.json) | 345 (88%) | [minved](https://github.com/minved) |
 | Polish | [pl](resources/lang/pl.json) | 345 (88%) | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
-| Arabic | [ar](resources/lang/ar.json) | 392 (100%) | [danyelkeddah](https://github.com/danyelkeddah), [saleem-hadad](https://github.com/saleem-hadad), [Arryan](https://github.com/Arryan) |
 | Romanian | [ro](resources/lang/ro.json) | 344 (87.8%) | [BTeodorWork](https://github.com/BTeodorWork), [alexgiuvara](https://github.com/alexgiuvara) |
 | Tagalog | [tl](resources/lang/tl.json) | 344 (87.8%) | [rcjavier](https://github.com/rcjavier) |
