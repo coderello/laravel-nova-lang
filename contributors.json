@@ -1,4 +1,13 @@
 {
+    "ar": {
+        "name": "Arabic",
+        "complete": 394,
+        "contributors": {
+            "saleem-hadad": 56,
+            "danyelkeddah": 48,
+            "Arryan": 3
+        }
+    },
     "pt-BR": {
         "name": "Brazilian Portuguese",
         "complete": 392,
@@ -269,14 +278,6 @@
             "Strus": 39,
             "marekfilip": 19,
             "wiktor-k": 2
-        }
-    },
-    "ar": {
-        "name": "Arabic",
-        "complete": 344,
-        "contributors": {
-            "saleem-hadad": 56,
-            "Arryan": 3
         }
     },
     "ro": {
