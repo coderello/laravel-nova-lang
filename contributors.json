@@ -61,14 +61,15 @@
     },
     "es": {
         "name": "Spanish",
-        "complete": 382,
+        "complete": 392,
         "contributors": {
             "joebordes": 51,
             "ajmariduena": 18,
             "Arryan": 3,
             "xcodinas": 2,
             "dgtal": 1,
-            "rodrigore": 1
+            "rodrigore": 1,
+            "iksaku": 10
         }
     },
     "fa": {
