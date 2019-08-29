@@ -70,16 +70,6 @@ class NovaLangStats extends Command
 
         $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
 
-        if (!in_array(':resource Details', $sourceKeys)) { // Temporary fix until laravel/nova#463 is merged
-            $sourceKeys = array_unique(array_merge($sourceKeys, [
-                'Action',
-                'Changes',
-                'Original',
-                'This resource no longer exists',
-                ':resource Details',
-            ]));
-        }
-
         $sourceCount = count($sourceKeys);
 
         $availableLocales = $this->getAvailableLocales();
@@ -146,7 +136,7 @@ class NovaLangStats extends Command
             $percent = round(($localeStat['complete'] / $sourceCount) * 100, 1).'%';
 
             $contributors = implode(', ', array_map(function($contributor) {
-                if ($contributor == '(deleted)') {
+                if ($contributor == '(unknown)') {
                     return $contributor;
                 }
                 return sprintf('[%s](https://github.com/%s)', $contributor, $contributor);
@@ -229,7 +219,7 @@ class NovaLangStats extends Command
 
         foreach ($pullRequests as $pullRequest) {
             if (!in_array($pullRequest['number'], [148, 156], true)) {
-                $author = $pullRequest['author']['login'] ?? '(deleted)';
+                $author = $pullRequest['author']['login'] ?? '(unknown)';
 
                 foreach ($pullRequest['files']['nodes'] as $file) {
                     if (stripos($file['path'], 'resources/lang') === 0) {
