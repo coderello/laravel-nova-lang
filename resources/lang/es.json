@@ -390,5 +390,6 @@
     "Changes": "Cambios",
     "Original": "Original",
     "This resource no longer exists": "Este recurso ya no existe",
-    ":resource Details": "Detalles de :resource"
+    ":resource Details": "Detalles de :resource",
+    "There are no available options for this resource.": "No hay opciones disponibles para este recurso."
 }

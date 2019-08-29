@@ -1,10 +1,22 @@
 {
+    "ru": {
+        "name": "Russian",
+        "complete": 393,
+        "contributors": {
+            "hivokas": 363,
+            "S-anasol": 32,
+            "sanasol": 32,
+            "den1n": 23,
+            "deadem": 12,
+            "estim": 1
+        }
+    },
     "ar": {
         "name": "Arabic",
-        "complete": 394,
+        "complete": 392,
         "contributors": {
             "saleem-hadad": 56,
-            "danyelkeddah": 48,
+            "danyelkeddah": 50,
             "Arryan": 3
         }
     },
@@ -42,12 +54,26 @@
             "dakira": 2
         }
     },
+    "es": {
+        "name": "Spanish",
+        "complete": 392,
+        "contributors": {
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "Arryan": 3,
+            "xcodinas": 2,
+            "dgtal": 1,
+            "rodrigore": 1
+        }
+    },
     "zh-CN": {
         "name": "Chinese (Simplified)",
         "complete": 387,
         "contributors": {
             "jcc": 362,
-            "zacksleo": 42
+            "zacksleo": 42,
+            "masterwto": 29
         }
     },
     "zh-TW": {
@@ -64,21 +90,9 @@
         "contributors": {
             "MarceauKa": 165,
             "InfinityWebMe": 28,
+            "Yannik-Slym": 28,
             "Arryan": 4,
             "KillianH": 2
-        }
-    },
-    "es": {
-        "name": "Spanish",
-        "complete": 392,
-        "contributors": {
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "Arryan": 3,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1,
-            "iksaku": 10
         }
     },
     "fa": {
@@ -87,16 +101,6 @@
         "contributors": {
             "alirezamirsepassi": 387,
             "mziraki": 35
-        }
-    },
-    "ru": {
-        "name": "Russian",
-        "complete": 371,
-        "contributors": {
-            "hivokas": 363,
-            "S-anasol": 32,
-            "deadem": 12,
-            "estim": 1
         }
     },
     "pt": {
@@ -110,7 +114,7 @@
         "name": "Italian",
         "complete": 350,
         "contributors": {
-            "(deleted)": 364,
+            "(unknown)": 364,
             "manuelcoppotelli": 13,
             "dejdav": 1
         }
@@ -254,7 +258,8 @@
         "contributors": {
             "hivokas": 3,
             "Ostap34JS": 1,
-            "coderello": 1
+            "coderello": 1,
+            "osbre": 1
         }
     },
     "bg": {
