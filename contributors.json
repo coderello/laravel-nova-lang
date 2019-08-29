@@ -1,4 +1,26 @@
 {
+    "en": {
+        "name": "English",
+        "complete": 393,
+        "contributors": {
+            "taylorotwell": 10001,
+            "bonzai": 10000,
+            "davidhemphill": 10000,
+            "themsaid": 10000,
+            "mziraki": 37,
+            "kitbs": 17
+        }
+    },
+    "de": {
+        "name": "German",
+        "complete": 393,
+        "contributors": {
+            "pille1842": 71,
+            "shieraki": 27,
+            "kitbs": 22,
+            "dakira": 2
+        }
+    },
     "ru": {
         "name": "Russian",
         "complete": 393,
@@ -9,6 +31,20 @@
             "den1n": 23,
             "deadem": 12,
             "estim": 1
+        }
+    },
+    "es": {
+        "name": "Spanish",
+        "complete": 393,
+        "contributors": {
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "Arryan": 3,
+            "kitbs": 2,
+            "xcodinas": 2,
+            "dgtal": 1,
+            "rodrigore": 1
         }
     },
     "ar": {
@@ -32,39 +68,16 @@
             "IgorDePaula": 5
         }
     },
-    "en": {
-        "name": "English",
-        "complete": 392,
+    "fr": {
+        "name": "French",
+        "complete": 388,
         "contributors": {
-            "taylorotwell": 10001,
-            "bonzai": 10000,
-            "davidhemphill": 10000,
-            "themsaid": 10000,
-            "mziraki": 37,
-            "kitbs": 15
-        }
-    },
-    "de": {
-        "name": "German",
-        "complete": 392,
-        "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 20,
-            "dakira": 2
-        }
-    },
-    "es": {
-        "name": "Spanish",
-        "complete": 392,
-        "contributors": {
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "iksaku": 11,
-            "Arryan": 3,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1
+            "MarceauKa": 165,
+            "InfinityWebMe": 28,
+            "Yannik-Slym": 28,
+            "kitbs": 10,
+            "Arryan": 4,
+            "KillianH": 2
         }
     },
     "zh-CN": {
@@ -82,17 +95,6 @@
         "contributors": {
             "CasperLaiTW": 362,
             "zacksleo": 42
-        }
-    },
-    "fr": {
-        "name": "French",
-        "complete": 387,
-        "contributors": {
-            "MarceauKa": 165,
-            "InfinityWebMe": 28,
-            "Yannik-Slym": 28,
-            "Arryan": 4,
-            "KillianH": 2
         }
     },
     "fa": {
