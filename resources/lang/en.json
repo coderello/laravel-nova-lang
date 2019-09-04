@@ -391,5 +391,6 @@
     "Original": "Original",
     "This resource no longer exists": "This resource no longer exists",
     ":resource Details": ":resource Details",
-    "There are no available options for this resource.": "There are no available options for this resource."
+    "There are no available options for this resource.": "There are no available options for this resource.",
+    "Show All Fields": "Show All Fields"
 }

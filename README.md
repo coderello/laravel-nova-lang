@@ -70,39 +70,39 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 
 | Language | Code | Lines translated | Thanks to |
 | --- | --- | --- | --- |
-| English | [en](resources/lang/en.json) | 393 (100%) | [taylorotwell](https://github.com/taylorotwell), [bonzai](https://github.com/bonzai), [davidhemphill](https://github.com/davidhemphill), [themsaid](https://github.com/themsaid), [mziraki](https://github.com/mziraki), [kitbs](https://github.com/kitbs) |
-| German | [de](resources/lang/de.json) | 393 (100%) | [pille1842](https://github.com/pille1842), [shieraki](https://github.com/shieraki), [kitbs](https://github.com/kitbs), [dakira](https://github.com/dakira) |
-| Russian | [ru](resources/lang/ru.json) | 393 (100%) | [hivokas](https://github.com/hivokas), [S-anasol](https://github.com/S-anasol), [sanasol](https://github.com/sanasol), [den1n](https://github.com/den1n), [deadem](https://github.com/deadem), [estim](https://github.com/estim) |
-| Spanish | [es](resources/lang/es.json) | 393 (100%) | [joebordes](https://github.com/joebordes), [ajmariduena](https://github.com/ajmariduena), [iksaku](https://github.com/iksaku), [Arryan](https://github.com/Arryan), [kitbs](https://github.com/kitbs), [xcodinas](https://github.com/xcodinas), [dgtal](https://github.com/dgtal), [rodrigore](https://github.com/rodrigore) |
-| Arabic | [ar](resources/lang/ar.json) | 392 (99.7%) | [saleem-hadad](https://github.com/saleem-hadad), [danyelkeddah](https://github.com/danyelkeddah), [Arryan](https://github.com/Arryan) |
-| Brazilian Portuguese | [pt-BR](resources/lang/pt-BR.json) | 392 (99.7%) | [henryavila](https://github.com/henryavila), [pedrofurtado](https://github.com/pedrofurtado), [eduardokum](https://github.com/eduardokum), [saulo-silva](https://github.com/saulo-silva), [chbbc](https://github.com/chbbc), [IgorDePaula](https://github.com/IgorDePaula) |
-| French | [fr](resources/lang/fr.json) | 388 (98.7%) | [MarceauKa](https://github.com/MarceauKa), [InfinityWebMe](https://github.com/InfinityWebMe), [Yannik-Slym](https://github.com/Yannik-Slym), [kitbs](https://github.com/kitbs), [Arryan](https://github.com/Arryan), [KillianH](https://github.com/KillianH) |
-| Chinese (Simplified) | [zh-CN](resources/lang/zh-CN.json) | 387 (98.5%) | [jcc](https://github.com/jcc), [zacksleo](https://github.com/zacksleo), [masterwto](https://github.com/masterwto) |
-| Chinese (Traditional) | [zh-TW](resources/lang/zh-TW.json) | 387 (98.5%) | [CasperLaiTW](https://github.com/CasperLaiTW), [zacksleo](https://github.com/zacksleo) |
-| Farsi | [fa](resources/lang/fa.json) | 374 (95.2%) | [alirezamirsepassi](https://github.com/alirezamirsepassi), [mziraki](https://github.com/mziraki) |
-| Portuguese | [pt](resources/lang/pt.json) | 370 (94.1%) | [Pedrocssg](https://github.com/Pedrocssg) |
-| Italian | [it](resources/lang/it.json) | 350 (89.1%) | (unknown), [manuelcoppotelli](https://github.com/manuelcoppotelli), [dejdav](https://github.com/dejdav) |
-| Catalan | [ca](resources/lang/ca.json) | 349 (88.8%) | [joebordes](https://github.com/joebordes) |
-| Basque | [eu](resources/lang/eu.json) | 348 (88.5%) | [JonPaternain](https://github.com/JonPaternain) |
-| Swedish | [sv](resources/lang/sv.json) | 347 (88.3%) | [tanjemark](https://github.com/tanjemark) |
-| Croatian | [hr](resources/lang/hr.json) | 346 (88%) | [defart](https://github.com/defart), [walaski](https://github.com/walaski) |
-| Czech | [cs](resources/lang/cs.json) | 346 (88%) | [walaskir](https://github.com/walaskir), [walaski](https://github.com/walaski) |
-| Danish | [da](resources/lang/da.json) | 346 (88%) | [olivernybroe](https://github.com/olivernybroe) |
-| Dutch | [nl](resources/lang/nl.json) | 346 (88%) | [happyDemon](https://github.com/happyDemon), [jschram](https://github.com/jschram), [sebastiaanspeck](https://github.com/sebastiaanspeck), [daniel-de-wit](https://github.com/daniel-de-wit) |
-| Filipino | [fil](resources/lang/fil.json) | 346 (88%) | [granaderos](https://github.com/granaderos) |
-| Finnish | [fi](resources/lang/fi.json) | 346 (88%) | [Krisseck](https://github.com/Krisseck) |
-| Georgian | [ka](resources/lang/ka.json) | 346 (88%) | [akalongman](https://github.com/akalongman) |
-| Hindi | [hi](resources/lang/hi.json) | 346 (88%) | [bantya](https://github.com/bantya) |
-| Hungarian | [hu](resources/lang/hu.json) | 346 (88%) | [milli05](https://github.com/milli05) |
-| Indonesian | [id](resources/lang/id.json) | 346 (88%) | [dvlwj](https://github.com/dvlwj) |
-| Serbian (Cyrillic) | [sr](resources/lang/sr.json) | 346 (88%) | [marjanovicsteva](https://github.com/marjanovicsteva) |
-| Serbian (Latin) | [sr-Latn](resources/lang/sr-Latn.json) | 346 (88%) | [marjanovicsteva](https://github.com/marjanovicsteva) |
-| Slovak | [sk](resources/lang/sk.json) | 346 (88%) | [hejty](https://github.com/hejty) |
-| Slovenian | [sl](resources/lang/sl.json) | 346 (88%) | [morpheus7CS](https://github.com/morpheus7CS) |
-| Turkish | [tr](resources/lang/tr.json) | 346 (88%) | [bureken](https://github.com/bureken), [sineld](https://github.com/sineld), [dilekuzulmez](https://github.com/dilekuzulmez) |
-| Ukrainian | [uk](resources/lang/uk.json) | 346 (88%) | [hivokas](https://github.com/hivokas), [Ostap34JS](https://github.com/Ostap34JS), [coderello](https://github.com/coderello), [osbre](https://github.com/osbre) |
-| Bulgarian | [bg](resources/lang/bg.json) | 345 (87.8%) | [BKirev](https://github.com/BKirev) |
-| Lithuanian | [lt](resources/lang/lt.json) | 345 (87.8%) | [minved](https://github.com/minved) |
-| Polish | [pl](resources/lang/pl.json) | 345 (87.8%) | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
-| Romanian | [ro](resources/lang/ro.json) | 344 (87.5%) | [BTeodorWork](https://github.com/BTeodorWork), [alexgiuvara](https://github.com/alexgiuvara) |
-| Tagalog | [tl](resources/lang/tl.json) | 344 (87.5%) | [rcjavier](https://github.com/rcjavier) |
+| English | [en](resources/lang/en.json) | 394 (100%) | [taylorotwell](https://github.com/taylorotwell), [bonzai](https://github.com/bonzai), [davidhemphill](https://github.com/davidhemphill), [themsaid](https://github.com/themsaid), [mziraki](https://github.com/mziraki), [kitbs](https://github.com/kitbs) |
+| German | [de](resources/lang/de.json) | 393 (99.7%) | [pille1842](https://github.com/pille1842), [shieraki](https://github.com/shieraki), [kitbs](https://github.com/kitbs), [dakira](https://github.com/dakira) |
+| Russian | [ru](resources/lang/ru.json) | 393 (99.7%) | [hivokas](https://github.com/hivokas), [S-anasol](https://github.com/S-anasol), [sanasol](https://github.com/sanasol), [den1n](https://github.com/den1n), [deadem](https://github.com/deadem), [estim](https://github.com/estim) |
+| Spanish | [es](resources/lang/es.json) | 393 (99.7%) | [joebordes](https://github.com/joebordes), [ajmariduena](https://github.com/ajmariduena), [iksaku](https://github.com/iksaku), [Arryan](https://github.com/Arryan), [kitbs](https://github.com/kitbs), [xcodinas](https://github.com/xcodinas), [dgtal](https://github.com/dgtal), [rodrigore](https://github.com/rodrigore) |
+| Arabic | [ar](resources/lang/ar.json) | 392 (99.5%) | [saleem-hadad](https://github.com/saleem-hadad), [danyelkeddah](https://github.com/danyelkeddah), [Arryan](https://github.com/Arryan) |
+| Brazilian Portuguese | [pt-BR](resources/lang/pt-BR.json) | 392 (99.5%) | [henryavila](https://github.com/henryavila), [pedrofurtado](https://github.com/pedrofurtado), [eduardokum](https://github.com/eduardokum), [saulo-silva](https://github.com/saulo-silva), [chbbc](https://github.com/chbbc), [IgorDePaula](https://github.com/IgorDePaula) |
+| French | [fr](resources/lang/fr.json) | 388 (98.5%) | [MarceauKa](https://github.com/MarceauKa), [InfinityWebMe](https://github.com/InfinityWebMe), [Yannik-Slym](https://github.com/Yannik-Slym), [kitbs](https://github.com/kitbs), [Arryan](https://github.com/Arryan), [KillianH](https://github.com/KillianH) |
+| Chinese (Simplified) | [zh-CN](resources/lang/zh-CN.json) | 387 (98.2%) | [jcc](https://github.com/jcc), [zacksleo](https://github.com/zacksleo), [masterwto](https://github.com/masterwto) |
+| Chinese (Traditional) | [zh-TW](resources/lang/zh-TW.json) | 387 (98.2%) | [CasperLaiTW](https://github.com/CasperLaiTW), [zacksleo](https://github.com/zacksleo) |
+| Farsi | [fa](resources/lang/fa.json) | 374 (94.9%) | [alirezamirsepassi](https://github.com/alirezamirsepassi), [mziraki](https://github.com/mziraki) |
+| Portuguese | [pt](resources/lang/pt.json) | 370 (93.9%) | [Pedrocssg](https://github.com/Pedrocssg) |
+| Italian | [it](resources/lang/it.json) | 350 (88.8%) | (unknown), [manuelcoppotelli](https://github.com/manuelcoppotelli), [dejdav](https://github.com/dejdav) |
+| Catalan | [ca](resources/lang/ca.json) | 349 (88.6%) | [joebordes](https://github.com/joebordes) |
+| Basque | [eu](resources/lang/eu.json) | 348 (88.3%) | [JonPaternain](https://github.com/JonPaternain) |
+| Swedish | [sv](resources/lang/sv.json) | 347 (88.1%) | [tanjemark](https://github.com/tanjemark) |
+| Croatian | [hr](resources/lang/hr.json) | 346 (87.8%) | [defart](https://github.com/defart), [walaski](https://github.com/walaski) |
+| Czech | [cs](resources/lang/cs.json) | 346 (87.8%) | [walaskir](https://github.com/walaskir), [walaski](https://github.com/walaski) |
+| Danish | [da](resources/lang/da.json) | 346 (87.8%) | [olivernybroe](https://github.com/olivernybroe) |
+| Dutch | [nl](resources/lang/nl.json) | 346 (87.8%) | [happyDemon](https://github.com/happyDemon), [jschram](https://github.com/jschram), [sebastiaanspeck](https://github.com/sebastiaanspeck), [daniel-de-wit](https://github.com/daniel-de-wit) |
+| Filipino | [fil](resources/lang/fil.json) | 346 (87.8%) | [granaderos](https://github.com/granaderos) |
+| Finnish | [fi](resources/lang/fi.json) | 346 (87.8%) | [Krisseck](https://github.com/Krisseck) |
+| Georgian | [ka](resources/lang/ka.json) | 346 (87.8%) | [akalongman](https://github.com/akalongman) |
+| Hindi | [hi](resources/lang/hi.json) | 346 (87.8%) | [bantya](https://github.com/bantya) |
+| Hungarian | [hu](resources/lang/hu.json) | 346 (87.8%) | [milli05](https://github.com/milli05) |
+| Indonesian | [id](resources/lang/id.json) | 346 (87.8%) | [dvlwj](https://github.com/dvlwj) |
+| Serbian (Cyrillic) | [sr](resources/lang/sr.json) | 346 (87.8%) | [marjanovicsteva](https://github.com/marjanovicsteva) |
+| Serbian (Latin) | [sr-Latn](resources/lang/sr-Latn.json) | 346 (87.8%) | [marjanovicsteva](https://github.com/marjanovicsteva) |
+| Slovak | [sk](resources/lang/sk.json) | 346 (87.8%) | [hejty](https://github.com/hejty) |
+| Slovenian | [sl](resources/lang/sl.json) | 346 (87.8%) | [morpheus7CS](https://github.com/morpheus7CS) |
+| Turkish | [tr](resources/lang/tr.json) | 346 (87.8%) | [bureken](https://github.com/bureken), [sineld](https://github.com/sineld), [dilekuzulmez](https://github.com/dilekuzulmez) |
+| Ukrainian | [uk](resources/lang/uk.json) | 346 (87.8%) | [hivokas](https://github.com/hivokas), [Ostap34JS](https://github.com/Ostap34JS), [coderello](https://github.com/coderello), [osbre](https://github.com/osbre) |
+| Bulgarian | [bg](resources/lang/bg.json) | 345 (87.6%) | [BKirev](https://github.com/BKirev) |
+| Lithuanian | [lt](resources/lang/lt.json) | 345 (87.6%) | [minved](https://github.com/minved) |
+| Polish | [pl](resources/lang/pl.json) | 345 (87.6%) | [Strus](https://github.com/Strus), [marekfilip](https://github.com/marekfilip), [wiktor-k](https://github.com/wiktor-k) |
+| Romanian | [ro](resources/lang/ro.json) | 344 (87.3%) | [BTeodorWork](https://github.com/BTeodorWork), [alexgiuvara](https://github.com/alexgiuvara) |
+| Tagalog | [tl](resources/lang/tl.json) | 344 (87.3%) | [rcjavier](https://github.com/rcjavier) |
