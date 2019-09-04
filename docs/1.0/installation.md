@@ -4,8 +4,6 @@ section: Getting Started
 weight: 100
 ---
 
-## Basic installation
-
 You can install this package via composer using this command:
 
 ```bash
