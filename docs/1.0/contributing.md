@@ -1,7 +1,7 @@
 ---
 title: Contribution Guide
 section: Contributing
-weight: 100
+weight: 900
 ---
 
 Thank you for taking the time to contribute your language to this package! It is amazing to have a community of developers and translators from around the world helping out. Contributions are **welcome** and will be fully **credited**.
