@@ -76,7 +76,7 @@
     "Search": "Pesquisar",
     "Press / to search": "Pressione / para pesquisar",
     "Select All": "Selecionar tudo",
-    "Select All Matching": "Selecionar todo os correspondentes",
+    "Select All Matching": "Selecionar todos os correspondentes",
     "Something went wrong.": "Algo deu errado",
     "The action ran successfully!": "A ação foi executada com sucesso!",
     "The government won't let us show you what's behind these doors": "O governo não vai nos deixar mostrar o que está por trás dessas portas",
@@ -356,7 +356,7 @@
     "No": "Não",
     "Action Name": "Nome",
     "Action Initiated By": "Iniciado por",
-    "Action Target": "Objetivo",
+    "Action Target": "Alvo",
     "Action Status": "Status",
     "Action Happened At": "Realizado em",
     "resource": "recurso",
@@ -390,5 +390,7 @@
     "Changes": "Alterados",
     "Original": "Originais",
     "This resource no longer exists": "Este recurso não existe mais",
-    ":resource Details": "Detalhes de :resource"
+    ":resource Details": "Detalhes de :resource",
+    "There are no available options for this resource.": "Não há opções disponíveis para este recurso.",
+    "Show All Fields": "Exibir todos os campos"
 }
