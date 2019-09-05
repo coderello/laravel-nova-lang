@@ -484,6 +484,11 @@
         "complete": 0,
         "contributors": []
     },
+    "cnr": {
+        "name": "Montenegrin",
+        "complete": 0,
+        "contributors": []
+    },
     "ne": {
         "name": "Nepali",
         "complete": 0,
@@ -561,11 +566,6 @@
     },
     "cy": {
         "name": "Welsh",
-        "complete": 0,
-        "contributors": []
-    },
-    "cnr": {
-        "name": "Montenegrin",
         "complete": 0,
         "contributors": []
     }

@@ -78,7 +78,7 @@ class NovaLangStats extends Command
         $blame = collect($this->getBlame());
 
         $caouecsLocales = $this->getCaouecsLocales();
-        $allLocales = $caouecsLocales->merge($availableLocales);
+        $allLocales = $caouecsLocales->merge($availableLocales)->unique()->values();
 
         $allLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
 

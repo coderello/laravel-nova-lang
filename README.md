@@ -109,3 +109,51 @@ Total lines translated ![14256 (91.1%)](https://img.shields.io/badge/12988-91%25
 | `ro` | Romanian | [`php`](resources/lang/ro) [`json`](resources/lang/ro.json) | ![346 (87.4%)](https://img.shields.io/badge/346-87%25-orange?style=flat-square) | [BTeodorWork](https://github.com/BTeodorWork), [alexgiuvara](https://github.com/alexgiuvara) |
 | `tl` | Tagalog | [`php`](resources/lang/tl) [`json`](resources/lang/tl.json) | ![346 (87.4%)](https://img.shields.io/badge/346-87%25-orange?style=flat-square) | [rcjavier](https://github.com/rcjavier) |
 | `bg` | Bulgarian | [`php`](resources/lang/bg) [`json`](resources/lang/bg.json) | ![345 (87.1%)](https://img.shields.io/badge/345-87%25-orange?style=flat-square) | [BKirev](https://github.com/BKirev) |
+
+## Missing Languages
+
+The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
+
+Parity with `caouecs/laravel-lang` ![34/73 (46.6%)](https://img.shields.io/badge/34%2F73-46%25-red?style=flat-square)
+
+| Code | Language | Lines translated |
+| --- | --- | --- |
+| `sq` | Albanian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `az` | Azerbaijani | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `bn` | Bangla | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `be` | Belarusian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `bs` | Bosnian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `zh‑HK` | Chinese (Hong Kong) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `et` | Estonian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `gl` | Galician | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `de‑CH` | German (Switzerland) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `el` | Greek | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `he` | Hebrew | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `is` | Icelandic | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ja` | Japanese | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `kn` | Kannada | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `kk` | Kazakh | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `km` | Khmer | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ko` | Korean | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `lv` | Latvian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `mk` | Macedonian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ms` | Malay | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `mr` | Marathi | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `mn` | Mongolian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `cnr` | Montenegrin | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ne` | Nepali | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `nb` | Norwegian Bokmål | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `nn` | Norwegian Nynorsk | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ps` | Pashto | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `sc` | Sardinian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `si` | Sinhala | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `sw` | Swahili | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `tg` | Tajik | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `th` | Thai | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `tk` | Turkmen | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ur` | Urdu | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `ug` | Uyghur | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `uz‑Cyrl` | Uzbek (Cyrillic) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `uz‑Latn` | Uzbek (Latin) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `vi` | Vietnamese | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `cy` | Welsh | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
