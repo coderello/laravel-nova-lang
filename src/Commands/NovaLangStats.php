@@ -68,22 +68,26 @@ class NovaLangStats extends Command
         $contributorsFile = __DIR__.'/../../contributors.json';
         $contributors = collect(json_decode($this->filesystem->get($contributorsFile), true));
 
-        $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
+        $sourceKeys = $this->getJsonKeys($sourceFile);
+        $sourcePhpKeys = $this->getPhpKeys($this->directoryNovaSource().'/en');
 
-        $sourceCount = count($sourceKeys);
+        $sourceCount = count($sourceKeys) + count($sourcePhpKeys);
+        $translatedCount = 0;
 
         $availableLocales = $this->getAvailableLocales();
         $blame = collect($this->getBlame());
 
-        $availableLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $blame) {
+        $availableLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
 
             $inputDirectory = $this->directoryFrom().'/'.$locale;
 
             $inputFile = $inputDirectory.'.json';
 
-            $localeKeys = array_keys(json_decode($this->filesystem->get($inputFile), true));
-
+            $localeKeys = $this->getJsonKeys($inputFile);
             $missingKeys = array_diff($sourceKeys, $localeKeys);
+
+            $localePhpKeys = $this->getPhpKeys($inputDirectory);
+            $missingPhpKeys = array_diff($sourcePhpKeys, $localePhpKeys);
 
             $localeStat = $contributors->get($locale, [
                 'name' => class_exists('Locale') ? \Locale::getDisplayName($locale) : $locale,
@@ -105,7 +109,12 @@ class NovaLangStats extends Command
                 }
             }
 
-            $localeStat['complete'] = $sourceCount - count($missingKeys);
+            $complete = $sourceCount - count($missingKeys) - count($missingPhpKeys);
+            $translatedCount += $complete;
+
+            $localeStat['complete'] = $complete;
+            $localeStat['json'] = count($localeKeys) > 0;
+            $localeStat['php'] = count($localePhpKeys) > 0;
 
             $localeStat['contributors'] = collect($localeStat['contributors'])
                 ->map(function($lines, $name) {
@@ -120,9 +129,13 @@ class NovaLangStats extends Command
 
         });
 
+        $en = $contributors->pull('en');
+
         $contributors = $contributors->sort(function($a, $b) {
             return $a['complete'] === $b['complete'] ? $a['name'] <=> $b['name'] : 0 - ($a['complete'] <=> $b['complete']);
         });
+
+        $contributors->prepend($en, 'en');
 
         $outputFile = $outputDirectory.'/contributors.json';
 
@@ -133,7 +146,8 @@ class NovaLangStats extends Command
 
         $contributors->transform(function($localeStat, $locale) use ($sourceCount) {
 
-            $percent = round(($localeStat['complete'] / $sourceCount) * 100, 1).'%';
+            $percent = $this->getPercent($localeStat['complete'], $sourceCount);
+            $icon = $this->getPercentIcon($localeStat['complete'], $percent);
 
             $contributors = implode(', ', array_map(function($contributor) {
                 if ($contributor == '(unknown)') {
@@ -142,17 +156,63 @@ class NovaLangStats extends Command
                 return sprintf('[%s](https://github.com/%s)', $contributor, $contributor);
             }, array_keys($localeStat['contributors'])));
 
-            return sprintf('| %s | [%s](resources/lang/%s.json) | %d (%s) | %s |', $localeStat['name'], $locale, $locale, $localeStat['complete'], $percent, $contributors);
+            $hasPhp = $localeStat['php'] ? sprintf('[`json`](resources/lang/%s.json)', $locale) : '~~`php`~~';
+            $hasJson = $localeStat['json'] ? sprintf('[`php`](resources/lang/%s)', $locale) : '~~`json`~~';
+
+            return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', $locale, $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
         $outputFile = $outputDirectory.'/README.excerpt.md';
 
-        $header = '## Available Languages'.PHP_EOL.PHP_EOL.'| Language | Code | Lines translated | Thanks to |'.PHP_EOL.'| --- | --- | --- | --- |';
+        $languagesCount = $contributors->count();
+
+        $sourceComplete = $sourceCount * $languagesCount;
+        $percent = $this->getPercent($translatedCount, $sourceComplete);
+        $countIcon = $this->getPercentIcon($languagesCount);
+        $icon = $this->getPercentIcon($translatedCount, $percent);
+
+        $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon).PHP_EOL.
+            sprintf('Total lines translated ![%d (%s%%)](%s)', $sourceComplete, $percent, $icon);
+
+        $header = '## Available Languages'.PHP_EOL.PHP_EOL.
+            $totals.PHP_EOL.PHP_EOL.
+            '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
+            '| --- | --- | --- | --- | --- |';
 
         $this->filesystem->put($outputFile, $header.PHP_EOL.$contributors->join(PHP_EOL));
 
         $this->info(sprintf('Updated "README.excerpt.md" has been output to [%s].', $outputFile));
         $this->warn('* Replace the Available Languages table in README.md in your fork of the repository with the contents of this file.');
+    }
+
+    protected function getPercent(int $complete, int $total): float
+    {
+        return round(($complete / $total) * 100, 1);
+    }
+
+    protected function getPercentIcon(int $complete, float $percent = null): string
+    {
+        if (is_null($percent)) {
+            return sprintf('https://img.shields.io/badge/%d-gray?style=flat-square', $complete);
+        }
+
+        $colors = [
+            0   => 'red',
+            85  => 'orange',
+            90  => 'yellow',
+            95  => 'green',
+            100 => 'brightgreen',
+        ];
+
+        $percent = floor($percent);
+
+        $colors = array_filter($colors, function($color, $limit) use ($percent) {
+            return $percent >= $limit;
+        }, ARRAY_FILTER_USE_BOTH);
+
+        $color = array_pop($colors) ?: 'lightgray';
+
+        return sprintf('https://img.shields.io/badge/%d-%s%%25-%s?style=flat-square', $complete, $percent, $color);
     }
 
     protected function getAvailableLocales(): Collection
@@ -164,10 +224,32 @@ class NovaLangStats extends Command
 
         $localesByFiles = collect($this->filesystem->files($this->directoryFrom()))
             ->map(function (SplFileInfo $splFileInfo) {
-                return str_replace('.'.$splFileInfo->getExtension(), '', $splFileInfo->getFilename());
+                return $splFileInfo->getBasename('.'.$splFileInfo->getExtension());
             });
 
         return $localesByDirectories->intersect($localesByFiles)->values();
+    }
+
+    protected function getJsonKeys(string $path): array
+    {
+        if ($this->filesystem->exists($path)) {
+            return array_keys(json_decode($this->filesystem->get($path), true));
+        }
+
+        return [];
+    }
+
+    protected function getPhpKeys(string $path): array
+    {
+        return collect($this->filesystem->glob($path.'/*.php'))
+            ->map(function (string $path) {
+                $file = basename($this->filesystem->basename($path), '.php');
+                $keys = collect(array_keys($this->filesystem->getRequire($path)))
+                    ->map(function ($key) use ($file) {
+                        return "$file.$key";
+                    });
+                return $keys;
+            })->flatten()->all();
     }
 
     protected function directoryFrom(): string
