@@ -373,5 +373,200 @@
         },
         "json": true,
         "php": true
+    },
+    "sq": {
+        "name": "Albanian",
+        "complete": 0,
+        "contributors": []
+    },
+    "az": {
+        "name": "Azerbaijani",
+        "complete": 0,
+        "contributors": []
+    },
+    "bn": {
+        "name": "Bangla",
+        "complete": 0,
+        "contributors": []
+    },
+    "be": {
+        "name": "Belarusian",
+        "complete": 0,
+        "contributors": []
+    },
+    "bs": {
+        "name": "Bosnian",
+        "complete": 0,
+        "contributors": []
+    },
+    "zh-HK": {
+        "name": "Chinese (Hong Kong)",
+        "complete": 0,
+        "contributors": []
+    },
+    "et": {
+        "name": "Estonian",
+        "complete": 0,
+        "contributors": []
+    },
+    "gl": {
+        "name": "Galician",
+        "complete": 0,
+        "contributors": []
+    },
+    "de-CH": {
+        "name": "German (Switzerland)",
+        "complete": 0,
+        "contributors": []
+    },
+    "el": {
+        "name": "Greek",
+        "complete": 0,
+        "contributors": []
+    },
+    "he": {
+        "name": "Hebrew",
+        "complete": 0,
+        "contributors": []
+    },
+    "is": {
+        "name": "Icelandic",
+        "complete": 0,
+        "contributors": []
+    },
+    "ja": {
+        "name": "Japanese",
+        "complete": 0,
+        "contributors": []
+    },
+    "kn": {
+        "name": "Kannada",
+        "complete": 0,
+        "contributors": []
+    },
+    "kk": {
+        "name": "Kazakh",
+        "complete": 0,
+        "contributors": []
+    },
+    "km": {
+        "name": "Khmer",
+        "complete": 0,
+        "contributors": []
+    },
+    "ko": {
+        "name": "Korean",
+        "complete": 0,
+        "contributors": []
+    },
+    "lv": {
+        "name": "Latvian",
+        "complete": 0,
+        "contributors": []
+    },
+    "mk": {
+        "name": "Macedonian",
+        "complete": 0,
+        "contributors": []
+    },
+    "ms": {
+        "name": "Malay",
+        "complete": 0,
+        "contributors": []
+    },
+    "mr": {
+        "name": "Marathi",
+        "complete": 0,
+        "contributors": []
+    },
+    "mn": {
+        "name": "Mongolian",
+        "complete": 0,
+        "contributors": []
+    },
+    "ne": {
+        "name": "Nepali",
+        "complete": 0,
+        "contributors": []
+    },
+    "nb": {
+        "name": "Norwegian Bokmål",
+        "complete": 0,
+        "contributors": []
+    },
+    "nn": {
+        "name": "Norwegian Nynorsk",
+        "complete": 0,
+        "contributors": []
+    },
+    "ps": {
+        "name": "Pashto",
+        "complete": 0,
+        "contributors": []
+    },
+    "sc": {
+        "name": "Sardinian",
+        "complete": 0,
+        "contributors": []
+    },
+    "si": {
+        "name": "Sinhala",
+        "complete": 0,
+        "contributors": []
+    },
+    "sw": {
+        "name": "Swahili",
+        "complete": 0,
+        "contributors": []
+    },
+    "tg": {
+        "name": "Tajik",
+        "complete": 0,
+        "contributors": []
+    },
+    "th": {
+        "name": "Thai",
+        "complete": 0,
+        "contributors": []
+    },
+    "tk": {
+        "name": "Turkmen",
+        "complete": 0,
+        "contributors": []
+    },
+    "ur": {
+        "name": "Urdu",
+        "complete": 0,
+        "contributors": []
+    },
+    "ug": {
+        "name": "Uyghur",
+        "complete": 0,
+        "contributors": []
+    },
+    "uz-Cyrl": {
+        "name": "Uzbek (Cyrillic)",
+        "complete": 0,
+        "contributors": []
+    },
+    "uz-Latn": {
+        "name": "Uzbek (Latin)",
+        "complete": 0,
+        "contributors": []
+    },
+    "vi": {
+        "name": "Vietnamese",
+        "complete": 0,
+        "contributors": []
+    },
+    "cy": {
+        "name": "Welsh",
+        "complete": 0,
+        "contributors": []
+    },
+    "cnr": {
+        "name": "Montenegrin",
+        "complete": 0,
+        "contributors": []
     }
 }

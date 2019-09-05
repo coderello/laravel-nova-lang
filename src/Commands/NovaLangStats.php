@@ -77,7 +77,10 @@ class NovaLangStats extends Command
         $availableLocales = $this->getAvailableLocales();
         $blame = collect($this->getBlame());
 
-        $availableLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
+        $caouecsLocales = $this->getCaouecsLocales();
+        $allLocales = $caouecsLocales->merge($availableLocales);
+
+        $allLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
 
             $inputDirectory = $this->directoryFrom().'/'.$locale;
 
@@ -91,39 +94,44 @@ class NovaLangStats extends Command
 
             $localeStat = $contributors->get($locale, [
                 'name' => class_exists('Locale') ? \Locale::getDisplayName($locale) : $locale,
+                'complete' => 0,
                 'contributors' => [],
             ]);
 
-            if ($blameContributors = $blame->get($locale)) {
-                foreach ($blameContributors as $contributor => $lines) {
-                    if (!($contributor == 'hivokas' && $lines == 3)) {
-                        if (!isset($localeStat['contributors'][$contributor])) {
-                            $localeStat['contributors'][$contributor] = $lines;
-                        }
-                        else {
-                            if ($lines > $localeStat['contributors'][$contributor]) {
+            $complete = $sourceCount - count($missingKeys) - count($missingPhpKeys);
+
+            if ($complete > 0) {
+
+                if ($blameContributors = $blame->get($locale)) {
+                    foreach ($blameContributors as $contributor => $lines) {
+                        if (!($contributor == 'hivokas' && $lines == 3)) {
+                            if (!isset($localeStat['contributors'][$contributor])) {
                                 $localeStat['contributors'][$contributor] = $lines;
+                            }
+                            else {
+                                if ($lines > $localeStat['contributors'][$contributor]) {
+                                    $localeStat['contributors'][$contributor] = $lines;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            $complete = $sourceCount - count($missingKeys) - count($missingPhpKeys);
-            $translatedCount += $complete;
+                $translatedCount += $complete;
 
-            $localeStat['complete'] = $complete;
-            $localeStat['json'] = count($localeKeys) > 0;
-            $localeStat['php'] = count($localePhpKeys) > 0;
+                $localeStat['complete'] = $complete;
+                $localeStat['json'] = count($localeKeys) > 0;
+                $localeStat['php'] = count($localePhpKeys) > 0;
 
-            $localeStat['contributors'] = collect($localeStat['contributors'])
+                $localeStat['contributors'] = collect($localeStat['contributors'])
                 ->map(function($lines, $name) {
                     return compact('lines', 'name');
                 })->sort(function($a, $b) {
-                return $a['lines'] === $b['lines'] ? $a['name'] <=> $b['name'] : 0 - ($a['lines'] <=> $b['lines']);
-            })->map(function($contributor) {
-                return $contributor['lines'];
-            })->all();
+                    return $a['lines'] === $b['lines'] ? $a['name'] <=> $b['name'] : 0 - ($a['lines'] <=> $b['lines']);
+                })->map(function($contributor) {
+                    return $contributor['lines'];
+                })->all();
+            }
 
             $contributors->put($locale, $localeStat);
 
@@ -135,11 +143,15 @@ class NovaLangStats extends Command
             return $a['complete'] === $b['complete'] ? $a['name'] <=> $b['name'] : 0 - ($a['complete'] <=> $b['complete']);
         });
 
+        list($contributors, $missing) = $contributors->partition(function ($contribution, $locale) {
+            return $contribution['complete'] > 0;
+        });
+
         $contributors->prepend($en, 'en');
 
         $outputFile = $outputDirectory.'/contributors.json';
 
-        $this->filesystem->put($outputFile, json_encode($contributors, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+        $this->filesystem->put($outputFile, json_encode($contributors->merge($missing), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
         $this->info(sprintf('Updated "contributors.json" has been output to [%s].', $outputFile));
         $this->warn('* Replace contributors.json in your fork of the repository with this file.');
@@ -162,6 +174,13 @@ class NovaLangStats extends Command
             return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', str_replace('-', '‑', $locale), $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
+        $missing->transform(function($localeStat, $locale) use ($sourceCount) {
+
+            $icon = $this->getPercentIcon(0, 0);
+            return sprintf('| `%s` | %s | ![%d (%s%%)](%s) |', str_replace('-', '‑', $locale), $localeStat['name'], 0, 0, $icon);
+
+        });
+
         $outputFile = $outputDirectory.'/README.excerpt.md';
 
         $languagesCount = $contributors->count();
@@ -179,7 +198,28 @@ class NovaLangStats extends Command
             '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
             '| --- | --- | --- | --- | --- |';
 
-        $this->filesystem->put($outputFile, $header.PHP_EOL.$contributors->join(PHP_EOL));
+        $contents = $header.PHP_EOL.$contributors->join(PHP_EOL);
+
+        if ($missing->count()) {
+
+            $parityCount = $caouecsLocales->intersect($availableLocales)->count();
+            $caouecsCount = $caouecsLocales->count();
+
+            $percent = $this->getPercent($parityCount, $caouecsCount);
+            $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $percent);
+
+            $totals = sprintf('Parity with `caouecs/laravel-lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $percent, $icon);
+
+            $header = '## Missing Languages'.PHP_EOL.PHP_EOL.
+                'The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.'.PHP_EOL.PHP_EOL.
+                $totals.PHP_EOL.PHP_EOL.
+                '| Code | Language | Lines translated |'.PHP_EOL.
+                '| --- | --- | --- |';
+
+            $contents .= PHP_EOL.PHP_EOL.$header.PHP_EOL.$missing->join(PHP_EOL);
+        }
+
+        $this->filesystem->put($outputFile, $contents);
 
         $this->info(sprintf('Updated "README.excerpt.md" has been output to [%s].', $outputFile));
         $this->warn('* Replace the Available Languages table in README.md in your fork of the repository with the contents of this file.');
@@ -190,14 +230,14 @@ class NovaLangStats extends Command
         return round(($complete / $total) * 100, 1);
     }
 
-    protected function getPercentIcon(int $complete, float $percent = null): string
+    protected function getPercentIcon($complete, $percent = null): string
     {
         if (is_null($percent)) {
             return sprintf('https://img.shields.io/badge/%d-gray?style=flat-square', $complete);
         }
 
         $colors = [
-            0   => 'red',
+            1   => 'red',
             85  => 'orange',
             90  => 'yellow',
             95  => 'green',
@@ -212,7 +252,7 @@ class NovaLangStats extends Command
 
         $color = array_pop($colors) ?: 'lightgray';
 
-        return sprintf('https://img.shields.io/badge/%d-%s%%25-%s?style=flat-square', $complete, $percent, $color);
+        return sprintf('https://img.shields.io/badge/%s-%s%%25-%s?style=flat-square', $complete, $percent, $color);
     }
 
     protected function getAvailableLocales(): Collection
@@ -227,7 +267,26 @@ class NovaLangStats extends Command
                 return $splFileInfo->getBasename('.'.$splFileInfo->getExtension());
             });
 
-        return $localesByDirectories->intersect($localesByFiles)->values();
+        return $localesByDirectories->merge($localesByFiles)->unique()->values();
+    }
+
+    protected function getCaouecsLocales(): Collection
+    {
+        if (!$this->filesystem->exists($this->directoryCaouecsSource())) {
+            return collect();
+        }
+
+        $localesByDirectories = collect($this->filesystem->directories($this->directoryCaouecsSource().'/src'))
+            ->map(function (string $path) {
+                return $this->caouecsMapping($this->filesystem->name($path));
+            });
+
+        $localesByFiles = collect($this->filesystem->files($this->directoryCaouecsSource().'/json'))
+            ->map(function (SplFileInfo $splFileInfo) {
+                return $this->caouecsMapping($splFileInfo->getBasename('.'.$splFileInfo->getExtension()));
+            });
+
+        return $localesByDirectories->merge($localesByFiles)->unique()->values();
     }
 
     protected function getJsonKeys(string $path): array
@@ -260,6 +319,23 @@ class NovaLangStats extends Command
     protected function directoryNovaSource(): string
     {
         return base_path('vendor/laravel/nova/resources/lang');
+    }
+
+    protected function directoryCaouecsSource(): string
+    {
+        return base_path('vendor/caouecs/laravel-lang');
+    }
+
+    protected function caouecsMapping(string $caouecs): string
+    {
+        $mapping = [
+            'uz-cyrillic' => 'uz-Cyrl',
+            'uz-latin'    => 'uz-Latn',
+            'sr'          => 'sr-Latn',
+            'me'          => 'cnr',
+        ];
+
+        return $mapping[$caouecs] ?? $caouecs;
     }
 
     protected function getBlame(): array
