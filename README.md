@@ -1,9 +1,8 @@
 <p align="center"><img alt="Laraflash" src="logo.png" width="450"></p>
 
-<p align="center">This package provides the language support for <b>Laravel Nova</b>.</p>
+<p align="center">Language files for <b>Laravel Nova</b> translated into 35+ languages.</p>
 
-Feel free to submit your language or update an existing one by sending a PR to help other people.  
-If you want to contribute, please ensure you read the [contributing guidelines](CONTRIBUTING.md) first.
+This is not an official Laravel package, but is built from community contributions. If you are able to help by submitting a new language, reviewing an existing language, or adding missing keys, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
 
 ## Installation
 
