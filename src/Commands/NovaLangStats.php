@@ -159,7 +159,7 @@ class NovaLangStats extends Command
             $hasPhp = $localeStat['php'] ? sprintf('[`json`](resources/lang/%s.json)', $locale) : '~~`php`~~';
             $hasJson = $localeStat['json'] ? sprintf('[`php`](resources/lang/%s)', $locale) : '~~`json`~~';
 
-            return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', $locale, $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
+            return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', str_replace('-', '‑', $locale), $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
         $outputFile = $outputDirectory.'/README.excerpt.md';
