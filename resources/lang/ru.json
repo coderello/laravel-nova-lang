@@ -391,5 +391,6 @@
     "Original": "Оригинал",
     "This resource no longer exists": "Ресурс больше не существует",
     ":resource Details": "Детали ресурса :resource",
-    "There are no available options for this resource.": "Нет доступных опций для этого ресурса."
+    "There are no available options for this resource.": "Нет доступных опций для этого ресурса.",
+    "Show All Fields": "Показать все поля"
 }
