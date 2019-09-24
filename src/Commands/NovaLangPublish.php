@@ -17,9 +17,9 @@ class NovaLangPublish extends Command
     protected $signature = 'nova-lang:publish
                             {locales? : Comma-separated list of languages}
                             {--all : Publish all languages}
-                            {--alias= : Publish files with a different filename for the locale}
-                            {--zhHans : Publish Chinese translations preferring \'script\' or \'region\' }
-                            {--ptBR : Publish Portuguese translations preferring \'BR\' or \'PT\' }
+                            {--alias= : Publish files using a different filename for certain locales, in the format "locale:alias,..."}
+                            {--zhHans : Publish Chinese translations as "zh-Hans/Hant" instead of "zh-CN/TW" }
+                            {--ptBR : Publish Portuguese translations prioritising "pt-BR" as "pt" over "pt-PT" }
                             {--force : Override existing files}';
 
     /**
