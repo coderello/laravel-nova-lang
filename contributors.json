@@ -27,26 +27,23 @@
         "json": true,
         "php": true
     },
-    "de": {
-        "name": "German",
-        "complete": 395,
+    "nb": {
+        "name": "Norwegian Bokmål",
+        "complete": 396,
         "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 22,
-            "dakira": 2
+            "einar-johan": 414
         },
         "json": true,
         "php": true
     },
     "ru": {
         "name": "Russian",
-        "complete": 395,
+        "complete": 396,
         "contributors": {
             "hivokas": 363,
             "S-anasol": 32,
             "sanasol": 32,
-            "den1n": 23,
+            "den1n": 25,
             "deadem": 12,
             "estim": 1
         },
@@ -55,16 +52,29 @@
     },
     "es": {
         "name": "Spanish",
-        "complete": 395,
+        "complete": 396,
         "contributors": {
             "joebordes": 51,
             "ajmariduena": 18,
             "iksaku": 11,
             "Arryan": 3,
+            "kennyhorna": 3,
             "kitbs": 2,
             "xcodinas": 2,
             "dgtal": 1,
             "rodrigore": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "de": {
+        "name": "German",
+        "complete": 395,
+        "contributors": {
+            "pille1842": 71,
+            "shieraki": 27,
+            "kitbs": 22,
+            "dakira": 2
         },
         "json": true,
         "php": true
@@ -491,11 +501,6 @@
     },
     "ne": {
         "name": "Nepali",
-        "complete": 0,
-        "contributors": []
-    },
-    "nb": {
-        "name": "Norwegian Bokmål",
         "complete": 0,
         "contributors": []
     },
