@@ -33,7 +33,7 @@ php artisan nova-lang:publish de,ru --force
 ```
 
 #### Aliases
-The language codes chosen for the files in this repository may not match the preferences for your project. You can use the `--alias` option to publish locales using a different filename.
+The language codes chosen for the files in this repository may not match the preferences for your project. You can use the `‑‑alias` option to publish locales using a different filename.
 
 * Publish translations for one language with an alias, using the simple format `{alias}`:
 ```bash
@@ -56,12 +56,13 @@ php artisan nova-lang:publish de,ru,fr --alias=de:de-DE,ru:ru-RU
   You do not need to supply an alias for every locale that is to be published, only those that you wish to override.
 
 * There are also some predefined option flags (case-sensitive) for common use cases:
-| Option | Explanation | Affected Languages | When Enabled | Default |
-| --- | --- | --- | --- | --- |
-| `‑‑zhHan` | Use Chinese scripts instead of regions. | Chinese (Simplified)<br>Chinese (Traditional) | `zh‑Hans`<br>`zh‑Hant` | `zh‑CN`<br>`zh‑TW` |
-| `‑‑ptBR` | Prefer Brazilian Portuguese as default. | Portuguese (Brazil)<br>Portuguese (Portugal) | `pt`<br>`pt‑PT` | `pt‑BR`<br>`pt` |
-| `‑‑srLatn` | Prefer Serbian in Latin script as default. | Serbian (Cyrillic)<br>Serbian (Latin) | `sr‑Cyrl`<br>`sr` | `sr`<br>`sr‑Latn` |
-| `‑U` or `‑‑underscore` | Use underscore separator instead of hyphen. | _(any)_ | _e.g._ `zh_CN` | _e.g._ `zh‑CN` |
+
+  | Option | Explanation | Affected Languages | When Enabled | Default |
+  | --- | --- | --- | --- | --- |
+  | `‑‑zhHan` | Use Chinese scripts instead of regions. | Chinese (Simplified)<br>Chinese (Traditional) | `zh‑Hans`<br>`zh‑Hant` | `zh‑CN`<br>`zh‑TW` |
+  | `‑‑ptBR` | Prefer Brazilian Portuguese as default. | Portuguese (Brazil)<br>Portuguese (Portugal) | `pt`<br>`pt‑PT` | `pt‑BR`<br>`pt` |
+  | `‑‑srLatn` | Prefer Serbian in Latin script as default. | Serbian (Cyrillic)<br>Serbian (Latin) | `sr‑Cyrl`<br>`sr` | `sr`<br>`sr‑Latn` |
+  | `‑U` or `‑‑underscore` | Use underscore separator instead of hyphen. | _(any)_ | _e.g._ `zh_CN` | _e.g._ `zh‑CN` |
 
   These can all be used alone or in combination with each other and the `--alias` option.
 
