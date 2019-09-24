@@ -59,10 +59,10 @@ php artisan nova-lang:publish de,ru,fr --alias=de:de-DE,ru:ru-RU
 
   | Option | Explanation | Affected Languages | When Enabled | Default |
   | --- | --- | --- | --- | --- |
-  | `‑‑zhHan` | Use Chinese scripts instead of regions. | Chinese (Simplified)<br>Chinese (Traditional) | `zh‑Hans`<br>`zh‑Hant` | `zh‑CN`<br>`zh‑TW` |
-  | `‑‑ptBR` | Prefer Brazilian Portuguese as default. | Portuguese (Brazil)<br>Portuguese (Portugal) | `pt`<br>`pt‑PT` | `pt‑BR`<br>`pt` |
-  | `‑‑srLatn` | Prefer Serbian in Latin script as default. | Serbian (Cyrillic)<br>Serbian (Latin) | `sr‑Cyrl`<br>`sr` | `sr`<br>`sr‑Latn` |
-  | `‑U` or `‑‑underscore` | Use underscore separator instead of hyphen. | _(any)_ | _e.g._ `zh_CN` | _e.g._ `zh‑CN` |
+  | `‑‑zhHan` | Use Chinese scripts instead of regions. | Chinese&nbsp;(Simplified)<br>Chinese&nbsp;(Traditional) | `zh‑Hans`<br>`zh‑Hant` | `zh‑CN`<br>`zh‑TW` |
+  | `‑‑ptBR` | Prefer Brazilian Portuguese. | Portuguese&nbsp;(Brazil)<br>Portuguese&nbsp;(Portugal) | `pt`<br>`pt‑PT` | `pt‑BR`<br>`pt` |
+  | `‑‑srLatn` | Prefer Serbian in Latin script. | Serbian&nbsp;(Cyrillic)<br>Serbian&nbsp;(Latin) | `sr‑Cyrl`<br>`sr` | `sr`<br>`sr‑Latn` |
+  | `‑U` or<br>`‑‑underscore` | Use underscore separator. | _(any)_ | _e.g._&nbsp;`zh_CN` | _e.g._&nbsp;`zh‑CN` |
 
   These can all be used alone or in combination with each other and the `--alias` option.
 
