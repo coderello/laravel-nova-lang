@@ -18,6 +18,8 @@ class NovaLangPublish extends Command
                             {locales? : Comma-separated list of languages}
                             {--all : Publish all languages}
                             {--alias= : Publish files with a different filename for the locale}
+                            {--zhHans : Publish Chinese translations preferring \'script\' or \'region\' }
+                            {--ptBR : Publish Portuguese translations preferring \'BR\' or \'PT\' }
                             {--force : Override existing files}';
 
     /**
@@ -153,7 +155,13 @@ class NovaLangPublish extends Command
     {
         $aliases = collect();
 
-        if ($input = $this->option('alias')) {
+        $input = implode(',', array_filter([
+            $this->option('alias'),
+            $this->option('ptBR') ? 'pt:pt-PT,pt-BR:pt' : null,
+            $this->option('zhHans') ? 'zh-CN:zh-Hans,zh-TW:zh-Hant' : null,
+        ]));
+
+        if ($input) {
 
             $inputs = explode(',', $input);
 
