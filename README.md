@@ -12,25 +12,58 @@ composer require coderello/laravel-nova-lang
 
 ## Usage
 ### Publish Command
-Publish translations for one language:
+* Publish translations for one language:
 ```bash
 php artisan nova-lang:publish de
 ```
 
-Publish translations for multiple languages:
+* Publish translations for multiple languages (comma-separated):
 ```bash
 php artisan nova-lang:publish de,ru
 ```
 
-Publish translations for all languages:
+* Publish translations for all available languages:
 ```bash
 php artisan nova-lang:publish --all
 ```
 
-Publish translations and override existing files:
+* Publish translations and override existing files:
 ```bash
 php artisan nova-lang:publish de,ru --force
 ```
+
+#### Aliases
+The language codes chosen for the files in this repository may not match the preferences for your project. You can use the `--alias` option to publish locales using a different filename.
+
+* Publish translations for one language with an alias, using the simple format `{alias}`:
+```bash
+php artisan nova-lang:publish de --alias=de-DE
+```
+  This will publish the file `de-DE.json`.
+
+
+* Publish translations for multiple languages with multiple aliases, using the format `{locale}:{alias}` (comma-separated):
+```bash
+php artisan nova-lang:publish de,ru,fr --alias=de:de-DE,ru:ru-RU
+```
+  This will publish the files `de-DE.json`, `ru-RU.json` and `fr.json` (no alias).
+
+* Aliases can also be used with the `--all` flag:
+
+  ```bash
+  php artisan nova-lang:publish --all --alias=es:es-ES
+  ```
+  You do not need to supply an alias for every locale that is to be published, only those that you wish to override.
+
+* There are also some predefined option flags (case-sensitive) for common use cases:
+| Option | Explanation | Affected Languages | When Enabled | Default |
+| --- | --- | --- | --- | --- |
+| `‑‑zhHan` | Use Chinese scripts instead of regions. | Chinese (Simplified)<br>Chinese (Traditional) | `zh‑Hans`<br>`zh‑Hant` | `zh‑CN`<br>`zh‑TW` |
+| `‑‑ptBR` | Prefer Brazilian Portuguese as default. | Portuguese (Brazil)<br>Portuguese (Portugal) | `pt`<br>`pt‑PT` | `pt‑BR`<br>`pt` |
+| `‑‑srLatn` | Prefer Serbian in Latin script as default. | Serbian (Cyrillic)<br>Serbian (Latin) | `sr‑Cyrl`<br>`sr` | `sr`<br>`sr‑Latn` |
+| `‑U` or `‑‑underscore` | Use underscore separator instead of hyphen. | _(any)_ | _e.g._ `zh_CN` | _e.g._ `zh‑CN` |
+
+  These can all be used alone or in combination with each other and the `--alias` option.
 
 ### Development Commands (debug mode only)
 
@@ -42,12 +75,12 @@ This command is to assist contributors to find any untranslated keys for their c
 
 A stub JSON file will be created at `storage_path('app/nova-lang/missing/{locale}.json')`. You can copy those keys into the `resources/lang/{locale}.json` language file in your own fork of the repository, translate them and create a pull request.
 
-Output missing translation keys for one or more languages:
+* Output missing translation keys for one or more languages:
 ```bash
 php artisan nova-lang:missing de,ru
 ```
 
-Output missing translation keys for all languages:
+* Output missing translation keys for all languages:
 ```bash
 php artisan nova-lang:missing --all
 ```
@@ -58,7 +91,7 @@ This command is to assist maintainers to update the completeness of each languag
 
 A `README.excerpt.md` and `contributors.json` file will be created at `storage_path('app/nova-lang')`. You can copy those files into your own fork of the repository and create a pull request.
 
-Output list of languages, lines translated and contributors:
+* Output list of languages, lines translated and contributors:
 ```bash
 php artisan nova-lang:stats
 ```
