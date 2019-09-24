@@ -157,20 +157,34 @@ class NovaLangPublish extends Command
 
             $inputs = explode(',', $input);
 
-            if (strpos($input, ':') === false && !$single) {
+            if (strpos($input, ':') === false) {
+                if ($single && count($inputs) == 1) {
+                    return collect([$single => $input]);
+                }
+
                 $this->error('If publishing more than one locale, the aliases must be in the format "locale:alias,...".');
                 exit;
             }
-            elseif ($single && count($inputs) > 1 && (substr_count($input, ':') < count($inputs))) {
-                $this->error('If publishing only one locale with a simple alias, only one alias should be passed.');
+            elseif (substr_count($input, ':') < count($inputs)) {
+                if ($single) {
+                    $this->error('If publishing only one locale with a simple alias, only one alias should be passed.');
+                }
+                else {
+                    $this->error('If publishing more than one locale, the aliases must be in the format "locale:alias,...".');
+                }
                 exit;
             }
 
-            foreach ($inputs as $alias) {
-                @list($locale, $alias) = explode(':', $alias);
+            foreach ($inputs as $input) {
+                @list($locale, $alias) = explode(':', $input);
 
-                if (is_null($alias) && $single) {
-                    return collect([$single => $locale]);
+                if (empty($alias) || empty($locale)) {
+                    $this->error(sprintf('Alias [%s] is not valid.', $input));
+                    exit;
+                }
+
+                if ($aliases->has($locale)) {
+                    $this->warn(sprintf('Alias for [%s] locale was declared more than once and will be overwritten by the last value.', $locale));
                 }
 
                 $aliases->put($locale, $alias);
