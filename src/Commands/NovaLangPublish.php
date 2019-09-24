@@ -65,7 +65,7 @@ class NovaLangPublish extends Command
         $requestedLocales->each(function (string $alias, string $locale) use ($availableLocales) {
 
             if ($alias == 'en' && $this->isForce()) {
-                if (!$this->confirm(sprintf('Are you sure you want to republish translations for [en] locale? This will overwrite the latest file from laravel/nova.'))) {
+                if (!$this->confirm(sprintf('Are you sure you want to publish translations for [en] locale? This will overwrite the file from laravel/nova.'))) {
                     return;
                 }
             }
