@@ -18,9 +18,8 @@ class NovaLangPublish extends Command
                             {locales? : Comma-separated list of languages}
                             {--all : Publish all languages}
                             {--alias= : Publish files using a different filename for certain locales, in the format "locale:alias,..."}
-                            {--zhHans : Publish Chinese translations as "zh-Hans/Hant" instead of "zh-CN/TW" }
+                            {--zhHan : Publish Chinese translations as "zh-Hans/Hant" instead of "zh-CN/TW" }
                             {--ptBR : Publish Portuguese translations prioritizing "pt-BR" as "pt" over "pt-PT" }
-                            {--srCyrl : Publish Serbian Cyrillic translations as "sr-Cyrl" instead of "sr" }
                             {--srLatn : Publish Serbian translations prioritizing "sr-Latn" as "sr" instead of "sr-Cyrl" }
                             {--U|underscore : Use underscore instead of dash as locale separator }
                             {--force : Override existing files}';
@@ -165,15 +164,9 @@ class NovaLangPublish extends Command
         $input = implode(',', array_filter([
             $this->option('alias'),
             $this->option('ptBR') ? 'pt:pt-PT,pt-BR:pt' : null,
-            $this->option('zhHans') ? 'zh-CN:zh-Hans,zh-TW:zh-Hant' : null,
-            $this->option('srCyrl') ? 'sr:sr-Cyrl' : null,
+            $this->option('zhHan') ? 'zh-CN:zh-Hans,zh-TW:zh-Hant' : null,
             $this->option('srLatn') ? 'sr-Latn:sr,sr:sr-Cyrl' : null,
         ]));
-
-        if ($this->option('srCyrl') && $this->option('srLatn')) {
-            $this->error('Options --srCyrl and --srLatn must not be used together.');
-            exit;
-        }
 
         if ($input) {
 
