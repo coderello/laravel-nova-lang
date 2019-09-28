@@ -386,5 +386,11 @@
     "Update :resource": "Enregistrer :resource",
     "Choose :field": "Choisir :field",
     "Download": "Télécharger",
-    "There are no available options for this resource.": "Il n’y a pas d’options disponibles pour cette ressource."
+    "Action": "Action",
+    "Changes": "Changements",
+    "Original": "Original",
+    "This resource no longer exists": "Cette ressource n’existe plus",
+    ":resource Details": "Détails :resource",
+    "There are no available options for this resource.": "Il n’y a pas d’options disponibles pour cette ressource.",
+    "Show All Fields": "Voir tous les champs"
 }
