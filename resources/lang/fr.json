@@ -392,5 +392,7 @@
     "This resource no longer exists": "Cette ressource n’existe plus",
     ":resource Details": "Détails :resource",
     "There are no available options for this resource.": "Il n’y a pas d’options disponibles pour cette ressource.",
-    "Show All Fields": "Voir tous les champs"
+    "Show All Fields": "Voir tous les champs",
+    "There was a problem submitting the form.": "Un problème est survenu lors de l’envoi du formulaire.",
+    "There was a problem executing the action.": "Un problème est survenu lors de l’exécution de l’action."
 }
