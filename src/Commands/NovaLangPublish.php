@@ -18,9 +18,6 @@ class NovaLangPublish extends Command
                             {locales? : Comma-separated list of languages}
                             {--all : Publish all languages}
                             {--alias= : Publish files using a different filename for certain locales, in the format "locale:alias,..."}
-                            {--zhHan : Publish Chinese translations as "zh-Hans/Hant" instead of "zh-CN/TW" }
-                            {--ptBR : Publish Portuguese translations prioritizing "pt-BR" as "pt" over "pt-PT" }
-                            {--srLatn : Publish Serbian translations prioritizing "sr-Latn" as "sr" instead of "sr-Cyrl" }
                             {--U|underscore : Use underscore instead of dash as locale separator }
                             {--force : Override existing files}';
 
@@ -161,12 +158,7 @@ class NovaLangPublish extends Command
     {
         $aliases = collect();
 
-        $input = implode(',', array_filter([
-            $this->option('alias'),
-            $this->option('ptBR') ? 'pt:pt-PT,pt-BR:pt' : null,
-            $this->option('zhHan') ? 'zh-CN:zh-Hans,zh-TW:zh-Hant' : null,
-            $this->option('srLatn') ? 'sr-Latn:sr,sr:sr-Cyrl' : null,
-        ]));
+        $input = $this->option('alias');
 
         if ($input) {
 

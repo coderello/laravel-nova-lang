@@ -55,16 +55,14 @@ php artisan nova-lang:publish de,ru,fr --alias=de:de-DE,ru:ru-RU
   ```
   You do not need to supply an alias for every locale that is to be published, only those that you wish to override.
 
-* There are also some predefined option flags (case-sensitive) for common use cases:
+* Here are some example aliases for common use cases:
 
-  | Option | Explanation | Affected Languages | When Enabled | Default |
-  | --- | --- | --- | --- | --- |
-  | `‑‑zhHan` | Use Chinese scripts instead of regions. | Chinese&nbsp;(Simplified)<br>Chinese&nbsp;(Traditional) | `zh‑Hans`<br>`zh‑Hant` | `zh‑CN`<br>`zh‑TW` |
-  | `‑‑ptBR` | Prefer Brazilian Portuguese. | Portuguese&nbsp;(Brazil)<br>Portuguese&nbsp;(Portugal) | `pt`<br>`pt‑PT` | `pt‑BR`<br>`pt` |
-  | `‑‑srLatn` | Prefer Serbian in Latin script. | Serbian&nbsp;(Cyrillic)<br>Serbian&nbsp;(Latin) | `sr‑Cyrl`<br>`sr` | `sr`<br>`sr‑Latn` |
-  | `‑U` or<br>`‑‑underscore` | Use underscore separator. | _(any)_ | _e.g._&nbsp;`zh_CN` | _e.g._&nbsp;`zh‑CN` |
+  * `zh-CN:zh-Hans,zh-TW:zh-Hant` (Use Chinese scripts instead of regions.)
+  * `pt:pt-PT,pt-BR:pt` (Brazilian Portuguese as default over European.)
+  * `sr-Latn:sr,sr:sr-Cyrl` (Serbian in Latin script as default over Cyrillic.)
 
-  These can all be used alone or in combination with each other and the `--alias` option.
+
+* There is also a `‑U` or`‑‑underscore` switch to publish locales with an underscore separator instead of a hyphen. This can be used in combination with aliases.
 
 ### Development Commands (debug mode only)
 
