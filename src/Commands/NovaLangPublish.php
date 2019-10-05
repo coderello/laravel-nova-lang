@@ -84,7 +84,7 @@ class NovaLangPublish extends Command
             $asAlias = '';
 
             if ($this->option('underscore')) {
-                $alias = str_replace('-', '_', $alias);
+                $alias = $this->fixSeparators($alias, '_');
             }
 
             if ($alias !== $locale) {
@@ -211,9 +211,9 @@ class NovaLangPublish extends Command
         return $aliases;
     }
 
-    protected function fixSeparators(string $locale)
+    protected function fixSeparators(string $locale, string $separator = '-')
     {
-        return preg_replace('/['.static::SEPARATORS.']+/', '-', $locale);
+        return preg_replace('/['.static::SEPARATORS.']+/', $separator, $locale);
     }
 
     protected function isForce(): bool
