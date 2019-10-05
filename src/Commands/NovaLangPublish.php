@@ -10,6 +10,12 @@ use SplFileInfo;
 class NovaLangPublish extends Command
 {
     /**
+     * Possible locale separators.
+     * @var string
+     */
+    const SEPARATORS = '-‑_';
+
+    /**
      * The name and signature of the console command.
      *
      * @var string
@@ -117,7 +123,8 @@ class NovaLangPublish extends Command
             $locales = $this->getAvailableLocales();
         }
         else {
-            $locales = collect(explode(',', $this->argument('locales')))->filter();
+            $locales = $this->fixSeparators($this->argument('locales'));
+            $locales = collect(explode(',', $locales))->filter();
         }
 
         $aliases = $this->getLocaleAliases($locales->count() == 1 ? $locales->first() : false);
@@ -194,11 +201,19 @@ class NovaLangPublish extends Command
                     $this->warn(sprintf('Alias for [%s] locale was declared more than once and will be overwritten by the last value.', $locale));
                 }
 
+
+                $locale = $this->fixSeparators($locale);
+
                 $aliases->put($locale, $alias);
             }
         }
 
         return $aliases;
+    }
+
+    protected function fixSeparators(string $locale)
+    {
+        return preg_replace('/['.static::SEPARATORS.']+/', '-', $locale);
     }
 
     protected function isForce(): bool
