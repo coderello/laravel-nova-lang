@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 396,
+        "complete": 401,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -9,6 +9,21 @@
             "themsaid": 10000,
             "mziraki": 37,
             "kitbs": 17
+        },
+        "json": true,
+        "php": true
+    },
+    "fr": {
+        "name": "French",
+        "complete": 398,
+        "contributors": {
+            "MarceauKa": 165,
+            "Yannik-Slym": 31,
+            "InfinityWebMe": 28,
+            "kitbs": 10,
+            "shaffe-fr": 8,
+            "Arryan": 4,
+            "KillianH": 2
         },
         "json": true,
         "php": true
@@ -27,6 +42,16 @@
         "json": true,
         "php": true
     },
+    "hu": {
+        "name": "Hungarian",
+        "complete": 396,
+        "contributors": {
+            "milli05": 364,
+            "bgeree": 49
+        },
+        "json": true,
+        "php": true
+    },
     "nb": {
         "name": "Norwegian Bokmål",
         "complete": 396,
@@ -41,7 +66,6 @@
         "complete": 396,
         "contributors": {
             "hivokas": 363,
-            "S-anasol": 32,
             "sanasol": 32,
             "den1n": 25,
             "deadem": 12,
@@ -86,20 +110,6 @@
             "saleem-hadad": 56,
             "danyelkeddah": 50,
             "Arryan": 3
-        },
-        "json": true,
-        "php": true
-    },
-    "fr": {
-        "name": "French",
-        "complete": 390,
-        "contributors": {
-            "MarceauKa": 165,
-            "InfinityWebMe": 28,
-            "Yannik-Slym": 28,
-            "kitbs": 10,
-            "Arryan": 4,
-            "KillianH": 2
         },
         "json": true,
         "php": true
@@ -255,15 +265,6 @@
         "complete": 348,
         "contributors": {
             "bantya": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "hu": {
-        "name": "Hungarian",
-        "complete": 348,
-        "contributors": {
-            "milli05": 364
         },
         "json": true,
         "php": true
