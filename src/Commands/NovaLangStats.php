@@ -94,13 +94,13 @@ class NovaLangStats extends Command
 
             $localeStat = $contributors->get($locale, [
                 'name' => class_exists('Locale') ? \Locale::getDisplayName($locale) : $locale,
-                'complete' => 0,
+                'complete' => null,
                 'contributors' => [],
             ]);
 
             $complete = $sourceCount - count($missingKeys) - count($missingPhpKeys);
 
-            if ($complete > 0) {
+            if (!is_null($complete) && $complete > 0) {
 
                 if ($blameContributors = $blame->get($locale)) {
                     foreach ($blameContributors as $contributor => $lines) {
