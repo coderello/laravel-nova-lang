@@ -390,5 +390,12 @@
     "Changes": "Ändringar",
     "Original": "Ursprunglig",
     "This resource no longer exists": "Den här resursen finns inte längre",
-    ":resource Details": "Detaljer om :resource"
+    ":resource Details": "Detaljer om :resource",
+    "There are no available options for this resource.": "Det finns inga tillgängliga val för den här resursen.",
+    "All resources loaded.": "Alla resurser har laddats.",
+    "Load :perPage More": "Ladda :perPage till",
+    ":amount Total": ":amount totalt",
+    "Show All Fields": "Visa alla fält",
+    "There was a problem submitting the form.": "Det gick inte att skicka formuläret.",
+    "There was a problem executing the action.": "Det gick inte att köra åtgärden."
 }
