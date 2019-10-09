@@ -13,6 +13,34 @@
         "json": true,
         "php": true
     },
+    "es": {
+        "name": "Spanish",
+        "complete": 401,
+        "contributors": {
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "IGedeon": 6,
+            "Arryan": 3,
+            "kennyhorna": 3,
+            "kitbs": 2,
+            "xcodinas": 2,
+            "dgtal": 1,
+            "rodrigore": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "sv": {
+        "name": "Swedish",
+        "complete": 401,
+        "contributors": {
+            "tanjemark": 364,
+            "slackernrrd": 89
+        },
+        "json": true,
+        "php": true
+    },
     "fr": {
         "name": "French",
         "complete": 398,
@@ -70,23 +98,6 @@
             "den1n": 25,
             "deadem": 12,
             "estim": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "es": {
-        "name": "Spanish",
-        "complete": 396,
-        "contributors": {
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "iksaku": 11,
-            "Arryan": 3,
-            "kennyhorna": 3,
-            "kitbs": 2,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1
         },
         "json": true,
         "php": true
@@ -179,15 +190,6 @@
         "complete": 350,
         "contributors": {
             "JonPaternain": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "sv": {
-        "name": "Swedish",
-        "complete": 349,
-        "contributors": {
-            "tanjemark": 364
         },
         "json": true,
         "php": true
