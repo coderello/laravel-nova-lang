@@ -349,7 +349,7 @@ class NovaLangStats extends Command
             return $contributions;
         }
 
-        $graphql = 'query { repository(owner: "coderello", name: "laravel-nova-lang") { pullRequests(first: 100, states: [MERGED]) { nodes { number title body state merged changedFiles files(first: 100) { nodes { path additions deletions } } author { login } } } } }';
+        $graphql = 'query { repository(owner: "coderello", name: "laravel-nova-lang") { pullRequests(last: 25, states: [MERGED]) { nodes { number title body state merged changedFiles files(first: 100) { nodes { path additions deletions } } author { login } } } } }';
 
         $curl = curl_init();
         curl_setopt_array($curl, [
