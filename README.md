@@ -4,6 +4,12 @@
 
 This is not an official Laravel package, but is built from community contributions. If you are able to help by submitting a new language, reviewing an existing language, or adding missing keys, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
 
+<hr>
+
+<p align="center">You can take part in <b>#Hacktoberfest</b> by contributing to our repo during the month of October. <a href="https://github.com/coderello/laravel-nova-lang/issues/180">Read more</a>.</p>
+
+<hr>
+
 ## Installation
 
 ```bash
