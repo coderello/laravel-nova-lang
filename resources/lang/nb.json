@@ -391,5 +391,11 @@
     "Original": "Original",
     "This resource no longer exists": "Denne ressursen finnes ikke lengre",
     ":resource Details": ":resource detaljer",
-    "There are no available options for this resource.": "Det er ingen tilgjengelige alternativer for denne ressursen."
+    "There are no available options for this resource.": "Det er ingen tilgjengelige alternativer for denne ressursen.",
+    "All resources loaded.": "Alle ressurser er lastet inn.",
+    "Load :perPage More": "Last inn :perPage til",
+    ":amount Total": ":amount totalt",
+    "Show All Fields": "Vis alle felt",
+    "There was a problem submitting the form.": "Det gikk ikke å sende inn skjemaet.",
+    "There was a problem executing the action.": "Det gikk ikke å gjennomføre handlingen."
 }
