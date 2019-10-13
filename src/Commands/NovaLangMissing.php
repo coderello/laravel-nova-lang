@@ -69,16 +69,6 @@ class NovaLangMissing extends Command
 
         $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
 
-        if (!in_array(':resource Details', $sourceKeys)) { // Temporary fix until laravel/nova#463 is merged
-            $sourceKeys = array_unique(array_merge($sourceKeys, [
-                'Action',
-                'Changes',
-                'Original',
-                'This resource no longer exists',
-                ':resource Details',
-            ]));
-        }
-
         $availableLocales = $this->getAvailableLocales();
 
         $requestedLocales = $this->getRequestedLocales();
