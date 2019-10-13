@@ -23,7 +23,7 @@ class NovaLangReorder extends Command
      *
      * @var string
      */
-    protected $description = 'Reorder the keys from Laravel Nova language files to match the source file and output to storage folder.';
+    protected $description = 'Reorder the keys from Laravel Nova language files to match the source file order and output to storage folder.';
 
     /**
      * @var Filesystem
