@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 396,
+        "complete": 401,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -9,6 +9,49 @@
             "themsaid": 10000,
             "mziraki": 37,
             "kitbs": 17
+        },
+        "json": true,
+        "php": true
+    },
+    "es": {
+        "name": "Spanish",
+        "complete": 401,
+        "contributors": {
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "IGedeon": 6,
+            "Arryan": 3,
+            "kennyhorna": 3,
+            "kitbs": 2,
+            "xcodinas": 2,
+            "dgtal": 1,
+            "rodrigore": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "sv": {
+        "name": "Swedish",
+        "complete": 401,
+        "contributors": {
+            "tanjemark": 364,
+            "slackernrrd": 89
+        },
+        "json": true,
+        "php": true
+    },
+    "fr": {
+        "name": "French",
+        "complete": 398,
+        "contributors": {
+            "MarceauKa": 165,
+            "Yannik-Slym": 31,
+            "InfinityWebMe": 28,
+            "kitbs": 10,
+            "shaffe-fr": 8,
+            "Arryan": 4,
+            "KillianH": 2
         },
         "json": true,
         "php": true
@@ -27,6 +70,38 @@
         "json": true,
         "php": true
     },
+    "hu": {
+        "name": "Hungarian",
+        "complete": 396,
+        "contributors": {
+            "milli05": 364,
+            "bgeree": 49
+        },
+        "json": true,
+        "php": true
+    },
+    "nb": {
+        "name": "Norwegian Bokmål",
+        "complete": 396,
+        "contributors": {
+            "einar-johan": 414
+        },
+        "json": true,
+        "php": true
+    },
+    "ru": {
+        "name": "Russian",
+        "complete": 396,
+        "contributors": {
+            "hivokas": 363,
+            "sanasol": 32,
+            "den1n": 25,
+            "deadem": 12,
+            "estim": 1
+        },
+        "json": true,
+        "php": true
+    },
     "de": {
         "name": "German",
         "complete": 395,
@@ -39,36 +114,6 @@
         "json": true,
         "php": true
     },
-    "ru": {
-        "name": "Russian",
-        "complete": 395,
-        "contributors": {
-            "hivokas": 363,
-            "S-anasol": 32,
-            "sanasol": 32,
-            "den1n": 23,
-            "deadem": 12,
-            "estim": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "es": {
-        "name": "Spanish",
-        "complete": 395,
-        "contributors": {
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "iksaku": 11,
-            "Arryan": 3,
-            "kitbs": 2,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1
-        },
-        "json": true,
-        "php": true
-    },
     "ar": {
         "name": "Arabic",
         "complete": 394,
@@ -76,20 +121,6 @@
             "saleem-hadad": 56,
             "danyelkeddah": 50,
             "Arryan": 3
-        },
-        "json": true,
-        "php": true
-    },
-    "fr": {
-        "name": "French",
-        "complete": 390,
-        "contributors": {
-            "MarceauKa": 165,
-            "InfinityWebMe": 28,
-            "Yannik-Slym": 28,
-            "kitbs": 10,
-            "Arryan": 4,
-            "KillianH": 2
         },
         "json": true,
         "php": true
@@ -159,15 +190,6 @@
         "complete": 350,
         "contributors": {
             "JonPaternain": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "sv": {
-        "name": "Swedish",
-        "complete": 349,
-        "contributors": {
-            "tanjemark": 364
         },
         "json": true,
         "php": true
@@ -245,15 +267,6 @@
         "complete": 348,
         "contributors": {
             "bantya": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "hu": {
-        "name": "Hungarian",
-        "complete": 348,
-        "contributors": {
-            "milli05": 364
         },
         "json": true,
         "php": true
@@ -491,11 +504,6 @@
     },
     "ne": {
         "name": "Nepali",
-        "complete": 0,
-        "contributors": []
-    },
-    "nb": {
-        "name": "Norwegian Bokmål",
         "complete": 0,
         "contributors": []
     },

@@ -38,7 +38,7 @@
     "Are you sure you want to force delete the selected resources?": "¿Estás seguro de que quieres forzar la eliminación de los recursos seleccionados?",
     "Are you sure you want to restore this resource?": "¿Estás seguro de que quieres restaurar este recurso?",
     "Are you sure you want to restore the selected resources?": "¿Estás seguro de que quieres restaurar los recursos seleccionados?",
-    "No :resource matched the given criteria.": "No :resource coincide con los criterios dados.",
+    "No :resource matched the given criteria.": "Ningún :resource coincide con los criterios dados.",
     "Another user has updated this resource since this page was loaded. Please refresh the page and try again.": "Otro usuario ha actualizado este recurso desde que esta página se ha cargado. Por favor, actualiza la página y vuelve a intentarlo.",
     "Are you sure you want to delete this file?": "¿Estás seguro de que quieres borrar este archivo?",
     "Are you sure you want to run this action?": "¿Estás seguro de que quieres ejecutar esta acción?",
@@ -391,5 +391,11 @@
     "Original": "Original",
     "This resource no longer exists": "Este recurso ya no existe",
     ":resource Details": "Detalles de :resource",
-    "There are no available options for this resource.": "No hay opciones disponibles para este recurso."
+    "There are no available options for this resource.": "No hay opciones disponibles para este recurso.",
+    "Show All Fields": "Mostrar todos los campos",
+    "All resources loaded.": "Se muestran todos los recursos.",
+    "Load :perPage More": "Mostrar :perPage más",
+    ":amount Total": ":amount Total",
+    "There was a problem submitting the form.": "Ocurrió un error al enviar el formulario.",
+    "There was a problem executing the action.": "Ocurrió un error al ejecutar la acción."
 }
