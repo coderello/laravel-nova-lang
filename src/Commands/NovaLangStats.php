@@ -194,6 +194,7 @@ class NovaLangStats extends Command
             sprintf('Total lines translated ![%d (%s%%)](%s)', $sourceComplete, $percent, $icon);
 
         $header = '## Available Languages'.PHP_EOL.PHP_EOL.
+            'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
             $totals.PHP_EOL.PHP_EOL.
             '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
             '| --- | --- | --- | --- | --- |';
