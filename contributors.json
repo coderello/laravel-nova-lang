@@ -13,6 +13,49 @@
         "json": true,
         "php": true
     },
+    "af": {
+        "name": "Afrikaans",
+        "complete": 401,
+        "contributors": {
+            "medlion": 421
+        },
+        "json": true,
+        "php": true
+    },
+    "nl": {
+        "name": "Dutch",
+        "complete": 401,
+        "contributors": {
+            "DannyvdSluijs": 54,
+            "happyDemon": 43,
+            "steefmin": 41,
+            "jschram": 36,
+            "sebastiaanspeck": 35,
+            "daniel-de-wit": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "nb": {
+        "name": "Norwegian Bokmål",
+        "complete": 401,
+        "contributors": {
+            "einar-johan": 420
+        },
+        "json": true,
+        "php": true
+    },
+    "ro": {
+        "name": "Romanian",
+        "complete": 401,
+        "contributors": {
+            "BTeodorWork": 362,
+            "dtix": 67,
+            "alexgiuvara": 2
+        },
+        "json": true,
+        "php": true
+    },
     "es": {
         "name": "Spanish",
         "complete": 401,
@@ -37,6 +80,19 @@
         "contributors": {
             "tanjemark": 364,
             "slackernrrd": 89
+        },
+        "json": true,
+        "php": true
+    },
+    "uk": {
+        "name": "Ukrainian",
+        "complete": 401,
+        "contributors": {
+            "soulshockers": 97,
+            "hivokas": 3,
+            "Ostap34JS": 1,
+            "coderello": 1,
+            "osbre": 1
         },
         "json": true,
         "php": true
@@ -76,15 +132,6 @@
         "contributors": {
             "milli05": 364,
             "bgeree": 49
-        },
-        "json": true,
-        "php": true
-    },
-    "nb": {
-        "name": "Norwegian Bokmål",
-        "complete": 396,
-        "contributors": {
-            "einar-johan": 414
         },
         "json": true,
         "php": true
@@ -223,18 +270,6 @@
         "json": true,
         "php": true
     },
-    "nl": {
-        "name": "Dutch",
-        "complete": 348,
-        "contributors": {
-            "happyDemon": 43,
-            "jschram": 36,
-            "sebastiaanspeck": 35,
-            "daniel-de-wit": 1
-        },
-        "json": true,
-        "php": true
-    },
     "fil": {
         "name": "Filipino",
         "complete": 348,
@@ -327,18 +362,6 @@
         "json": true,
         "php": true
     },
-    "uk": {
-        "name": "Ukrainian",
-        "complete": 348,
-        "contributors": {
-            "hivokas": 3,
-            "Ostap34JS": 1,
-            "coderello": 1,
-            "osbre": 1
-        },
-        "json": true,
-        "php": true
-    },
     "lt": {
         "name": "Lithuanian",
         "complete": 347,
@@ -355,16 +378,6 @@
             "Strus": 39,
             "marekfilip": 19,
             "wiktor-k": 2
-        },
-        "json": true,
-        "php": true
-    },
-    "ro": {
-        "name": "Romanian",
-        "complete": 346,
-        "contributors": {
-            "BTeodorWork": 362,
-            "alexgiuvara": 2
         },
         "json": true,
         "php": true
