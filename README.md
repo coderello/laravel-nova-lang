@@ -89,6 +89,24 @@ php artisan nova-lang:missing de,ru
 php artisan nova-lang:missing --all
 ```
 
+#### Reorder Command
+
+This command is to assist contributors to ensure that the translation keys for their chosen language are in the same order as the `en.json` source file from Laravel Nova.
+
+If you have imported the keys you are translating into a translation string management tool, the original order of the keys may be lost when you reexport the file. This makes the diff difficult to read because it will highlight all keys rather than just those which you have added or updated.
+
+A new JSON file will be created at `storage_path('app/nova-lang/reorder/{locale}.json')`. You can copy the contents of this file to `resources/lang/{locale}.json` in your fork before you raise a PR.
+
+* Output reordered translation keys for one or more languages:
+```bash
+php artisan nova-lang:reorder de,ru
+```
+
+* Output reordered translation keys for all languages:
+```bash
+php artisan nova-lang:reorder --all
+```
+
 #### Stats Command
 
 This command is to assist maintainers to update the completeness of each language and list of contributors in this README file.

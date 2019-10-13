@@ -88,9 +88,11 @@ class NovaLangReorder extends Command
 
             $inputFile = $inputDirectory.'.json';
 
-            $localeKeys = json_decode($this->filesystem->get($inputFile), true);
+            $localeTranslations = json_decode($this->filesystem->get($inputFile), true);
 
-            $reorderedKeys = array_diff_assoc($sourceKeys, array_keys($localeKeys));
+            $localeKeys = array_keys($localeTranslations);
+
+            $reorderedKeys = array_diff_assoc(array_values(array_intersect($sourceKeys, $localeKeys)), $localeKeys);
 
             $outputFile = $outputDirectory.'/'.$locale.'.json';
 
@@ -100,8 +102,8 @@ class NovaLangReorder extends Command
 
                 $outputKeys = [];
                 foreach ($sourceKeys as $key) {
-                    if (isset($localeKeys[$key])) {
-                        $outputKeys[$key] = $localeKeys[$key];
+                    if (isset($localeTranslations[$key])) {
+                        $outputKeys[$key] = $localeTranslations[$key];
                     }
                     else {
                         $missingKeys[$key] = '';
@@ -120,7 +122,7 @@ class NovaLangReorder extends Command
             }
 
             if (count($missingKeys)) {
-                $this->info(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the `nova-lang:missing` command to view them.', count($missingKeys), $locale));
+                $this->warn(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the `nova-lang:missing` command to view them.', count($missingKeys), $locale));
             }
 
         });
