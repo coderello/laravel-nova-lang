@@ -7,14 +7,14 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangMissing extends Command
+class NovaLangReorder extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova-lang:missing
+    protected $signature = 'nova-lang:reorder
                             {locales? : Comma-separated list of languages}
                             {--all : Output all languages}';
 
@@ -23,7 +23,7 @@ class NovaLangMissing extends Command
      *
      * @var string
      */
-    protected $description = 'Output missing keys from Laravel Nova language files to storage folder.';
+    protected $description = 'Reorder the keys from Laravel Nova language files to match the source file order and output to storage folder.';
 
     /**
      * @var Filesystem
@@ -64,7 +64,7 @@ class NovaLangMissing extends Command
             return;
         }
 
-        $outputDirectory = storage_path('app/nova-lang/missing');
+        $outputDirectory = storage_path('app/nova-lang/reorder');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
         $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
@@ -81,42 +81,48 @@ class NovaLangMissing extends Command
         $requestedLocales->each(function (string $locale) use ($availableLocales, $sourceKeys, $outputDirectory) {
 
             if (! $availableLocales->contains($locale)) {
-                $this->warn(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
-
-                if (!$this->confirm(sprintf('Do you wish to create the file for [%s]?', $locale))) {
-                    return;
-                }
-
-                $missingKeys = $sourceKeys;
-            }
-            else {
-                $inputDirectory = $this->directoryFrom().'/'.$locale;
-
-                $inputFile = $inputDirectory.'.json';
-
-                $localeKeys = array_keys(json_decode($this->filesystem->get($inputFile), true));
-
-                $localeKeys = array_map(function($key) {
-                    return str_replace('\\\'', '\'', $key);
-                }, $localeKeys);
-
-                $missingKeys = array_diff($sourceKeys, $localeKeys);
+                return $this->error(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
             }
 
-            $outputKeys = array_fill_keys($missingKeys, '');
+            $inputDirectory = $this->directoryFrom().'/'.$locale;
+
+            $inputFile = $inputDirectory.'.json';
+
+            $localeKeys = json_decode($this->filesystem->get($inputFile), true);
+
+            $reorderedKeys = array_diff_assoc($sourceKeys, array_keys($localeKeys));
 
             $outputFile = $outputDirectory.'/'.$locale.'.json';
 
-            if (count($outputKeys)) {
+            $missingKeys = [];
+
+            if (count($reorderedKeys)) {
+
+                $outputKeys = [];
+                foreach ($sourceKeys as $key) {
+                    if (isset($localeKeys[$key])) {
+                        $outputKeys[$key] = $localeKeys[$key];
+                    }
+                    else {
+                        $missingKeys[$key] = '';
+                    }
+                }
+
                 $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
-                $this->info(sprintf('%d missing translation keys for [%s] locale have been output to [%s].', count($missingKeys), $locale, $outputFile));
+                $this->info(sprintf('%d translation keys for [%s] locale were out of order. The reordered file has been output to [%s].', count($reorderedKeys), $locale, $outputFile));
+
             } elseif ($this->filesystem->exists($outputFile)) {
-                    $this->warn(sprintf('[%s] locale has no missing translation keys. The existing output file at [%s] was deleted.', $locale, $outputFile));
+                    $this->warn(sprintf('[%s] locale has no translation keys out of order. The existing output file at [%s] was deleted.', $locale, $outputFile));
                     $this->filesystem->delete($outputFile);
             } else {
-                $this->warn(sprintf('[%s] locale has no missing translation keys. No output file was created.', $locale));
+                $this->warn(sprintf('[%s] locale has no translation keys out of order. No output file was created.', $locale));
             }
+
+            if (count($missingKeys)) {
+                $this->info(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the `nova-lang:missing` command to view them.', count($missingKeys), $locale));
+            }
+
         });
     }
 
