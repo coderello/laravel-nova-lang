@@ -90,16 +90,16 @@ class NovaLangReorder extends Command
 
             $localeKeys = json_decode($this->filesystem->get($inputFile), true);
 
-            $reorderedKeys = array_diff_key($sourceKeys, array_keys($localeKeys));
+            $reorderedKeys = array_diff_assoc($sourceKeys, array_keys($localeKeys));
 
             $outputFile = $outputDirectory.'/'.$locale.'.json';
 
-            if (count($outputKeys)) {
+            $missingKeys = [];
 
-                $missingKeys = [];
+            if (count($reorderedKeys)) {
 
                 $outputKeys = [];
-                foreach ($sourceKeys as $key => $translation) {
+                foreach ($sourceKeys as $key) {
                     if (isset($localeKeys[$key])) {
                         $outputKeys[$key] = $localeKeys[$key];
                     }
