@@ -22,6 +22,15 @@
         "json": true,
         "php": true
     },
+    "bs": {
+        "name": "Bosnian",
+        "complete": 401,
+        "contributors": {
+            "hajro92": 420
+        },
+        "json": true,
+        "php": true
+    },
     "nl": {
         "name": "Dutch",
         "complete": 401,
@@ -32,6 +41,19 @@
             "jschram": 36,
             "sebastiaanspeck": 35,
             "daniel-de-wit": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "de": {
+        "name": "German",
+        "complete": 401,
+        "contributors": {
+            "pille1842": 71,
+            "shieraki": 27,
+            "kitbs": 22,
+            "tobiasthaden": 7,
+            "dakira": 2
         },
         "json": true,
         "php": true
@@ -66,7 +88,7 @@
             "IGedeon": 6,
             "Arryan": 3,
             "kennyhorna": 3,
-            "kitbs": 2,
+            "kitbs": 3,
             "xcodinas": 2,
             "dgtal": 1,
             "rodrigore": 1
@@ -145,18 +167,6 @@
             "den1n": 25,
             "deadem": 12,
             "estim": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "de": {
-        "name": "German",
-        "complete": 395,
-        "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 22,
-            "dakira": 2
         },
         "json": true,
         "php": true
@@ -417,11 +427,6 @@
     },
     "be": {
         "name": "Belarusian",
-        "complete": 0,
-        "contributors": []
-    },
-    "bs": {
-        "name": "Bosnian",
         "complete": 0,
         "contributors": []
     },

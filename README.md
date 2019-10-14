@@ -124,14 +124,16 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 
 Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.
 
-Total languages ![38](https://img.shields.io/badge/38-gray?style=flat-square)  
-Total lines translated ![15238 (92.3%)](https://img.shields.io/badge/14071-92%25-yellow?style=flat-square)
+Total languages ![39](https://img.shields.io/badge/39-gray?style=flat-square)  
+Total lines translated ![15639 (92.6%)](https://img.shields.io/badge/14478-92%25-yellow?style=flat-square)
 
 | Code | Language | Translated files | Lines translated | Thanks to |
 | --- | --- | --- | --- | --- |
 | `en` | English | [`php`](resources/lang/en) [`json`](resources/lang/en.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [taylorotwell](https://github.com/taylorotwell), [bonzai](https://github.com/bonzai), [davidhemphill](https://github.com/davidhemphill), [themsaid](https://github.com/themsaid), [mziraki](https://github.com/mziraki), [kitbs](https://github.com/kitbs) |
 | `af` | Afrikaans | [`php`](resources/lang/af) [`json`](resources/lang/af.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [medlion](https://github.com/medlion) |
+| `bs` | Bosnian | [`php`](resources/lang/bs) [`json`](resources/lang/bs.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [hajro92](https://github.com/hajro92) |
 | `nl` | Dutch | [`php`](resources/lang/nl) [`json`](resources/lang/nl.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [DannyvdSluijs](https://github.com/DannyvdSluijs), [happyDemon](https://github.com/happyDemon), [steefmin](https://github.com/steefmin), [jschram](https://github.com/jschram), [sebastiaanspeck](https://github.com/sebastiaanspeck), [daniel-de-wit](https://github.com/daniel-de-wit) |
+| `de` | German | [`php`](resources/lang/de) [`json`](resources/lang/de.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [pille1842](https://github.com/pille1842), [shieraki](https://github.com/shieraki), [kitbs](https://github.com/kitbs), [tobiasthaden](https://github.com/tobiasthaden), [dakira](https://github.com/dakira) |
 | `nb` | Norwegian Bokmål | [`php`](resources/lang/nb) [`json`](resources/lang/nb.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [einar-johan](https://github.com/einar-johan) |
 | `ro` | Romanian | [`php`](resources/lang/ro) [`json`](resources/lang/ro.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [BTeodorWork](https://github.com/BTeodorWork), [dtix](https://github.com/dtix), [alexgiuvara](https://github.com/alexgiuvara) |
 | `es` | Spanish | [`php`](resources/lang/es) [`json`](resources/lang/es.json) | ![401 (100%)](https://img.shields.io/badge/401-100%25-brightgreen?style=flat-square) | [joebordes](https://github.com/joebordes), [ajmariduena](https://github.com/ajmariduena), [iksaku](https://github.com/iksaku), [IGedeon](https://github.com/IGedeon), [Arryan](https://github.com/Arryan), [kennyhorna](https://github.com/kennyhorna), [kitbs](https://github.com/kitbs), [xcodinas](https://github.com/xcodinas), [dgtal](https://github.com/dgtal), [rodrigore](https://github.com/rodrigore) |
@@ -141,7 +143,6 @@ Total lines translated ![15238 (92.3%)](https://img.shields.io/badge/14071-92%25
 | `pt‑BR` | Brazilian Portuguese | [`php`](resources/lang/pt-BR) [`json`](resources/lang/pt-BR.json) | ![396 (98.8%)](https://img.shields.io/badge/396-98%25-green?style=flat-square) | [henryavila](https://github.com/henryavila), [pedrofurtado](https://github.com/pedrofurtado), [eduardokum](https://github.com/eduardokum), [saulo-silva](https://github.com/saulo-silva), [chbbc](https://github.com/chbbc), [IgorDePaula](https://github.com/IgorDePaula) |
 | `hu` | Hungarian | [`php`](resources/lang/hu) [`json`](resources/lang/hu.json) | ![396 (98.8%)](https://img.shields.io/badge/396-98%25-green?style=flat-square) | [milli05](https://github.com/milli05), [bgeree](https://github.com/bgeree) |
 | `ru` | Russian | [`php`](resources/lang/ru) [`json`](resources/lang/ru.json) | ![396 (98.8%)](https://img.shields.io/badge/396-98%25-green?style=flat-square) | [hivokas](https://github.com/hivokas), [sanasol](https://github.com/sanasol), [den1n](https://github.com/den1n), [deadem](https://github.com/deadem), [estim](https://github.com/estim) |
-| `de` | German | [`php`](resources/lang/de) [`json`](resources/lang/de.json) | ![395 (98.5%)](https://img.shields.io/badge/395-98%25-green?style=flat-square) | [pille1842](https://github.com/pille1842), [shieraki](https://github.com/shieraki), [kitbs](https://github.com/kitbs), [dakira](https://github.com/dakira) |
 | `ar` | Arabic | [`php`](resources/lang/ar) [`json`](resources/lang/ar.json) | ![394 (98.3%)](https://img.shields.io/badge/394-98%25-green?style=flat-square) | [saleem-hadad](https://github.com/saleem-hadad), [danyelkeddah](https://github.com/danyelkeddah), [Arryan](https://github.com/Arryan) |
 | `zh‑CN` | Chinese (Simplified) | [`php`](resources/lang/zh-CN) [`json`](resources/lang/zh-CN.json) | ![389 (97%)](https://img.shields.io/badge/389-97%25-green?style=flat-square) | [jcc](https://github.com/jcc), [zacksleo](https://github.com/zacksleo), [masterwto](https://github.com/masterwto) |
 | `zh‑TW` | Chinese (Traditional) | [`php`](resources/lang/zh-TW) [`json`](resources/lang/zh-TW.json) | ![389 (97%)](https://img.shields.io/badge/389-97%25-green?style=flat-square) | [CasperLaiTW](https://github.com/CasperLaiTW), [zacksleo](https://github.com/zacksleo) |
@@ -172,7 +173,7 @@ Total lines translated ![15238 (92.3%)](https://img.shields.io/badge/14071-92%25
 
 The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
 
-Parity with `caouecs/laravel-lang` ![35/73 (47.9%)](https://img.shields.io/badge/35%2F73-47%25-red?style=flat-square)
+Parity with `caouecs/laravel-lang` ![36/73 (49.3%)](https://img.shields.io/badge/36%2F73-49%25-red?style=flat-square)
 
 | Code | Language | Lines translated |
 | --- | --- | --- |
@@ -180,7 +181,6 @@ Parity with `caouecs/laravel-lang` ![35/73 (47.9%)](https://img.shields.io/badge
 | `az` | Azerbaijani | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `bn` | Bangla | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `be` | Belarusian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `bs` | Bosnian | ![280 (70%)](https://img.shields.io/badge/280-70%25-red?style=flat-square) [#188](/coderello/laravel-nova-lang/pull/188) |
 | `zh‑HK` | Chinese (Hong Kong) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `et` | Estonian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `gl` | Galician | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
