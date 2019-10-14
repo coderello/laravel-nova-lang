@@ -45,6 +45,21 @@
         "json": true,
         "php": true
     },
+    "fr": {
+        "name": "French",
+        "complete": 401,
+        "contributors": {
+            "MarceauKa": 165,
+            "Yannik-Slym": 31,
+            "InfinityWebMe": 28,
+            "kitbs": 13,
+            "shaffe-fr": 8,
+            "Arryan": 4,
+            "KillianH": 2
+        },
+        "json": true,
+        "php": true
+    },
     "de": {
         "name": "German",
         "complete": 401,
@@ -115,21 +130,6 @@
             "Ostap34JS": 1,
             "coderello": 1,
             "osbre": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "fr": {
-        "name": "French",
-        "complete": 398,
-        "contributors": {
-            "MarceauKa": 165,
-            "Yannik-Slym": 31,
-            "InfinityWebMe": 28,
-            "kitbs": 10,
-            "shaffe-fr": 8,
-            "Arryan": 4,
-            "KillianH": 2
         },
         "json": true,
         "php": true
