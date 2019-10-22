@@ -392,5 +392,10 @@
     "This resource no longer exists": "Ресурс больше не существует",
     ":resource Details": "Детали ресурса :resource",
     "There are no available options for this resource.": "Нет доступных опций для этого ресурса.",
-    "Show All Fields": "Показать все поля"
+    "Show All Fields": "Показать все поля",
+    "All resources loaded.": "Все ресурсы загружены.",
+    "Load :perPage More": "Загрузить ещё perPage",
+    ":amount Total": "Всего :amount",
+    "There was a problem submitting the form.": "Во время отправки формы возникла проблема.",
+    "There was a problem executing the action.": "Во время выполнения действия возникла проблема."
 }
