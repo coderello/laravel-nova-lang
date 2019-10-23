@@ -1,6 +1,6 @@
 <p align="center"><img alt="Laraflash" src="logo.png" width="450"></p>
 
-<p align="center">Language files for <b>Laravel Nova</b> translated into 35+ languages.</p>
+<p align="center">Language files for <b>Laravel Nova</b> translated into 40+ languages.</p>
 
 This is not an official Laravel package, but is built from community contributions. If you are able to help by submitting a new language, reviewing an existing language, or adding missing keys, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
 
