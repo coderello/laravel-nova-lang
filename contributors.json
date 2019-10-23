@@ -73,6 +73,15 @@
         "json": true,
         "php": true
     },
+    "ja": {
+        "name": "Japanese",
+        "complete": 401,
+        "contributors": {
+            "Tsumagari": 420
+        },
+        "json": true,
+        "php": true
+    },
     "nb": {
         "name": "Norwegian Bokmål",
         "complete": 401,
@@ -89,6 +98,20 @@
             "BTeodorWork": 362,
             "dtix": 67,
             "alexgiuvara": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "ru": {
+        "name": "Russian",
+        "complete": 401,
+        "contributors": {
+            "hivokas": 363,
+            "sanasol": 32,
+            "den1n": 25,
+            "deadem": 12,
+            "soulshockers": 6,
+            "estim": 1
         },
         "json": true,
         "php": true
@@ -129,6 +152,7 @@
             "hivokas": 3,
             "Ostap34JS": 1,
             "coderello": 1,
+            "kitbs": 1,
             "osbre": 1
         },
         "json": true,
@@ -154,19 +178,6 @@
         "contributors": {
             "milli05": 364,
             "bgeree": 49
-        },
-        "json": true,
-        "php": true
-    },
-    "ru": {
-        "name": "Russian",
-        "complete": 396,
-        "contributors": {
-            "hivokas": 363,
-            "sanasol": 32,
-            "den1n": 25,
-            "deadem": 12,
-            "estim": 1
         },
         "json": true,
         "php": true
@@ -462,11 +473,6 @@
     },
     "is": {
         "name": "Icelandic",
-        "complete": 0,
-        "contributors": []
-    },
-    "ja": {
-        "name": "Japanese",
         "complete": 0,
         "contributors": []
     },
