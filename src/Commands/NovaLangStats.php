@@ -293,7 +293,7 @@ class NovaLangStats extends Command
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            return array_keys(json_decode($this->filesystem->get($path), true));
+            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), ['*']);
         }
 
         return [];
