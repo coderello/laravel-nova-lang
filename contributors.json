@@ -6,9 +6,10 @@
             "taylorotwell": 10001,
             "bonzai": 10000,
             "davidhemphill": 10000,
+            "jbrooksuk": 10000,
             "themsaid": 10000,
-            "mziraki": 37,
-            "kitbs": 17
+            "kitbs": 5,
+            "dillingham": 1
         },
         "json": true,
         "php": true
@@ -120,13 +121,13 @@
         "name": "Spanish",
         "complete": 401,
         "contributors": {
+            "kitbs": 83,
             "joebordes": 51,
             "ajmariduena": 18,
             "iksaku": 11,
             "IGedeon": 6,
             "Arryan": 3,
             "kennyhorna": 3,
-            "kitbs": 3,
             "xcodinas": 2,
             "dgtal": 1,
             "rodrigore": 1
@@ -149,9 +150,7 @@
         "complete": 401,
         "contributors": {
             "soulshockers": 97,
-            "hivokas": 3,
             "Ostap34JS": 1,
-            "coderello": 1,
             "kitbs": 1,
             "osbre": 1
         },

@@ -397,6 +397,18 @@ class NovaLangStats extends Command
             }
         }
 
+        $collaborators = [
+            'kitbs' => ['en', 'de', 'es', 'fr'],
+            'hivokas' => ['ru'],
+        ];
+
+        foreach ($collaborators as $collaborator => $collaboratorLocales) {
+            $collaboratorLocales = array_diff(array_keys($contributions), $collaboratorLocales);
+            foreach ($collaboratorLocales as $locale) {
+                unset($contributions[$locale][$collaborator]);
+            }
+        }
+
         return $contributions;
     }
 }
