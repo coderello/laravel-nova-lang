@@ -67,7 +67,7 @@ class NovaLangMissing extends Command
         $outputDirectory = storage_path('app/nova-lang/missing');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
-        $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
+        $sourceKeys = array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), ['*']);
 
         $availableLocales = $this->getAvailableLocales();
 
