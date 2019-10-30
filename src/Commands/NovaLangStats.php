@@ -194,6 +194,7 @@ class NovaLangStats extends Command
             sprintf('Total lines translated ![%d (%s%%)](%s)', $sourceComplete, $percent, $icon);
 
         $header = '## Available Languages'.PHP_EOL.PHP_EOL.
+            'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
             $totals.PHP_EOL.PHP_EOL.
             '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
             '| --- | --- | --- | --- | --- |';
@@ -292,7 +293,7 @@ class NovaLangStats extends Command
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            return array_keys(json_decode($this->filesystem->get($path), true));
+            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), ['*']);
         }
 
         return [];
@@ -349,7 +350,7 @@ class NovaLangStats extends Command
             return $contributions;
         }
 
-        $graphql = 'query { repository(owner: "coderello", name: "laravel-nova-lang") { pullRequests(first: 100, states: [MERGED]) { nodes { number title body state merged changedFiles files(first: 100) { nodes { path additions deletions } } author { login } } } } }';
+        $graphql = 'query { repository(owner: "coderello", name: "laravel-nova-lang") { pullRequests(last: 25, states: [MERGED]) { nodes { number title body state merged changedFiles files(first: 100) { nodes { path additions deletions } } author { login } } } } }';
 
         $curl = curl_init();
         curl_setopt_array($curl, [
@@ -393,6 +394,18 @@ class NovaLangStats extends Command
                         }
                     }
                 }
+            }
+        }
+
+        $collaborators = [
+            'kitbs' => ['en', 'de', 'es', 'fr'],
+            'hivokas' => ['ru'],
+        ];
+
+        foreach ($collaborators as $collaborator => $collaboratorLocales) {
+            $collaboratorLocales = array_diff(array_keys($contributions), $collaboratorLocales);
+            foreach ($collaboratorLocales as $locale) {
+                unset($contributions[$locale][$collaborator]);
             }
         }
 

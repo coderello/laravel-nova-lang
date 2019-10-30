@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'attached' => 'Поле :attribute вже прикріплено.',
-    'relatable' => 'Поле :attribute не може бути повязано із цим ресурсом.',
+    'attached' => 'Ovaj :attribute je vec zakacen.',
+    'relatable' => 'Ovaj :attribute mozda nije povezan sa ovim resursom.',
 
 ];

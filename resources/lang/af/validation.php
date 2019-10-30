@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -13,7 +14,7 @@ return [
     |
     */
 
-    'attached' => 'Поле :attribute вже прикріплено.',
-    'relatable' => 'Поле :attribute не може бути повязано із цим ресурсом.',
+    'attached' => 'Hierdie :attribute is reeds aangeheg.',
+    'relatable' => 'Hierdie :attribute mag nie met hierdie hulpbron geassosieer word nie.',
 
 ];
