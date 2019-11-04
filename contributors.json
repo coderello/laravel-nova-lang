@@ -156,6 +156,15 @@
         "json": true,
         "php": true
     },
+    "tk": {
+        "name": "Turkmen",
+        "complete": 400,
+        "contributors": {
+            "kakajansh": 419
+        },
+        "json": true,
+        "php": true
+    },
     "pt-BR": {
         "name": "Brazilian Portuguese",
         "complete": 396,
@@ -176,6 +185,17 @@
         "contributors": {
             "milli05": 364,
             "bgeree": 49
+        },
+        "json": true,
+        "php": true
+    },
+    "fa": {
+        "name": "Farsi",
+        "complete": 395,
+        "contributors": {
+            "alirezamirsepassi": 387,
+            "mziraki": 35,
+            "zareismail": 21
         },
         "json": true,
         "php": true
@@ -208,16 +228,6 @@
         "contributors": {
             "CasperLaiTW": 362,
             "zacksleo": 42
-        },
-        "json": true,
-        "php": true
-    },
-    "fa": {
-        "name": "Farsi",
-        "complete": 376,
-        "contributors": {
-            "alirezamirsepassi": 387,
-            "mziraki": 35
         },
         "json": true,
         "php": true
@@ -396,6 +406,7 @@
         "contributors": {
             "Strus": 39,
             "marekfilip": 19,
+            "mslepko": 7,
             "wiktor-k": 2
         },
         "json": true,
@@ -561,11 +572,6 @@
     },
     "th": {
         "name": "Thai",
-        "complete": 0,
-        "contributors": []
-    },
-    "tk": {
-        "name": "Turkmen",
         "complete": 0,
         "contributors": []
     },
