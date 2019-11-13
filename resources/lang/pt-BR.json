@@ -392,10 +392,10 @@
     "This resource no longer exists": "Este recurso não existe mais",
     ":resource Details": "Detalhes de :resource",
     "There are no available options for this resource.": "Não há opções disponíveis para este recurso.",
-    "All resources loaded.": "All resources loaded.",
+    "All resources loaded.": "Todos os recursos foram carregados.",
     "Load :perPage More": "Carregar mais :perPage",
-    ":amount Total": ":amount Total",
+    ":amount Total": "Total: :amount",
     "Show All Fields": "Exibir todos os campos",
-    "There was a problem submitting the form.": "There was a problem submitting the form.",
-    "There was a problem executing the action.": "There was a problem executing the action."    
+    "There was a problem submitting the form.": "Ocorreu um problema ao enviar o formulário.",
+    "There was a problem executing the action.": "Ocorreu um problema ao executar a ação." 
 }
