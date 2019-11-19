@@ -1,6 +1,6 @@
 ---
-title: Introduction
-section: Usage
+title: Publishing translations
+section: Introduction
 weight: 1000
 featherIcon: terminal
 ---
