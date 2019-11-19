@@ -1,6 +1,6 @@
 ---
 title: Publishing translations
-section: Introduction
+section: Usage
 weight: 1000
 featherIcon: play
 ---
