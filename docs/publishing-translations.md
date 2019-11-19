@@ -6,24 +6,24 @@ featherIcon: terminal
 ---
 
 - Publish translations for one language:
-```bash
-php artisan nova-lang:publish de
-```
+  ```bash
+  php artisan nova-lang:publish de
+  ```
 
 - Publish translations for multiple languages (comma-separated):
-```bash
-php artisan nova-lang:publish de,ru
-```
+  ```bash
+  php artisan nova-lang:publish de,ru
+  ```
 
 - Publish translations for all available languages:
-```bash
-php artisan nova-lang:publish --all
-```
+  ```bash
+  php artisan nova-lang:publish --all
+  ```
 
 - Publish translations and override existing files:
-```bash
-php artisan nova-lang:publish de,ru --force
-```
+  ```bash
+  php artisan nova-lang:publish de,ru --force
+  ```
 
 ## Aliases
 The language codes chosen for the files in this repository may not match the preferences for your project. You can use the `‑‑alias` option to publish locales using a different filename.
