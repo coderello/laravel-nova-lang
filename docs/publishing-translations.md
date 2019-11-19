@@ -2,7 +2,7 @@
 title: Publishing translations
 section: Introduction
 weight: 1000
-featherIcon: terminal
+featherIcon: play
 ---
 
 - Publish translations for one language:
