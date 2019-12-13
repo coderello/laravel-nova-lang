@@ -1,7 +1,7 @@
 ---
 title: Publishing translations
 section: Usage
-weight: 1000
+weight: 800
 featherIcon: play
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Development commands
 section: Contributing
-weight: 8900
+weight: 700
 featherIcon: terminal
 ---
 

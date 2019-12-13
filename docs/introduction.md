@@ -1,7 +1,7 @@
 ---
 title: Introduction
 section: Getting Started
-weight: 100
+weight: 990
 featherIcon: info
 ---
 
