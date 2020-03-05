@@ -154,6 +154,15 @@
         "json": true,
         "php": true
     },
+    "uz-Latn": {
+        "name": "Uzbek (Latin)",
+        "complete": 405,
+        "contributors": {
+            "shokhaa": 423
+        },
+        "json": true,
+        "php": true
+    },
     "af": {
         "name": "Afrikaans",
         "complete": 400,
@@ -217,7 +226,21 @@
         "contributors": {
             "saleem-hadad": 56,
             "danyelkeddah": 50,
+            "omarfathy13": 26,
             "Arryan": 3
+        },
+        "json": true,
+        "php": true
+    },
+    "pl": {
+        "name": "Polish",
+        "complete": 397,
+        "contributors": {
+            "pzmarzly": 60,
+            "Strus": 39,
+            "marekfilip": 19,
+            "mslepko": 7,
+            "wiktor-k": 2
         },
         "json": true,
         "php": true
@@ -239,6 +262,18 @@
         "contributors": {
             "CasperLaiTW": 362,
             "zacksleo": 42
+        },
+        "json": true,
+        "php": true
+    },
+    "tr": {
+        "name": "Turkish",
+        "complete": 393,
+        "contributors": {
+            "bureken": 58,
+            "Milkhan": 45,
+            "sineld": 7,
+            "dilekuzulmez": 2
         },
         "json": true,
         "php": true
@@ -381,34 +416,11 @@
         "json": true,
         "php": true
     },
-    "tr": {
-        "name": "Turkish",
-        "complete": 352,
-        "contributors": {
-            "bureken": 58,
-            "sineld": 7,
-            "dilekuzulmez": 2
-        },
-        "json": true,
-        "php": true
-    },
     "lt": {
         "name": "Lithuanian",
         "complete": 351,
         "contributors": {
             "minved": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "pl": {
-        "name": "Polish",
-        "complete": 351,
-        "contributors": {
-            "Strus": 39,
-            "marekfilip": 19,
-            "mslepko": 7,
-            "wiktor-k": 2
         },
         "json": true,
         "php": true
@@ -588,11 +600,6 @@
     },
     "uz-Cyrl": {
         "name": "Uzbek (Cyrillic)",
-        "complete": 0,
-        "contributors": []
-    },
-    "uz-Latn": {
-        "name": "Uzbek (Latin)",
         "complete": 0,
         "contributors": []
     },
