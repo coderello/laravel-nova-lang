@@ -2,18 +2,11 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangStats extends Command
+class NovaLangStats extends AbstractCommand
 {
-    /**
-     * @var string[]
-     */
-    const IGNORED_KEYS = ['*', '—'];
-
     /**
      * The name and signature of the console command.
      *
@@ -27,23 +20,6 @@ class NovaLangStats extends Command
      * @var string
      */
     protected $description = 'Collect translation completion and contribution stats for documentation.';
-
-    /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.

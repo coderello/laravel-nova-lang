@@ -2,12 +2,10 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangMissing extends Command
+class NovaLangMissing extends AbstractCommand
 {
     /**
      * The name and signature of the console command.
@@ -26,23 +24,6 @@ class NovaLangMissing extends Command
     protected $description = 'Output missing keys from Laravel Nova language files to storage folder.';
 
     /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -52,6 +33,10 @@ class NovaLangMissing extends Command
         if (!config('app.debug')) {
             $this->error('This command will only run in debug mode.');
 
+            return;
+        }
+
+        if ($this->formalLocalesRequested()) {
             return;
         }
 
@@ -67,14 +52,13 @@ class NovaLangMissing extends Command
         $outputDirectory = storage_path('app/nova-lang/missing');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
-        $sourceKeys = array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), ['*']);
+        $sourceKeys = array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS);
 
         $availableLocales = $this->getAvailableLocales();
 
         $requestedLocales = $this->getRequestedLocales();
 
-        if (!$requestedLocales->count()) {
-            $this->error('You must either specify one or more locales, or use the --all option.');
+        if ($this->noLocalesRequested($requestedLocales)) {
             return;
         }
 
@@ -118,44 +102,5 @@ class NovaLangMissing extends Command
                 $this->warn(sprintf('[%s] locale has no missing translation keys. No output file was created.', $locale));
             }
         });
-    }
-
-    protected function getRequestedLocales(): Collection
-    {
-        if ($this->isAll()) {
-            return $this->getAvailableLocales();
-        }
-
-        return collect(explode(',', $this->argument('locales')))->filter();
-    }
-
-    protected function getAvailableLocales(): Collection
-    {
-        $localesByDirectories = collect($this->filesystem->directories($this->directoryFrom()))
-            ->map(function (string $path) {
-                return $this->filesystem->name($path);
-            });
-
-        $localesByFiles = collect($this->filesystem->files($this->directoryFrom()))
-            ->map(function (SplFileInfo $splFileInfo) {
-                return str_replace('.'.$splFileInfo->getExtension(), '', $splFileInfo->getFilename());
-            });
-
-        return $localesByDirectories->intersect($localesByFiles)->values();
-    }
-
-    protected function isAll(): bool
-    {
-        return $this->option('all');
-    }
-
-    protected function directoryFrom(): string
-    {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
-    }
-
-    protected function directoryNovaSource(): string
-    {
-        return base_path('vendor/laravel/nova/resources/lang');
     }
 }
