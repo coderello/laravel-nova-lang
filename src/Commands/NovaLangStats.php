@@ -159,9 +159,9 @@ class NovaLangStats extends Command
         $this->filesystem->put($outputFile, json_encode($contributors->merge($missing), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
         $this->info(sprintf('Updated "contributors.json" has been output to [%s].', $outputFile));
-        $this->warn('* Replace contributors.json in your fork of the repository with this file.');
+        $this->warn('* Replace ./contributors.json in your fork of the repository with this file.');
 
-        $contributors->transform(function($localeStat, $locale) use ($sourceCount) {
+        $contributorsTable = $contributors->map(function($localeStat, $locale) use ($sourceCount) {
 
             $percent = $this->getPercent($localeStat['complete'], $sourceCount);
             $icon = $this->getPercentIcon($localeStat['complete'], $percent);
@@ -204,17 +204,17 @@ class NovaLangStats extends Command
             '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
             '| --- | --- | --- | --- | --- |';
 
-        $contents = $header.PHP_EOL.$contributors->join(PHP_EOL);
+        $contents = $header.PHP_EOL.$contributorsTable->join(PHP_EOL);
 
         if ($missing->count()) {
 
             $parityCount = $caouecsLocales->intersect($availableLocales)->count();
             $caouecsCount = $caouecsLocales->count();
 
-            $percent = $this->getPercent($parityCount, $caouecsCount);
-            $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $percent);
+            $missingPercent = $this->getPercent($parityCount, $caouecsCount);
+            $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $missingPercent);
 
-            $totals = sprintf('Parity with `caouecs/laravel-lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $percent, $icon);
+            $totals = sprintf('Parity with `caouecs/laravel-lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $missingPercent, $icon);
 
             $header = '## Missing Languages'.PHP_EOL.PHP_EOL.
                 'The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.'.PHP_EOL.PHP_EOL.
@@ -228,7 +228,31 @@ class NovaLangStats extends Command
         $this->filesystem->put($outputFile, $contents);
 
         $this->info(sprintf('Updated "README.excerpt.md" has been output to [%s].', $outputFile));
-        $this->warn('* Replace the Available Languages table in README.md in your fork of the repository with the contents of this file.');
+        $this->warn('* Replace the Available Languages table in ./README.md in your fork of the repository with the contents of this file.');
+
+        $outputFile = $outputDirectory . '/introduction.excerpt.md';
+
+        $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
+
+            $percent = $this->getPercent($localeStat['complete'], $sourceCount);
+
+            return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
+        });
+
+        $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
+            sprintf('Total lines translated **%d (%s%%)**', $sourceComplete, $percent);
+
+        $header = '### Available Languages' . PHP_EOL . PHP_EOL .
+            $totals . PHP_EOL;
+
+        $contents = $header . PHP_EOL . $contributorsList->join(PHP_EOL);
+
+        $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
+
+        $this->filesystem->put($outputFile, $contents);
+
+        $this->info(sprintf('Updated "introduction.excerpt.md" has been output to [%s].', $outputFile));
+        $this->warn('* Replace the Available Languages list in ./docs/introduction.md in your fork of the repository with the contents of this file.');
     }
 
     protected function getPercent(int $complete, int $total): float
