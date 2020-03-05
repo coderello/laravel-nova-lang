@@ -12,7 +12,7 @@ This is not an official Laravel package, but is built from community contributio
 ### Available Languages
 
 Total languages **42**  
-Total lines translated **17010 (94%)**
+Total lines translated **15995 (94%)**
 
 * `en` English &middot; **405 (100%)**
 * `pt‑BR` Brazilian Portuguese &middot; **405 (100%)**

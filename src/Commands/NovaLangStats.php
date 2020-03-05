@@ -172,7 +172,7 @@ class NovaLangStats extends AbstractCommand
         $icon = $this->getPercentIcon($translatedCount, $percent);
 
         $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon).PHP_EOL.
-            sprintf('Total lines translated ![%d (%s%%)](%s)', $sourceComplete, $percent, $icon);
+            sprintf('Total lines translated ![%d (%s%%)](%s)', $translatedCount, $percent, $icon);
 
         $header = '## Available Languages'.PHP_EOL.PHP_EOL.
             'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
@@ -216,7 +216,7 @@ class NovaLangStats extends AbstractCommand
         });
 
         $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
-            sprintf('Total lines translated **%d (%s%%)**', $sourceComplete, $percent);
+            sprintf('Total lines translated **%d (%s%%)**', $translatedCount, $percent);
 
         $header = '### Available Languages' . PHP_EOL . PHP_EOL .
             $totals . PHP_EOL;

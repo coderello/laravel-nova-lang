@@ -137,7 +137,7 @@ Ensure you have created a GitHub personal access token and saved it as a `GITHUB
 Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.
 
 Total languages ![42](https://img.shields.io/badge/42-gray?style=flat-square)  
-Total lines translated ![17010 (94%)](https://img.shields.io/badge/15995-94%25-yellow?style=flat-square)
+Total lines translated ![15995 (94%)](https://img.shields.io/badge/15995-94%25-yellow?style=flat-square)
 
 | Code | Language | Translated files | Lines translated | Thanks to |
 | --- | --- | --- | --- | --- |
