@@ -2,19 +2,11 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangPublish extends Command
+class NovaLangPublish extends AbstractCommand
 {
-    /**
-     * Possible locale separators.
-     * @var string
-     */
-    const SEPARATORS = '-‑_';
-
     /**
      * The name and signature of the console command.
      *
@@ -35,35 +27,23 @@ class NovaLangPublish extends Command
     protected $description = 'Publish Laravel Nova language files to resource folder.';
 
     /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
      */
     public function handle()
     {
+        if ($this->formalLocalesRequested()) {
+            return;
+        }
+
         $availableLocales = $this->getAvailableLocales();
 
         $requestedLocales = $this->getRequestedLocales();
 
-        if (!$requestedLocales->count()) {
-            $this->error('You must either specify one or more locales, or use the --all option.');
+        $formalLocales = $this->getFormalLocales();
+
+        if ($this->noLocalesRequested($requestedLocales)) {
             return;
         }
 
@@ -107,11 +87,17 @@ class NovaLangPublish extends Command
                 return;
             }
 
-            $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
+            if ($this->filesystem->exists($inputDirectory)) {
+                $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
-            $this->filesystem->copyDirectory($inputDirectory, $outputDirectory);
+                $this->filesystem->copyDirectory($inputDirectory, $outputDirectory);
+            }
 
-            $this->filesystem->copy($inputFile, $outputFile);
+            if ($this->filesystem->exists($inputFile)) {
+
+                $this->filesystem->copy($inputFile, $outputFile);
+
+            }
 
             $this->info(sprintf('Translations for [%s] locale have been published successfully%s.', $locale, $asAlias));
         });
@@ -119,13 +105,7 @@ class NovaLangPublish extends Command
 
     protected function getRequestedLocales(): Collection
     {
-        if ($this->isAll()) {
-            $locales = $this->getAvailableLocales();
-        }
-        else {
-            $locales = $this->fixSeparators($this->argument('locales'));
-            $locales = collect(explode(',', $locales))->filter();
-        }
+        $locales = parent::getRequestedLocales();
 
         $aliases = $this->getLocaleAliases($locales->count() == 1 ? $locales->first() : false);
 
@@ -144,21 +124,6 @@ class NovaLangPublish extends Command
         }
 
         return $locales;
-    }
-
-    protected function getAvailableLocales(): Collection
-    {
-        $localesByDirectories = collect($this->filesystem->directories($this->directoryFrom()))
-            ->map(function (string $path) {
-                return $this->filesystem->name($path);
-            });
-
-        $localesByFiles = collect($this->filesystem->files($this->directoryFrom()))
-            ->map(function (SplFileInfo $splFileInfo) {
-                return str_replace('.'.$splFileInfo->getExtension(), '', $splFileInfo->getFilename());
-            });
-
-        return $localesByDirectories->intersect($localesByFiles)->values();
     }
 
     protected function getLocaleAliases($single = false): Collection
@@ -209,30 +174,5 @@ class NovaLangPublish extends Command
         }
 
         return $aliases;
-    }
-
-    protected function fixSeparators(string $locale, string $separator = '-')
-    {
-        return preg_replace('/['.static::SEPARATORS.']+/', $separator, $locale);
-    }
-
-    protected function isForce(): bool
-    {
-        return $this->option('force');
-    }
-
-    protected function isAll(): bool
-    {
-        return $this->option('all');
-    }
-
-    protected function directoryFrom(): string
-    {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
-    }
-
-    protected function directoryTo(): string
-    {
-        return resource_path('lang/vendor/nova');
     }
 }

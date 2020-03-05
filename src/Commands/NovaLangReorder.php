@@ -2,12 +2,10 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangReorder extends Command
+class NovaLangReorder extends AbstractCommand
 {
     /**
      * The name and signature of the console command.
@@ -26,23 +24,6 @@ class NovaLangReorder extends Command
     protected $description = 'Reorder the keys from Laravel Nova language files to match the source file order and output to storage folder.';
 
     /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -52,6 +33,10 @@ class NovaLangReorder extends Command
         if (!config('app.debug')) {
             $this->error('This command will only run in debug mode.');
 
+            return;
+        }
+
+        if ($this->formalLocalesRequested()) {
             return;
         }
 
@@ -73,8 +58,7 @@ class NovaLangReorder extends Command
 
         $requestedLocales = $this->getRequestedLocales();
 
-        if (!$requestedLocales->count()) {
-            $this->error('You must either specify one or more locales, or use the --all option.');
+        if ($this->noLocalesRequested($requestedLocales)) {
             return;
         }
 
@@ -126,44 +110,5 @@ class NovaLangReorder extends Command
             }
 
         });
-    }
-
-    protected function getRequestedLocales(): Collection
-    {
-        if ($this->isAll()) {
-            return $this->getAvailableLocales();
-        }
-
-        return collect(explode(',', $this->argument('locales')))->filter();
-    }
-
-    protected function getAvailableLocales(): Collection
-    {
-        $localesByDirectories = collect($this->filesystem->directories($this->directoryFrom()))
-            ->map(function (string $path) {
-                return $this->filesystem->name($path);
-            });
-
-        $localesByFiles = collect($this->filesystem->files($this->directoryFrom()))
-            ->map(function (SplFileInfo $splFileInfo) {
-                return str_replace('.'.$splFileInfo->getExtension(), '', $splFileInfo->getFilename());
-            });
-
-        return $localesByDirectories->intersect($localesByFiles)->values();
-    }
-
-    protected function isAll(): bool
-    {
-        return $this->option('all');
-    }
-
-    protected function directoryFrom(): string
-    {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
-    }
-
-    protected function directoryNovaSource(): string
-    {
-        return base_path('vendor/laravel/nova/resources/lang');
     }
 }

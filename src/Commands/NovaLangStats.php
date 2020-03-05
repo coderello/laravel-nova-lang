@@ -2,18 +2,11 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangStats extends Command
+class NovaLangStats extends AbstractCommand
 {
-    /**
-     * @var string[]
-     */
-    const IGNORED_KEYS = ['*', '—'];
-
     /**
      * The name and signature of the console command.
      *
@@ -27,23 +20,6 @@ class NovaLangStats extends Command
      * @var string
      */
     protected $description = 'Collect translation completion and contribution stats for documentation.';
-
-    /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
@@ -196,7 +172,7 @@ class NovaLangStats extends Command
         $icon = $this->getPercentIcon($translatedCount, $percent);
 
         $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon).PHP_EOL.
-            sprintf('Total lines translated ![%d (%s%%)](%s)', $sourceComplete, $percent, $icon);
+            sprintf('Total lines translated ![%d (%s%%)](%s)', $translatedCount, $percent, $icon);
 
         $header = '## Available Languages'.PHP_EOL.PHP_EOL.
             'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
@@ -240,7 +216,7 @@ class NovaLangStats extends Command
         });
 
         $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
-            sprintf('Total lines translated **%d (%s%%)**', $sourceComplete, $percent);
+            sprintf('Total lines translated **%d (%s%%)**', $translatedCount, $percent);
 
         $header = '### Available Languages' . PHP_EOL . PHP_EOL .
             $totals . PHP_EOL;

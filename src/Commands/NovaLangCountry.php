@@ -2,12 +2,10 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangCountry extends Command
+class NovaLangCountry extends AbstractCommand
 {
     /**
      * The name and signature of the console command.
@@ -26,23 +24,6 @@ class NovaLangCountry extends Command
     protected $description = 'Download country names from CLDR and save to storage folder.';
 
     /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -55,6 +36,10 @@ class NovaLangCountry extends Command
             return;
         }
 
+        if ($this->formalLocalesRequested()) {
+            return;
+        }
+
         $outputDirectory = storage_path('app/nova-lang/countries');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
@@ -62,8 +47,7 @@ class NovaLangCountry extends Command
 
         $requestedLocales = $this->getRequestedLocales();
 
-        if (!$requestedLocales->count()) {
-            $this->error('You must specify one or more locales.');
+        if ($this->noLocalesRequested($requestedLocales)) {
             return;
         }
 
@@ -100,26 +84,12 @@ class NovaLangCountry extends Command
         });
     }
 
-    protected function getRequestedLocales(): Collection
-    {
-        if ($this->isAll()) {
-            return $this->getAvailableLocales();
-        }
-
-        return collect(explode(',', $this->argument('locales')))->filter();
-    }
-
     protected function getAvailableLocales(): Collection
     {
         return collect($this->filesystem->files($this->directoryFrom()))
             ->map(function (SplFileInfo $splFileInfo) {
                 return str_replace('.' . $splFileInfo->getExtension(), '', $splFileInfo->getFilename());
             })->values();
-    }
-
-    protected function directoryFrom(): string
-    {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
     }
 
     protected function downloadCldr(string $locale, array &$untranslated = []): array
@@ -157,11 +127,6 @@ class NovaLangCountry extends Command
         }
 
         return [];
-    }
-
-    protected function isAll(): bool
-    {
-        return $this->option('all');
     }
 
     protected function standardizeLocale(string $locale): array
