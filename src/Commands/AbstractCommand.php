@@ -70,7 +70,7 @@ abstract class AbstractCommand extends Command
 
     protected function getFormalLocales(): Collection
     {
-        if (!$this->option('formal')) {
+        if (!$this->hasOption('formal') || !$this->option('formal')) {
             return collect();
         }
 
@@ -123,7 +123,7 @@ abstract class AbstractCommand extends Command
 
     protected function isAllFormal(): bool
     {
-        return $this->option('formal') == '*';
+        return $this->option('formal') ? $this->option('formal') == '*' : false;
     }
 
     protected function directoryFrom(): string
