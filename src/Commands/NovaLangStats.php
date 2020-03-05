@@ -10,6 +10,11 @@ use SplFileInfo;
 class NovaLangStats extends Command
 {
     /**
+     * @var string[]
+     */
+    const IGNORED_KEYS = ['*', '—'];
+
+    /**
      * The name and signature of the console command.
      *
      * @var string
@@ -228,7 +233,11 @@ class NovaLangStats extends Command
 
     protected function getPercent(int $complete, int $total): float
     {
-        return $total > 0 ? round(($complete / $total) * 100, 1) : 0;
+        if ($total == 0) {
+            return 0;
+        }
+
+        return $complete > $total ? 100 : round(($complete / $total) * 100, 1);
     }
 
     protected function getPercentIcon($complete, $percent = null): string
@@ -293,7 +302,7 @@ class NovaLangStats extends Command
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), ['*']);
+            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), static::IGNORED_KEYS);
         }
 
         return [];
