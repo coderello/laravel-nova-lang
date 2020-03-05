@@ -228,7 +228,7 @@ class NovaLangStats extends Command
 
     protected function getPercent(int $complete, int $total): float
     {
-        return round(($complete / $total) * 100, 1);
+        return $total > 0 ? round(($complete / $total) * 100, 1) : 0;
     }
 
     protected function getPercentIcon($complete, $percent = null): string
