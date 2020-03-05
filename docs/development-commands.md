@@ -41,7 +41,7 @@ A new JSON file will be created at `storage_path('app/nova-lang/reorder/{locale}
   php artisan nova-lang:reorder --all
   ```
 
-#### Country Names Command
+## Country Names Command
 
 This command is to assist contributors to download the country names automatically from the [Unicode Common Locale Data Repository](http://cldr.unicode.org/translation/displaynames/country-names) (CLDR). We use the CLDR as the definitive source for country names, as described in the contribution guidelines.
 
