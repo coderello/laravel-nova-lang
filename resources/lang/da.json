@@ -1,6 +1,6 @@
 {
     "Actions": "Handlinger",
-    "Details": "Detaljer",
+    ":resource Details": ":resource Detaljer",
     "If you did not request a password reset, no further action is required.": "Hvis du ikke anmodede om en nulstilling af adgangskoden, er der ikke behov for yderligere handlinger.",
     "Reset Password": "Nulstil adgangskode",
     "Sorry! You are not authorized to perform this action.": "Undskyld! Du har ikke rettigheder til at udfører denne handling.",

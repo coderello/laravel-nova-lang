@@ -1,6 +1,6 @@
 {
     "Actions": "Veiksmai",
-    "Details": "Plačiau",
+    ":resource Details": ":resource Plačiau",
     "If you did not request a password reset, no further action is required.": "Jei nenorėjote keisti slaptažodžio, nieko daryti nereikia.",
     "Reset Password": "Keisti slaptažodį",
     "Sorry! You are not authorized to perform this action.": "Atsiprašome! Jūs neturite teisių atlikti šį veiksmą.",

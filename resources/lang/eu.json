@@ -1,6 +1,6 @@
 {
     "Actions": "Ekintzak",
-    "Details": "Xehetasunak",
+    ":resource Details": ":resource Xehetasunak",
     "If you did not request a password reset, no further action is required.": "Pasahitza aldaketa eskatu ez baduzu, ez dago ekintza gehiagoren beharrik.",
     "Reset Password": "Pasahitza berritu",
     "Sorry! You are not authorized to perform this action.": "Adi! Ekintza egiteko baimenak falta dituzu.",

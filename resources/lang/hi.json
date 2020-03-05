@@ -1,6 +1,6 @@
 {
     "Actions": "क्रिया",
-    "Details": "विवरण",
+    ":resource Details": ":resource विवरण",
     "If you did not request a password reset, no further action is required.": "अगर आपने पासवर्ड रीसेट का अनुरोध नहीं किया है, तो आगे कोई कार्रवाई की आवश्यकता नहीं है।",
     "Reset Password": "पासवर्ड रीसेट",
     "Sorry! You are not authorized to perform this action.": "माफ़ कीजिये! आप इस क्रिया को करने के लिए अधिकृत नहीं हैं।",

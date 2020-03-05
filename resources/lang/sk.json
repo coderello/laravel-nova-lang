@@ -1,6 +1,6 @@
 {
     "Actions": "Akcie",
-    "Details": "Detaily",
+    ":resource Details": ":resource Detaily",
     "If you did not request a password reset, no further action is required.": "Pokiaľ ste si resetovanie hesla nevyžiadali, nie je potrebné nič robiť.",
     "Reset Password": "Resetovať heslo",
     "Sorry! You are not authorized to perform this action.": "Sorry! Nemáte práva na túto akciu.",

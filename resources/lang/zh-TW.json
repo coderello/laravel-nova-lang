@@ -1,6 +1,6 @@
 {
     "Actions": "操作",
-    "Details": "細節",
+    ":resource Details": ":resource 細節",
     "If you did not request a password reset, no further action is required.": "如果您未執行密碼重置，不需進行操作。",
     "Reset Password": "重置密碼",
     "Sorry! You are not authorized to perform this action.": "抱歉！您沒有權限執行此操作。",

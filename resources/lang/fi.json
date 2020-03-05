@@ -1,6 +1,6 @@
 {
     "Actions": "Toiminnot",
-    "Details": "Yksityiskohdat",
+    ":resource Details": ":resource Yksityiskohdat",
     "If you did not request a password reset, no further action is required.": "Jos et pyytänyt uutta salasanaa, sinun ei tarvitse tehdä mitään.",
     "Reset Password": "Palauta salasana",
     "Sorry! You are not authorized to perform this action.": "Sori! Sinulla ei ole oikeuksia suorittaa tätä toimintoa.",

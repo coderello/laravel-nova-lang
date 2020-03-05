@@ -1,6 +1,6 @@
 {
     "Actions": "Mga aksyon",
-    "Details": "Mga detalye",
+    ":resource Details": ":resource Mga detalye",
     "If you did not request a password reset, no further action is required.": "Kung hindi ka humiling ng pag-reset ng password, walang karagdagang pagkilos ang kinakailangan.",
     "Reset Password": "Baguhin ang password",
     "Sorry! You are not authorized to perform this action.": "Paumanhin! Wala kang karapatan para gawin ang askyon na ito.",

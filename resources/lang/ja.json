@@ -1,6 +1,5 @@
 {
     "Actions": "アクション",
-    "Details": "詳細",
     "If you did not request a password reset, no further action is required.": "もしパスワードのリセットをリクエストしていないなら, これ以上のアクションは必要ありません.",
     "Reset Password": "パスワードをリセット",
     "Sorry! You are not authorized to perform this action.": "申し訳ありません! このアクションを実行する権限がありません.",

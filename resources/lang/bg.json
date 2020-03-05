@@ -1,6 +1,6 @@
 {
     "Actions": "Действия",
-    "Details": "Детайли",
+    ":resource Details": ":resource Детайли",
     "If you did not request a password reset, no further action is required.": "Ако не сте поискали възстановяване на паролата, не се изискват допълнителни действия.",
     "Reset Password": "Нулиране на паролата",
     "Sorry! You are not authorized to perform this action.": "Съжаляваме! Нямате право да извършвате това действие.",

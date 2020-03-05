@@ -1,6 +1,6 @@
 {
     "Actions": "Accions",
-    "Details": "Detalls",
+    ":resource Details": ":resource Detalls",
     "If you did not request a password reset, no further action is required.": "Si no heu sol·licitat un restabliment de la contrasenya, no cal una acció addicional.",
     "Reset Password": "Restablir la Contrasenya",
     "Sorry! You are not authorized to perform this action.": "Ho sento! No esteu autoritzat a realitzar aquesta acció.",

@@ -1,6 +1,6 @@
 {
     "Actions": "Azioni",
-    "Details": "Dettagli",
+    ":resource Details": ":resource Dettagli",
     "If you did not request a password reset, no further action is required.": "Se non hai richiesto di resettare la tua password non devi fare altro.",
     "Reset Password": "Resettare la password",
     "Sorry! You are not authorized to perform this action.": "Purtroppo non sei autorizzato ad eseguire questa azione.",

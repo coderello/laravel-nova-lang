@@ -1,6 +1,6 @@
 {
     "Actions": "მოქმედებები",
-    "Details": "დეტალები",
+    ":resource Details": ":resource დეტალები",
     "If you did not request a password reset, no further action is required.": "თუ თქვენ არ მოგითხოვიათ პაროლის აღდგენა, არანაირი დამატებითი მოქმედება საჭირო არ არის.",
     "Reset Password": "პაროლის აღდგენა",
     "Sorry! You are not authorized to perform this action.": "თქვენ არ გაქვთ ამ მოქმედების შესრულების უფლება.",

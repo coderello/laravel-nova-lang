@@ -1,6 +1,6 @@
 {
     "Actions": "Akcije",
-    "Details": "Detalji",
+    ":resource Details": ":resource Detalji",
     "If you did not request a password reset, no further action is required.": "Ako niste zatražili promjenu lozinke, nema potrebe za dodatnim akcijama.",
     "Reset Password": "Resetiranje lozinke",
     "Sorry! You are not authorized to perform this action.": "Žao nam je! Vi niste ovlašteni za izvršavanje ovog postupka.",

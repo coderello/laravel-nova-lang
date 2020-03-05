@@ -1,6 +1,6 @@
 {
     "Actions": "Aksi",
-    "Details": "Detail",
+    ":resource Details": ":resource Detail",
     "If you did not request a password reset, no further action is required.": "Abaikan jika anda tidak memohon pengaturan ulang kata sandi.",
     "Reset Password": "Atur ulang kata sandi",
     "Sorry! You are not authorized to perform this action.": "Maaf ! Anda tidak diijinkan untuk melakukan tindakan ini.",

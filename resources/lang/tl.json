@@ -1,6 +1,6 @@
 {
     "Actions": "Mga gawain",
-    "Details": "Mga detalye",
+    ":resource Details": ":resource Mga detalye",
     "If you did not request a password reset, no further action is required.": "Kung hindi po kayo ang nag-request na i-reset ang inyong password, huwag na lamang pansinin itong email na ito.",
     "Reset Password": "I-reset ang password",
     "Sorry! You are not authorized to perform this action.": "Pasensya na po. hindi po maaaring ituloy ang inyong pakay.",

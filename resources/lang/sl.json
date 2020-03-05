@@ -1,6 +1,6 @@
 {
     "Actions": "Dejanja",
-    "Details": "Podrobnosti",
+    ":resource Details": ":resource Podrobnosti",
     "If you did not request a password reset, no further action is required.": "Če niste zahtevali ponastavitve gesla, nadaljna dejanja niso potrebna.",
     "Reset Password": "Ponastavi geslo",
     "Sorry! You are not authorized to perform this action.": "Oprostite, niste pooblaščeni za omenjeno dejanje.",

@@ -1,6 +1,6 @@
 {
     "Actions": "Hereketler",
-    "Details": "Goşmaça",
+    ":resource Details": ":resource Goşmaça",
     "If you did not request a password reset, no further action is required.": "Açar sözüni üýtgetmegi talap etmedik bolsaňyz, hiç zat etmek gerek däl.",
     "Reset Password": "Açar sözü täzelemek",
     "Sorry! You are not authorized to perform this action.": "Bagyşlaň! Bu harekedi amala aşyrmak üçin siziň rugsadyňyz ýok.",
