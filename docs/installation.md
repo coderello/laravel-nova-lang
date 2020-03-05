@@ -1,7 +1,7 @@
 ---
 title: Installation
 section: Getting Started
-weight: 1000
+weight: 990
 featherIcon: download
 ---
 

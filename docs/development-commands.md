@@ -41,6 +41,22 @@ A new JSON file will be created at `storage_path('app/nova-lang/reorder/{locale}
   php artisan nova-lang:reorder --all
   ```
 
+#### Country Names Command
+
+This command is to assist contributors to download the country names automatically from the [Unicode Common Locale Data Repository](http://cldr.unicode.org/translation/displaynames/country-names) (CLDR). We use the CLDR as the definitive source for country names, as described in the contribution guidelines.
+
+A new JSON file will be created at `storage_path('app/nova-lang/countries/{locale}.json')`. You can merge the keys from this file into `resources/lang/{locale}.json` in your fork before you raise a PR.
+
+* Output country names for one or more languages:
+```bash
+php artisan nova-lang:country de,ru
+```
+
+* Output country names for all languages:
+```bash
+php artisan nova-lang:country --all
+```
+
 ## Stats Command
 
 This command is to assist maintainers to update the completeness of each language and list of contributors in this README file.
