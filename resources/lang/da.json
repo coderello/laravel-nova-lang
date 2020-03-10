@@ -348,5 +348,11 @@
     "Yes": "Ja",
     "No": "Nej",
     "Action Status": "Status",
-    "Download": "Downloade"
+    "Download": "Downloade",
+    "Create :resource": "Opret :resource",
+    "User": "Bruger",
+    "Users": "Brugere",
+    "Search": "Søg",
+    "Press / to search": "Tryk på / for at søge",
+    "No Results Found.": "Ingen resultater fundet."
 }
