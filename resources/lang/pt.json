@@ -372,5 +372,6 @@
     "Changes": "Alterados",
     "Original": "Originais",
     "This resource no longer exists": "Este recurso não existe mais",
-    ":resource Details": "Detalhes de :resource"
+    ":resource Details": "Detalhes de :resource",
+    "The file was deleted!": "O arquivo foi eliminado!"
 }

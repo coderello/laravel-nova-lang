@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 405,
+        "complete": 406,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -16,14 +16,61 @@
     },
     "pt-BR": {
         "name": "Brazilian Portuguese",
-        "complete": 405,
+        "complete": 406,
         "contributors": {
             "henryavila": 398,
             "pedrofurtado": 377,
             "eduardokum": 364,
             "saulo-silva": 33,
             "chbbc": 29,
-            "IgorDePaula": 5
+            "IgorDePaula": 5,
+            "emtudo": 3
+        },
+        "json": true,
+        "php": true
+    },
+    "fr": {
+        "name": "French",
+        "complete": 406,
+        "contributors": {
+            "MarceauKa": 165,
+            "Yannik-Slym": 31,
+            "InfinityWebMe": 28,
+            "kitbs": 28,
+            "shaffe-fr": 8,
+            "Arryan": 4,
+            "KillianH": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "de": {
+        "name": "German",
+        "complete": 406,
+        "contributors": {
+            "pille1842": 71,
+            "shieraki": 27,
+            "kitbs": 22,
+            "tobiasthaden": 7,
+            "dakira": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "es": {
+        "name": "Spanish",
+        "complete": 406,
+        "contributors": {
+            "kitbs": 83,
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "IGedeon": 6,
+            "Arryan": 3,
+            "kennyhorna": 3,
+            "xcodinas": 2,
+            "dgtal": 1,
+            "rodrigore": 1
         },
         "json": true,
         "php": true
@@ -49,34 +96,6 @@
             "jschram": 36,
             "sebastiaanspeck": 35,
             "daniel-de-wit": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "fr": {
-        "name": "French",
-        "complete": 405,
-        "contributors": {
-            "MarceauKa": 165,
-            "Yannik-Slym": 31,
-            "InfinityWebMe": 28,
-            "kitbs": 13,
-            "shaffe-fr": 8,
-            "Arryan": 4,
-            "KillianH": 2
-        },
-        "json": true,
-        "php": true
-    },
-    "de": {
-        "name": "German",
-        "complete": 405,
-        "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 22,
-            "tobiasthaden": 7,
-            "dakira": 2
         },
         "json": true,
         "php": true
@@ -111,24 +130,6 @@
             "deadem": 12,
             "soulshockers": 6,
             "estim": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "es": {
-        "name": "Spanish",
-        "complete": 405,
-        "contributors": {
-            "kitbs": 83,
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "iksaku": 11,
-            "IGedeon": 6,
-            "Arryan": 3,
-            "kennyhorna": 3,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1
         },
         "json": true,
         "php": true
@@ -195,7 +196,8 @@
         "name": "Japanese",
         "complete": 400,
         "contributors": {
-            "Tsumagari": 420
+            "Tsumagari": 420,
+            "storyn26383": 3
         },
         "json": true,
         "php": true
@@ -261,7 +263,8 @@
         "complete": 393,
         "contributors": {
             "CasperLaiTW": 362,
-            "zacksleo": 42
+            "zacksleo": 42,
+            "storyn26383": 6
         },
         "json": true,
         "php": true
@@ -280,9 +283,19 @@
     },
     "pt": {
         "name": "Portuguese",
-        "complete": 376,
+        "complete": 377,
         "contributors": {
             "Pedrocssg": 347
+        },
+        "json": true,
+        "php": true
+    },
+    "da": {
+        "name": "Danish",
+        "complete": 356,
+        "contributors": {
+            "olivernybroe": 364,
+            "rugaard": 8
         },
         "json": true,
         "php": true
@@ -322,15 +335,6 @@
         "contributors": {
             "defart": 364,
             "walaski": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "da": {
-        "name": "Danish",
-        "complete": 352,
-        "contributors": {
-            "olivernybroe": 364
         },
         "json": true,
         "php": true
@@ -611,6 +615,11 @@
     "cy": {
         "name": "Welsh",
         "complete": 0,
+        "contributors": []
+    },
+    "hy": {
+        "name": "Armenian",
+        "complete": null,
         "contributors": []
     }
 }
