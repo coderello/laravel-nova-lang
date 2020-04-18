@@ -357,7 +357,7 @@
     "Zambia": "Zambiya",
     "Zimbabwe": "Zimbabve",
     "Yes": "Evet",
-    "Netherlands Antilles": "Netherlands Antilles",
+    "No": "Hayır",
     "Action Name": "Ad",
     "Action Initiated By": "Tarafından Başlatılan",
     "Action Target": "Hedef",
@@ -403,7 +403,5 @@
     "There was a problem submitting the form.": "Formu gönderirken bir hata oluştu.",
     "There was a problem executing the action.": "İşlemi gerçekleştirirken bir hata oluştu.",
     "The file was deleted!": "Bu dosya silinmiş!",
-    "This file field is read-only.": "Bu dosya salt okunur.",
-    "Resources": "Kaynaklar",
-    "Dashboard": "Panel"
+    "This file field is read-only.": "Bu dosya salt okunur."
 }
