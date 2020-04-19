@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 406,
+        "complete": 407,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -25,6 +25,21 @@
             "chbbc": 29,
             "IgorDePaula": 5,
             "emtudo": 3
+        },
+        "json": true,
+        "php": true
+    },
+    "nl": {
+        "name": "Dutch",
+        "complete": 406,
+        "contributors": {
+            "DannyvdSluijs": 54,
+            "happyDemon": 43,
+            "steefmin": 41,
+            "jschram": 36,
+            "sebastiaanspeck": 35,
+            "webovatenl": 3,
+            "daniel-de-wit": 1
         },
         "json": true,
         "php": true
@@ -86,20 +101,6 @@
         "json": true,
         "php": true
     },
-    "nl": {
-        "name": "Dutch",
-        "complete": 405,
-        "contributors": {
-            "DannyvdSluijs": 54,
-            "happyDemon": 43,
-            "steefmin": 41,
-            "jschram": 36,
-            "sebastiaanspeck": 35,
-            "daniel-de-wit": 1
-        },
-        "json": true,
-        "php": true
-    },
     "nb": {
         "name": "Norwegian Bokmål",
         "complete": 405,
@@ -140,6 +141,19 @@
         "contributors": {
             "tanjemark": 364,
             "slackernrrd": 89
+        },
+        "json": true,
+        "php": true
+    },
+    "tr": {
+        "name": "Turkish",
+        "complete": 405,
+        "contributors": {
+            "jnbn": 67,
+            "bureken": 58,
+            "Milkhan": 45,
+            "sineld": 7,
+            "dilekuzulmez": 2
         },
         "json": true,
         "php": true
@@ -265,18 +279,6 @@
             "CasperLaiTW": 362,
             "zacksleo": 42,
             "storyn26383": 6
-        },
-        "json": true,
-        "php": true
-    },
-    "tr": {
-        "name": "Turkish",
-        "complete": 393,
-        "contributors": {
-            "bureken": 58,
-            "Milkhan": 45,
-            "sineld": 7,
-            "dilekuzulmez": 2
         },
         "json": true,
         "php": true
