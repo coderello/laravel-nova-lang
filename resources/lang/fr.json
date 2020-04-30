@@ -402,5 +402,6 @@
     "Show All Fields": "Voir tous les champs",
     "There was a problem submitting the form.": "Un problème est survenu lors de l’envoi du formulaire.",
     "There was a problem executing the action.": "Un problème est survenu lors de l’exécution de l’action.",
-    "The file was deleted!": "Le fichier a été supprimé !"
+    "The file was deleted!": "Le fichier a été supprimé !",
+    "This file field is read-only.": "Ce champ de type fichier est en lecture seule."
 }
