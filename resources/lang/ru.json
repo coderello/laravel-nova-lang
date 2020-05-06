@@ -392,5 +392,7 @@
     "This resource no longer exists": "Ресурс больше не существует",
     ":resource Details": "Детали ресурса :resource",
     "There are no available options for this resource.": "Нет доступных опций для этого ресурса.",
-    "Show All Fields": "Показать все поля"
+    "Show All Fields": "Показать все поля",
+    "The file was deleted!": "Файл был удалён!",
+    "This file field is read-only.": "Это поле для файла доступно только для чтения."
 }
