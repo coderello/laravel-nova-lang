@@ -21,6 +21,7 @@ Before you commit any changes, please consider the following guidelines:
 * If there is a problem where your language cannot be translated grammatically correctly because of the way Nova has formatted the English sentence, you should raise an issue in the [laravel/nova-issues](https://github.com/laravel/nova-issues/issues/) repository. We cannot fix limitations of the available keys. For example the issue of "`Create` + Resource" was fixed to `Create :resource` by raising it directly with the Nova team. You can link your Nova issue to an issue or PR in this repository if it helps.
 * All country names have been imported from the [CLDR repository](http://cldr.unicode.org/) as the definitive source, so please do not modify the names of countries in this repository. If you have a genuine problem with the name of a country, please raise an issue to discuss it.
 * Note that the `en.json` file in this repository has been modified from the original file from laravel/nova to provide the correct country names as above.
+* There is no need to update the count of translated strings and add your username to the readme as this is done by script when the PR is merged.
 * Take note of the common mistakes below which can be misleading in English and are commonly mistranslated.
 
 ### Common Mistakes

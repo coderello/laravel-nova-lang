@@ -1,67 +1,88 @@
 {
     "en": {
         "name": "English",
-        "complete": 396,
+        "complete": 407,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
             "davidhemphill": 10000,
+            "jbrooksuk": 10000,
             "themsaid": 10000,
-            "mziraki": 37,
-            "kitbs": 17
+            "kitbs": 5,
+            "dillingham": 1
         },
         "json": true,
         "php": true
     },
     "pt-BR": {
         "name": "Brazilian Portuguese",
-        "complete": 396,
+        "complete": 406,
         "contributors": {
             "henryavila": 398,
             "pedrofurtado": 377,
             "eduardokum": 364,
             "saulo-silva": 33,
             "chbbc": 29,
-            "IgorDePaula": 5
+            "IgorDePaula": 5,
+            "emtudo": 3
+        },
+        "json": true,
+        "php": true
+    },
+    "nl": {
+        "name": "Dutch",
+        "complete": 406,
+        "contributors": {
+            "DannyvdSluijs": 54,
+            "happyDemon": 43,
+            "steefmin": 41,
+            "jschram": 36,
+            "sebastiaanspeck": 35,
+            "webovatenl": 3,
+            "daniel-de-wit": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "fr": {
+        "name": "French",
+        "complete": 406,
+        "contributors": {
+            "MarceauKa": 165,
+            "Yannik-Slym": 31,
+            "InfinityWebMe": 28,
+            "kitbs": 28,
+            "shaffe-fr": 8,
+            "Arryan": 4,
+            "KillianH": 2
         },
         "json": true,
         "php": true
     },
     "de": {
         "name": "German",
-        "complete": 395,
+        "complete": 406,
         "contributors": {
             "pille1842": 71,
             "shieraki": 27,
             "kitbs": 22,
+            "tobiasthaden": 7,
             "dakira": 2
-        },
-        "json": true,
-        "php": true
-    },
-    "ru": {
-        "name": "Russian",
-        "complete": 395,
-        "contributors": {
-            "hivokas": 363,
-            "S-anasol": 32,
-            "sanasol": 32,
-            "den1n": 23,
-            "deadem": 12,
-            "estim": 1
         },
         "json": true,
         "php": true
     },
     "es": {
         "name": "Spanish",
-        "complete": 395,
+        "complete": 406,
         "contributors": {
+            "kitbs": 83,
             "joebordes": 51,
             "ajmariduena": 18,
             "iksaku": 11,
+            "IGedeon": 6,
             "Arryan": 3,
-            "kitbs": 2,
+            "kennyhorna": 3,
             "xcodinas": 2,
             "dgtal": 1,
             "rodrigore": 1
@@ -69,34 +90,180 @@
         "json": true,
         "php": true
     },
+    "cs": {
+        "name": "Czech",
+        "complete": 405,
+        "contributors": {
+            "walaskir": 362,
+            "theimerj": 56,
+            "walaski": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "nb": {
+        "name": "Norwegian Bokmål",
+        "complete": 405,
+        "contributors": {
+            "einar-johan": 420
+        },
+        "json": true,
+        "php": true
+    },
+    "ro": {
+        "name": "Romanian",
+        "complete": 405,
+        "contributors": {
+            "BTeodorWork": 362,
+            "dtix": 67,
+            "alexgiuvara": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "ru": {
+        "name": "Russian",
+        "complete": 405,
+        "contributors": {
+            "hivokas": 363,
+            "sanasol": 32,
+            "den1n": 25,
+            "deadem": 12,
+            "soulshockers": 6,
+            "estim": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "sv": {
+        "name": "Swedish",
+        "complete": 405,
+        "contributors": {
+            "tanjemark": 364,
+            "slackernrrd": 89
+        },
+        "json": true,
+        "php": true
+    },
+    "tr": {
+        "name": "Turkish",
+        "complete": 405,
+        "contributors": {
+            "jnbn": 67,
+            "bureken": 58,
+            "Milkhan": 45,
+            "sineld": 7,
+            "dilekuzulmez": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "uk": {
+        "name": "Ukrainian",
+        "complete": 405,
+        "contributors": {
+            "soulshockers": 97,
+            "Ostap34JS": 1,
+            "osbre": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "uz-Latn": {
+        "name": "Uzbek (Latin)",
+        "complete": 405,
+        "contributors": {
+            "shokhaa": 423
+        },
+        "json": true,
+        "php": true
+    },
+    "af": {
+        "name": "Afrikaans",
+        "complete": 400,
+        "contributors": {
+            "medlion": 421
+        },
+        "json": true,
+        "php": true
+    },
+    "bs": {
+        "name": "Bosnian",
+        "complete": 400,
+        "contributors": {
+            "hajro92": 420
+        },
+        "json": true,
+        "php": true
+    },
+    "hu": {
+        "name": "Hungarian",
+        "complete": 400,
+        "contributors": {
+            "milli05": 364,
+            "bgeree": 49
+        },
+        "json": true,
+        "php": true
+    },
+    "ja": {
+        "name": "Japanese",
+        "complete": 400,
+        "contributors": {
+            "Tsumagari": 420,
+            "storyn26383": 3
+        },
+        "json": true,
+        "php": true
+    },
+    "fa": {
+        "name": "Farsi",
+        "complete": 399,
+        "contributors": {
+            "alirezamirsepassi": 387,
+            "mziraki": 35,
+            "zareismail": 21
+        },
+        "json": true,
+        "php": true
+    },
+    "tk": {
+        "name": "Turkmen",
+        "complete": 399,
+        "contributors": {
+            "kakajansh": 419
+        },
+        "json": true,
+        "php": true
+    },
     "ar": {
         "name": "Arabic",
-        "complete": 394,
+        "complete": 398,
         "contributors": {
             "saleem-hadad": 56,
             "danyelkeddah": 50,
+            "omarfathy13": 26,
             "Arryan": 3
         },
         "json": true,
         "php": true
     },
-    "fr": {
-        "name": "French",
-        "complete": 390,
+    "pl": {
+        "name": "Polish",
+        "complete": 397,
         "contributors": {
-            "MarceauKa": 165,
-            "InfinityWebMe": 28,
-            "Yannik-Slym": 28,
-            "kitbs": 10,
-            "Arryan": 4,
-            "KillianH": 2
+            "pzmarzly": 60,
+            "Strus": 39,
+            "marekfilip": 19,
+            "mslepko": 7,
+            "wiktor-k": 2
         },
         "json": true,
         "php": true
     },
     "zh-CN": {
         "name": "Chinese (Simplified)",
-        "complete": 389,
+        "complete": 393,
         "contributors": {
             "jcc": 362,
             "zacksleo": 42,
@@ -107,36 +274,37 @@
     },
     "zh-TW": {
         "name": "Chinese (Traditional)",
-        "complete": 389,
+        "complete": 393,
         "contributors": {
             "CasperLaiTW": 362,
-            "zacksleo": 42
-        },
-        "json": true,
-        "php": true
-    },
-    "fa": {
-        "name": "Farsi",
-        "complete": 376,
-        "contributors": {
-            "alirezamirsepassi": 387,
-            "mziraki": 35
+            "zacksleo": 42,
+            "storyn26383": 6
         },
         "json": true,
         "php": true
     },
     "pt": {
         "name": "Portuguese",
-        "complete": 372,
+        "complete": 377,
         "contributors": {
             "Pedrocssg": 347
         },
         "json": true,
         "php": true
     },
+    "da": {
+        "name": "Danish",
+        "complete": 356,
+        "contributors": {
+            "olivernybroe": 364,
+            "rugaard": 8
+        },
+        "json": true,
+        "php": true
+    },
     "it": {
         "name": "Italian",
-        "complete": 352,
+        "complete": 356,
         "contributors": {
             "(unknown)": 364,
             "manuelcoppotelli": 13,
@@ -147,7 +315,7 @@
     },
     "ca": {
         "name": "Catalan",
-        "complete": 351,
+        "complete": 355,
         "contributors": {
             "joebordes": 364
         },
@@ -156,25 +324,16 @@
     },
     "eu": {
         "name": "Basque",
-        "complete": 350,
+        "complete": 354,
         "contributors": {
             "JonPaternain": 364
         },
         "json": true,
         "php": true
     },
-    "sv": {
-        "name": "Swedish",
-        "complete": 349,
-        "contributors": {
-            "tanjemark": 364
-        },
-        "json": true,
-        "php": true
-    },
     "hr": {
         "name": "Croatian",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "defart": 364,
             "walaski": 1
@@ -182,40 +341,9 @@
         "json": true,
         "php": true
     },
-    "cs": {
-        "name": "Czech",
-        "complete": 348,
-        "contributors": {
-            "walaskir": 362,
-            "walaski": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "da": {
-        "name": "Danish",
-        "complete": 348,
-        "contributors": {
-            "olivernybroe": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "nl": {
-        "name": "Dutch",
-        "complete": 348,
-        "contributors": {
-            "happyDemon": 43,
-            "jschram": 36,
-            "sebastiaanspeck": 35,
-            "daniel-de-wit": 1
-        },
-        "json": true,
-        "php": true
-    },
     "fil": {
         "name": "Filipino",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "granaderos": 362
         },
@@ -224,7 +352,7 @@
     },
     "fi": {
         "name": "Finnish",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "Krisseck": 364
         },
@@ -233,7 +361,7 @@
     },
     "ka": {
         "name": "Georgian",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "akalongman": 364
         },
@@ -242,25 +370,16 @@
     },
     "hi": {
         "name": "Hindi",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "bantya": 364
         },
         "json": true,
         "php": true
     },
-    "hu": {
-        "name": "Hungarian",
-        "complete": 348,
-        "contributors": {
-            "milli05": 364
-        },
-        "json": true,
-        "php": true
-    },
     "id": {
         "name": "Indonesian",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "dvlwj": 364
         },
@@ -269,7 +388,7 @@
     },
     "sr": {
         "name": "Serbian (Cyrillic)",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "marjanovicsteva": 366
         },
@@ -281,13 +400,13 @@
         "contributors": {
             "marjanovicsteva": 366
         },
-        "complete": 348,
+        "complete": 352,
         "json": true,
         "php": true
     },
     "sk": {
         "name": "Slovak",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "hejty": 364
         },
@@ -296,80 +415,36 @@
     },
     "sl": {
         "name": "Slovenian",
-        "complete": 348,
+        "complete": 352,
         "contributors": {
             "morpheus7CS": 364
         },
         "json": true,
         "php": true
     },
-    "tr": {
-        "name": "Turkish",
-        "complete": 348,
-        "contributors": {
-            "bureken": 58,
-            "sineld": 7,
-            "dilekuzulmez": 2
-        },
-        "json": true,
-        "php": true
-    },
-    "uk": {
-        "name": "Ukrainian",
-        "complete": 348,
-        "contributors": {
-            "hivokas": 3,
-            "Ostap34JS": 1,
-            "coderello": 1,
-            "osbre": 1
-        },
-        "json": true,
-        "php": true
-    },
     "lt": {
         "name": "Lithuanian",
-        "complete": 347,
+        "complete": 351,
         "contributors": {
             "minved": 364
         },
         "json": true,
         "php": true
     },
-    "pl": {
-        "name": "Polish",
-        "complete": 347,
+    "bg": {
+        "name": "Bulgarian",
+        "complete": 349,
         "contributors": {
-            "Strus": 39,
-            "marekfilip": 19,
-            "wiktor-k": 2
-        },
-        "json": true,
-        "php": true
-    },
-    "ro": {
-        "name": "Romanian",
-        "complete": 346,
-        "contributors": {
-            "BTeodorWork": 362,
-            "alexgiuvara": 2
+            "BKirev": 360
         },
         "json": true,
         "php": true
     },
     "tl": {
         "name": "Tagalog",
-        "complete": 346,
-        "contributors": {
-            "rcjavier": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "bg": {
-        "name": "Bulgarian",
         "complete": 345,
         "contributors": {
-            "BKirev": 360
+            "rcjavier": 364
         },
         "json": true,
         "php": true
@@ -391,11 +466,6 @@
     },
     "be": {
         "name": "Belarusian",
-        "complete": 0,
-        "contributors": []
-    },
-    "bs": {
-        "name": "Bosnian",
         "complete": 0,
         "contributors": []
     },
@@ -431,11 +501,6 @@
     },
     "is": {
         "name": "Icelandic",
-        "complete": 0,
-        "contributors": []
-    },
-    "ja": {
-        "name": "Japanese",
         "complete": 0,
         "contributors": []
     },
@@ -494,11 +559,6 @@
         "complete": 0,
         "contributors": []
     },
-    "nb": {
-        "name": "Norwegian Bokmål",
-        "complete": 0,
-        "contributors": []
-    },
     "nn": {
         "name": "Norwegian Nynorsk",
         "complete": 0,
@@ -534,11 +594,6 @@
         "complete": 0,
         "contributors": []
     },
-    "tk": {
-        "name": "Turkmen",
-        "complete": 0,
-        "contributors": []
-    },
     "ur": {
         "name": "Urdu",
         "complete": 0,
@@ -554,11 +609,6 @@
         "complete": 0,
         "contributors": []
     },
-    "uz-Latn": {
-        "name": "Uzbek (Latin)",
-        "complete": 0,
-        "contributors": []
-    },
     "vi": {
         "name": "Vietnamese",
         "complete": 0,
@@ -567,6 +617,11 @@
     "cy": {
         "name": "Welsh",
         "complete": 0,
+        "contributors": []
+    },
+    "hy": {
+        "name": "Armenian",
+        "complete": null,
         "contributors": []
     }
 }

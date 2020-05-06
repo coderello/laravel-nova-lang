@@ -2,12 +2,10 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangStats extends Command
+class NovaLangStats extends AbstractCommand
 {
     /**
      * The name and signature of the console command.
@@ -22,23 +20,6 @@ class NovaLangStats extends Command
      * @var string
      */
     protected $description = 'Collect translation completion and contribution stats for documentation.';
-
-    /**
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param Filesystem $filesystem
-     */
-    public function __construct(Filesystem $filesystem)
-    {
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
@@ -94,13 +75,13 @@ class NovaLangStats extends Command
 
             $localeStat = $contributors->get($locale, [
                 'name' => class_exists('Locale') ? \Locale::getDisplayName($locale) : $locale,
-                'complete' => 0,
+                'complete' => null,
                 'contributors' => [],
             ]);
 
             $complete = $sourceCount - count($missingKeys) - count($missingPhpKeys);
 
-            if ($complete > 0) {
+            if (!is_null($complete) && $complete > 0) {
 
                 if ($blameContributors = $blame->get($locale)) {
                     foreach ($blameContributors as $contributor => $lines) {
@@ -154,9 +135,9 @@ class NovaLangStats extends Command
         $this->filesystem->put($outputFile, json_encode($contributors->merge($missing), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
         $this->info(sprintf('Updated "contributors.json" has been output to [%s].', $outputFile));
-        $this->warn('* Replace contributors.json in your fork of the repository with this file.');
+        $this->warn('* Replace ./contributors.json in your fork of the repository with this file.');
 
-        $contributors->transform(function($localeStat, $locale) use ($sourceCount) {
+        $contributorsTable = $contributors->map(function($localeStat, $locale) use ($sourceCount) {
 
             $percent = $this->getPercent($localeStat['complete'], $sourceCount);
             $icon = $this->getPercentIcon($localeStat['complete'], $percent);
@@ -191,24 +172,25 @@ class NovaLangStats extends Command
         $icon = $this->getPercentIcon($translatedCount, $percent);
 
         $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon).PHP_EOL.
-            sprintf('Total lines translated ![%d (%s%%)](%s)', $sourceComplete, $percent, $icon);
+            sprintf('Total lines translated ![%d (%s%%)](%s)', $translatedCount, $percent, $icon);
 
         $header = '## Available Languages'.PHP_EOL.PHP_EOL.
+            'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
             $totals.PHP_EOL.PHP_EOL.
             '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
             '| --- | --- | --- | --- | --- |';
 
-        $contents = $header.PHP_EOL.$contributors->join(PHP_EOL);
+        $contents = $header.PHP_EOL.$contributorsTable->join(PHP_EOL);
 
         if ($missing->count()) {
 
             $parityCount = $caouecsLocales->intersect($availableLocales)->count();
             $caouecsCount = $caouecsLocales->count();
 
-            $percent = $this->getPercent($parityCount, $caouecsCount);
-            $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $percent);
+            $missingPercent = $this->getPercent($parityCount, $caouecsCount);
+            $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $missingPercent);
 
-            $totals = sprintf('Parity with `caouecs/laravel-lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $percent, $icon);
+            $totals = sprintf('Parity with `caouecs/laravel-lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $missingPercent, $icon);
 
             $header = '## Missing Languages'.PHP_EOL.PHP_EOL.
                 'The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.'.PHP_EOL.PHP_EOL.
@@ -222,12 +204,40 @@ class NovaLangStats extends Command
         $this->filesystem->put($outputFile, $contents);
 
         $this->info(sprintf('Updated "README.excerpt.md" has been output to [%s].', $outputFile));
-        $this->warn('* Replace the Available Languages table in README.md in your fork of the repository with the contents of this file.');
+        $this->warn('* Replace the Available Languages table in ./README.md in your fork of the repository with the contents of this file.');
+
+        $outputFile = $outputDirectory . '/introduction.excerpt.md';
+
+        $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
+
+            $percent = $this->getPercent($localeStat['complete'], $sourceCount);
+
+            return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
+        });
+
+        $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
+            sprintf('Total lines translated **%d (%s%%)**', $translatedCount, $percent);
+
+        $header = '### Available Languages' . PHP_EOL . PHP_EOL .
+            $totals . PHP_EOL;
+
+        $contents = $header . PHP_EOL . $contributorsList->join(PHP_EOL);
+
+        $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
+
+        $this->filesystem->put($outputFile, $contents);
+
+        $this->info(sprintf('Updated "introduction.excerpt.md" has been output to [%s].', $outputFile));
+        $this->warn('* Replace the Available Languages list in ./docs/introduction.md in your fork of the repository with the contents of this file.');
     }
 
     protected function getPercent(int $complete, int $total): float
     {
-        return round(($complete / $total) * 100, 1);
+        if ($total == 0) {
+            return 0;
+        }
+
+        return $complete > $total ? 100 : round(($complete / $total) * 100, 1);
     }
 
     protected function getPercentIcon($complete, $percent = null): string
@@ -292,7 +302,7 @@ class NovaLangStats extends Command
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            return array_keys(json_decode($this->filesystem->get($path), true));
+            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), static::IGNORED_KEYS);
         }
 
         return [];
@@ -349,7 +359,7 @@ class NovaLangStats extends Command
             return $contributions;
         }
 
-        $graphql = 'query { repository(owner: "coderello", name: "laravel-nova-lang") { pullRequests(first: 100, states: [MERGED]) { nodes { number title body state merged changedFiles files(first: 100) { nodes { path additions deletions } } author { login } } } } }';
+        $graphql = 'query { repository(owner: "coderello", name: "laravel-nova-lang") { pullRequests(last: 25, states: [MERGED]) { nodes { number title body state merged changedFiles files(first: 100) { nodes { path additions deletions } } author { login } } } } }';
 
         $curl = curl_init();
         curl_setopt_array($curl, [
@@ -393,6 +403,18 @@ class NovaLangStats extends Command
                         }
                     }
                 }
+            }
+        }
+
+        $collaborators = [
+            'kitbs' => ['en', 'de', 'es', 'fr'],
+            'hivokas' => ['ru'],
+        ];
+
+        foreach ($collaborators as $collaborator => $collaboratorLocales) {
+            $collaboratorLocales = array_diff(array_keys($contributions), $collaboratorLocales);
+            foreach ($collaboratorLocales as $locale) {
+                unset($contributions[$locale][$collaborator]);
             }
         }
 
