@@ -401,5 +401,7 @@
     ":amount Total": "Всего :amount",
     "Show All Fields": "Показать все поля",
     "There was a problem submitting the form.": "Во время отправки формы возникла проблема.",
-    "There was a problem executing the action.": "Во время выполнения действия возникла проблема."
+    "There was a problem executing the action.": "Во время выполнения действия возникла проблема.",
+    "The file was deleted!": "Файл был удалён!",
+    "This file field is read-only.": "Это поле для файла доступно только для чтения."
 }
