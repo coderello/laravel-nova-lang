@@ -29,7 +29,7 @@
     "Restore": "Herstellen",
     "Force Delete Resource": "Bron geforceerd verwijderen",
     "Force Delete": "Geforceerd verwijderen",
-    "The :resource was created!": "De :resource is aangemaakt!",
+    "The :resource was created!": ":resource is aangemaakt!",
     "Are you sure you want to delete this resource?": "Weet u zeker dat u deze bron wilt verwijderen?",
     "Are you sure you want to delete the selected resources?": "Weet u zeker dat u alle geselecteerde bronnen wilt verwijderen?",
     "Are you sure you want to detach this resource?": "Weet u zeker dat u deze bron wilt ontkoppelen?",
