@@ -396,5 +396,15 @@
     "This resource no longer exists": "Ez az eszköz már nem létezik",
     ":resource Details": ":resource részletei",
     "There are no available options for this resource.": "Ehhez az eszközhöz nem állnak rendelkezésre lehetőségek.",
-    "Show All Fields": "Összes mező mutatása"
+    "Show All Fields": "Összes mező mutatása",
+    "All resources loaded.": "Minden eszköz betöltve",
+    "Load :perPage More": "További :perPage betöltése",
+    ":amount Total": "Összesen :amount",
+    "There was a problem submitting the form.": "Hiba történt az űrlap elküldése közben",
+    "There was a problem executing the action.": "Hiba történt a művelet végrehajtása közben",
+    "*": "*",
+    "—": "—",
+    "The file was deleted!": "Fájl sikeresen törölve!",
+    "This file field is read-only.": "Ez a fájl csak olvasható.",
+    "No additional information...": "Nincs további elérhető információ..."
 }
