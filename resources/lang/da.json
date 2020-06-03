@@ -65,8 +65,11 @@
     "Please select a resource to perform this action on.": "Vælg venligst en ressource at udfører denne handling på.",
     "Preview": "Forhåndsvisning",
     "Previous": "Forrige",
+    "No Results Found.": "Ingen resultater fundet.",
     "Run Action": "Kør handling",
     "Select Action": "Vælg handling",
+    "Search": "Søg",
+    "Press / to search": "Tryk på / for at søge",
     "Select All": "Vælg alle",
     "Select All Matching": "Vælg alle matchende",
     "Something went wrong.": "Noget gik galt.",
@@ -348,11 +351,6 @@
     "Yes": "Ja",
     "No": "Nej",
     "Action Status": "Status",
-    "Download": "Downloade",
     "Create :resource": "Opret :resource",
-    "User": "Bruger",
-    "Users": "Brugere",
-    "Search": "Søg",
-    "Press / to search": "Tryk på / for at søge",
-    "No Results Found.": "Ingen resultater fundet."
+    "Download": "Downloade"
 }
