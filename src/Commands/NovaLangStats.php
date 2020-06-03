@@ -262,6 +262,8 @@ class NovaLangStats extends AbstractCommand
 
         $color = array_pop($colors) ?: 'lightgray';
 
+        $complete = ctype_digit($complete) ? number_format($complete) : $complete;
+
         return sprintf('https://img.shields.io/badge/%s-%s%%25-%s?style=flat-square', $complete, $percent, $color);
     }
 
