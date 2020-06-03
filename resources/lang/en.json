@@ -403,5 +403,6 @@
     "There was a problem submitting the form.": "There was a problem submitting the form.",
     "There was a problem executing the action.": "There was a problem executing the action.",
     "The file was deleted!": "The file was deleted!",
-    "This file field is read-only.": "This file field is read-only."
+    "This file field is read-only.": "This file field is read-only.",
+    "No additional information...": "No additional information..."
 }

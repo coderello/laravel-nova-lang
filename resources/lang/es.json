@@ -403,5 +403,6 @@
     "There was a problem submitting the form.": "Ocurrió un error al enviar el formulario.",
     "There was a problem executing the action.": "Ocurrió un error al ejecutar la acción.",
     "The file was deleted!": "El archivo fue borrado!",
-    "This file field is read-only.": "Este campo de archivo es de solo lectura."
+    "This file field is read-only.": "Este campo de archivo es de solo lectura.",
+    "No additional information...": "Sin información adicional..."
 }
