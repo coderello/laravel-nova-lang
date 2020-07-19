@@ -394,5 +394,15 @@
     "Changes": "تغييرات",
     "Original": "الأصلي",
     "This resource no longer exists": "هذا المصدر لم يعد موجودا",
-    ":resource Details": "تفاصيل الـ :resource"
+    ":resource Details": "تفاصيل الـ :resource",
+    "There are no available options for this resource.": "لا توجد خيارات متاحة لهذا المصدر.",
+    "All resources loaded.": "تم تحميل جميع المصادر.",
+    "Load :perPage More": "حمل :perPage زيادة",
+    ":amount Total": ":amount إجمالي",
+    "Show All Fields": "إظهار كافة الحقول",
+    "There was a problem submitting the form.": "حصل خطأ في إرسال الإستمارة.",
+    "There was a problem executing the action.": "حصل خطأ في تنفيذ الإجراء.",
+    "The file was deleted!": "تم حذف الملف!",
+    "This file field is read-only.": "حقل الملف لا يقبل التغيير.",
+    "No additional information...": "ليس هناك معلومات إضافية..."
 }
