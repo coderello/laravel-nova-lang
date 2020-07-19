@@ -16,7 +16,7 @@
     "Remember Me": "تذكرني",
     "Resources": "المصادر",
     "Send Password Reset Link": "أرسل رابط إعادة تعيين كلمة المرور",
-    "Welcome Back!": "مرحبا بك مرة أخرى!",
+    "Welcome Back!": "!مرحبا بك مرة أخرى",
     "Delete Resource": "حذف المصدر",
     "Delete": "حذف",
     "Detach Resource": "فصل المصدر",
@@ -276,7 +276,7 @@
     "Oman": "عُمان",
     "Pakistan": "باكستان",
     "Palau": "بالاو",
-    "Palestinian Territory, Occupied": "فلسطين المحتلة",
+    "Palestinian Territory, Occupied": "الأراضي الفلسطينية",
     "Panama": "بنما",
     "Papua New Guinea": "بابوا غينيا الجديدة",
     "Paraguay": "باراغواي",
@@ -395,4 +395,14 @@
     "Original": "الأصلي",
     "This resource no longer exists": "هذا المصدر لم يعد موجودا",
     ":resource Details": "تفاصيل :resource"
+    "There are no available options for this resource.": "لا توجد خيارات متاحة لهذا المصدر.",
+    "All resources loaded.": "تم تحميل جميع المصادر.",
+    "Load :perPage More": "حمل :perPage زيادة",
+    ":amount Total": ":amount إجمالي",
+    "Show All Fields": "إظهار كافة الحقول",
+    "There was a problem submitting the form.": "حصل خطأ في إرسال الإستمارة.",
+    "There was a problem executing the action.": "حصل خطأ في تنفيذ الإجراء.",
+    "The file was deleted!": "تم حذف الملف!",
+    "This file field is read-only.": "حقل الملف لا يقبل التغيير.",
+    "No additional information...": "ليس هناك معلومات إضافية..."
 }
