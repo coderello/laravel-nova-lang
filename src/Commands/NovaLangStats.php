@@ -304,7 +304,13 @@ class NovaLangStats extends AbstractCommand
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), static::IGNORED_KEYS);
+            $json = json_decode($this->filesystem->get($path), true);
+
+            if (!is_array($json)) {
+                throw new \Exception('Invalid JSON file: '.$path);
+            }
+
+            return array_diff(array_keys($json), static::IGNORED_KEYS);
         }
 
         return [];
@@ -315,7 +321,14 @@ class NovaLangStats extends AbstractCommand
         return collect($this->filesystem->glob($path.'/*.php'))
             ->map(function (string $path) {
                 $file = basename($this->filesystem->basename($path), '.php');
-                $keys = collect(array_keys($this->filesystem->getRequire($path)))
+
+                $php = $this->filesystem->getRequire($path);
+
+                if (!is_array($php)) {
+                    throw new \Exception('Invalid JSON file: ' . $path);
+                }
+
+                $keys = collect(array_keys($php))
                     ->map(function ($key) use ($file) {
                         return "$file.$key";
                     });
@@ -343,6 +356,8 @@ class NovaLangStats extends AbstractCommand
         $mapping = [
             'uz-cyrillic' => 'uz-Cyrl',
             'uz-latin'    => 'uz-Latn',
+            'sr-cyrillic' => 'sr',
+            'sr-latin'    => 'sr-Latn',
             'sr'          => 'sr-Latn',
             'me'          => 'cnr',
         ];

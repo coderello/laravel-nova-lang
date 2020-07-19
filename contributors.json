@@ -14,6 +14,32 @@
         "json": true,
         "php": true
     },
+    "ar": {
+        "name": "Arabic",
+        "complete": 408,
+        "contributors": {
+            "saleem-hadad": 56,
+            "danyelkeddah": 50,
+            "omarfathy13": 26,
+            "CaddyDz": 12,
+            "i3asm": 10,
+            "Arryan": 3
+        },
+        "json": true,
+        "php": true
+    },
+    "cs": {
+        "name": "Czech",
+        "complete": 408,
+        "contributors": {
+            "walaskir": 362,
+            "theimerj": 56,
+            "genesiscz": 12,
+            "walaski": 1
+        },
+        "json": true,
+        "php": true
+    },
     "nl": {
         "name": "Dutch",
         "complete": 408,
@@ -150,17 +176,6 @@
         "json": true,
         "php": true
     },
-    "cs": {
-        "name": "Czech",
-        "complete": 405,
-        "contributors": {
-            "walaskir": 362,
-            "theimerj": 56,
-            "walaski": 1
-        },
-        "json": true,
-        "php": true
-    },
     "nb": {
         "name": "Norwegian Bokmål",
         "complete": 405,
@@ -272,18 +287,6 @@
         "json": true,
         "php": true
     },
-    "ar": {
-        "name": "Arabic",
-        "complete": 398,
-        "contributors": {
-            "saleem-hadad": 56,
-            "danyelkeddah": 50,
-            "omarfathy13": 26,
-            "Arryan": 3
-        },
-        "json": true,
-        "php": true
-    },
     "pl": {
         "name": "Polish",
         "complete": 397,
@@ -333,7 +336,8 @@
         "complete": 356,
         "contributors": {
             "olivernybroe": 364,
-            "rugaard": 8
+            "rugaard": 8,
+            "peterchrjoergensen": 3
         },
         "json": true,
         "php": true
@@ -501,6 +505,11 @@
         "complete": 0,
         "contributors": []
     },
+    "hy": {
+        "name": "Armenian",
+        "complete": null,
+        "contributors": []
+    },
     "he": {
         "name": "Hebrew",
         "complete": 0,
@@ -624,11 +633,6 @@
     "cy": {
         "name": "Welsh",
         "complete": 0,
-        "contributors": []
-    },
-    "hy": {
-        "name": "Armenian",
-        "complete": null,
         "contributors": []
     }
 }
