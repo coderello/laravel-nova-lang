@@ -402,5 +402,18 @@
     "Show All Fields": "Exibir todos os campos",
     "There was a problem submitting the form.": "Ocorreu um problema ao enviar o formulário.",
     "There was a problem executing the action.": "Ocorreu um problema ao executar a ação.",
-    "The file was deleted!": "O arquivo foi excluído!"
+    "Do you really want to leave? You have unsaved changes.": "Deseja realmente sair? Você tem alterações não salvas.",
+    "*": "*",
+    "—": "—",
+    "The file was deleted!": "O arquivo foi excluído!",
+    "This file field is read-only.": "Este campo de arquivo é somente leitura.",
+    "No additional information...": "Sem informações adicionais...",
+    "ID": "ID",
+    "30 Days": "30 dias",
+    "60 Days": "60 dias",
+    "90 Days": "90 dias",
+    "Today": "Hoje",
+    "Month To Date": "Este mês",
+    "Quarter To Date": "Este trimestre",
+    "Year To Date": "Este ano"
 }
