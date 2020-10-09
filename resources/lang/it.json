@@ -416,4 +416,5 @@
     "Customize": "Personalizza",
     "Update :resource: :title": "Aggiorna :resource: :title",
     "Update attached :resource: :title": "Aggiorna :resource: :title collegata",
+    ":resource Details: :title": "Dettagli :resource: :title"
 }
