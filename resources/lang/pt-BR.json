@@ -63,7 +63,6 @@
     "Next": "Próximo",
     "Only Trashed": "Apenas excluídos",
     "Per Page": "Por página",
-    "Please select a resource to perform this action on.": "Por favor, selecione um recurso para executar esta ação.",
     "Preview": "Visualizar",
     "Previous": "Anterior",
     "No Data": "Sem registros",
@@ -415,5 +414,9 @@
     "Today": "Hoje",
     "Month To Date": "Este mês",
     "Quarter To Date": "Este trimestre",
-    "Year To Date": "Este ano"
+    "Year To Date": "Este ano",
+    "Customize": "Personalizar",
+    "Update :resource: :title": "Atualizar :resource: :title",
+    "Update attached :resource: :title": "Atualizar anexo :resource: :title",
+    ":resource Details: :title": "Detalhamento: :resource :title"
 }
