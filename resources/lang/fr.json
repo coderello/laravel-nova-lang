@@ -29,7 +29,7 @@
     "Restore": "Restaurer",
     "Force Delete Resource": "Forcer la suppression de la ressource",
     "Force Delete": "Forcer la suppression",
-    "The :resource was created!": "La ressource :resource a été ajouté !",
+    "The :resource was created!": "La ressource :resource a été ajoutée !",
     "Are you sure you want to delete this resource?": "Êtes-vous sûr de vouloir supprimer cette ressource ?",
     "Are you sure you want to delete the selected resources?": "Êtes-vous sûr de vouloir supprimer les ressources sélectionnés ?",
     "Are you sure you want to detach this resource?": "Êtes-vous sûr de vouloir détacher cette ressource ?",
@@ -38,7 +38,7 @@
     "Are you sure you want to force delete the selected resources?": "Êtes-vous sûr de vouloir forcer la suppression des ressources sélectionnées ?",
     "Are you sure you want to restore this resource?": "Êtes-vous sûr de vouloir restaurer cette ressource ?",
     "Are you sure you want to restore the selected resources?": "Êtes-vous sûr de vouloir restaurer les ressources sélectionnées ?",
-    "No :resource matched the given criteria.": "Aucun :resource ne correspond aux critères indiqués.",
+    "No :resource matched the given criteria.": "Aucune ressource :resource ne correspond aux critères indiqués.",
     "Another user has updated this resource since this page was loaded. Please refresh the page and try again.": "Un autre utilisateur a mis à jour cette ressource depuis que vous avez commencé à la modifier. Veuillez actualiser la page.",
     "Are you sure you want to delete this file?": "Êtes-vous sûr de vouloir supprimer ce fichier ?",
     "Are you sure you want to run this action?": "Êtes-vous sûr que vous voulez exécuter cette action ?",
@@ -83,7 +83,7 @@
     "This image": "Cette image",
     "Update": "Enregistrer",
     "Update & Continue Editing": "Enregistrer et continuer",
-    "View": "Vue",
+    "View": "Voir",
     "We're lost in space. The page you were trying to view does not exist.": "Vous êtes perdu dans l’espace. La page demandée n’existe pas.",
     "Show Content": "Montrer le contenu",
     "Hide Content": "Masquer le contenu",
@@ -382,7 +382,7 @@
     "Key": "Clé",
     "Value": "Valeur",
     "Add row": "Ajouter une ligne",
-    "Attach :resource": "Attache :resource",
+    "Attach :resource": "Attacher :resource",
     "Create :resource": "Créer :resource",
     "Choose :resource": "Choisir :resource",
     "New :resource": "Nouveau",
@@ -403,5 +403,6 @@
     "There was a problem submitting the form.": "Un problème est survenu lors de l’envoi du formulaire.",
     "There was a problem executing the action.": "Un problème est survenu lors de l’exécution de l’action.",
     "The file was deleted!": "Le fichier a été supprimé !",
-    "This file field is read-only.": "Ce champ de type fichier est en lecture seule."
+    "This file field is read-only.": "Ce champ de type fichier est en lecture seule.",
+    "No additional information...": "Pas d’informations supplémentaires..."
 }

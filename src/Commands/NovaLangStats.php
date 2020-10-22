@@ -172,7 +172,7 @@ class NovaLangStats extends AbstractCommand
         $icon = $this->getPercentIcon($translatedCount, $percent);
 
         $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon).PHP_EOL.
-            sprintf('Total lines translated ![%d (%s%%)](%s)', $translatedCount, $percent, $icon);
+            sprintf('Total lines translated ![%s (%s%%)](%s)', number_format($translatedCount), $percent, $icon);
 
         $header = '## Available Languages'.PHP_EOL.PHP_EOL.
             'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
@@ -216,7 +216,7 @@ class NovaLangStats extends AbstractCommand
         });
 
         $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
-            sprintf('Total lines translated **%d (%s%%)**', $translatedCount, $percent);
+            sprintf('Total lines translated **%s (%s%%)**', number_format($translatedCount), $percent);
 
         $header = '### Available Languages' . PHP_EOL . PHP_EOL .
             $totals . PHP_EOL;
@@ -262,6 +262,8 @@ class NovaLangStats extends AbstractCommand
 
         $color = array_pop($colors) ?: 'lightgray';
 
+        $complete = ctype_digit($complete) ? number_format($complete) : $complete;
+
         return sprintf('https://img.shields.io/badge/%s-%s%%25-%s?style=flat-square', $complete, $percent, $color);
     }
 
@@ -302,7 +304,13 @@ class NovaLangStats extends AbstractCommand
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            return array_diff(array_keys(json_decode($this->filesystem->get($path), true)), static::IGNORED_KEYS);
+            $json = json_decode($this->filesystem->get($path), true);
+
+            if (!is_array($json)) {
+                throw new \Exception('Invalid JSON file: '.$path);
+            }
+
+            return array_diff(array_keys($json), static::IGNORED_KEYS);
         }
 
         return [];
@@ -313,7 +321,14 @@ class NovaLangStats extends AbstractCommand
         return collect($this->filesystem->glob($path.'/*.php'))
             ->map(function (string $path) {
                 $file = basename($this->filesystem->basename($path), '.php');
-                $keys = collect(array_keys($this->filesystem->getRequire($path)))
+
+                $php = $this->filesystem->getRequire($path);
+
+                if (!is_array($php)) {
+                    throw new \Exception('Invalid JSON file: ' . $path);
+                }
+
+                $keys = collect(array_keys($php))
                     ->map(function ($key) use ($file) {
                         return "$file.$key";
                     });
@@ -341,6 +356,8 @@ class NovaLangStats extends AbstractCommand
         $mapping = [
             'uz-cyrillic' => 'uz-Cyrl',
             'uz-latin'    => 'uz-Latn',
+            'sr-cyrillic' => 'sr',
+            'sr-latin'    => 'sr-Latn',
             'sr'          => 'sr-Latn',
             'me'          => 'cnr',
         ];

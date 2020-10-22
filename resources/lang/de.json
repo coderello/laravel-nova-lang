@@ -402,5 +402,7 @@
     "Show All Fields": "Alle Felder anzeigen",
     "There was a problem submitting the form.": "Beim Senden des Formulars ist ein Fehler aufgetreten.",
     "There was a problem executing the action.": "Beim Ausführen der Aktion ist ein Fehler aufgetreten.",
-    "The file was deleted!": "Die Datei wurde gelöscht!"
+    "The file was deleted!": "Die Datei wurde gelöscht!",
+    "This file field is read-only.": "Dieses Dateifeld ist schreibgeschützt.",
+    "No additional information...": "Keine zusätzlichen Informationen..."
 }
