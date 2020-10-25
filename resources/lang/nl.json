@@ -402,7 +402,20 @@
     "Show All Fields": "Alle velden tonen",
     "There was a problem submitting the form.": "Er is een probleem opgetreden bij het verzenden van het formulier.",
     "There was a problem executing the action.": "Er is een probleem opgetreden bij het uitvoeren van de actie.",
+    "Do you really want to leave? You have unsaved changes.": "Weet u zeker dat u deze pagina wilt verlaten? U heeft niet opgeslagen wijzigingen.",
     "The file was deleted!": "Het bestand is verwijderd!",
     "This file field is read-only.": "Dit bestandsveld is alleen-lezen.",
-    "No additional information...": "Geen aanvullende informatie..."
+    "No additional information...": "Geen aanvullende informatie...",
+    "ID": "ID",
+    "30 Days": "30 Dagen",
+    "60 Days": "60 Dagen",
+    "90 Days": "90 Dagen",
+    "Today": "Vandaag",
+    "Month To Date": "Huidige maand",
+    "Quarter To Date": "Huidig kwartaal",
+    "Year To Date": "Huidig jaar",
+    "Customize": "Aanpassen",
+    "Update :resource: :title": "Bewerk :resource: :title",
+    "Update attached :resource: :title": "Bewerk gekoppelde :resource: :title",
+    ":resource Details: :title": ":resource details: :title"
 }
