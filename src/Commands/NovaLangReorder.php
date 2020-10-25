@@ -52,7 +52,7 @@ class NovaLangReorder extends AbstractCommand
         $outputDirectory = storage_path('app/nova-lang/reorder');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
-        $sourceKeys = array_keys(json_decode($this->filesystem->get($sourceFile), true));
+        $sourceKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));
 
         $availableLocales = $this->getAvailableLocales();
 
@@ -74,7 +74,7 @@ class NovaLangReorder extends AbstractCommand
 
             $localeTranslations = json_decode($this->filesystem->get($inputFile), true);
 
-            $localeKeys = array_keys($localeTranslations);
+            $localeKeys = array_values(array_diff(array_keys($localeTranslations), static::IGNORED_KEYS));
 
             $reorderedKeys = array_diff_assoc(array_values(array_intersect($sourceKeys, $localeKeys)), $localeKeys);
 
