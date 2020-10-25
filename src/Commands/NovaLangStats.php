@@ -155,6 +155,10 @@ class NovaLangStats extends AbstractCommand
             return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', str_replace('-', '‑', $locale), $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
+        $missing = $missing->sortBy(function($localeStat) {
+            return $localeStat['name'];
+        });
+
         $missing->transform(function($localeStat, $locale) use ($sourceCount) {
 
             $icon = $this->getPercentIcon(0, 0);
@@ -353,6 +357,8 @@ class NovaLangStats extends AbstractCommand
 
     protected function caouecsMapping(string $caouecs): string
     {
+        $caouecs = str_replace('_', '-', $caouecs);
+
         $mapping = [
             'uz-cyrillic' => 'uz-Cyrl',
             'uz-latin'    => 'uz-Latn',
@@ -362,7 +368,7 @@ class NovaLangStats extends AbstractCommand
             'me'          => 'cnr',
         ];
 
-        return $mapping[$caouecs] ?? $caouecs;
+        return $mapping[strtolower($caouecs)] ?? $caouecs;
     }
 
     protected function getBlame(): array

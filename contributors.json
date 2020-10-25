@@ -464,11 +464,6 @@
         "json": true,
         "php": true
     },
-    "sq": {
-        "name": "Albanian",
-        "complete": 0,
-        "contributors": []
-    },
     "az": {
         "name": "Azerbaijani",
         "complete": 0,
@@ -544,13 +539,18 @@
         "complete": 0,
         "contributors": []
     },
+    "mk": {
+        "name": "Macedonian",
+        "complete": 0,
+        "contributors": []
+    },
     "hy": {
         "name": "Armenian",
         "complete": null,
         "contributors": []
     },
-    "mk": {
-        "name": "Macedonian",
+    "sq": {
+        "name": "Albanian",
         "complete": 0,
         "contributors": []
     },

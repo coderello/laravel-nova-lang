@@ -125,11 +125,12 @@ Total lines translated ![16,234 (92%)](https://img.shields.io/badge/16,234-92%25
 
 The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
 
-Parity with `caouecs/laravel-lang` ![0/0 (0%)](https://img.shields.io/badge/0%2F0-0%25-lightgray?style=flat-square)
+Parity with `caouecs/laravel-lang` ![40/75 (53.3%)](https://img.shields.io/badge/40%2F75-53%25-red?style=flat-square)
 
 | Code | Language | Lines translated |
 | --- | --- | --- |
 | `sq` | Albanian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `hy` | Armenian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `az` | Azerbaijani | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `bn` | Bangla | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `be` | Belarusian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
@@ -145,7 +146,6 @@ Parity with `caouecs/laravel-lang` ![0/0 (0%)](https://img.shields.io/badge/0%2F
 | `km` | Khmer | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `ko` | Korean | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `lv` | Latvian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `hy` | Armenian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `mk` | Macedonian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `ms` | Malay | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `mr` | Marathi | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
