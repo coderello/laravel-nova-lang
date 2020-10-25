@@ -394,7 +394,7 @@
     "Changes": "Änderungen",
     "Original": "Originale",
     "This resource no longer exists": "Diese Ressource existiert nicht mehr.",
-    ":resource Details": ":resource Details",
+    ":resource Details": ":resource-Details",
     "There are no available options for this resource.": "Für diese Ressource sind keine Optionen verfügbar.",
     "All resources loaded.": "Alle Ressourcen geladen.",
     "Load :perPage More": ":perPage weitere laden",
@@ -404,5 +404,18 @@
     "There was a problem executing the action.": "Beim Ausführen der Aktion ist ein Fehler aufgetreten.",
     "The file was deleted!": "Die Datei wurde gelöscht!",
     "This file field is read-only.": "Dieses Dateifeld ist schreibgeschützt.",
-    "No additional information...": "Keine zusätzlichen Informationen..."
+    "No additional information...": "Keine zusätzlichen Informationen...",
+    "Do you really want to leave? You have unsaved changes.": "Bist du sicher, dass du diese Seite verlassen willst? Du hast einige ungespeicherte Änderungen.",
+    "ID": "ID",
+    "30 Days": "30 Tage",
+    "60 Days": "60 Tage",
+    "90 Days": "90 Tage",
+    "Today": "Heute",
+    "Month To Date": "Monat bis heute",
+    "Quarter To Date": "Quartal bis heute",
+    "Year To Date": "Jahr bis heute",
+    "Customize": "Anpassen",
+    "Update :resource: :title": ":resource bearbeiten: :title",
+    "Update attached :resource: :title": ":resource-Ankopplung bearbeiten: :title",
+    ":resource Details: :title": ":resource-Details: :title"
 }
