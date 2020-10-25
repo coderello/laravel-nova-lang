@@ -403,5 +403,18 @@
     "There was a problem submitting the form.": "C'è stato un problema nell'invio dei dati.",
     "There was a problem executing the action.": "C'è stato un problema nell'esecuzione dell'azione.",
     "The file was deleted!": "Il file è stato cancellato!",
-    "This file field is read-only.": "Questo campo è di sola lettura."
+    "This file field is read-only.": "Questo campo è di sola lettura.",
+    "No additional information...": "Nessuna informazione aggiuntiva...",
+    "ID": "ID",
+    "30 Days": "30 giorni",
+    "60 Days": "60 giorni",
+    "90 Days": "90 giorni",
+    "Today": "Oggi",
+    "Month To Date": "Un mese ad oggi",
+    "Quarter To Date": "Un trimestre ad oggi",
+    "Year To Date": "Un anno ad oggi",
+    "Customize": "Personalizza",
+    "Update :resource: :title": "Aggiorna :resource: :title",
+    "Update attached :resource: :title": "Aggiorna :resource: :title collegata",
+    ":resource Details: :title": "Dettagli :resource: :title"
 }
