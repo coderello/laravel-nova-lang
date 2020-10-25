@@ -63,7 +63,6 @@
     "Next": "Další",
     "Only Trashed": "Pouze odstraněné",
     "Per Page": "Na stránku",
-    "Please select a resource to perform this action on.": "Vyberte prosím zdroj, na kterém se má spustit akce.",
     "Preview": "Náhled",
     "Previous": "Předešlé",
     "No Data": "Žádná data",
@@ -402,7 +401,7 @@
     "Show All Fields": "Zobrazit všechna pole",
     "There was a problem submitting the form.": "Při odesílání formuláře se vyskytl problém.",
     "There was a problem executing the action.": "Při provádění akce se vyskytl problém.",
-    "No additional information...": "Bez dalších informací...",
     "The file was deleted!": "Soubor byl smazán!",
-    "This file field is read-only.": "Soubor je pouze pro čtení"
+    "This file field is read-only.": "Soubor je pouze pro čtení",
+    "No additional information...": "Bez dalších informací..."
 }
