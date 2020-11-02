@@ -394,5 +394,9 @@
     "This resource no longer exists": "این منبع دیگر وجود ندارد",
     ":resource Details": "جزییات :resource",
     "There are no available options for this resource.": "هیچ گزینه در دسترسی برای این منبع وجود ندارد.",
-    "Show All Fields": "نمایش تمام فیلدها"
+    "Show All Fields": "نمایش تمام فیلدها",
+    "There was a problem submitting the form.": "متاسفانه خطایی در ذخیره کردن فرم رخ داده است. لطفا فیلدهای فرم را برای خطا بررسی نمایید.",
+    "Update :resource: :title": "به روزرسانی :resource: :title",
+    "Update attached :resource: :title": "به‌روزرسانی اتصال :resource: :title",
+    ":resource Details: :title": ":resource جزییات: :title"
 }
