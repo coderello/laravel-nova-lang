@@ -401,7 +401,20 @@
     "Show All Fields": "إظهار كافة الحقول",
     "There was a problem submitting the form.": "حصل خطأ في إرسال الإستمارة.",
     "There was a problem executing the action.": "حصل خطأ في تنفيذ الإجراء.",
+    "Do you really want to leave? You have unsaved changes.": "هل تريد حقا المغادرة؟ لم تحفظ التغييرات.",
     "The file was deleted!": "تم حذف الملف!",
     "This file field is read-only.": "حقل الملف لا يقبل التغيير.",
-    "No additional information...": "ليس هناك معلومات إضافية..."
+    "No additional information...": "ليس هناك معلومات إضافية...",
+    "ID": "المعرف",
+    "30 Days": "٣٠ يوم",
+    "60 Days": "٦٠ يوم",
+    "90 Days": "٩٠ يوم",
+    "Today": "اليوم",
+    "Month To Date": "شهر من الآن",
+    "Quarter To Date": "۳ شهور من الآن",
+    "Year To Date": "سنة من الآن",
+    "Customize": "تخصيص",
+    "Update :resource: :title": "تحديث :resource: :title",
+    "Update attached :resource: :title": "تحديث المرفق :resource: :title",
+    ":resource Details: :title": ":resource details: :title"
 }
