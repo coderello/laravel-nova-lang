@@ -420,5 +420,5 @@
     "Update attached :resource: :title": "Enregistrer :resource attaché: :title",
     ":resource Details: :title": "Détails de :resource: :title",
     "The HasOne relationship has already been filled.": "La relation HasOne a déjà été remplie.",
-    "An error occured while uploading the file.": "Un problème est survenu lors du téléchargemente du fichier."
+    "An error occured while uploading the file.": "Un problème est survenu lors du téléchargement du fichier."
 }
