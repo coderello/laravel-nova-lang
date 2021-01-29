@@ -416,5 +416,9 @@
     "Customize": "Customize",
     "Update :resource: :title": "Update :resource: :title",
     "Update attached :resource: :title": "Update attached :resource: :title",
-    ":resource Details: :title": ":resource Details: :title"
+    ":resource Details: :title": ":resource Details: :title",
+    "Start Polling": "Start Polling",
+    "Stop Polling": "Stop Polling",
+    "The HasOne relationship has already been filled.": "The HasOne relationship has already been filled.",
+    "An error occured while uploading the file.": "An error occured while uploading the file."
 }

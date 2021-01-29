@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 420,
+        "complete": 424,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -10,6 +10,21 @@
             "themsaid": 10000,
             "kitbs": 5,
             "dillingham": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "ar": {
+        "name": "Arabic",
+        "complete": 420,
+        "contributors": {
+            "saleem-hadad": 56,
+            "danyelkeddah": 50,
+            "omarfathy13": 26,
+            "MohamedMaher5": 14,
+            "CaddyDz": 12,
+            "i3asm": 10,
+            "Arryan": 3
         },
         "json": true,
         "php": true
@@ -61,27 +76,32 @@
     },
     "it": {
         "name": "Italian",
-        "complete": 419,
+        "complete": 420,
         "contributors": {
             "(unknown)": 364,
             "alfonsocuccaro": 53,
             "f-liva": 14,
             "manuelcoppotelli": 13,
+            "trippo": 3,
             "dejdav": 1
         },
         "json": true,
         "php": true
     },
-    "ar": {
-        "name": "Arabic",
-        "complete": 407,
+    "km": {
+        "name": "Khmer",
+        "complete": 420,
         "contributors": {
-            "saleem-hadad": 56,
-            "danyelkeddah": 50,
-            "omarfathy13": 26,
-            "CaddyDz": 12,
-            "i3asm": 10,
-            "Arryan": 3
+            "chhaihongsrun": 439
+        },
+        "json": true,
+        "php": true
+    },
+    "ur": {
+        "name": "Urdu",
+        "complete": 420,
+        "contributors": {
+            "junaidtariq48": 439
         },
         "json": true,
         "php": true
@@ -110,7 +130,8 @@
             "Arryan": 4,
             "voidgraphics": 3,
             "KillianH": 2,
-            "rbnhtl": 2
+            "rbnhtl": 2,
+            "stockhausen": 2
         },
         "json": true,
         "php": true
@@ -243,6 +264,18 @@
         "json": true,
         "php": true
     },
+    "fa": {
+        "name": "Farsi",
+        "complete": 402,
+        "contributors": {
+            "alirezamirsepassi": 387,
+            "mziraki": 35,
+            "zareismail": 21,
+            "SadeghPM": 6
+        },
+        "json": true,
+        "php": true
+    },
     "af": {
         "name": "Afrikaans",
         "complete": 399,
@@ -267,17 +300,6 @@
         "contributors": {
             "Tsumagari": 420,
             "storyn26383": 3
-        },
-        "json": true,
-        "php": true
-    },
-    "fa": {
-        "name": "Farsi",
-        "complete": 398,
-        "contributors": {
-            "alirezamirsepassi": 387,
-            "mziraki": 35,
-            "zareismail": 21
         },
         "json": true,
         "php": true
@@ -464,6 +486,11 @@
         "json": true,
         "php": true
     },
+    "sq": {
+        "name": "Albanian",
+        "complete": 0,
+        "contributors": []
+    },
     "az": {
         "name": "Azerbaijani",
         "complete": 0,
@@ -524,11 +551,6 @@
         "complete": 0,
         "contributors": []
     },
-    "km": {
-        "name": "Khmer",
-        "complete": 0,
-        "contributors": []
-    },
     "ko": {
         "name": "Korean",
         "complete": 0,
@@ -547,11 +569,6 @@
     "hy": {
         "name": "Armenian",
         "complete": null,
-        "contributors": []
-    },
-    "sq": {
-        "name": "Albanian",
-        "complete": 0,
         "contributors": []
     },
     "ms": {
@@ -611,11 +628,6 @@
     },
     "th": {
         "name": "Thai",
-        "complete": 0,
-        "contributors": []
-    },
-    "ur": {
-        "name": "Urdu",
         "complete": 0,
         "contributors": []
     },
