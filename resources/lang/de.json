@@ -387,6 +387,8 @@
     "New :resource": ":resource erstellen",
     "Edit :resource": ":resource bearbeiten",
     "Update :resource": ":resource aktualisieren",
+    "Start Polling": "Abruf starten",
+    "Stop Polling": "Abruf stoppen",
     "Choose :field": ":field auswählen",
     "Download": "Herunterladen",
     "Action": "Aktion",
@@ -417,8 +419,6 @@
     "Update :resource: :title": ":resource bearbeiten: :title",
     "Update attached :resource: :title": ":resource-Ankopplung bearbeiten: :title",
     ":resource Details: :title": ":resource-Details: :title",
-    "Start Polling": "Abruf starten",
-    "Stop Polling": "Abruf stoppen",
     "The HasOne relationship has already been filled.": "Die HasOne-Beziehung wurde bereits ausgefüllt.",
     "An error occured while uploading the file.": "Beim Hochladen der Datei ist ein Fehler aufgetreten."
 }
