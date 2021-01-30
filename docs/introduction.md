@@ -12,21 +12,21 @@ This is not an official Laravel package, but is built from community contributio
 ### Available Languages
 
 Total languages **44**  
-Total lines translated **17,096 (91.6%)**
+Total lines translated **17,134 (91.8%)**
 
 * `en` English &middot; **424 (100%)**
+* `fr` French &middot; **424 (100%)**
+* `de` German &middot; **424 (100%)**
+* `es` Spanish &middot; **424 (100%)**
 * `ar` Arabic &middot; **420 (99.1%)**
 * `pt‑BR` Brazilian Portuguese &middot; **420 (99.1%)**
 * `nl` Dutch &middot; **420 (99.1%)**
-* `de` German &middot; **420 (99.1%)**
 * `it` Italian &middot; **420 (99.1%)**
 * `km` Khmer &middot; **420 (99.1%)**
 * `ur` Urdu &middot; **420 (99.1%)**
 * `cs` Czech &middot; **407 (96%)**
-* `fr` French &middot; **407 (96%)**
 * `hu` Hungarian &middot; **407 (96%)**
 * `id` Indonesian &middot; **407 (96%)**
-* `es` Spanish &middot; **407 (96%)**
 * `ru` Russian &middot; **406 (95.8%)**
 * `ca` Catalan &middot; **405 (95.5%)**
 * `nb` Norwegian Bokmål &middot; **404 (95.3%)**

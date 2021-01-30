@@ -14,6 +14,56 @@
         "json": true,
         "php": true
     },
+    "fr": {
+        "name": "French",
+        "complete": 424,
+        "contributors": {
+            "MarceauKa": 165,
+            "Yannik-Slym": 31,
+            "InfinityWebMe": 28,
+            "kitbs": 28,
+            "shaffe-fr": 8,
+            "Arryan": 4,
+            "voidgraphics": 3,
+            "KillianH": 2,
+            "rbnhtl": 2,
+            "stockhausen": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "de": {
+        "name": "German",
+        "complete": 424,
+        "contributors": {
+            "pille1842": 71,
+            "shieraki": 27,
+            "kitbs": 22,
+            "tobiasthaden": 7,
+            "dakira": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "es": {
+        "name": "Spanish",
+        "complete": 424,
+        "contributors": {
+            "kitbs": 83,
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "IGedeon": 6,
+            "Arryan": 3,
+            "kennyhorna": 3,
+            "miktown": 2,
+            "xcodinas": 2,
+            "dgtal": 1,
+            "rodrigore": 1
+        },
+        "json": true,
+        "php": true
+    },
     "ar": {
         "name": "Arabic",
         "complete": 420,
@@ -57,19 +107,6 @@
             "preliot": 23,
             "webovatenl": 3,
             "daniel-de-wit": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "de": {
-        "name": "German",
-        "complete": 420,
-        "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 22,
-            "tobiasthaden": 7,
-            "dakira": 2
         },
         "json": true,
         "php": true
@@ -118,24 +155,6 @@
         "json": true,
         "php": true
     },
-    "fr": {
-        "name": "French",
-        "complete": 407,
-        "contributors": {
-            "MarceauKa": 165,
-            "Yannik-Slym": 31,
-            "InfinityWebMe": 28,
-            "kitbs": 28,
-            "shaffe-fr": 8,
-            "Arryan": 4,
-            "voidgraphics": 3,
-            "KillianH": 2,
-            "rbnhtl": 2,
-            "stockhausen": 2
-        },
-        "json": true,
-        "php": true
-    },
     "hu": {
         "name": "Hungarian",
         "complete": 407,
@@ -153,25 +172,6 @@
         "contributors": {
             "dvlwj": 364,
             "opanegro": 67
-        },
-        "json": true,
-        "php": true
-    },
-    "es": {
-        "name": "Spanish",
-        "complete": 407,
-        "contributors": {
-            "kitbs": 83,
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "iksaku": 11,
-            "IGedeon": 6,
-            "Arryan": 3,
-            "kennyhorna": 3,
-            "miktown": 2,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1
         },
         "json": true,
         "php": true
