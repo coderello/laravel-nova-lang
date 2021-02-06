@@ -421,13 +421,5 @@
     "Update :resource: :title": ":resource: :title-ის განახლება",
     "Update attached :resource: :title": "მიბმული :resource: :title-ის განახლება",
     ":resource Details: :title": ":resourceს დეტალები: :title",
-    "The HasOne relationship has already been filled.": "HasOne ურთიერთობა უკვე შევსებულია.",
-    "An error occured while uploading the file.": "დაფიქსირდა შეცდომა ფაილის ატვირთვისას.",
-    "Title": "სათაური",
-    "Price": "ფასი",
-    "Price by area": "ფასი ფართობის მიხედვით",
-    "Readonly": "მხოლოდ წაკითხვადი",
-    "Services": "სერვისები",
-    "Service": "სერვისი",
-    "Package": "პაკეტი"
+    "The HasOne relationship has already been filled.": "HasOne ურთიერთობა უკვე შევსებულია."
 }
