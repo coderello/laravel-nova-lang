@@ -404,8 +404,6 @@
     "There was a problem submitting the form.": "ფორმის შენახვისას დაფიქსირდა შეცდომა.",
     "There was a problem executing the action.": "დაფიქსირდა შეცდომა ქმედების განხორციელებისას.",
     "Do you really want to leave? You have unsaved changes.": "ნამდვილად გინდა გასვლა? ცვლილებები არ გაქვს შენახული.",
-    "*": "*",
-    "—": "—",
     "The file was deleted!": "ფაილი წაშლილია!",
     "This file field is read-only.": "ფაილის ველი მხოლოდ წაკითხვადია.",
     "No additional information...": "არ არის დამატებითი ინფორმაცია...",
@@ -421,5 +419,6 @@
     "Update :resource: :title": ":resource: :title-ის განახლება",
     "Update attached :resource: :title": "მიბმული :resource: :title-ის განახლება",
     ":resource Details: :title": ":resourceს დეტალები: :title",
-    "The HasOne relationship has already been filled.": "HasOne ურთიერთობა უკვე შევსებულია."
+    "The HasOne relationship has already been filled.": "HasOne ურთიერთობა უკვე შევსებულია.",
+    "An error occured while uploading the file.": "დაფიქსირდა შეცდომა ფაილის ატვირთვისას."
 }
