@@ -12,10 +12,11 @@ This is not an official Laravel package, but is built from community contributio
 ### Available Languages
 
 Total languages **44**  
-Total lines translated **17,134 (91.8%)**
+Total lines translated **17,207 (92.2%)**
 
 * `en` English &middot; **424 (100%)**
 * `fr` French &middot; **424 (100%)**
+* `ka` Georgian &middot; **424 (100%)**
 * `de` German &middot; **424 (100%)**
 * `es` Spanish &middot; **424 (100%)**
 * `ar` Arabic &middot; **420 (99.1%)**
@@ -49,7 +50,6 @@ Total lines translated **17,134 (91.8%)**
 * `hr` Croatian &middot; **351 (82.8%)**
 * `fil` Filipino &middot; **351 (82.8%)**
 * `fi` Finnish &middot; **351 (82.8%)**
-* `ka` Georgian &middot; **351 (82.8%)**
 * `hi` Hindi &middot; **351 (82.8%)**
 * `sr` Serbian (Cyrillic) &middot; **351 (82.8%)**
 * `sr‑Latn` Serbian (Latin) &middot; **351 (82.8%)**
