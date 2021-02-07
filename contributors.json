@@ -650,5 +650,10 @@
         "name": "Welsh",
         "complete": 0,
         "contributors": []
+    },
+    "oc": {
+        "name": "Occitan",
+        "complete": null,
+        "contributors": []
     }
 }

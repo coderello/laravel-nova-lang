@@ -125,9 +125,9 @@ Total lines translated ![17,134 (91.8%)](https://img.shields.io/badge/17,134-91%
 
 ## Missing Languages
 
-The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
+The following languages are supported for the main Laravel framework by the excellent [laravel-lang/lang](https://github.com/laravel-lang/lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
 
-Parity with `caouecs/laravel-lang` ![42/75 (56%)](https://img.shields.io/badge/42%2F75-56%25-red?style=flat-square)
+Parity with `laravel-lang/lang` ![42/76 (55.3%)](https://img.shields.io/badge/42%2F76-55%25-red?style=flat-square)
 
 | Code | Language | Lines translated |
 | --- | --- | --- |
@@ -154,6 +154,7 @@ Parity with `caouecs/laravel-lang` ![42/75 (56%)](https://img.shields.io/badge/4
 | `cnr` | Montenegrin | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `ne` | Nepali | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `nn` | Norwegian Nynorsk | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
+| `oc` | Occitan | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `ps` | Pashto | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `sc` | Sardinian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
 | `si` | Sinhala | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |

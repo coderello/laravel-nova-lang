@@ -194,10 +194,10 @@ class NovaLangStats extends AbstractCommand
             $missingPercent = $this->getPercent($parityCount, $caouecsCount);
             $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $missingPercent);
 
-            $totals = sprintf('Parity with `caouecs/laravel-lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $missingPercent, $icon);
+            $totals = sprintf('Parity with `laravel-lang/lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $missingPercent, $icon);
 
             $header = '## Missing Languages'.PHP_EOL.PHP_EOL.
-                'The following languages are supported for the main Laravel framework by the excellent [caouecs/laravel-lang](https://github.com/caouecs/Laravel-lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.'.PHP_EOL.PHP_EOL.
+                'The following languages are supported for the main Laravel framework by the excellent [laravel-lang/lang](https://github.com/laravel-lang/lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.'.PHP_EOL.PHP_EOL.
                 $totals.PHP_EOL.PHP_EOL.
                 '| Code | Language | Lines translated |'.PHP_EOL.
                 '| --- | --- | --- |';
@@ -352,7 +352,7 @@ class NovaLangStats extends AbstractCommand
 
     protected function directoryCaouecsSource(): string
     {
-        return base_path('vendor/caouecs/laravel-lang');
+        return base_path('vendor/laravel-lang/lang');
     }
 
     protected function caouecsMapping(string $caouecs): string
@@ -363,9 +363,11 @@ class NovaLangStats extends AbstractCommand
             'uz-cyrillic' => 'uz-Cyrl',
             'uz-latin'    => 'uz-Latn',
             'sr-cyrillic' => 'sr',
+            'sr-cyrl'     => 'sr',
             'sr-latin'    => 'sr-Latn',
             'sr'          => 'sr-Latn',
             'me'          => 'cnr',
+            'sr-latn-me'  => 'cnr',
         ];
 
         return $mapping[strtolower($caouecs)] ?? $caouecs;
