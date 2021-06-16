@@ -418,7 +418,7 @@
     "Update attached :resource: :title": "Atualizar anexo :resource: :title",
     ":resource Details: :title": "Detalhamento: :resource :title",
     "Start Polling": "Iniciar Atualização automática",
-    "Stop Polling": "Stop Atualização automática",
+    "Stop Polling": "Parar Atualização automática",
     "The HasOne relationship has already been filled.": "O relacionamento 'HasOne' já foi definido.",
     "An error occured while uploading the file.": "Ocorreu um erro ao enviar o arquivo."
 }
