@@ -31,19 +31,24 @@ class NovaLangMissing extends AbstractDevCommand
             return;
         }
 
-        $sourceDirectory = $this->directoryNovaSource().'/en';
-        $sourceFile = $sourceDirectory.'.json';
+        // $sourceDirectory = $this->directoryNovaSource().'/en';
+        // $sourceFile = $sourceDirectory.'.json';
 
-        if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
-            $this->error('The source language files were not found in the vendor/laravel/nova directory.');
+        // if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
+        //     $this->error('The source language files were not found in the vendor/laravel/nova directory.');
 
+        //     return;
+        // }
+
+        $sourceKeys = $this->getNovaKeys();
+
+        if (!count($sourceKeys)) {
+            $this->error('The source language files were not found in the vendor/laravel/nova directory. Have you run `composer install`?');
             return;
         }
 
         $outputDirectory = $this->base_path('build/missing');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
-
-        $sourceKeys = array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS);
 
         $availableLocales = $this->getAvailableLocales();
 
@@ -81,7 +86,7 @@ class NovaLangMissing extends AbstractDevCommand
             $outputFile = "$outputDirectory/$locale.json";
 
             if (count($outputKeys)) {
-                $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+                $this->saveJson($outputFile, $outputKeys);
 
                 $this->info(sprintf('%d missing translation keys for [%s] locale have been output to [%s].', count($missingKeys), $locale, $outputFile));
             } elseif ($this->filesystem->exists($outputFile)) {

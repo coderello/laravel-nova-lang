@@ -130,7 +130,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $outputFile = $this->base_path('contributors.json');
 
-        $this->filesystem->put($outputFile, json_encode($contributors->merge($missing), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+        $this->saveJson($outputFile, $contributors->merge($missing));
 
         $this->info('Updated "contributors.json"');
 
@@ -178,7 +178,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
 
-        $this->filesystem->put($outputFile, $contents);
+        $this->saveText($outputFile, $contents);
 
         $this->info('Updated "README.md"');
 
@@ -207,7 +207,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
 
-        $this->filesystem->put($outputFile, $contents);
+        $this->saveText($outputFile, $contents);
 
         $this->info('Updated "docs/introduction.md"');
     }

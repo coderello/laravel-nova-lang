@@ -31,30 +31,11 @@ class NovaLangReorder extends AbstractDevCommand
             return;
         }
 
-        $sourceDirectory = $this->directoryNovaSource().'/en';
-        $sourceFile = "$sourceDirectory.json";
+        $sourceKeys = $this->getNovaKeys();
 
-        if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
-            $this->error('The source language files were not found in the vendor/laravel/nova directory.');
-
+        if (!count($sourceKeys)) {
+            $this->error('The source language files were not found in the vendor/laravel/nova directory. Have you run `composer install`?');
             return;
-        }
-
-        $novaKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));
-        $sourceKeys = [];
-
-        // Workaround for keys that have been forgotten by Nova
-        $forgottenKeys = [
-            // After existing key => Insert new key(s)
-            '90 Days' => '365 Days'
-        ];
-
-        foreach ($novaKeys as $novaKey) {
-            $sourceKeys[] = $novaKey;
-
-            if (array_key_exists($novaKey, $forgottenKeys)) {
-                $sourceKeys = array_merge($sourceKeys, (array) $forgottenKeys[$novaKey]);
-            }
         }
 
         $availableLocales = $this->getAvailableLocales();
@@ -94,7 +75,7 @@ class NovaLangReorder extends AbstractDevCommand
                     }
                 }
 
-                $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+                $this->saveJson($outputFile, $outputKeys);
 
                 $this->info(sprintf('%d translation keys for [%s] locale were out of order. The updated file has been output to [%s].', count($reorderedKeys), $locale, $outputFile));
 

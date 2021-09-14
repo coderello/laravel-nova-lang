@@ -45,7 +45,14 @@ class NovaLangCountry extends AbstractDevCommand
             return;
         }
 
-        $requestedLocales->each(function (string $locale) use ($availableLocales, $outputDirectory) {
+        $sourceKeys = $this->getNovaKeys();
+
+        if (!count($sourceKeys)) {
+            $this->error('The source language files were not found in the vendor/laravel/nova directory. Have you run `composer install`?');
+            return;
+        }
+
+        $requestedLocales->each(function (string $locale) use ($availableLocales, $outputDirectory, $sourceKeys) {
 
             if (!$availableLocales->contains($locale)) {
                 $this->warn(sprintf('The translation file for [%s] locale does not exist.', $locale));
@@ -57,12 +64,24 @@ class NovaLangCountry extends AbstractDevCommand
 
             $untranslated = [];
 
-            $outputKeys = $this->downloadCldr($locale, $untranslated);
+            $cldrKeys = $this->downloadCldr($locale, $untranslated);
 
-            $outputFile = "$outputDirectory/$locale.json";
+            $inputFile = $this->directoryFrom() . "/$locale.json";
+
+            $localeTranslations = json_decode($this->filesystem->get($inputFile), true);
+
+            $outputKeys = [];
+
+            foreach ($sourceKeys as $sourceKey) {
+                $outputKeys[$sourceKey] = $cldrKeys[$sourceKey] ?? $localeTranslations[$sourceKey] ?? '@MISSING@';
+            }
+
+            $outputKeys = array_filter($outputKeys, fn ($value) => $value != '@MISSING@');
+
+            $outputFile = $inputFile;
 
             if (count($outputKeys)) {
-                $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+                $this->saveJson($outputFile, $outputKeys);
 
                 $this->info(sprintf('Country names for [%s] locale have been output to [%s].', $locale, $outputFile));
             } else {
@@ -71,7 +90,7 @@ class NovaLangCountry extends AbstractDevCommand
 
             if (count($untranslated)) {
                 $outputFile = "$outputDirectory/$locale-untranslated.json";
-                $this->filesystem->put($outputFile, json_encode($untranslated, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+                $this->saveJson($outputFile, $untranslated);
 
                 $this->warn(sprintf('Additionally, country names were not found for [%d] key(s). An output file has been created at [%s].', count($untranslated), $outputFile));
             }
@@ -207,7 +226,7 @@ class NovaLangCountry extends AbstractDevCommand
             'BM' => 'Bermuda',
             'BT' => 'Bhutan',
             'BO' => 'Bolivia',
-            'BQ' => 'Bonaire, Sint Eustatius and Saba', // New in Nova v2.7.0
+            'BQ' => 'Bonaire, Sint Eustatius and Saba',
             'BA' => 'Bosnia And Herzegovina',
             'BW' => 'Botswana',
             'BV' => 'Bouvet Island',
@@ -237,7 +256,7 @@ class NovaLangCountry extends AbstractDevCommand
             'CI' => 'Cote D\'Ivoire',
             'HR' => 'Croatia',
             'CU' => 'Cuba',
-            'CW' => 'Curaçao', // New in Nova v2.7.0
+            'CW' => 'Curaçao',
             'CY' => 'Cyprus',
             'CZ' => 'Czech Republic',
             'DK' => 'Denmark',
@@ -297,7 +316,7 @@ class NovaLangCountry extends AbstractDevCommand
             'KZ' => 'Kazakhstan',
             'KE' => 'Kenya',
             'KI' => 'Kiribati',
-            'KP' => 'Korea, Democratic People\'s Republic of', // New in Nova v2.7.0
+            'KP' => 'Korea, Democratic People\'s Republic of',
             'KR' => 'Korea',
             'XK' => 'Kosovo',
             'KW' => 'Kuwait',
@@ -382,14 +401,14 @@ class NovaLangCountry extends AbstractDevCommand
             'SC' => 'Seychelles',
             'SL' => 'Sierra Leone',
             'SG' => 'Singapore',
-            'SX' => 'Sint Maarten (Dutch part)', // New in Nova v2.7.0
+            'SX' => 'Sint Maarten (Dutch part)',
             'SK' => 'Slovakia',
             'SI' => 'Slovenia',
             'SB' => 'Solomon Islands',
             'SO' => 'Somalia',
             'ZA' => 'South Africa',
             'GS' => 'South Georgia And Sandwich Isl.',
-            'SS' => 'South Sudan', // New in Nova v2.7.0
+            'SS' => 'South Sudan',
             'ES' => 'Spain',
             'LK' => 'Sri Lanka',
             'SD' => 'Sudan',
