@@ -27,19 +27,6 @@ class NovaLangMissing extends AbstractDevCommand
      */
     public function handle()
     {
-        if ($this->formalLocalesRequested()) {
-            return;
-        }
-
-        // $sourceDirectory = $this->directoryNovaSource().'/en';
-        // $sourceFile = $sourceDirectory.'.json';
-
-        // if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
-        //     $this->error('The source language files were not found in the vendor/laravel/nova directory.');
-
-        //     return;
-        // }
-
         $sourceKeys = $this->getNovaKeys();
 
         if (!count($sourceKeys)) {

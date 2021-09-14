@@ -33,15 +33,9 @@ class NovaLangPublish extends AbstractCommand
      */
     public function handle()
     {
-        if ($this->formalLocalesRequested()) {
-            return;
-        }
-
         $availableLocales = $this->getAvailableLocales();
 
         $requestedLocales = $this->getRequestedLocales();
-
-        $formalLocales = $this->getFormalLocales();
 
         if ($this->noLocalesRequested($requestedLocales)) {
             return;

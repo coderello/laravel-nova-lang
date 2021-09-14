@@ -27,10 +27,6 @@ class NovaLangReorder extends AbstractDevCommand
      */
     public function handle()
     {
-        if ($this->formalLocalesRequested()) {
-            return;
-        }
-
         $sourceKeys = $this->getNovaKeys();
 
         if (!count($sourceKeys)) {

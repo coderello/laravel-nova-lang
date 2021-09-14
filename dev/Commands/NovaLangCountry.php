@@ -30,10 +30,6 @@ class NovaLangCountry extends AbstractDevCommand
      */
     public function handle()
     {
-        if ($this->formalLocalesRequested()) {
-            return;
-        }
-
         $outputDirectory = $this->base_path('build/countries');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
