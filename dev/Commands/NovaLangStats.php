@@ -4,6 +4,7 @@ namespace Coderello\LaravelNovaLang\Commands;
 
 use Illuminate\Support\Collection;
 use SplFileInfo;
+use Symfony\Component\Intl\Exception\MethodNotImplementedException;
 
 class NovaLangStats extends AbstractDevCommand
 {
@@ -37,10 +38,7 @@ class NovaLangStats extends AbstractDevCommand
             return;
         }
 
-        $outputDirectory = $this->base_path('build/nova-lang');
-        $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
-
-        $contributorsFile = __DIR__.'/../../contributors.json';
+        $contributorsFile = $this->base_path('contributors.json');
         $contributors = collect(json_decode($this->filesystem->get($contributorsFile), true));
 
         $sourceKeys = $this->getJsonKeys($sourceFile);
@@ -64,8 +62,14 @@ class NovaLangStats extends AbstractDevCommand
             $localePhpKeys = $this->getPhpKeys($inputDirectory);
             $missingPhpKeys = array_diff($sourcePhpKeys, $localePhpKeys);
 
+            try {
+                $displayName = class_exists('Locale') ? \Locale::getDisplayName($locale) : $locale;
+            } catch (MethodNotImplementedException $e) {
+                $displayName = $locale;
+            }
+
             $localeStat = $contributors->get($locale, [
-                'name' => class_exists('Locale') ? \Locale::getDisplayName($locale) : $locale,
+                'name' => $displayName,
                 'complete' => null,
                 'contributors' => [],
             ]);
@@ -96,18 +100,20 @@ class NovaLangStats extends AbstractDevCommand
                 $localeStat['php'] = count($localePhpKeys) > 0;
 
                 $localeStat['contributors'] = collect($localeStat['contributors'])
-                ->map(function($lines, $name) {
-                    return compact('lines', 'name');
-                })->sort(function($a, $b) {
-                    return $a['lines'] === $b['lines'] ? $a['name'] <=> $b['name'] : 0 - ($a['lines'] <=> $b['lines']);
-                })->map(function($contributor) {
-                    return $contributor['lines'];
-                })->all();
+                    ->map(function($lines, $name) {
+                        return compact('lines', 'name');
+                    })->sort(function($a, $b) {
+                        return $a['lines'] === $b['lines'] ? $a['name'] <=> $b['name'] : 0 - ($a['lines'] <=> $b['lines']);
+                    })->map(function($contributor) {
+                        return $contributor['lines'];
+                    })->all();
             }
 
             $contributors->put($locale, $localeStat);
 
         });
+
+        // Update "contributors.json"
 
         $en = $contributors->pull('en');
 
@@ -121,12 +127,13 @@ class NovaLangStats extends AbstractDevCommand
 
         $contributors->prepend($en, 'en');
 
-        $outputFile = $outputDirectory.'/contributors.json';
+        $outputFile = $this->base_path('contributors.json');
 
         $this->filesystem->put($outputFile, json_encode($contributors->merge($missing), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
-        $this->info(sprintf('Updated "contributors.json" has been output to [%s].', $outputFile));
-        $this->warn('* Replace ./contributors.json in your fork of the repository with this file.');
+        $this->info('Updated "contributors.json"');
+
+        // Update "README.md"
 
         $contributorsTable = $contributors->map(function($localeStat, $locale) use ($sourceCount) {
 
@@ -146,7 +153,7 @@ class NovaLangStats extends AbstractDevCommand
             return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', str_replace('-', '‑', $locale), $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
-        $outputFile = $outputDirectory.'/README.excerpt.md';
+        $outputFile = $this->base_path('README.md');
 
         $languagesCount = $contributors->count();
 
@@ -166,34 +173,39 @@ class NovaLangStats extends AbstractDevCommand
 
         $contents = $header.PHP_EOL.$contributorsTable->join(PHP_EOL);
 
-        $this->filesystem->put($outputFile, $contents);
+        $originalContents = $this->filesystem->get($outputFile);
 
-        $this->info(sprintf('Updated "README.excerpt.md" has been output to [%s].', $outputFile));
-        $this->warn('* Replace the Available Languages table in ./README.md in your fork of the repository with the contents of this file.');
-
-        $outputFile = $outputDirectory . '/introduction.excerpt.md';
-
-        $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
-
-            $percent = $this->getPercent($localeStat['complete'], $sourceCount);
-
-            return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
-        });
-
-        $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
-            sprintf('Total lines translated **%s (%s%%)**', number_format($translatedCount), $percent);
-
-        $header = '### Available Languages' . PHP_EOL . PHP_EOL .
-            $totals . PHP_EOL;
-
-        $contents = $header . PHP_EOL . $contributorsList->join(PHP_EOL);
-
-        $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
+        $contents = preg_replace('/(.+)## Available Languages.+/sm', $contents, $originalContents);
 
         $this->filesystem->put($outputFile, $contents);
 
-        $this->info(sprintf('Updated "introduction.excerpt.md" has been output to [%s].', $outputFile));
-        $this->warn('* Replace the Available Languages list in ./docs/introduction.md in your fork of the repository with the contents of this file.');
+        $this->info('Updated "README.md"');
+
+        // Update "docs/introduction.md"
+
+        // $outputFile = $outputDirectory . '/introduction.excerpt.md';
+
+        // $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
+
+        //     $percent = $this->getPercent($localeStat['complete'], $sourceCount);
+
+        //     return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
+        // });
+
+        // $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
+        //     sprintf('Total lines translated **%s (%s%%)**', number_format($translatedCount), $percent);
+
+        // $header = '### Available Languages' . PHP_EOL . PHP_EOL .
+        //     $totals . PHP_EOL;
+
+        // $contents = $header . PHP_EOL . $contributorsList->join(PHP_EOL);
+
+        // $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
+
+        // $this->filesystem->put($outputFile, $contents);
+
+        // $this->info(sprintf('Updated "introduction.excerpt.md" has been output to [%s].', $outputFile));
+        // $this->warn('* Replace the Available Languages list in ./docs/introduction.md in your fork of the repository with the contents of this file.');
     }
 
     protected function getPercent(int $complete, int $total): float

@@ -63,7 +63,7 @@ The language codes chosen for the files in this repository may not match the pre
   * Default to Serbian in Latin script over Cyrillic: `sr-Latn:sr,sr:sr-Cyrl`
 
 
-* There is also an `‑‑underscore` or `‑U` switch to publish locales with an underscore separator instead of a hyphen. This can be used in combination with aliases.
+* There is also an `--underscore` or `-U` switch to publish locales with an underscore separator instead of a hyphen. This can be used in combination with aliases.
 
 ### Development Commands
 

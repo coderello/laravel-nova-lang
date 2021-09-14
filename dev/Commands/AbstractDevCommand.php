@@ -14,8 +14,8 @@ abstract class AbstractDevCommand extends AbstractCommand
         return $this->base_path('vendor/laravel/nova/resources/lang');
     }
 
-    protected function base_path(string $path): string
+    protected function base_path(?string $path = null): string
     {
-        return realpath(__DIR__ . '/../..') . '/' . $path;
+        return rtrim(realpath(__DIR__ . '/../..') . '/' . $path, '/');
     }
 }
