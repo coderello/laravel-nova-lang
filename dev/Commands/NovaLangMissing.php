@@ -65,9 +65,7 @@ class NovaLangMissing extends AbstractDevCommand
                 $missingKeys = $sourceKeys;
             }
             else {
-                $inputDirectory = $this->directoryFrom().'/'.$locale;
-
-                $inputFile = $inputDirectory.'.json';
+                $inputFile = $this->directoryFrom() . "/$locale.json";
 
                 $localeKeys = array_keys(json_decode($this->filesystem->get($inputFile), true));
 
@@ -80,7 +78,7 @@ class NovaLangMissing extends AbstractDevCommand
 
             $outputKeys = array_fill_keys($missingKeys, '');
 
-            $outputFile = $outputDirectory.'/'.$locale.'.json';
+            $outputFile = "$outputDirectory/$locale.json";
 
             if (count($outputKeys)) {
                 $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));

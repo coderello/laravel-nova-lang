@@ -59,7 +59,7 @@ class NovaLangCountry extends AbstractDevCommand
 
             $outputKeys = $this->downloadCldr($locale, $untranslated);
 
-            $outputFile = $outputDirectory . '/' . $locale . '.json';
+            $outputFile = "$outputDirectory/$locale.json";
 
             if (count($outputKeys)) {
                 $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
@@ -70,7 +70,7 @@ class NovaLangCountry extends AbstractDevCommand
             }
 
             if (count($untranslated)) {
-                $outputFile = $outputDirectory . '/' . $locale . '-untranslated.json';
+                $outputFile = "$outputDirectory/$locale-untranslated.json";
                 $this->filesystem->put($outputFile, json_encode($untranslated, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
                 $this->warn(sprintf('Additionally, country names were not found for [%d] key(s). An output file has been created at [%s].', count($untranslated), $outputFile));
