@@ -61,54 +61,14 @@ abstract class AbstractCommand extends Command
         $localesByFiles = collect($this->filesystem->files($this->directoryFrom()))
             ->map(function (SplFileInfo $splFileInfo) {
                 return str_replace('.' . $splFileInfo->getExtension(), '', $splFileInfo->getFilename());
-            })->filter(function ($locale) {
-                return !$this->isFormalLocale($locale);
             });
 
         return $localesByDirectories->merge($localesByFiles)->unique()->values();
     }
 
-    protected function getFormalLocales(): Collection
-    {
-        if (!$this->hasOption('formal') || !$this->option('formal')) {
-            return collect();
-        }
-
-        if ($this->isAllFormal()) {
-            $locales = $this->getAvailableFormalLocales();
-        } else {
-            $locales = $this->fixSeparators($this->option('formal'));
-            $locales = collect(explode(',', $locales))->filter();
-        }
-
-        return $locales;
-    }
-
-    protected function getAvailableFormalLocales(): Collection
-    {
-        return collect($this->filesystem->files($this->directoryFrom()))
-            ->map(function (SplFileInfo $splFileInfo) {
-                return str_replace('.' . $splFileInfo->getExtension(), '', $splFileInfo->getFilename());
-            })->filter(function ($locale) {
-                return $this->isFormalLocale($locale);
-            })->map(function ($locale) {
-                return $this->stripFormalLocale($locale);
-            })->values();
-    }
-
     protected function fixSeparators(?string $locale, string $separator = '-'): string
     {
         return preg_replace('/[' . static::SEPARATORS . ']+/', $separator, $locale);
-    }
-
-    public function isFormalLocale(?string $locale): bool
-    {
-        return stripos($locale, '@formal') !== false;
-    }
-
-    public function stripFormalLocale(?string $locale): string
-    {
-        return str_replace('@formal', '', $locale);
     }
 
     protected function isForce(): bool
@@ -119,11 +79,6 @@ abstract class AbstractCommand extends Command
     protected function isAll(): bool
     {
         return $this->option('all');
-    }
-
-    protected function isAllFormal(): bool
-    {
-        return $this->option('formal') ? $this->option('formal') == '*' : false;
     }
 
     protected function directoryFrom(): string
@@ -139,16 +94,6 @@ abstract class AbstractCommand extends Command
     protected function directoryTo(): string
     {
         return resource_path('lang/vendor/nova');
-    }
-
-    public function formalLocalesRequested(): bool
-    {
-        if ($this->isFormalLocale($this->argument('locales')) || ($this->hasOption('alias') && $this->isFormalLocale($this->option('alias')))) {
-            $this->error('You must not specify the @formal suffix in the locales argument or --alias option.');
-            return true;
-        }
-
-        return false;
     }
 
     public function noLocalesRequested(Collection $requestedLocales): bool
