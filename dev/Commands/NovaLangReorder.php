@@ -2,17 +2,14 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Support\Collection;
-use SplFileInfo;
-
-class NovaLangReorder extends AbstractCommand
+class NovaLangReorder extends AbstractDevCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova-lang:reorder
+    protected $signature = 'reorder
                             {locales? : Comma-separated list of languages}
                             {--all : Output all languages}';
 
@@ -30,12 +27,6 @@ class NovaLangReorder extends AbstractCommand
      */
     public function handle()
     {
-        if (!config('app.debug')) {
-            $this->error('This command will only run in debug mode.');
-
-            return;
-        }
-
         if ($this->formalLocalesRequested()) {
             return;
         }
@@ -49,7 +40,7 @@ class NovaLangReorder extends AbstractCommand
             return;
         }
 
-        $outputDirectory = storage_path('app/nova-lang/reorder');
+        $outputDirectory = $this->base_path('build/reorder');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
         $sourceKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));
@@ -106,7 +97,7 @@ class NovaLangReorder extends AbstractCommand
             }
 
             if (count($missingKeys)) {
-                $this->warn(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the `nova-lang:missing` command to view them.', count($missingKeys), $locale));
+                $this->warn(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the `nova-lang missing` command to view them.', count($missingKeys), $locale));
             }
 
         });

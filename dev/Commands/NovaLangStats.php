@@ -5,14 +5,14 @@ namespace Coderello\LaravelNovaLang\Commands;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangStats extends AbstractCommand
+class NovaLangStats extends AbstractDevCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova-lang:stats';
+    protected $signature = 'stats';
 
     /**
      * The console command description.
@@ -28,12 +28,6 @@ class NovaLangStats extends AbstractCommand
      */
     public function handle()
     {
-        if (!config('app.debug')) {
-            $this->error('This command will only run in debug mode.');
-
-            return;
-        }
-
         $sourceDirectory = $this->directoryNovaSource().'/en';
         $sourceFile = $sourceDirectory.'.json';
 
@@ -43,7 +37,7 @@ class NovaLangStats extends AbstractCommand
             return;
         }
 
-        $outputDirectory = storage_path('app/nova-lang');
+        $outputDirectory = $this->base_path('build/nova-lang');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
         $contributorsFile = __DIR__.'/../../contributors.json';
@@ -58,10 +52,7 @@ class NovaLangStats extends AbstractCommand
         $availableLocales = $this->getAvailableLocales();
         $blame = collect($this->getBlame());
 
-        $caouecsLocales = $this->getCaouecsLocales();
-        $allLocales = $caouecsLocales->merge($availableLocales)->unique()->values();
-
-        $allLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
+        $availableLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
 
             $inputDirectory = $this->directoryFrom().'/'.$locale;
 
@@ -155,17 +146,6 @@ class NovaLangStats extends AbstractCommand
             return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', str_replace('-', '‑', $locale), $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
-        $missing = $missing->sortBy(function($localeStat) {
-            return $localeStat['name'];
-        });
-
-        $missing->transform(function($localeStat, $locale) use ($sourceCount) {
-
-            $icon = $this->getPercentIcon(0, 0);
-            return sprintf('| `%s` | %s | ![%d (%s%%)](%s) |', str_replace('-', '‑', $locale), $localeStat['name'], 0, 0, $icon);
-
-        });
-
         $outputFile = $outputDirectory.'/README.excerpt.md';
 
         $languagesCount = $contributors->count();
@@ -185,25 +165,6 @@ class NovaLangStats extends AbstractCommand
             '| --- | --- | --- | --- | --- |';
 
         $contents = $header.PHP_EOL.$contributorsTable->join(PHP_EOL);
-
-        if ($missing->count()) {
-
-            $parityCount = $caouecsLocales->intersect($availableLocales)->count();
-            $caouecsCount = $caouecsLocales->count();
-
-            $missingPercent = $this->getPercent($parityCount, $caouecsCount);
-            $icon = $this->getPercentIcon($parityCount.'%2F'.$caouecsCount, $missingPercent);
-
-            $totals = sprintf('Parity with `laravel-lang/lang` ![%d/%d (%s%%)](%s)', $parityCount, $caouecsCount, $missingPercent, $icon);
-
-            $header = '## Missing Languages'.PHP_EOL.PHP_EOL.
-                'The following languages are supported for the main Laravel framework by the excellent [laravel-lang/lang](https://github.com/laravel-lang/lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.'.PHP_EOL.PHP_EOL.
-                $totals.PHP_EOL.PHP_EOL.
-                '| Code | Language | Lines translated |'.PHP_EOL.
-                '| --- | --- | --- |';
-
-            $contents .= PHP_EOL.PHP_EOL.$header.PHP_EOL.$missing->join(PHP_EOL);
-        }
 
         $this->filesystem->put($outputFile, $contents);
 
@@ -286,25 +247,6 @@ class NovaLangStats extends AbstractCommand
         return $localesByDirectories->merge($localesByFiles)->unique()->values();
     }
 
-    protected function getCaouecsLocales(): Collection
-    {
-        if (!$this->filesystem->exists($this->directoryCaouecsSource())) {
-            return collect();
-        }
-
-        $localesByDirectories = collect($this->filesystem->directories($this->directoryCaouecsSource().'/src'))
-            ->map(function (string $path) {
-                return $this->caouecsMapping($this->filesystem->name($path));
-            });
-
-        $localesByFiles = collect($this->filesystem->files($this->directoryCaouecsSource().'/json'))
-            ->map(function (SplFileInfo $splFileInfo) {
-                return $this->caouecsMapping($splFileInfo->getBasename('.'.$splFileInfo->getExtension()));
-            });
-
-        return $localesByDirectories->merge($localesByFiles)->unique()->values();
-    }
-
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
@@ -340,42 +282,9 @@ class NovaLangStats extends AbstractCommand
             })->flatten()->all();
     }
 
-    protected function directoryFrom(): string
-    {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
-    }
-
-    protected function directoryNovaSource(): string
-    {
-        return base_path('vendor/laravel/nova/resources/lang');
-    }
-
-    protected function directoryCaouecsSource(): string
-    {
-        return base_path('vendor/laravel-lang/lang');
-    }
-
-    protected function caouecsMapping(string $caouecs): string
-    {
-        $caouecs = str_replace('_', '-', $caouecs);
-
-        $mapping = [
-            'uz-cyrillic' => 'uz-Cyrl',
-            'uz-latin'    => 'uz-Latn',
-            'sr-cyrillic' => 'sr',
-            'sr-cyrl'     => 'sr',
-            'sr-latin'    => 'sr-Latn',
-            'sr'          => 'sr-Latn',
-            'me'          => 'cnr',
-            'sr-latn-me'  => 'cnr',
-        ];
-
-        return $mapping[strtolower($caouecs)] ?? $caouecs;
-    }
-
     protected function getBlame(): array
     {
-        $token = env('GITHUB_TOKEN_NOVALANG');
+        $token = $this->filesystem->get('.github_token');
 
         $contributions = ['en' => ['taylorotwell' => 10001, 'bonzai' => 10000, 'davidhemphill' => 10000, 'themsaid' => 10000]];
 
@@ -390,7 +299,7 @@ class NovaLangStats extends AbstractCommand
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => 'https://api.github.com/graphql',
-            CURLOPT_USERAGENT => 'langcompare',
+            CURLOPT_USERAGENT => 'LaravelNovaLang',
             CURLOPT_HTTPHEADER => [
                 'Authorization: bearer '.$token,
                 'Content-Type: application/json',

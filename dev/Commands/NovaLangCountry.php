@@ -5,14 +5,14 @@ namespace Coderello\LaravelNovaLang\Commands;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 
-class NovaLangCountry extends AbstractCommand
+class NovaLangCountry extends AbstractDevCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova-lang:country
+    protected $signature = 'country
                             {locales? : Comma-separated list of languages}
                             {--all : Output all languages}';
 
@@ -30,17 +30,11 @@ class NovaLangCountry extends AbstractCommand
      */
     public function handle()
     {
-        if (!config('app.debug')) {
-            $this->error('This command will only run in debug mode.');
-
-            return;
-        }
-
         if ($this->formalLocalesRequested()) {
             return;
         }
 
-        $outputDirectory = storage_path('app/nova-lang/countries');
+        $outputDirectory = $this->base_path('build/countries');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
         $availableLocales = $this->getAvailableLocales();

@@ -5,14 +5,31 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^7.1|^8.0",
-        "laravel/framework": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0"
+        "php": "^7.1|^8.0"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "laravel/nova": "~3.0",
+        "illuminate/console": "^8.0",
+        "illuminate/filesystem": "^8.0",
+        "illuminate/events": "^8.0"
     },
     "autoload": {
         "psr-4": {
             "Coderello\\LaravelNovaLang\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Coderello\\LaravelNovaLang\\": "dev/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [

@@ -2,17 +2,14 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
-use Illuminate\Support\Collection;
-use SplFileInfo;
-
-class NovaLangMissing extends AbstractCommand
+class NovaLangMissing extends AbstractDevCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova-lang:missing
+    protected $signature = 'missing
                             {locales? : Comma-separated list of languages}
                             {--all : Output all languages}';
 
@@ -30,12 +27,6 @@ class NovaLangMissing extends AbstractCommand
      */
     public function handle()
     {
-        if (!config('app.debug')) {
-            $this->error('This command will only run in debug mode.');
-
-            return;
-        }
-
         if ($this->formalLocalesRequested()) {
             return;
         }
@@ -49,7 +40,7 @@ class NovaLangMissing extends AbstractCommand
             return;
         }
 
-        $outputDirectory = storage_path('app/nova-lang/missing');
+        $outputDirectory = $this->base_path('build/missing');
         $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
 
         $sourceKeys = array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS);
