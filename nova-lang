@@ -14,7 +14,6 @@ $events = new Dispatcher($container);
 $artisan = new Application($container, $events, '1.0');
 $artisan->setName('Laravel Nova Language');
 
-// Bind a command
 $artisan->resolve(Commands\NovaLangCountry::class);
 $artisan->resolve(Commands\NovaLangMissing::class);
 $artisan->resolve(Commands\NovaLangReorder::class);

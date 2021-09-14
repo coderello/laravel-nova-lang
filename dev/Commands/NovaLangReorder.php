@@ -32,7 +32,7 @@ class NovaLangReorder extends AbstractDevCommand
         }
 
         $sourceDirectory = $this->directoryNovaSource().'/en';
-        $sourceFile = $sourceDirectory.'.json';
+        $sourceFile = "$sourceDirectory.json";
 
         if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
             $this->error('The source language files were not found in the vendor/laravel/nova directory.');
@@ -40,10 +40,22 @@ class NovaLangReorder extends AbstractDevCommand
             return;
         }
 
-        $outputDirectory = $this->base_path('build/reorder');
-        $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
+        $novaKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));
+        $sourceKeys = [];
 
-        $sourceKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));
+        // Workaround for keys that have been forgotten by Nova
+        $forgottenKeys = [
+            // After existing key => Insert new key(s)
+            '90 Days' => '365 Days'
+        ];
+
+        foreach ($novaKeys as $novaKey) {
+            $sourceKeys[] = $novaKey;
+
+            if (array_key_exists($novaKey, $forgottenKeys)) {
+                $sourceKeys = array_merge($sourceKeys, (array) $forgottenKeys[$novaKey]);
+            }
+        }
 
         $availableLocales = $this->getAvailableLocales();
 
@@ -53,23 +65,20 @@ class NovaLangReorder extends AbstractDevCommand
             return;
         }
 
-        $requestedLocales->each(function (string $locale) use ($availableLocales, $sourceKeys, $outputDirectory) {
+        $requestedLocales->each(function (string $locale) use ($availableLocales, $sourceKeys) {
 
             if (! $availableLocales->contains($locale)) {
                 return $this->error(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
             }
 
-            $inputDirectory = $this->directoryFrom().'/'.$locale;
-
-            $inputFile = $inputDirectory.'.json';
+            $inputFile = $this->directoryFrom()."/$locale.json";
+            $outputFile = $inputFile;
 
             $localeTranslations = json_decode($this->filesystem->get($inputFile), true);
 
             $localeKeys = array_values(array_diff(array_keys($localeTranslations), static::IGNORED_KEYS));
 
             $reorderedKeys = array_diff_assoc(array_values(array_intersect($sourceKeys, $localeKeys)), $localeKeys);
-
-            $outputFile = $outputDirectory.'/'.$locale.'.json';
 
             $missingKeys = [];
 
@@ -87,17 +96,14 @@ class NovaLangReorder extends AbstractDevCommand
 
                 $this->filesystem->put($outputFile, json_encode($outputKeys, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
-                $this->info(sprintf('%d translation keys for [%s] locale were out of order. The reordered file has been output to [%s].', count($reorderedKeys), $locale, $outputFile));
+                $this->info(sprintf('%d translation keys for [%s] locale were out of order. The updated file has been output to [%s].', count($reorderedKeys), $locale, $outputFile));
 
-            } elseif ($this->filesystem->exists($outputFile)) {
-                    $this->warn(sprintf('[%s] locale has no translation keys out of order. The existing output file at [%s] was deleted.', $locale, $outputFile));
-                    $this->filesystem->delete($outputFile);
             } else {
-                $this->warn(sprintf('[%s] locale has no translation keys out of order. No output file was created.', $locale));
+                $this->warn(sprintf('[%s] locale has no translation keys out of order.', $locale));
             }
 
             if (count($missingKeys)) {
-                $this->warn(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the `nova-lang missing` command to view them.', count($missingKeys), $locale));
+                $this->warn(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the command `php nova-lang missing` to view them.', count($missingKeys), $locale));
             }
 
         });

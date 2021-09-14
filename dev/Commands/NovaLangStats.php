@@ -2,6 +2,7 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Collection;
 use SplFileInfo;
 use Symfony\Component\Intl\Exception\MethodNotImplementedException;
@@ -175,7 +176,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $originalContents = $this->filesystem->get($outputFile);
 
-        $contents = preg_replace('/(.+)## Available Languages.+/sm', $contents, $originalContents);
+        $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
 
         $this->filesystem->put($outputFile, $contents);
 
@@ -183,29 +184,32 @@ class NovaLangStats extends AbstractDevCommand
 
         // Update "docs/introduction.md"
 
-        // $outputFile = $outputDirectory . '/introduction.excerpt.md';
+        $outputFile = $this->base_path('docs/introduction.md');
 
-        // $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
+        $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
 
-        //     $percent = $this->getPercent($localeStat['complete'], $sourceCount);
+            $percent = $this->getPercent($localeStat['complete'], $sourceCount);
 
-        //     return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
-        // });
+            return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
+        });
 
-        // $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
-        //     sprintf('Total lines translated **%s (%s%%)**', number_format($translatedCount), $percent);
+        $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
+            sprintf('Total lines translated **%s (%s%%)**', number_format($translatedCount), $percent);
 
-        // $header = '### Available Languages' . PHP_EOL . PHP_EOL .
-        //     $totals . PHP_EOL;
+        $header = '### Available Languages' . PHP_EOL . PHP_EOL .
+            $totals . PHP_EOL;
 
-        // $contents = $header . PHP_EOL . $contributorsList->join(PHP_EOL);
+        $contents = $header . PHP_EOL . $contributorsList->join(PHP_EOL);
 
-        // $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
+        $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
 
-        // $this->filesystem->put($outputFile, $contents);
+        $originalContents = $this->filesystem->get($outputFile);
 
-        // $this->info(sprintf('Updated "introduction.excerpt.md" has been output to [%s].', $outputFile));
-        // $this->warn('* Replace the Available Languages list in ./docs/introduction.md in your fork of the repository with the contents of this file.');
+        $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
+
+        $this->filesystem->put($outputFile, $contents);
+
+        $this->info('Updated "docs/introduction.md"');
     }
 
     protected function getPercent(int $complete, int $total): float
@@ -296,12 +300,16 @@ class NovaLangStats extends AbstractDevCommand
 
     protected function getBlame(): array
     {
-        $token = $this->filesystem->get('.github_token');
+        try {
+            $token = $this->filesystem->get('.github_token');
+        } catch (FileNotFoundException $e) {
+            $token = null;
+        }
 
         $contributions = ['en' => ['taylorotwell' => 10001, 'bonzai' => 10000, 'davidhemphill' => 10000, 'themsaid' => 10000]];
 
         if (!$token) {
-            $this->error('To download newer contributions from GitHub, ensure the GITHUB_TOKEN_NOVALANG env key is set to a personal access token. Falling back to existing contributors list.');
+            $this->error('To download newer contributions from GitHub, create a file named .github_token in the package root directory which contains a personal access token. Falling back to existing contributors list.');
             return $contributions;
         }
 
@@ -311,7 +319,7 @@ class NovaLangStats extends AbstractDevCommand
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => 'https://api.github.com/graphql',
-            CURLOPT_USERAGENT => 'LaravelNovaLang',
+            CURLOPT_USERAGENT => 'coderello/laravel-nova-lang',
             CURLOPT_HTTPHEADER => [
                 'Authorization: bearer '.$token,
                 'Content-Type: application/json',
