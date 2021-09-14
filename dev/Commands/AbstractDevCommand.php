@@ -2,8 +2,13 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
+use Illuminate\Support\Collection;
+
 abstract class AbstractDevCommand extends AbstractCommand
 {
+    protected ?Collection $availableLocales = null;
+    protected ?Collection $requestedLocales = null;
+
     protected function directoryFrom(): string
     {
         return $this->base_path('resources/lang');
@@ -35,6 +40,7 @@ abstract class AbstractDevCommand extends AbstractCommand
         $sourceFile = "$sourceDirectory.json";
 
         if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
+            $this->error('The source language files were not found in the vendor/laravel/nova directory. Have you run `composer install`?');
             return [];
         }
 
