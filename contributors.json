@@ -32,16 +32,6 @@
         "json": true,
         "php": true
     },
-    "ka": {
-        "name": "Georgian",
-        "complete": 424,
-        "contributors": {
-            "akalongman": 364,
-            "zgabievi": 77
-        },
-        "json": true,
-        "php": true
-    },
     "de": {
         "name": "German",
         "complete": 424,
@@ -411,6 +401,15 @@
         "complete": 351,
         "contributors": {
             "Krisseck": 364
+        },
+        "json": true,
+        "php": true
+    },
+    "ka": {
+        "name": "Georgian",
+        "complete": 351,
+        "contributors": {
+            "akalongman": 364
         },
         "json": true,
         "php": true

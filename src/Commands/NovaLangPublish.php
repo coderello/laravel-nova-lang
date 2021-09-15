@@ -3,10 +3,20 @@
 namespace Coderello\LaravelNovaLang\Commands;
 
 use Illuminate\Support\Collection;
-use SplFileInfo;
 
 class NovaLangPublish extends AbstractCommand
 {
+    protected const CONFIRM_EN_OVERWRITE = 'Are you sure you want to publish translations for "en" locale? This will overwrite the original file from laravel/nova.';
+    protected const CONFIRM_OVERWRITE = 'Translations for "%s" locale already exist%s. Use --force to overwrite.';
+    protected const LOCALE_NOT_EXIST = 'Unfortunately, translations for "%s" locale don\'t exist. Feel free to send a PR to coderello/laravel-nova-lang to add this locale and help others.';
+    protected const PUBLISHED_SUCCESSFULLY = 'Translations for "%s" locale have been published successfully%s.';
+    protected const ALIASES_NOT_USED = 'Aliases "%s" were not used by the selected locales.';
+    protected const ALIAS_WRONG_FORMAT = 'If publishing more than one locale, the aliases must be in the format "locale:alias,...".';
+    protected const ONLY_ONE_ALIAS = 'If publishing only one locale with a simple alias, only one alias should be passed.';
+    protected const ALIAS_NOT_VALID = 'Alias "%s" is not valid.';
+    protected const ALIAS_DECLARED_MORE_THAN_ONCE = 'Alias for "%s" locale was declared more than once and will be overwritten by the last value.';
+    protected const AS_ALIAS = ' as "%s"';
+
     /**
      * The name and signature of the console command.
      *
@@ -29,34 +39,23 @@ class NovaLangPublish extends AbstractCommand
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
-        if ($this->formalLocalesRequested()) {
-            return;
-        }
-
         $availableLocales = $this->getAvailableLocales();
 
         $requestedLocales = $this->getRequestedLocales();
 
-        $formalLocales = $this->getFormalLocales();
-
-        if ($this->noLocalesRequested($requestedLocales)) {
-            return;
-        }
-
         $requestedLocales->each(function (string $alias, string $locale) use ($availableLocales) {
-
             if ($alias == 'en' && $this->isForce()) {
-                if (!$this->confirm(sprintf('Are you sure you want to publish translations for [en] locale? This will overwrite the file from laravel/nova.'))) {
+                if (! $this->confirm(sprintf(static::CONFIRM_EN_OVERWRITE))) {
                     return;
                 }
             }
 
             if (! $availableLocales->contains($locale)) {
-                $this->warn(sprintf('Unfortunately, translations for [%s] locale don\'t exist. Feel free to send a PR to add them and help other people.', $locale));
+                $this->warn(sprintf(static::LOCALE_NOT_EXIST, $locale));
 
                 return;
             }
@@ -68,7 +67,7 @@ class NovaLangPublish extends AbstractCommand
             }
 
             if ($alias !== $locale) {
-                $asAlias = sprintf(' as [%s]', $alias);
+                $asAlias = sprintf(static::AS_ALIAS, $alias);
             }
 
             $inputDirectory = $this->directoryFrom().'/'.$locale;
@@ -79,10 +78,8 @@ class NovaLangPublish extends AbstractCommand
 
             $outputFile = $outputDirectory.'.json';
 
-            if (($this->filesystem->exists($outputDirectory)
-                || $this->filesystem->exists($outputFile))
-                && ! $this->isForce()) {
-                $this->warn(sprintf('Translations for [%s] locale already exist%s. Use --force to overwrite.', $locale, $asAlias));
+            if (($this->filesystem->exists($outputDirectory) || $this->filesystem->exists($outputFile)) && ! $this->isForce()) {
+                $this->warn(sprintf(static::CONFIRM_OVERWRITE, $locale, $asAlias));
 
                 return;
             }
@@ -94,12 +91,10 @@ class NovaLangPublish extends AbstractCommand
             }
 
             if ($this->filesystem->exists($inputFile)) {
-
                 $this->filesystem->copy($inputFile, $outputFile);
-
             }
 
-            $this->info(sprintf('Translations for [%s] locale have been published successfully%s.', $locale, $asAlias));
+            $this->info(sprintf(static::PUBLISHED_SUCCESSFULLY, $locale, $asAlias));
         });
     }
 
@@ -109,7 +104,7 @@ class NovaLangPublish extends AbstractCommand
 
         $aliases = $this->getLocaleAliases($locales->count() == 1 ? $locales->first() : false);
 
-        $locales = $locales->mapWithKeys(function (string $locale, string $alias) use (&$aliases) {
+        $locales = $locales->mapWithKeys(function (string $locale) use (&$aliases) {
             $alias = $aliases->pull($locale, $locale);
 
             return [$locale => $alias];
@@ -120,52 +115,57 @@ class NovaLangPublish extends AbstractCommand
                 return "$alias:$locale";
             })->join(',');
 
-            $this->info(sprintf('Aliases [%s] were not used by the selected locales.', $aliases));
+            $this->warn(sprintf(static::ALIASES_NOT_USED, $aliases));
         }
 
         return $locales;
     }
 
+    /**
+     * Get aliases for locales.
+     *
+     * @param bool|string $single
+     * @return Collection
+     */
     protected function getLocaleAliases($single = false): Collection
     {
         $aliases = collect();
 
+        /** @var string $input */
         $input = $this->option('alias');
 
         if ($input) {
-
             $inputs = explode(',', $input);
 
             if (strpos($input, ':') === false) {
                 if ($single && count($inputs) == 1) {
-                    return collect([$single => $input]);
+                    return collect([(string) $single => $input]);
                 }
 
-                $this->error('If publishing more than one locale, the aliases must be in the format "locale:alias,...".');
+                $this->error(static::ALIAS_WRONG_FORMAT);
+
                 exit;
-            }
-            elseif (substr_count($input, ':') < count($inputs)) {
+            } elseif (substr_count($input, ':') < count($inputs)) {
                 if ($single) {
-                    $this->error('If publishing only one locale with a simple alias, only one alias should be passed.');
+                    $this->error(static::ONLY_ONE_ALIAS);
+                } else {
+                    $this->error(static::ALIAS_WRONG_FORMAT);
                 }
-                else {
-                    $this->error('If publishing more than one locale, the aliases must be in the format "locale:alias,...".');
-                }
+
                 exit;
             }
 
             foreach ($inputs as $input) {
-                @list($locale, $alias) = explode(':', $input);
+                [$locale, $alias] = explode(':', $input);
 
                 if (empty($alias) || empty($locale)) {
-                    $this->error(sprintf('Alias [%s] is not valid.', $input));
+                    $this->error(sprintf(static::ALIAS_NOT_VALID, $input));
                     exit;
                 }
 
                 if ($aliases->has($locale)) {
-                    $this->warn(sprintf('Alias for [%s] locale was declared more than once and will be overwritten by the last value.', $locale));
+                    $this->warn(sprintf(static::ALIAS_DECLARED_MORE_THAN_ONCE, $locale));
                 }
-
 
                 $locale = $this->fixSeparators($locale);
 

@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Console\Application;
+use Coderello\LaravelNovaLang\Commands;
+
+$container = new Container;
+$events = new Dispatcher($container);
+
+$artisan = new Application($container, $events, '1.0');
+$artisan->setName('Laravel Nova Language');
+
+$artisan->resolve(Commands\NovaLangCountry::class);
+$artisan->resolve(Commands\NovaLangMissing::class);
+$artisan->resolve(Commands\NovaLangReorder::class);
+$artisan->resolve(Commands\NovaLangStats::class);
+
+$artisan->run();

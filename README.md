@@ -14,64 +14,69 @@ composer require coderello/laravel-nova-lang
 
 ## Usage
 ### Publish Command
-* Publish translations for one language:
-  ```bash
-  php artisan nova-lang:publish de
-  ```
+##### Publish translations for one language:
+```bash
+php artisan nova-lang:publish de
+```
 
-* Publish translations for multiple languages (comma-separated):
-  ```bash
-  php artisan nova-lang:publish de,ru
-  ```
+##### Publish translations for multiple languages (comma-separated):
+```bash
+php artisan nova-lang:publish de,ru
+```
 
-* Publish translations for all available languages:
-  ```bash
-  php artisan nova-lang:publish --all
-  ```
+##### Publish translations for all available languages:
+```bash
+php artisan nova-lang:publish --all
+```
 
-* Publish translations and override existing files:
-  ```bash
-  php artisan nova-lang:publish de,ru --force
-  ```
+##### Publish translations and override existing files:
+```bash
+php artisan nova-lang:publish de,ru --force
+```
 
 #### Aliases
 The language codes chosen for the files in this repository may not match the preferences for your project. You can use the `‑‑alias` option to publish locales using a different filename.
 
-* Publish translations for one language with an alias, using the simple format `{alias}`:
-  ```bash
-  php artisan nova-lang:publish de --alias=de-DE
-  ```
-  This will publish the file `de-DE.json`.
+##### Publish translations for one language with an alias, using the simple format `{alias}`:
+```bash
+php artisan nova-lang:publish de --alias=de-DE
+```
 
-* Publish translations for multiple languages with multiple aliases, using the format `{locale}:{alias}` (comma-separated):
-  ```bash
-  php artisan nova-lang:publish de,ru,fr --alias=de:de-DE,ru:ru-RU
-  ```
-  This will publish the files `de-DE.json`, `ru-RU.json` and `fr.json` (no alias).
+This will publish the file `de-DE.json`.
 
-* Aliases can also be used with the `--all` flag:
+##### Publish translations for multiple languages with multiple aliases, using the format `{locale}:{alias}` (comma-separated):
+```bash
+php artisan nova-lang:publish de,ru,fr --alias=de:de-DE,ru:ru-RU
+```
 
-  ```bash
-  php artisan nova-lang:publish --all --alias=es:es-ES
-  ```
-  You do not need to supply an alias for every locale that is to be published, only those that you wish to override.
+This will publish the files `de-DE.json`, `ru-RU.json` and `fr.json` (no alias).
 
-* Here are some example aliases for common use cases:
+##### Aliases can also be used with the `--all` flag:
 
-  * Use Chinese with scripts instead of regions: `zh-CN:zh-Hans,zh-TW:zh-Hant`
-  * Default to Brazilian Portuguese over European: `pt:pt-PT,pt-BR:pt`
-  * Default to Serbian in Latin script over Cyrillic: `sr-Latn:sr,sr:sr-Cyrl`
+```bash
+php artisan nova-lang:publish --all --alias=es:es-ES
+```
+
+You do not need to supply an alias for every locale that is to be published, only those that you wish to override.
+
+Here are some example aliases for common use cases:
+
+* Use Chinese with scripts instead of regions: `zh-CN:zh-Hans,zh-TW:zh-Hant`
+* Default to Brazilian Portuguese over European: `pt:pt-PT,pt-BR:pt`
+* Default to Serbian in Latin script over Cyrillic: `sr-Latn:sr,sr:sr-Cyrl`
 
 
-* There is also an `‑‑underscore` or `‑U` switch to publish locales with an underscore separator instead of a hyphen. This can be used in combination with aliases.
+There is also an `--underscore` or `-U` switch to publish locales with an underscore separator instead of a hyphen. This can be used in combination with aliases.
 
 ### Development Commands
 
-Documentation of development commands for contributors is available at [Development Commands](development-commands.md).
+Documentation of development commands for contributors and maintainers is available at [Development Commands](development-commands.md).
 
 ## Available Languages
 
-Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.
+We welcome new languages and additions/improvements to existing languages! Please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
+
+**Note**: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.
 
 Total languages ![44](https://img.shields.io/badge/44-gray?style=flat-square)  
 Total lines translated ![17,207 (92.2%)](https://img.shields.io/badge/17,207-92%25-yellow?style=flat-square)
@@ -122,46 +127,3 @@ Total lines translated ![17,207 (92.2%)](https://img.shields.io/badge/17,207-92%
 | `lt` | Lithuanian | [`php`](resources/lang/lt) [`json`](resources/lang/lt.json) | ![350 (82.5%)](https://img.shields.io/badge/350-82%25-red?style=flat-square) | [minved](https://github.com/minved) |
 | `bg` | Bulgarian | [`php`](resources/lang/bg) [`json`](resources/lang/bg.json) | ![348 (82.1%)](https://img.shields.io/badge/348-82%25-red?style=flat-square) | [BKirev](https://github.com/BKirev) |
 | `tl` | Tagalog | [`php`](resources/lang/tl) [`json`](resources/lang/tl.json) | ![344 (81.1%)](https://img.shields.io/badge/344-81%25-red?style=flat-square) | [rcjavier](https://github.com/rcjavier) |
-
-## Missing Languages
-
-The following languages are supported for the main Laravel framework by the excellent [laravel-lang/lang](https://github.com/laravel-lang/lang) package. We would love for our package to make these languages available for Nova as well. If you are able to contribute to any of these or other languages, please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.
-
-Parity with `laravel-lang/lang` ![42/76 (55.3%)](https://img.shields.io/badge/42%2F76-55%25-red?style=flat-square)
-
-| Code | Language | Lines translated |
-| --- | --- | --- |
-| `sq` | Albanian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `hy` | Armenian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `az` | Azerbaijani | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `bn` | Bangla | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `be` | Belarusian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `zh‑HK` | Chinese (Hong Kong) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `et` | Estonian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `gl` | Galician | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `de‑CH` | German (Switzerland) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `el` | Greek | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `he` | Hebrew | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `is` | Icelandic | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `kn` | Kannada | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `kk` | Kazakh | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `ko` | Korean | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `lv` | Latvian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `mk` | Macedonian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `ms` | Malay | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `mr` | Marathi | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `mn` | Mongolian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `cnr` | Montenegrin | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `ne` | Nepali | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `nn` | Norwegian Nynorsk | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `oc` | Occitan | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `ps` | Pashto | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `sc` | Sardinian | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `si` | Sinhala | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `sw` | Swahili | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `tg` | Tajik | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `th` | Thai | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `ug` | Uyghur | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `uz‑Cyrl` | Uzbek (Cyrillic) | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `vi` | Vietnamese | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
-| `cy` | Welsh | ![0 (0%)](https://img.shields.io/badge/0-0%25-lightgray?style=flat-square) |
