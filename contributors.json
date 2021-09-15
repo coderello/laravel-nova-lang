@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 424,
+        "complete": 425,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -242,6 +242,34 @@
         "json": true,
         "php": true
     },
+    "af": {
+        "name": "Afrikaans",
+        "complete": 404,
+        "contributors": {
+            "medlion": 421
+        },
+        "json": true,
+        "php": true
+    },
+    "bs": {
+        "name": "Bosnian",
+        "complete": 404,
+        "contributors": {
+            "hajro92": 420
+        },
+        "json": true,
+        "php": true
+    },
+    "ja": {
+        "name": "Japanese",
+        "complete": 404,
+        "contributors": {
+            "Tsumagari": 420,
+            "storyn26383": 3
+        },
+        "json": true,
+        "php": true
+    },
     "nb": {
         "name": "Norwegian Bokmål",
         "complete": 404,
@@ -281,6 +309,15 @@
         "json": true,
         "php": true
     },
+    "tk": {
+        "name": "Turkmen",
+        "complete": 403,
+        "contributors": {
+            "kakajansh": 419
+        },
+        "json": true,
+        "php": true
+    },
     "fa": {
         "name": "Farsi",
         "complete": 402,
@@ -289,43 +326,6 @@
             "mziraki": 35,
             "zareismail": 21,
             "SadeghPM": 6
-        },
-        "json": true,
-        "php": true
-    },
-    "af": {
-        "name": "Afrikaans",
-        "complete": 399,
-        "contributors": {
-            "medlion": 421
-        },
-        "json": true,
-        "php": true
-    },
-    "bs": {
-        "name": "Bosnian",
-        "complete": 399,
-        "contributors": {
-            "hajro92": 420
-        },
-        "json": true,
-        "php": true
-    },
-    "ja": {
-        "name": "Japanese",
-        "complete": 399,
-        "contributors": {
-            "Tsumagari": 420,
-            "storyn26383": 3
-        },
-        "json": true,
-        "php": true
-    },
-    "tk": {
-        "name": "Turkmen",
-        "complete": 398,
-        "contributors": {
-            "kakajansh": 419
         },
         "json": true,
         "php": true
@@ -367,7 +367,7 @@
     },
     "pt": {
         "name": "Portuguese",
-        "complete": 376,
+        "complete": 383,
         "contributors": {
             "Pedrocssg": 347
         },

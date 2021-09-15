@@ -9,12 +9,12 @@ featherIcon: info
 
 This is not an official Laravel package, but is built from community contributions. If you are able to help by submitting a new language, reviewing an existing language, or adding missing keys, please read our [contributing guidelines]({{base}}/{{version}}/contributing) and raise a PR.
 
-#### Available Languages
+###### Available Languages
 
 Total languages **44**  
-Total lines translated **17,288 (92.4%)**
+Total lines translated **17,316 (92.6%)**
 
-* `en` English &middot; **424 (99.8%)**
+* `en` English &middot; **425 (100%)**
 * `id` Indonesian &middot; **425 (100%)**
 * `es` Spanish &middot; **425 (100%)**
 * `pt‑BR` Brazilian Portuguese &middot; **424 (99.8%)**
@@ -32,19 +32,19 @@ Total lines translated **17,288 (92.4%)**
 * `cs` Czech &middot; **407 (95.8%)**
 * `hu` Hungarian &middot; **407 (95.8%)**
 * `ca` Catalan &middot; **405 (95.3%)**
+* `af` Afrikaans &middot; **404 (95.1%)**
+* `bs` Bosnian &middot; **404 (95.1%)**
+* `ja` Japanese &middot; **404 (95.1%)**
 * `nb` Norwegian Bokmål &middot; **404 (95.1%)**
 * `sv` Swedish &middot; **404 (95.1%)**
 * `uk` Ukrainian &middot; **404 (95.1%)**
 * `uz‑Latn` Uzbek (Latin) &middot; **404 (95.1%)**
+* `tk` Turkmen &middot; **403 (94.8%)**
 * `fa` Farsi &middot; **402 (94.6%)**
-* `af` Afrikaans &middot; **399 (93.9%)**
-* `bs` Bosnian &middot; **399 (93.9%)**
-* `ja` Japanese &middot; **399 (93.9%)**
-* `tk` Turkmen &middot; **398 (93.6%)**
 * `pl` Polish &middot; **396 (93.2%)**
 * `zh‑CN` Chinese (Simplified) &middot; **392 (92.2%)**
 * `zh‑TW` Chinese (Traditional) &middot; **392 (92.2%)**
-* `pt` Portuguese &middot; **376 (88.5%)**
+* `pt` Portuguese &middot; **383 (90.1%)**
 * `da` Danish &middot; **355 (83.5%)**
 * `eu` Basque &middot; **353 (83.1%)**
 * `hr` Croatian &middot; **351 (82.6%)**
