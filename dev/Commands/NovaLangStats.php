@@ -159,16 +159,17 @@ class NovaLangStats extends AbstractDevCommand
         $countIcon = $this->getPercentIcon($languagesCount);
         $icon = $this->getPercentIcon($translatedCount, $percent);
 
-        $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon).PHP_EOL.
+        $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon) . PHP_EOL .
             sprintf('Total lines translated ![%s (%s%%)](%s)', number_format($translatedCount), $percent, $icon);
 
-        $header = '## Available Languages'.PHP_EOL.PHP_EOL.
-            'Note: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.'.PHP_EOL.PHP_EOL.
-            $totals.PHP_EOL.PHP_EOL.
-            '| Code | Language | Translated files | Lines translated | Thanks to |'.PHP_EOL.
+        $header = '## Available Languages' . PHP_EOL . PHP_EOL.
+            'We welcome new languages and additions/improvements to existing languages! Please read our [contributing guidelines](CONTRIBUTING.md) and raise a PR.' . PHP_EOL . PHP_EOL .
+            '**Note**: There is no need to update the count of translated strings and add your username below, as this is done by script when your PR is merged.' . PHP_EOL . PHP_EOL .
+            $totals . PHP_EOL . PHP_EOL .
+            '| Code | Language | Translated files | Lines translated | Thanks to |' . PHP_EOL .
             '| --- | --- | --- | --- | --- |';
 
-        $contents = $header.PHP_EOL.$contributorsTable->join(PHP_EOL);
+        $contents = $header . PHP_EOL . $contributorsTable->join(PHP_EOL);
 
         $originalContents = $this->loadText($outputFile);
 
@@ -356,15 +357,15 @@ class NovaLangStats extends AbstractDevCommand
             }
         }
 
-        $collaborators = [
+        $maintainers = [
             'kitbs' => ['en', 'de', 'es', 'fr'],
             'hivokas' => ['ru'],
         ];
 
-        foreach ($collaborators as $collaborator => $collaboratorLocales) {
-            $collaboratorLocales = array_diff(array_keys($contributions), $collaboratorLocales);
-            foreach ($collaboratorLocales as $locale) {
-                unset($contributions[$locale][$collaborator]);
+        foreach ($maintainers as $maintainer => $maintainerLocales) {
+            $maintainerLocales = array_diff(array_keys($contributions), $maintainerLocales);
+            foreach ($maintainerLocales as $locale) {
+                unset($contributions[$locale][$maintainer]);
             }
         }
 
