@@ -8,7 +8,7 @@ use SplFileInfo;
 class NovaLangCountry extends AbstractDevCommand
 {
     protected const SAVED_COUNTRY_NAMES = 'Country names for "%s" locale have been added to [%s].';
-    protected const RUN_MISSING_COMMAND = 'Additionally, country names were not found for %d keys. These were not added to the file. Run the command `php nova-lang missing` to add them.';
+    protected const RUN_MISSING_COMMAND = 'Country names were not found for %d keys. These were not added to the file. Run the command `php nova-lang missing` to add them.';
     protected const COUNTRY_NAMES_NOT_FOUND = 'Country names could not be found for "%s" locale. The file was not updated.';
 
     protected const CLDR_URL = 'https://github.com/unicode-org/cldr-json/raw/main/cldr-json/cldr-localenames-modern/main/%s/territories.json';

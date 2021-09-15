@@ -9,7 +9,7 @@ class NovaLangReorder extends AbstractDevCommand
 
     protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order. The updated file has been output to [%s].';
     protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
-    protected const RUN_MISSING_COMMAND = 'Additionally, %d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to add them.';
+    protected const RUN_MISSING_COMMAND = '%d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to add them.';
 
     /**
      * The name and signature of the console command.
@@ -52,9 +52,8 @@ class NovaLangReorder extends AbstractDevCommand
 
         $diffs = $this->array_diff_order($commonKeys, $localeKeys);
 
-        $missingKeys = 0;
-
         if ($diffs > 0) {
+            $missingKeys = 0;
 
             $outputKeys = [];
 
@@ -71,9 +70,11 @@ class NovaLangReorder extends AbstractDevCommand
             $this->info(sprintf(static::KEYS_OUT_OF_ORDER, $diffs, $locale, $outputFile));
         } else {
             $this->info(sprintf(static::NO_KEYS_OUT_OF_ORDER, $locale));
+
+            $missingKeys = count($this->sourceKeys) - count($commonKeys);
         }
 
-        if ($missingKeys) {
+        if ($missingKeys > 0) {
             $this->warn('    ' . sprintf(static::RUN_MISSING_COMMAND, $missingKeys, $locale));
             $this->newLine();
         }
