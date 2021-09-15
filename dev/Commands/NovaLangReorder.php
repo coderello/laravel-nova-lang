@@ -6,7 +6,6 @@ use Exception;
 
 class NovaLangReorder extends AbstractDevCommand
 {
-
     protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order. The updated file has been output to [%s].';
     protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
     protected const RUN_MISSING_COMMAND = '%d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to add them.';
@@ -35,7 +34,7 @@ class NovaLangReorder extends AbstractDevCommand
      */
     public function handleLocale(string $locale)
     {
-        if (!$this->availableLocales->contains($locale)) {
+        if (! $this->availableLocales->contains($locale)) {
             $this->error(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
 
             exit;
@@ -95,7 +94,6 @@ class NovaLangReorder extends AbstractDevCommand
 
         for ($i = 0; $i < count($array1); $i++) {
             while ($array1[$i] != ($array2[$i] ?? null)) {
-
                 if (in_array($array1[$i], $diff, true)) {
                     $moves++;
                     $diff = array_diff($diff, [$array1[$i]]);

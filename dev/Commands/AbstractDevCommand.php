@@ -16,7 +16,7 @@ abstract class AbstractDevCommand extends AbstractCommand
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
@@ -92,7 +92,7 @@ abstract class AbstractDevCommand extends AbstractCommand
         $sourceDirectory = $this->directoryNovaSource() . '/en';
         $sourceFile = "$sourceDirectory.json";
 
-        if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
+        if (! $this->filesystem->exists($sourceDirectory) || ! $this->filesystem->exists($sourceFile)) {
             $this->error('The Nova language files were not found in the "vendor/laravel/nova" directory. Have you run `composer install`?');
 
             exit;

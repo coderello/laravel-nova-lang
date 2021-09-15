@@ -37,10 +37,10 @@ class NovaLangCountry extends AbstractDevCommand
      */
     protected function handleLocale(string $locale): void
     {
-        if (!$this->availableLocales->contains($locale)) {
+        if (! $this->availableLocales->contains($locale)) {
             $this->warn(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
 
-            if (!$this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
+            if (! $this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
                 return;
             }
         }
@@ -72,7 +72,6 @@ class NovaLangCountry extends AbstractDevCommand
                 $this->warn('    ' . sprintf(static::RUN_MISSING_COMMAND, $untranslated, $outputFile));
                 $this->newLine();
             }
-
         } else {
             $this->warn(sprintf(static::COUNTRY_NAMES_NOT_FOUND, $locale));
         }
@@ -98,6 +97,7 @@ class NovaLangCountry extends AbstractDevCommand
 
             if ($json) {
                 $found = true;
+
                 break;
             }
         }
@@ -114,8 +114,7 @@ class NovaLangCountry extends AbstractDevCommand
             foreach ($countryKeys as $code => $key) {
                 if (isset($json[$code])) {
                     $names[$key] = $json[$code];
-                }
-                else {
+                } else {
                     $untranslated++;
                 }
             }

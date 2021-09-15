@@ -36,10 +36,10 @@ class NovaLangMissing extends AbstractDevCommand
     {
         $inputFile = $this->directoryFrom("$locale.json");
 
-        if (!$this->availableLocales->contains($locale)) {
+        if (! $this->availableLocales->contains($locale)) {
             $this->warn(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
 
-            if (!$this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
+            if (! $this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
                 return;
             }
 
@@ -72,7 +72,6 @@ class NovaLangMissing extends AbstractDevCommand
                 $this->comment('    ' . sprintf(static::RUN_COUNTRY_COMMAND, $countryKeys, $locale));
                 $this->newLine();
             }
-
         } else {
             $this->info(sprintf(static::NO_MISSING_KEYS, $locale));
         }

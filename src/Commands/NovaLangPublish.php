@@ -39,7 +39,7 @@ class NovaLangPublish extends AbstractCommand
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
@@ -48,9 +48,8 @@ class NovaLangPublish extends AbstractCommand
         $requestedLocales = $this->getRequestedLocales();
 
         $requestedLocales->each(function (string $alias, string $locale) use ($availableLocales) {
-
             if ($alias == 'en' && $this->isForce()) {
-                if (!$this->confirm(sprintf(static::CONFIRM_EN_OVERWRITE))) {
+                if (! $this->confirm(sprintf(static::CONFIRM_EN_OVERWRITE))) {
                     return;
                 }
             }
@@ -105,7 +104,7 @@ class NovaLangPublish extends AbstractCommand
 
         $aliases = $this->getLocaleAliases($locales->count() == 1 ? $locales->first() : false);
 
-        $locales = $locales->mapWithKeys(function (string $locale, string $alias) use (&$aliases) {
+        $locales = $locales->mapWithKeys(function (string $locale) use (&$aliases) {
             $alias = $aliases->pull($locale, $locale);
 
             return [$locale => $alias];
@@ -122,30 +121,34 @@ class NovaLangPublish extends AbstractCommand
         return $locales;
     }
 
+    /**
+     * Get aliases for locales.
+     *
+     * @param bool|string $single
+     * @return Collection
+     */
     protected function getLocaleAliases($single = false): Collection
     {
         $aliases = collect();
 
+        /** @var string $input */
         $input = $this->option('alias');
 
         if ($input) {
-
             $inputs = explode(',', $input);
 
             if (strpos($input, ':') === false) {
                 if ($single && count($inputs) == 1) {
-                    return collect([$single => $input]);
+                    return collect([(string) $single => $input]);
                 }
 
                 $this->error(static::ALIAS_WRONG_FORMAT);
 
                 exit;
-            }
-            elseif (substr_count($input, ':') < count($inputs)) {
+            } elseif (substr_count($input, ':') < count($inputs)) {
                 if ($single) {
                     $this->error(static::ONLY_ONE_ALIAS);
-                }
-                else {
+                } else {
                     $this->error(static::ALIAS_WRONG_FORMAT);
                 }
 

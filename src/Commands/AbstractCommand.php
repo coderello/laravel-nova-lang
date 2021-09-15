@@ -2,6 +2,7 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
@@ -13,12 +14,12 @@ abstract class AbstractCommand extends Command
      * Possible locale separators.
      * @var string
      */
-    const SEPARATORS = '-‑_';
+    public const SEPARATORS = '-‑_';
 
     /**
      * @var string[]
      */
-    const IGNORED_KEYS = ['*', '—'];
+    public const IGNORED_KEYS = ['*', '—'];
 
     /**
      * @var Filesystem
@@ -42,7 +43,9 @@ abstract class AbstractCommand extends Command
         if ($this->isAll()) {
             $locales = $this->getAvailableLocales();
         } elseif ($this->argument('locales')) {
-            $locales = $this->fixSeparators($this->argument('locales'));
+            /** @var string $locales */
+            $locales = $this->argument('locales');
+            $locales = $this->fixSeparators($locales);
             $locales = collect(explode(',', $locales))->filter();
         } else {
             $locales = collect();
@@ -74,41 +77,52 @@ abstract class AbstractCommand extends Command
 
     protected function fixSeparators(?string $locale, string $separator = '-'): string
     {
-        return preg_replace('/[' . static::SEPARATORS . ']+/', $separator, $locale);
+        return preg_replace('/[' . static::SEPARATORS . ']+/', $separator, $locale ?? '');
     }
 
     protected function isForce(): bool
     {
-        return $this->option('force');
+        return (bool) $this->option('force');
     }
 
     protected function isAll(): bool
     {
-        return $this->option('all');
+        return (bool) $this->option('all');
     }
 
     protected function directoryFrom(): string
     {
-        return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
+        if (function_exists('base_path')) {
+            return base_path('vendor/coderello/laravel-nova-lang/resources/lang');
+        }
+
+        throw new Exception('Command cannot be run outside Laravel');
     }
 
     protected function directoryNovaSource(): string
     {
-        return base_path('vendor/laravel/nova/resources/lang');
+        if (function_exists('base_path')) {
+            return base_path('vendor/laravel/nova/resources/lang');
+        }
+
+        throw new Exception('Command cannot be run outside Laravel');
     }
 
     protected function directoryTo(): string
     {
-        return resource_path('lang/vendor/nova');
+        if (function_exists('resource_path')) {
+            return resource_path('lang/vendor/nova');
+        }
+
+        throw new Exception('Command cannot be run outside Laravel');
     }
 
     public function noLocalesRequested(Collection $requestedLocales): void
     {
-        if (!$requestedLocales->count()) {
+        if (! $requestedLocales->count()) {
             $this->error('You must either specify one or more locales, or use the --all option.');
 
             exit;
         }
     }
-
 }

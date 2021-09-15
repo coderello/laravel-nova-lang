@@ -33,7 +33,7 @@ class NovaLangStats extends AbstractDevCommand
         $sourceDirectory = $this->directoryNovaSource().'/en';
         $sourceFile = $sourceDirectory.'.json';
 
-        if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
+        if (! $this->filesystem->exists($sourceDirectory) || ! $this->filesystem->exists($sourceFile)) {
             $this->error('The source language files were not found in the vendor/laravel/nova directory.');
 
             exit;
@@ -52,7 +52,6 @@ class NovaLangStats extends AbstractDevCommand
         $blame = collect($this->getBlame());
 
         $availableLocales->each(function (string $locale) use ($contributors, $sourceKeys, $sourceCount, $sourcePhpKeys, $blame, &$translatedCount) {
-
             $inputDirectory = $this->directoryFrom().'/'.$locale;
 
             $inputFile = $inputDirectory.'.json';
@@ -77,15 +76,13 @@ class NovaLangStats extends AbstractDevCommand
 
             $complete = $sourceCount - count($missingKeys) - count($missingPhpKeys);
 
-            if (!is_null($complete) && $complete > 0) {
-
+            if (! is_null($complete) && $complete > 0) {
                 if ($blameContributors = $blame->get($locale)) {
                     foreach ($blameContributors as $contributor => $lines) {
-                        if (!($contributor == 'hivokas' && $lines == 3)) {
-                            if (!isset($localeStat['contributors'][$contributor])) {
+                        if (! ($contributor == 'hivokas' && $lines == 3)) {
+                            if (! isset($localeStat['contributors'][$contributor])) {
                                 $localeStat['contributors'][$contributor] = $lines;
-                            }
-                            else {
+                            } else {
                                 if ($lines > $localeStat['contributors'][$contributor]) {
                                     $localeStat['contributors'][$contributor] = $lines;
                                 }
@@ -101,24 +98,23 @@ class NovaLangStats extends AbstractDevCommand
                 $localeStat['php'] = count($localePhpKeys) > 0;
 
                 $localeStat['contributors'] = collect($localeStat['contributors'])
-                    ->map(function($lines, $name) {
+                    ->map(function ($lines, $name) {
                         return compact('lines', 'name');
-                    })->sort(function($a, $b) {
+                    })->sort(function ($a, $b) {
                         return $a['lines'] === $b['lines'] ? $a['name'] <=> $b['name'] : 0 - ($a['lines'] <=> $b['lines']);
-                    })->map(function($contributor) {
+                    })->map(function ($contributor) {
                         return $contributor['lines'];
                     })->all();
             }
 
             $contributors->put($locale, $localeStat);
-
         });
 
         // Update "contributors.json"
 
         $en = $contributors->pull('en');
 
-        $contributors = $contributors->sort(function($a, $b) {
+        $contributors = $contributors->sort(function ($a, $b) {
             return $a['complete'] === $b['complete'] ? $a['name'] <=> $b['name'] : 0 - ($a['complete'] <=> $b['complete']);
         });
 
@@ -136,15 +132,15 @@ class NovaLangStats extends AbstractDevCommand
 
         // Update "README.md"
 
-        $contributorsTable = $contributors->map(function($localeStat, $locale) use ($sourceCount) {
-
+        $contributorsTable = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
             $percent = $this->getPercent($localeStat['complete'], $sourceCount);
             $icon = $this->getPercentIcon($localeStat['complete'], $percent);
 
-            $contributors = implode(', ', array_map(function($contributor) {
+            $contributors = implode(', ', array_map(function ($contributor) {
                 if ($contributor == '(unknown)') {
                     return $contributor;
                 }
+
                 return sprintf('[%s](https://github.com/%s)', $contributor, $contributor);
             }, array_keys($localeStat['contributors'])));
 
@@ -187,7 +183,6 @@ class NovaLangStats extends AbstractDevCommand
         $outputFile = $this->basePath('docs/introduction.md');
 
         $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
-
             $percent = $this->getPercent($localeStat['complete'], $sourceCount);
 
             return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
@@ -228,16 +223,16 @@ class NovaLangStats extends AbstractDevCommand
         }
 
         $colors = [
-            1   => 'red',
-            85  => 'orange',
-            90  => 'yellow',
-            95  => 'green',
+            1 => 'red',
+            85 => 'orange',
+            90 => 'yellow',
+            95 => 'green',
             100 => 'brightgreen',
         ];
 
         $percent = floor($percent);
 
-        $colors = array_filter($colors, function($color, $limit) use ($percent) {
+        $colors = array_filter($colors, function ($color, $limit) use ($percent) {
             return $percent >= $limit;
         }, ARRAY_FILTER_USE_BOTH);
 
@@ -268,7 +263,7 @@ class NovaLangStats extends AbstractDevCommand
         if ($this->filesystem->exists($path)) {
             $json = $this->loadJson($path);
 
-            if (!is_array($json)) {
+            if (! is_array($json)) {
                 throw new \Exception('Invalid JSON file: '.$path);
             }
 
@@ -286,7 +281,7 @@ class NovaLangStats extends AbstractDevCommand
 
                 $php = $this->filesystem->getRequire($path);
 
-                if (!is_array($php)) {
+                if (! is_array($php)) {
                     throw new \Exception('Invalid JSON file: ' . $path);
                 }
 
@@ -294,6 +289,7 @@ class NovaLangStats extends AbstractDevCommand
                     ->map(function ($key) use ($file) {
                         return "$file.$key";
                     });
+
                 return $keys;
             })->flatten()->all();
     }
@@ -308,8 +304,9 @@ class NovaLangStats extends AbstractDevCommand
 
         $contributions = ['en' => ['taylorotwell' => 10001, 'bonzai' => 10000, 'davidhemphill' => 10000, 'themsaid' => 10000]];
 
-        if (!$token) {
+        if (! $token) {
             $this->error('To download newer contributions from GitHub, create a file named .github_token in the package root directory which contains a personal access token. Falling back to existing contributors list.');
+
             return $contributions;
         }
 
@@ -333,14 +330,14 @@ class NovaLangStats extends AbstractDevCommand
 
         curl_close($curl);
 
-        if (!isset($result['data']['repository']['pullRequests']['nodes'])) {
+        if (! isset($result['data']['repository']['pullRequests']['nodes'])) {
             return $contributions;
         }
 
         $pullRequests = $result['data']['repository']['pullRequests']['nodes'];
 
         foreach ($pullRequests as $pullRequest) {
-            if (!in_array($pullRequest['number'], [148, 156], true)) {
+            if (! in_array($pullRequest['number'], [148, 156], true)) {
                 $author = $pullRequest['author']['login'] ?? '(unknown)';
 
                 foreach ($pullRequest['files']['nodes'] as $file) {
@@ -350,8 +347,7 @@ class NovaLangStats extends AbstractDevCommand
                         if ($locale != 'cn' && $file['additions']) {
                             if (isset($contributions[$locale][$author])) {
                                 $contributions[$locale][$author] += $file['additions'];
-                            }
-                            else {
+                            } else {
                                 $contributions[$locale][$author] = $file['additions'];
                             }
                         }
