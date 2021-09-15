@@ -15,6 +15,7 @@ class NovaLangPublish extends AbstractCommand
     protected const ONLY_ONE_ALIAS = 'If publishing only one locale with a simple alias, only one alias should be passed.';
     protected const ALIAS_NOT_VALID = 'Alias "%s" is not valid.';
     protected const ALIAS_DECLARED_MORE_THAN_ONCE = 'Alias for "%s" locale was declared more than once and will be overwritten by the last value.';
+    protected const AS_ALIAS = ' as "%s"';
 
     /**
      * The name and signature of the console command.
@@ -67,7 +68,7 @@ class NovaLangPublish extends AbstractCommand
             }
 
             if ($alias !== $locale) {
-                $asAlias = sprintf(' as "%s"', $alias);
+                $asAlias = sprintf(static::AS_ALIAS, $alias);
             }
 
             $inputDirectory = $this->directoryFrom().'/'.$locale;
@@ -78,9 +79,7 @@ class NovaLangPublish extends AbstractCommand
 
             $outputFile = $outputDirectory.'.json';
 
-            if (($this->filesystem->exists($outputDirectory)
-                || $this->filesystem->exists($outputFile))
-                && ! $this->isForce()) {
+            if (($this->filesystem->exists($outputDirectory) || $this->filesystem->exists($outputFile)) && ! $this->isForce()) {
                 $this->warn(sprintf(static::CONFIRM_OVERWRITE, $locale, $asAlias));
 
                 return;
@@ -93,9 +92,7 @@ class NovaLangPublish extends AbstractCommand
             }
 
             if ($this->filesystem->exists($inputFile)) {
-
                 $this->filesystem->copy($inputFile, $outputFile);
-
             }
 
             $this->info(sprintf(static::PUBLISHED_SUCCESSFULLY, $locale, $asAlias));
@@ -141,6 +138,7 @@ class NovaLangPublish extends AbstractCommand
                 }
 
                 $this->error(static::ALIAS_WRONG_FORMAT);
+
                 exit;
             }
             elseif (substr_count($input, ':') < count($inputs)) {
@@ -150,11 +148,12 @@ class NovaLangPublish extends AbstractCommand
                 else {
                     $this->error(static::ALIAS_WRONG_FORMAT);
                 }
+
                 exit;
             }
 
             foreach ($inputs as $input) {
-                @list($locale, $alias) = explode(':', $input);
+                [$locale, $alias] = explode(':', $input);
 
                 if (empty($alias) || empty($locale)) {
                     $this->error(sprintf(static::ALIAS_NOT_VALID, $input));
