@@ -8,7 +8,7 @@ class NovaLangMissing extends AbstractDevCommand
     protected const SAVED_MISSING_KEYS = '%d missing translation keys for "%s" locale have been added to [%s].';
     protected const REMOVE_MISSING_VALUES = 'Ensure you translate or remove all "%s" values before raising your PR.';
     protected const NO_MISSING_KEYS = '"%s" locale has no missing translation keys.';
-    protected const RUN_COUNTRY_COMMAND = '%d of these missing keys are country names, which can be automatically added by running the command `php nova-lang country %s`.';
+    protected const RUN_COUNTRY_COMMAND = '%d of these missing keys are country names. Run the command `php nova-lang country %s` to automatically add them.';
 
     /**
      * The name and signature of the console command.
@@ -24,7 +24,7 @@ class NovaLangMissing extends AbstractDevCommand
      *
      * @var string
      */
-    protected $description = 'Add missing keys from Laravel Nova language files.';
+    protected $description = 'Add missing keys from Nova language files.';
 
     /**
      * Handle the command for a given locale.
@@ -40,7 +40,7 @@ class NovaLangMissing extends AbstractDevCommand
             $this->warn(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
 
             if (!$this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
-                exit;
+                return;
             }
 
             $missingKeys = $this->sourceKeys;
@@ -69,12 +69,18 @@ class NovaLangMissing extends AbstractDevCommand
             $this->info(sprintf(static::SAVED_MISSING_KEYS, $missingKeys, $locale, $outputFile));
 
             if ($countryKeys) {
-                $this->info(sprintf(static::RUN_COUNTRY_COMMAND, $countryKeys, $locale));
+                $this->comment('    ' . sprintf(static::RUN_COUNTRY_COMMAND, $countryKeys, $locale));
+                $this->newLine();
             }
 
-            $this->warn(sprintf(static::REMOVE_MISSING_VALUES, static::MISSING_TEXT));
         } else {
             $this->info(sprintf(static::NO_MISSING_KEYS, $locale));
         }
+    }
+
+    protected function afterHandle()
+    {
+        $this->newLine();
+        $this->warn(sprintf(static::REMOVE_MISSING_VALUES, static::MISSING_TEXT));
     }
 }

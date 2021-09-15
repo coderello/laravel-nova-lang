@@ -7,7 +7,7 @@ class NovaLangReorder extends AbstractDevCommand
 
     protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order. The updated file has been output to [%s].';
     protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
-    protected const RUN_MISSING_COMMAND = 'Additionally, %d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to view them.';
+    protected const RUN_MISSING_COMMAND = 'Additionally, %d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to add them.';
 
     /**
      * The name and signature of the console command.
@@ -23,7 +23,7 @@ class NovaLangReorder extends AbstractDevCommand
      *
      * @var string
      */
-    protected $description = 'Reorder the keys from Laravel Nova language files to match the source file order.';
+    protected $description = 'Reorder the keys from Nova language files to match the source file order.';
 
     /**
      * Handle the command for a given locale.

@@ -27,6 +27,13 @@ abstract class AbstractDevCommand extends AbstractCommand
         $this->sourceKeys = $this->getNovaKeys();
 
         $this->requestedLocales->each(fn (string $locale) => $this->handleLocale($locale));
+
+        $this->afterHandle();
+    }
+
+    protected function afterHandle()
+    {
+        //
     }
 
     protected function directoryFrom(string $path = null): string
