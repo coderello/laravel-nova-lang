@@ -80,7 +80,6 @@ class NovaLangMissing extends AbstractDevCommand
 
     protected function afterHandle()
     {
-        $this->newLine();
         $this->warn(sprintf(static::REMOVE_MISSING_VALUES, static::MISSING_TEXT));
     }
 }

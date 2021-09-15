@@ -28,6 +28,8 @@ abstract class AbstractDevCommand extends AbstractCommand
 
         $this->requestedLocales->each(fn (string $locale) => $this->handleLocale($locale));
 
+        $this->newLine();
+
         $this->afterHandle();
     }
 
@@ -38,7 +40,7 @@ abstract class AbstractDevCommand extends AbstractCommand
 
     protected function directoryFrom(string $path = null): string
     {
-        return $this->basePath("resources/lang/$path");
+        return rtrim($this->basePath('resources/lang') . "/$path", '/');
     }
 
     protected function directoryNovaSource(): string

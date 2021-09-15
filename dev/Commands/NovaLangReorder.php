@@ -2,6 +2,8 @@
 
 namespace Coderello\LaravelNovaLang\Commands;
 
+use Exception;
+
 class NovaLangReorder extends AbstractDevCommand
 {
 
@@ -46,30 +48,70 @@ class NovaLangReorder extends AbstractDevCommand
 
         $localeKeys = array_values(array_diff(array_keys($localeTranslations), static::IGNORED_KEYS));
 
-        $reorderedKeys = array_diff_assoc(array_values(array_intersect($this->sourceKeys, $localeKeys)), $localeKeys);
+        $commonKeys = array_values(array_intersect($this->sourceKeys, $localeKeys));
 
-        $missingKeys = [];
+        $diffs = $this->array_diff_order($commonKeys, $localeKeys);
 
-        if (count($reorderedKeys)) {
+        $missingKeys = 0;
+
+        if ($diffs > 0) {
 
             $outputKeys = [];
+
             foreach ($this->sourceKeys as $key) {
                 if (isset($localeTranslations[$key])) {
                     $outputKeys[$key] = $localeTranslations[$key];
                 } else {
-                    $missingKeys[$key] = '';
+                    $missingKeys++;
                 }
             }
 
             $this->saveJson($outputFile, $outputKeys);
 
-            $this->info(sprintf(static::KEYS_OUT_OF_ORDER, count($reorderedKeys), $locale, $outputFile));
+            $this->info(sprintf(static::KEYS_OUT_OF_ORDER, $diffs, $locale, $outputFile));
         } else {
-            $this->warn(sprintf(static::NO_KEYS_OUT_OF_ORDER, $locale));
+            $this->info(sprintf(static::NO_KEYS_OUT_OF_ORDER, $locale));
         }
 
-        if (count($missingKeys)) {
-            $this->warn(sprintf(static::RUN_MISSING_COMMAND, count($missingKeys), $locale));
+        if ($missingKeys) {
+            $this->warn('    ' . sprintf(static::RUN_MISSING_COMMAND, $missingKeys, $locale));
+            $this->newLine();
         }
+    }
+
+    protected function array_diff_order(array $array2, array $array1): int
+    {
+        if (count($array1) <> count($array2)) {
+            throw new Exception('Both arrays must be the same size');
+        }
+
+        if (count(array_diff($array1, $array2)) > 0) {
+            throw new Exception('Both arrays must contain the same values');
+        }
+
+        $diff = [];
+        $moves = 0;
+
+        for ($i = 0; $i < count($array1); $i++) {
+            while ($array1[$i] != ($array2[$i] ?? null)) {
+
+                if (in_array($array1[$i], $diff, true)) {
+                    $moves++;
+                    $diff = array_diff($diff, [$array1[$i]]);
+                    array_splice($array2, $i, 0, $array1[$i]);
+                } else {
+                    $diff[] = $array2[$i];
+                    unset($array2[$i]);
+                }
+
+                $array2 = array_values($array2);
+            }
+        }
+
+        if (count($diff)) {
+            $moves += count($diff);
+        }
+
+        return $moves;
     }
 }

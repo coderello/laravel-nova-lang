@@ -41,7 +41,7 @@ class NovaLangCountry extends AbstractDevCommand
             $this->warn(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
 
             if (!$this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
-                exit;
+                return;
             }
         }
 
@@ -69,7 +69,8 @@ class NovaLangCountry extends AbstractDevCommand
             $this->info(sprintf(static::SAVED_COUNTRY_NAMES, $locale, $outputFile));
 
             if ($untranslated > 0) {
-                $this->warn(sprintf(static::RUN_MISSING_COMMAND, $untranslated, $outputFile));
+                $this->warn('    ' . sprintf(static::RUN_MISSING_COMMAND, $untranslated, $outputFile));
+                $this->newLine();
             }
 
         } else {
