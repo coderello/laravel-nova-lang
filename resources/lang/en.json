@@ -387,6 +387,8 @@
     "New :resource": "New :resource",
     "Edit :resource": "Edit :resource",
     "Update :resource": "Update :resource",
+    "Start Polling": "Start Polling",
+    "Stop Polling": "Stop Polling",
     "Choose :field": "Choose :field",
     "Download": "Download",
     "Action": "Action",
@@ -417,8 +419,6 @@
     "Update :resource: :title": "Update :resource: :title",
     "Update attached :resource: :title": "Update attached :resource: :title",
     ":resource Details: :title": ":resource Details: :title",
-    "Start Polling": "Start Polling",
-    "Stop Polling": "Stop Polling",
     "The HasOne relationship has already been filled.": "The HasOne relationship has already been filled.",
     "An error occured while uploading the file.": "An error occured while uploading the file."
 }
