@@ -14,6 +14,55 @@
         "json": true,
         "php": true
     },
+    "id": {
+        "name": "Indonesian",
+        "complete": 425,
+        "contributors": {
+            "dvlwj": 364,
+            "opanegro": 67,
+            "Kristories": 20
+        },
+        "json": true,
+        "php": true
+    },
+    "es": {
+        "name": "Spanish",
+        "complete": 425,
+        "contributors": {
+            "kitbs": 83,
+            "joebordes": 51,
+            "ajmariduena": 18,
+            "iksaku": 11,
+            "IGedeon": 6,
+            "SpiritSaint": 6,
+            "alejandrotrevi": 4,
+            "Arryan": 3,
+            "kennyhorna": 3,
+            "miktown": 2,
+            "xcodinas": 2,
+            "AndresReyesDev": 1,
+            "dgtal": 1,
+            "rodrigore": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "pt-BR": {
+        "name": "Brazilian Portuguese",
+        "complete": 424,
+        "contributors": {
+            "henryavila": 398,
+            "pedrofurtado": 377,
+            "eduardokum": 364,
+            "saulo-silva": 33,
+            "chbbc": 29,
+            "hpiaia": 14,
+            "IgorDePaula": 5,
+            "emtudo": 3
+        },
+        "json": true,
+        "php": true
+    },
     "fr": {
         "name": "French",
         "complete": 424,
@@ -32,6 +81,16 @@
         "json": true,
         "php": true
     },
+    "ka": {
+        "name": "Georgian",
+        "complete": 424,
+        "contributors": {
+            "akalongman": 364,
+            "zgabievi": 77
+        },
+        "json": true,
+        "php": true
+    },
     "de": {
         "name": "German",
         "complete": 424,
@@ -45,21 +104,44 @@
         "json": true,
         "php": true
     },
-    "es": {
-        "name": "Spanish",
+    "ro": {
+        "name": "Romanian",
         "complete": 424,
         "contributors": {
-            "kitbs": 83,
-            "joebordes": 51,
-            "ajmariduena": 18,
-            "iksaku": 11,
-            "IGedeon": 6,
-            "Arryan": 3,
-            "kennyhorna": 3,
-            "miktown": 2,
-            "xcodinas": 2,
-            "dgtal": 1,
-            "rodrigore": 1
+            "BTeodorWork": 362,
+            "dtix": 67,
+            "alexgiuvara": 2
+        },
+        "json": true,
+        "php": true
+    },
+    "ru": {
+        "name": "Russian",
+        "complete": 424,
+        "contributors": {
+            "hivokas": 363,
+            "sanasol": 32,
+            "den1n": 25,
+            "medvinator": 19,
+            "deadem": 12,
+            "soulshockers": 6,
+            "estim": 1,
+            "kongulov": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "tr": {
+        "name": "Turkish",
+        "complete": 424,
+        "contributors": {
+            "jnbn": 67,
+            "bureken": 58,
+            "Milkhan": 45,
+            "erayusta": 21,
+            "sineld": 7,
+            "semihkeskindev": 4,
+            "dilekuzulmez": 2
         },
         "json": true,
         "php": true
@@ -75,22 +157,6 @@
             "CaddyDz": 12,
             "i3asm": 10,
             "Arryan": 3
-        },
-        "json": true,
-        "php": true
-    },
-    "pt-BR": {
-        "name": "Brazilian Portuguese",
-        "complete": 420,
-        "contributors": {
-            "henryavila": 398,
-            "pedrofurtado": 377,
-            "eduardokum": 364,
-            "saulo-silva": 33,
-            "chbbc": 29,
-            "hpiaia": 14,
-            "IgorDePaula": 5,
-            "emtudo": 3
         },
         "json": true,
         "php": true
@@ -166,30 +232,6 @@
         "json": true,
         "php": true
     },
-    "id": {
-        "name": "Indonesian",
-        "complete": 407,
-        "contributors": {
-            "dvlwj": 364,
-            "opanegro": 67
-        },
-        "json": true,
-        "php": true
-    },
-    "ru": {
-        "name": "Russian",
-        "complete": 406,
-        "contributors": {
-            "hivokas": 363,
-            "sanasol": 32,
-            "den1n": 25,
-            "deadem": 12,
-            "soulshockers": 6,
-            "estim": 1
-        },
-        "json": true,
-        "php": true
-    },
     "ca": {
         "name": "Catalan",
         "complete": 405,
@@ -209,37 +251,12 @@
         "json": true,
         "php": true
     },
-    "ro": {
-        "name": "Romanian",
-        "complete": 404,
-        "contributors": {
-            "BTeodorWork": 362,
-            "dtix": 67,
-            "alexgiuvara": 2
-        },
-        "json": true,
-        "php": true
-    },
     "sv": {
         "name": "Swedish",
         "complete": 404,
         "contributors": {
             "tanjemark": 364,
             "slackernrrd": 89
-        },
-        "json": true,
-        "php": true
-    },
-    "tr": {
-        "name": "Turkish",
-        "complete": 404,
-        "contributors": {
-            "jnbn": 67,
-            "bureken": 58,
-            "Milkhan": 45,
-            "sineld": 7,
-            "semihkeskindev": 4,
-            "dilekuzulmez": 2
         },
         "json": true,
         "php": true
@@ -401,15 +418,6 @@
         "complete": 351,
         "contributors": {
             "Krisseck": 364
-        },
-        "json": true,
-        "php": true
-    },
-    "ka": {
-        "name": "Georgian",
-        "complete": 351,
-        "contributors": {
-            "akalongman": 364
         },
         "json": true,
         "php": true
