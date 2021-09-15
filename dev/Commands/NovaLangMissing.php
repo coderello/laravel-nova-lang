@@ -4,6 +4,12 @@ namespace Coderello\LaravelNovaLang\Commands;
 
 class NovaLangMissing extends AbstractDevCommand
 {
+    protected const MISSING_TEXT = '<MISSING>';
+    protected const SAVED_MISSING_KEYS = '%d missing translation keys for "%s" locale have been added to [%s].';
+    protected const REMOVE_MISSING_VALUES = 'Ensure you translate or remove all "%s" values before raising your PR.';
+    protected const NO_MISSING_KEYS = '"%s" locale has no missing translation keys.';
+    protected const RUN_COUNTRY_COMMAND = '%d of these missing keys are country names, which can be automatically added by running the command `php nova-lang country %s`.';
+
     /**
      * The name and signature of the console command.
      *
@@ -18,70 +24,57 @@ class NovaLangMissing extends AbstractDevCommand
      *
      * @var string
      */
-    protected $description = 'Output missing keys from Laravel Nova language files to storage folder.';
+    protected $description = 'Add missing keys from Laravel Nova language files.';
 
     /**
-     * Execute the console command.
+     * Handle the command for a given locale.
      *
-     * @return mixed
+     * @param string $locale
+     * @return void
      */
-    public function handle()
+    protected function handleLocale(string $locale): void
     {
-        $sourceKeys = $this->getNovaKeys();
+        $inputFile = $this->directoryFrom("$locale.json");
 
-        if (!count($sourceKeys)) {
-            $this->error('The source language files were not found in the vendor/laravel/nova directory. Have you run `composer install`?');
-            return;
+        if (!$this->availableLocales->contains($locale)) {
+            $this->warn(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
+
+            if (!$this->confirm(sprintf(static::WANT_TO_CREATE_FILE, $locale))) {
+                exit;
+            }
+
+            $missingKeys = $this->sourceKeys;
+        } else {
+            $localeTranslations = $this->loadJson($inputFile);
+
+            $missingKeys = array_diff($this->sourceKeys, array_keys($localeTranslations));
         }
 
-        $outputDirectory = $this->base_path('build/missing');
-        $this->filesystem->makeDirectory($outputDirectory, 0777, true, true);
+        $outputKeys = [];
 
-        $availableLocales = $this->getAvailableLocales();
-
-        $requestedLocales = $this->getRequestedLocales();
-
-        if ($this->noLocalesRequested($requestedLocales)) {
-            return;
+        foreach ($this->sourceKeys as $sourceKey) {
+            $outputKeys[$sourceKey] = $localeTranslations[$sourceKey] ?? static::MISSING_TEXT;
         }
 
-        $requestedLocales->each(function (string $locale) use ($availableLocales, $sourceKeys, $outputDirectory) {
+        $outputFile = $inputFile;
 
-            if (! $availableLocales->contains($locale)) {
-                $this->warn(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
+        $countryKeys = array_values(NovaLangCountry::COUNTRY_KEYS);
+        $countryKeys = count(array_intersect($missingKeys, $countryKeys));
 
-                if (!$this->confirm(sprintf('Do you wish to create the file for [%s]?', $locale))) {
-                    return;
-                }
+        $missingKeys = count($missingKeys);
 
-                $missingKeys = $sourceKeys;
-            }
-            else {
-                $inputFile = $this->directoryFrom() . "/$locale.json";
+        if ($missingKeys > 0) {
+            $this->saveJson($outputFile, $outputKeys);
 
-                $localeKeys = array_keys(json_decode($this->filesystem->get($inputFile), true));
+            $this->info(sprintf(static::SAVED_MISSING_KEYS, $missingKeys, $locale, $outputFile));
 
-                $localeKeys = array_map(function($key) {
-                    return str_replace('\\\'', '\'', $key);
-                }, $localeKeys);
-
-                $missingKeys = array_diff($sourceKeys, $localeKeys);
+            if ($countryKeys) {
+                $this->info(sprintf(static::RUN_COUNTRY_COMMAND, $countryKeys, $locale));
             }
 
-            $outputKeys = array_fill_keys($missingKeys, '');
-
-            $outputFile = "$outputDirectory/$locale.json";
-
-            if (count($outputKeys)) {
-                $this->saveJson($outputFile, $outputKeys);
-
-                $this->info(sprintf('%d missing translation keys for [%s] locale have been output to [%s].', count($missingKeys), $locale, $outputFile));
-            } elseif ($this->filesystem->exists($outputFile)) {
-                    $this->warn(sprintf('[%s] locale has no missing translation keys. The existing output file at [%s] was deleted.', $locale, $outputFile));
-                    $this->filesystem->delete($outputFile);
-            } else {
-                $this->warn(sprintf('[%s] locale has no missing translation keys. No output file was created.', $locale));
-            }
-        });
+            $this->warn(sprintf(static::REMOVE_MISSING_VALUES, static::MISSING_TEXT));
+        } else {
+            $this->info(sprintf(static::NO_MISSING_KEYS, $locale));
+        }
     }
 }

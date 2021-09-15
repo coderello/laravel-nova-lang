@@ -36,11 +36,11 @@ class NovaLangStats extends AbstractDevCommand
         if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
             $this->error('The source language files were not found in the vendor/laravel/nova directory.');
 
-            return;
+            exit;
         }
 
-        $contributorsFile = $this->base_path('contributors.json');
-        $contributors = collect(json_decode($this->filesystem->get($contributorsFile), true));
+        $contributorsFile = $this->basePath('contributors.json');
+        $contributors = collect($this->loadJson($contributorsFile));
 
         $sourceKeys = $this->getJsonKeys($sourceFile);
         $sourcePhpKeys = $this->getPhpKeys($this->directoryNovaSource().'/en');
@@ -128,7 +128,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $contributors->prepend($en, 'en');
 
-        $outputFile = $this->base_path('contributors.json');
+        $outputFile = $this->basePath('contributors.json');
 
         $this->saveJson($outputFile, $contributors->merge($missing));
 
@@ -154,7 +154,7 @@ class NovaLangStats extends AbstractDevCommand
             return sprintf('| `%s` | %s | %s %s | ![%d (%s%%)](%s) | %s |', str_replace('-', '‑', $locale), $localeStat['name'], $hasJson, $hasPhp, $localeStat['complete'], $percent, $icon, $contributors);
         });
 
-        $outputFile = $this->base_path('README.md');
+        $outputFile = $this->basePath('README.md');
 
         $languagesCount = $contributors->count();
 
@@ -174,7 +174,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $contents = $header.PHP_EOL.$contributorsTable->join(PHP_EOL);
 
-        $originalContents = $this->filesystem->get($outputFile);
+        $originalContents = $this->loadText($outputFile);
 
         $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
 
@@ -184,7 +184,7 @@ class NovaLangStats extends AbstractDevCommand
 
         // Update "docs/introduction.md"
 
-        $outputFile = $this->base_path('docs/introduction.md');
+        $outputFile = $this->basePath('docs/introduction.md');
 
         $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
 
@@ -203,7 +203,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $contents .= PHP_EOL . PHP_EOL . 'See the full list of contributors on [GitHub](https://github.com/coderello/laravel-nova-lang#available-languages).';
 
-        $originalContents = $this->filesystem->get($outputFile);
+        $originalContents = $this->loadText($outputFile);
 
         $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
 
@@ -266,7 +266,7 @@ class NovaLangStats extends AbstractDevCommand
     protected function getJsonKeys(string $path): array
     {
         if ($this->filesystem->exists($path)) {
-            $json = json_decode($this->filesystem->get($path), true);
+            $json = $this->loadJson($path);
 
             if (!is_array($json)) {
                 throw new \Exception('Invalid JSON file: '.$path);
@@ -301,7 +301,7 @@ class NovaLangStats extends AbstractDevCommand
     protected function getBlame(): array
     {
         try {
-            $token = $this->filesystem->get('.github_token');
+            $token = $this->loadText('.github_token');
         } catch (FileNotFoundException $e) {
             $token = null;
         }

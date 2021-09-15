@@ -37,22 +37,19 @@ class NovaLangPublish extends AbstractCommand
 
         $requestedLocales = $this->getRequestedLocales();
 
-        if ($this->noLocalesRequested($requestedLocales)) {
-            return;
-        }
-
         $requestedLocales->each(function (string $alias, string $locale) use ($availableLocales) {
 
             if ($alias == 'en' && $this->isForce()) {
-                if (!$this->confirm(sprintf('Are you sure you want to publish translations for [en] locale? This will overwrite the file from laravel/nova.'))) {
-                    return;
+                if (!$this->confirm(sprintf('Are you sure you want to publish translations for "en" locale? This will overwrite the file from laravel/nova.'))) {
+
+                    exit;
                 }
             }
 
             if (! $availableLocales->contains($locale)) {
-                $this->warn(sprintf('Unfortunately, translations for [%s] locale don\'t exist. Feel free to send a PR to add them and help other people.', $locale));
+                $this->warn(sprintf('Unfortunately, translations for "%s" locale don\'t exist. Feel free to send a PR to add them and help others.', $locale));
 
-                return;
+                exit;
             }
 
             $asAlias = '';
@@ -62,7 +59,7 @@ class NovaLangPublish extends AbstractCommand
             }
 
             if ($alias !== $locale) {
-                $asAlias = sprintf(' as [%s]', $alias);
+                $asAlias = sprintf(' as "%s"', $alias);
             }
 
             $inputDirectory = $this->directoryFrom().'/'.$locale;
@@ -76,7 +73,7 @@ class NovaLangPublish extends AbstractCommand
             if (($this->filesystem->exists($outputDirectory)
                 || $this->filesystem->exists($outputFile))
                 && ! $this->isForce()) {
-                $this->warn(sprintf('Translations for [%s] locale already exist%s. Use --force to overwrite.', $locale, $asAlias));
+                $this->warn(sprintf('Translations for "%s" locale already exist%s. Use --force to overwrite.', $locale, $asAlias));
 
                 return;
             }
@@ -93,7 +90,7 @@ class NovaLangPublish extends AbstractCommand
 
             }
 
-            $this->info(sprintf('Translations for [%s] locale have been published successfully%s.', $locale, $asAlias));
+            $this->info(sprintf('Translations for "%s" locale have been published successfully%s.', $locale, $asAlias));
         });
     }
 
@@ -114,7 +111,7 @@ class NovaLangPublish extends AbstractCommand
                 return "$alias:$locale";
             })->join(',');
 
-            $this->info(sprintf('Aliases [%s] were not used by the selected locales.', $aliases));
+            $this->info(sprintf('Aliases "%s" were not used by the selected locales.', $aliases));
         }
 
         return $locales;
@@ -152,14 +149,13 @@ class NovaLangPublish extends AbstractCommand
                 @list($locale, $alias) = explode(':', $input);
 
                 if (empty($alias) || empty($locale)) {
-                    $this->error(sprintf('Alias [%s] is not valid.', $input));
+                    $this->error(sprintf('Alias "%s" is not valid.', $input));
                     exit;
                 }
 
                 if ($aliases->has($locale)) {
-                    $this->warn(sprintf('Alias for [%s] locale was declared more than once and will be overwritten by the last value.', $locale));
+                    $this->warn(sprintf('Alias for "%s" locale was declared more than once and will be overwritten by the last value.', $locale));
                 }
-
 
                 $locale = $this->fixSeparators($locale);
 

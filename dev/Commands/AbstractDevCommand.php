@@ -6,32 +6,76 @@ use Illuminate\Support\Collection;
 
 abstract class AbstractDevCommand extends AbstractCommand
 {
+    protected const LOCALE_FILE_DOES_NOT_EXIST = 'The translation file for "%s" locale does not exist. You could help by creating this file and sending a PR.';
+    protected const WANT_TO_CREATE_FILE = 'Do you wish to create the file for "%s" locale?';
+
     protected ?Collection $availableLocales = null;
     protected ?Collection $requestedLocales = null;
+    protected ?Collection $sourceLocales = null;
 
-    protected function directoryFrom(): string
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
     {
-        return $this->base_path('resources/lang');
+        $this->availableLocales = $this->getAvailableLocales();
+
+        $this->requestedLocales = $this->getRequestedLocales();
+
+        $this->sourceKeys = $this->getNovaKeys();
+
+        $this->requestedLocales->each(fn (string $locale) => $this->handleLocale($locale));
+    }
+
+    protected function directoryFrom(string $path = null): string
+    {
+        return $this->basePath("resources/lang/$path");
     }
 
     protected function directoryNovaSource(): string
     {
-        return $this->base_path('vendor/laravel/nova/resources/lang');
+        return $this->basePath('vendor/laravel/nova/resources/lang');
     }
 
-    protected function base_path(?string $path = null): string
+    protected function basePath(?string $path = null, bool $create = false): string
     {
-        return rtrim(realpath(__DIR__ . '/../..') . '/' . $path, '/');
+        $path = rtrim(realpath(__DIR__ . '/../..') . '/' . $path, '/');
+
+        if ($create) {
+            $this->filesystem->makeDirectory($path, 0777, true, true);
+        }
+
+        return $path;
     }
 
-    protected function saveJson(string $path, mixed $content)
+    protected function loadJson(string $path): mixed
     {
-        $this->filesystem->put($path, json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . PHP_EOL);
+        if ($this->filesystem->exists($path)) {
+            return json_decode($this->filesystem->get($path), true);
+        }
+
+        return [];
     }
 
-    protected function saveText(string $path, string $content)
+    protected function loadText(string $path): string
     {
-        $this->filesystem->put($path, rtrim($content) . PHP_EOL);
+        if ($this->filesystem->exists($path)) {
+            return $this->filesystem->get($path);
+        }
+
+        return '';
+    }
+
+    protected function saveJson(string $path, mixed $content): int
+    {
+        return $this->filesystem->put($path, json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . PHP_EOL);
+    }
+
+    protected function saveText(string $path, string $content): int
+    {
+        return $this->filesystem->put($path, rtrim($content) . PHP_EOL);
     }
 
     protected function getNovaKeys(): array
@@ -40,8 +84,9 @@ abstract class AbstractDevCommand extends AbstractCommand
         $sourceFile = "$sourceDirectory.json";
 
         if (!$this->filesystem->exists($sourceDirectory) || !$this->filesystem->exists($sourceFile)) {
-            $this->error('The source language files were not found in the vendor/laravel/nova directory. Have you run `composer install`?');
-            return [];
+            $this->error('The Nova language files were not found in the "vendor/laravel/nova" directory. Have you run `composer install`?');
+
+            exit;
         }
 
         $novaKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));

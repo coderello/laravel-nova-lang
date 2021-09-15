@@ -1,5 +1,4 @@
 vendor
-build
 composer.lock
 .idea
 .github_token

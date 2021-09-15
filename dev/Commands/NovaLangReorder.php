@@ -4,6 +4,11 @@ namespace Coderello\LaravelNovaLang\Commands;
 
 class NovaLangReorder extends AbstractDevCommand
 {
+
+    protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order. The updated file has been output to [%s].';
+    protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
+    protected const RUN_MISSING_COMMAND = 'Additionally, %d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to view them.';
+
     /**
      * The name and signature of the console command.
      *
@@ -18,29 +23,37 @@ class NovaLangReorder extends AbstractDevCommand
      *
      * @var string
      */
-    protected $description = 'Reorder the keys from Laravel Nova language files to match the source file order and output to storage folder.';
+    protected $description = 'Reorder the keys from Laravel Nova language files to match the source file order.';
 
-    public function handleLocale(string $locale, array $sourceKeys)
+    /**
+     * Handle the command for a given locale.
+     *
+     * @param string $locale
+     * @return void
+     */
+    public function handleLocale(string $locale)
     {
         if (!$this->availableLocales->contains($locale)) {
-            return $this->error(sprintf('The translation file for [%s] locale does not exist. You could help other people by creating this file and sending a PR :)', $locale));
+            $this->error(sprintf(static::LOCALE_FILE_DOES_NOT_EXIST, $locale));
+
+            exit;
         }
 
-        $inputFile = $this->directoryFrom() . "/$locale.json";
+        $inputFile = $this->directoryFrom("$locale.json");
         $outputFile = $inputFile;
 
-        $localeTranslations = json_decode($this->filesystem->get($inputFile), true);
+        $localeTranslations = $this->loadJson($inputFile);
 
         $localeKeys = array_values(array_diff(array_keys($localeTranslations), static::IGNORED_KEYS));
 
-        $reorderedKeys = array_diff_assoc(array_values(array_intersect($sourceKeys, $localeKeys)), $localeKeys);
+        $reorderedKeys = array_diff_assoc(array_values(array_intersect($this->sourceKeys, $localeKeys)), $localeKeys);
 
         $missingKeys = [];
 
         if (count($reorderedKeys)) {
 
             $outputKeys = [];
-            foreach ($sourceKeys as $key) {
+            foreach ($this->sourceKeys as $key) {
                 if (isset($localeTranslations[$key])) {
                     $outputKeys[$key] = $localeTranslations[$key];
                 } else {
@@ -50,35 +63,13 @@ class NovaLangReorder extends AbstractDevCommand
 
             $this->saveJson($outputFile, $outputKeys);
 
-            $this->info(sprintf('%d translation keys for [%s] locale were out of order. The updated file has been output to [%s].', count($reorderedKeys), $locale, $outputFile));
+            $this->info(sprintf(static::KEYS_OUT_OF_ORDER, count($reorderedKeys), $locale, $outputFile));
         } else {
-            $this->warn(sprintf('[%s] locale has no translation keys out of order.', $locale));
+            $this->warn(sprintf(static::NO_KEYS_OUT_OF_ORDER, $locale));
         }
 
         if (count($missingKeys)) {
-            $this->warn(sprintf('Additionally, %d translation keys for [%s] locale were missing. Run the command `php nova-lang missing` to view them.', count($missingKeys), $locale));
+            $this->warn(sprintf(static::RUN_MISSING_COMMAND, count($missingKeys), $locale));
         }
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function handle()
-    {
-        $sourceKeys = $this->getNovaKeys();
-
-        $this->availableLocales = $this->getAvailableLocales();
-
-        $this->requestedLocales = $this->getRequestedLocales();
-
-        if ($this->noLocalesRequested($this->requestedLocales)) {
-            return;
-        }
-
-        $this->requestedLocales->each(function (string $locale) use ($sourceKeys) {
-            $this->handleLocale($locale, $sourceKeys);
-        });
     }
 }

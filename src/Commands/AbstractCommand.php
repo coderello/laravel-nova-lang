@@ -48,6 +48,12 @@ abstract class AbstractCommand extends Command
             $locales = collect();
         }
 
+        if (! $locales->count()) {
+            $this->error('You must either specify one or more locales, or use the --all option.');
+
+            exit;
+        }
+
         return $locales;
     }
 
@@ -96,14 +102,13 @@ abstract class AbstractCommand extends Command
         return resource_path('lang/vendor/nova');
     }
 
-    public function noLocalesRequested(Collection $requestedLocales): bool
+    public function noLocalesRequested(Collection $requestedLocales): void
     {
         if (!$requestedLocales->count()) {
             $this->error('You must either specify one or more locales, or use the --all option.');
-            return true;
-        }
 
-        return false;
+            exit;
+        }
     }
 
 }
