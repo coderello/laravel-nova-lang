@@ -47,6 +47,22 @@
         "json": true,
         "php": true
     },
+    "tr": {
+        "name": "Turkish",
+        "complete": 425,
+        "contributors": {
+            "jnbn": 67,
+            "bureken": 58,
+            "Milkhan": 45,
+            "erayusta": 21,
+            "sineld": 7,
+            "semihkeskindev": 4,
+            "dilekuzulmez": 2,
+            "suleymanozev": 1
+        },
+        "json": true,
+        "php": true
+    },
     "pt-BR": {
         "name": "Brazilian Portuguese",
         "complete": 424,
@@ -127,21 +143,6 @@
             "soulshockers": 6,
             "estim": 1,
             "kongulov": 1
-        },
-        "json": true,
-        "php": true
-    },
-    "tr": {
-        "name": "Turkish",
-        "complete": 424,
-        "contributors": {
-            "jnbn": 67,
-            "bureken": 58,
-            "Milkhan": 45,
-            "erayusta": 21,
-            "sineld": 7,
-            "semihkeskindev": 4,
-            "dilekuzulmez": 2
         },
         "json": true,
         "php": true

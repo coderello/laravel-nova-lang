@@ -9,21 +9,21 @@ featherIcon: info
 
 This is not an official Laravel package, but is built from community contributions. If you are able to help by submitting a new language, reviewing an existing language, or adding missing keys, please read our [contributing guidelines]({{base}}/{{version}}/contributing) and raise a PR.
 
-###### Available Languages
+######## Available Languages
 
 Total languages **44**  
-Total lines translated **17,316 (92.6%)**
+Total lines translated **17,317 (92.6%)**
 
 * `en` English &middot; **425 (100%)**
 * `id` Indonesian &middot; **425 (100%)**
 * `es` Spanish &middot; **425 (100%)**
+* `tr` Turkish &middot; **425 (100%)**
 * `pt‑BR` Brazilian Portuguese &middot; **424 (99.8%)**
 * `fr` French &middot; **424 (99.8%)**
 * `ka` Georgian &middot; **424 (99.8%)**
 * `de` German &middot; **424 (99.8%)**
 * `ro` Romanian &middot; **424 (99.8%)**
 * `ru` Russian &middot; **424 (99.8%)**
-* `tr` Turkish &middot; **424 (99.8%)**
 * `ar` Arabic &middot; **420 (98.8%)**
 * `nl` Dutch &middot; **420 (98.8%)**
 * `it` Italian &middot; **420 (98.8%)**
