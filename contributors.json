@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 425,
+        "complete": 426,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -21,6 +21,23 @@
             "dvlwj": 364,
             "opanegro": 67,
             "Kristories": 20
+        },
+        "json": true,
+        "php": true
+    },
+    "ru": {
+        "name": "Russian",
+        "complete": 425,
+        "contributors": {
+            "hivokas": 363,
+            "sanasol": 32,
+            "den1n": 25,
+            "medvinator": 19,
+            "deadem": 12,
+            "soulshockers": 6,
+            "estim": 1,
+            "kongulov": 1,
+            "saundefined": 1
         },
         "json": true,
         "php": true
@@ -59,6 +76,15 @@
             "semihkeskindev": 4,
             "dilekuzulmez": 2,
             "suleymanozev": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "tk": {
+        "name": "Turkmen",
+        "complete": 425,
+        "contributors": {
+            "kakajansh": 419
         },
         "json": true,
         "php": true
@@ -131,22 +157,6 @@
         "json": true,
         "php": true
     },
-    "ru": {
-        "name": "Russian",
-        "complete": 424,
-        "contributors": {
-            "hivokas": 363,
-            "sanasol": 32,
-            "den1n": 25,
-            "medvinator": 19,
-            "deadem": 12,
-            "soulshockers": 6,
-            "estim": 1,
-            "kongulov": 1
-        },
-        "json": true,
-        "php": true
-    },
     "ar": {
         "name": "Arabic",
         "complete": 420,
@@ -210,18 +220,6 @@
         "json": true,
         "php": true
     },
-    "cs": {
-        "name": "Czech",
-        "complete": 407,
-        "contributors": {
-            "walaskir": 362,
-            "theimerj": 56,
-            "genesiscz": 12,
-            "walaski": 1
-        },
-        "json": true,
-        "php": true
-    },
     "hu": {
         "name": "Hungarian",
         "complete": 407,
@@ -229,6 +227,18 @@
             "milli05": 364,
             "bgeree": 49,
             "lintaba": 10
+        },
+        "json": true,
+        "php": true
+    },
+    "cs": {
+        "name": "Czech",
+        "complete": 406,
+        "contributors": {
+            "walaskir": 362,
+            "theimerj": 56,
+            "genesiscz": 12,
+            "walaski": 1
         },
         "json": true,
         "php": true
@@ -306,15 +316,6 @@
         "complete": 404,
         "contributors": {
             "shokhaa": 423
-        },
-        "json": true,
-        "php": true
-    },
-    "tk": {
-        "name": "Turkmen",
-        "complete": 403,
-        "contributors": {
-            "kakajansh": 419
         },
         "json": true,
         "php": true

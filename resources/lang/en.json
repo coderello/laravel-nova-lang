@@ -39,6 +39,7 @@
     "Are you sure you want to restore this resource?": "Are you sure you want to restore this resource?",
     "Are you sure you want to restore the selected resources?": "Are you sure you want to restore the selected resources?",
     "No :resource matched the given criteria.": "No :resource matched the given criteria.",
+    "Failed to load :resource!": "Failed to load :resource!",
     "Another user has updated this resource since this page was loaded. Please refresh the page and try again.": "Another user has updated this resource since this page was loaded. Please refresh the page and try again.",
     "Are you sure you want to delete this file?": "Are you sure you want to delete this file?",
     "Are you sure you want to run this action?": "Are you sure you want to run this action?",
