@@ -16,6 +16,7 @@ $artisan->setName('Laravel Nova Language');
 
 $artisan->resolve(Commands\NovaLangCountry::class);
 $artisan->resolve(Commands\NovaLangMissing::class);
+$artisan->resolve(Commands\NovaLangCleanup::class);
 $artisan->resolve(Commands\NovaLangReorder::class);
 $artisan->resolve(Commands\NovaLangStats::class);
 

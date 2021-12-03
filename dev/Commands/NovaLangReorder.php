@@ -8,7 +8,7 @@ class NovaLangReorder extends AbstractDevCommand
 {
     protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order. The updated file has been output to [%s].';
     protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
-    protected const RUN_MISSING_COMMAND = '%d translation keys for "%s" locale were missing. Run the command `php nova-lang missing` to add them.';
+    protected const RUN_MISSING_COMMAND = '%d translation keys for "%s" locale were missing. Run the command `php nova-lang missing %2$s` to add them.';
 
     /**
      * The name and signature of the console command.

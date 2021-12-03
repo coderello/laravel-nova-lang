@@ -134,7 +134,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $contributorsTable = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
             $percent = $this->getPercent($localeStat['complete'], $sourceCount);
-            $icon = $this->getPercentIcon($localeStat['complete'], $percent);
+            $icon = $this->getPercentBadge($localeStat['complete'], $percent);
 
             $contributors = implode(', ', array_map(function ($contributor) {
                 if ($contributor == '(unknown)') {
@@ -156,10 +156,17 @@ class NovaLangStats extends AbstractDevCommand
 
         $sourceComplete = $sourceCount * $languagesCount;
         $percent = $this->getPercent($translatedCount, $sourceComplete);
-        $countIcon = $this->getPercentIcon($languagesCount);
-        $icon = $this->getPercentIcon($translatedCount, $percent);
+        $countIcon = $this->getTextBadge($languagesCount);
+        $icon = $this->getPercentBadge($translatedCount, $percent);
 
-        $totals = sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon) . PHP_EOL .
+        $composer = $this->loadJson($this->basePath('composer.lock'))['packages-dev'];
+        $package = array_filter($composer, fn ($package) => $package['name'] == 'laravel/nova');
+        $novaVersion = array_shift($package)['version'];
+        $versionIcon = $this->getTextBadge($novaVersion);
+
+        $totals =
+            sprintf('Latest Nova version ![%s](%s)  ', $novaVersion, $versionIcon) . PHP_EOL .
+            sprintf('Total languages ![%s](%s)  ', $languagesCount, $countIcon) . PHP_EOL .
             sprintf('Total lines translated ![%s (%s%%)](%s)', number_format($translatedCount), $percent, $icon);
 
         $header = '## Available Languages' . PHP_EOL . PHP_EOL.
@@ -186,11 +193,12 @@ class NovaLangStats extends AbstractDevCommand
         $contributorsList = $contributors->map(function ($localeStat, $locale) use ($sourceCount) {
             $percent = $this->getPercent($localeStat['complete'], $sourceCount);
 
-            return sprintf('* `%s` %s &middot; **%d (%s%%)**', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
+            return sprintf('* `%s` %s &middot; **%d** (%s%%)', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
         });
 
-        $totals = sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
-            sprintf('Total lines translated **%s (%s%%)**', number_format($translatedCount), $percent);
+        $totals = sprintf('Current Nova version **%s**  ', $novaVersion) . PHP_EOL .
+            sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
+            sprintf('Total lines translated **%s** (%s%%)', number_format($translatedCount), $percent);
 
         $header = '### Available Languages' . PHP_EOL . PHP_EOL .
             $totals . PHP_EOL;
@@ -201,7 +209,7 @@ class NovaLangStats extends AbstractDevCommand
 
         $originalContents = $this->loadText($outputFile);
 
-        $contents = preg_replace('/(.+)## Available Languages.+/sm', '$1' . $contents, $originalContents);
+        $contents = preg_replace('/^#+ Available Languages.+/sm', '$1' . $contents, $originalContents);
 
         $this->saveText($outputFile, $contents);
 
@@ -217,12 +225,8 @@ class NovaLangStats extends AbstractDevCommand
         return $complete > $total ? 100 : round(($complete / $total) * 100, 1);
     }
 
-    protected function getPercentIcon($complete, $percent = null): string
+    protected function getPercentBadge(float $complete, float $percent): string
     {
-        if (is_null($percent)) {
-            return sprintf('https://img.shields.io/badge/%d-gray?style=flat-square', $complete);
-        }
-
         $colors = [
             1 => 'red',
             85 => 'orange',
@@ -242,6 +246,11 @@ class NovaLangStats extends AbstractDevCommand
         $complete = ctype_digit($complete) ? number_format($complete) : $complete;
 
         return sprintf('https://img.shields.io/badge/%s-%s%%25-%s?style=flat-square', $complete, $percent, $color);
+    }
+
+    protected function getTextBadge(string $text): string
+    {
+        return sprintf('https://img.shields.io/badge/%s-gray?style=flat-square', $text);
     }
 
     protected function getAvailableLocales(): Collection
