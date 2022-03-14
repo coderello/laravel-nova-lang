@@ -39,6 +39,7 @@
     "Are you sure you want to restore this resource?": "Bu kaynağı geri yüklemek istediğinizden emin misiniz?",
     "Are you sure you want to restore the selected resources?": "Seçili kaynakları geri yüklemek istediğinizden emin misiniz?",
     "No :resource matched the given criteria.": "Belirtilen kritere uyan :resource kaynağı bulunamadı.",
+    "Failed to load :resource!": "Belirtilen :resource kaynağı yüklenemedi!",
     "Another user has updated this resource since this page was loaded. Please refresh the page and try again.": "Başka bir kullanıcı sayfa yüklendiğinden beri bu kaynağı güncelledi. Lütfen sayfayı yenileyin ve tekrar deneyin.",
     "Are you sure you want to delete this file?": "Bu dosyayı silmek istediğinizden emin misiniz?",
     "Are you sure you want to run this action?": "Bu işlemi çalıştırmak istediğinizden emin misiniz?",
