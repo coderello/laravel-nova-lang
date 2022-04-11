@@ -11,15 +11,15 @@ This is not an official Laravel package, but is built from community contributio
 
 ### Available Languages
 
-Current Nova version **3.30.0**  
+Current Nova version **3.32.0**  
 Total languages **44**  
-Total lines translated **17,340** (92.5%)
+Total lines translated **17,344** (92.5%)
 
 * `en` English &middot; **426** (100%)
-* `id` Indonesian &middot; **425** (99.8%)
-* `ru` Russian &middot; **425** (99.8%)
-* `es` Spanish &middot; **425** (99.8%)
-* `tr` Turkish &middot; **425** (99.8%)
+* `id` Indonesian &middot; **426** (100%)
+* `ru` Russian &middot; **426** (100%)
+* `es` Spanish &middot; **426** (100%)
+* `tr` Turkish &middot; **426** (100%)
 * `tk` Turkmen &middot; **425** (99.8%)
 * `pt‑BR` Brazilian Portuguese &middot; **424** (99.5%)
 * `fr` French &middot; **424** (99.5%)
