@@ -117,4 +117,17 @@ abstract class AbstractDevCommand extends AbstractCommand
 
         return $sourceKeys;
     }
+
+    protected function getRenamedNovaKeys(): array
+    {
+        // Keys that have been renamed by Nova (from version 4.0)
+        return [
+            // Old key => New key
+            'Forgot Your Password?'                      => 'Forgot Password',
+            'Login'                                      => 'Log In',
+            'Remember Me'                                => 'Remember me',
+            'The action ran successfully!'               => 'The action was executed successfully.',
+            'An error occured while uploading the file.' => 'An error occurred while uploading the file.'
+        ];
+    }
 }

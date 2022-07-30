@@ -6,7 +6,9 @@ use Exception;
 
 class NovaLangReorder extends AbstractDevCommand
 {
-    protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order. The updated file has been output to [%s].';
+    protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order.';
+    protected const RENAMED_KEYS = 'Additionally, %d keys were renamed for Nova 4.0.';
+    protected const OUTPUT_FILE = 'The updated file has been output to [%s].';
     protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
     protected const RUN_MISSING_COMMAND = '%d translation keys for "%s" locale were missing. Run the command `php nova-lang missing %2$s` to add them.';
 
@@ -43,7 +45,21 @@ class NovaLangReorder extends AbstractDevCommand
         $inputFile = $this->directoryFrom("$locale.json");
         $outputFile = $inputFile;
 
-        $localeTranslations = $this->loadJson($inputFile);
+        $novaRenamedKeys = $this->getRenamedNovaKeys();
+
+        $unsortedLocaleTranslations = $this->loadJson($inputFile);
+        $localeTranslations = [];
+
+        $renamedKeys = 0;
+
+        foreach ($unsortedLocaleTranslations as $key => $translation) {
+            if ($newKey = $novaRenamedKeys[$key] ?? false) {
+                $localeTranslations[$newKey] = $translation;
+                $renamedKeys++;
+            } else {
+                $localeTranslations[$key] = $translation;
+            }
+        }
 
         $localeKeys = array_values(array_diff(array_keys($localeTranslations), static::IGNORED_KEYS));
 
@@ -51,7 +67,7 @@ class NovaLangReorder extends AbstractDevCommand
 
         $diffs = $this->array_diff_order($commonKeys, $localeKeys);
 
-        if ($diffs > 0) {
+        if ($diffs > 0 || $renamedKeys > 0) {
             $missingKeys = 0;
 
             $outputKeys = [];
@@ -66,7 +82,14 @@ class NovaLangReorder extends AbstractDevCommand
 
             $this->saveJson($outputFile, $outputKeys);
 
-            $this->info(sprintf(static::KEYS_OUT_OF_ORDER, $diffs, $locale, $outputFile));
+            $this->info(sprintf(static::KEYS_OUT_OF_ORDER, $diffs, $locale));
+
+            if ($renamedKeys > 0) {
+                $this->info(sprintf(static::RENAMED_KEYS, $renamedKeys));
+            }
+
+            $this->info(sprintf(static::OUTPUT_FILE, $outputFile));
+
         } else {
             $this->info(sprintf(static::NO_KEYS_OUT_OF_ORDER, $locale));
 
