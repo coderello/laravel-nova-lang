@@ -10,7 +10,7 @@
     "require-dev": {
         "php": "^8.0",
         "ext-curl": "*",
-        "laravel/nova": "~3.0",
+        "laravel/nova": "~4.0",
         "illuminate/console": "^8.0",
         "illuminate/filesystem": "^8.0",
         "illuminate/events": "^8.0"

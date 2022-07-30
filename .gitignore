@@ -3,3 +3,4 @@ composer.lock
 .idea
 .github_token
 .php-cs-fixer.cache
+auth.json
