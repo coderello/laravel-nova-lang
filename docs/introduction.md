@@ -13,9 +13,10 @@ This is not an official Laravel package, but is built from community contributio
 
 Current Nova version **4.12.13**  
 Total languages **45**  
-Total lines translated **17,857** (88%)
+Total lines translated **17,884** (88.1%)
 
 * `en` English &middot; **451** (100%)
+* `de` German &middot; **451** (100%)
 * `ru` Russian &middot; **448** (99.3%)
 * `az` Azerbaijani &middot; **447** (99.1%)
 * `pt‑BR` Brazilian Portuguese &middot; **443** (98.2%)
@@ -25,7 +26,6 @@ Total lines translated **17,857** (88%)
 * `tk` Turkmen &middot; **425** (94.2%)
 * `fr` French &middot; **424** (94%)
 * `ka` Georgian &middot; **424** (94%)
-* `de` German &middot; **424** (94%)
 * `ro` Romanian &middot; **424** (94%)
 * `ar` Arabic &middot; **420** (93.1%)
 * `nl` Dutch &middot; **420** (93.1%)

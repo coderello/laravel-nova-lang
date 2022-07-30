@@ -442,6 +442,8 @@
     "Light": "Hell",
     "Dark": "Dunkel",
     "System": "System",
+    "From": "Von",
+    "To": "Bis",
     "There are no fields to display.": "Es gibt keine anzuzeigenden Felder.",
     "Notifications": "Benachrichtigungen",
     "Mark all as Read": "Alle als gelesen markieren",

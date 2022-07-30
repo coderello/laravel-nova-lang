@@ -14,6 +14,20 @@
         "json": true,
         "php": true
     },
+    "de": {
+        "name": "German",
+        "complete": 451,
+        "contributors": {
+            "pille1842": 71,
+            "kitbs": 40,
+            "shieraki": 27,
+            "StanBarrows": 25,
+            "tobiasthaden": 7,
+            "dakira": 2
+        },
+        "json": true,
+        "php": true
+    },
     "ru": {
         "name": "Russian",
         "complete": 448,
@@ -142,19 +156,6 @@
         "contributors": {
             "akalongman": 364,
             "zgabievi": 77
-        },
-        "json": true,
-        "php": true
-    },
-    "de": {
-        "name": "German",
-        "complete": 424,
-        "contributors": {
-            "pille1842": 71,
-            "shieraki": 27,
-            "kitbs": 22,
-            "tobiasthaden": 7,
-            "dakira": 2
         },
         "json": true,
         "php": true
