@@ -1,7 +1,7 @@
 {
     "en": {
         "name": "English",
-        "complete": 426,
+        "complete": 451,
         "contributors": {
             "taylorotwell": 10001,
             "bonzai": 10000,
@@ -14,6 +14,50 @@
         "json": true,
         "php": true
     },
+    "ru": {
+        "name": "Russian",
+        "complete": 448,
+        "contributors": {
+            "hivokas": 363,
+            "sanasol": 32,
+            "makhsam": 30,
+            "den1n": 25,
+            "medvinator": 19,
+            "deadem": 12,
+            "soulshockers": 6,
+            "kongulov": 2,
+            "saundefined": 2,
+            "estim": 1
+        },
+        "json": true,
+        "php": true
+    },
+    "az": {
+        "name": "Azerbaijani",
+        "complete": 447,
+        "contributors": {
+            "kongulov": 474
+        },
+        "json": true,
+        "php": true
+    },
+    "pt-BR": {
+        "name": "Brazilian Portuguese",
+        "complete": 443,
+        "contributors": {
+            "henryavila": 398,
+            "pedrofurtado": 377,
+            "eduardokum": 364,
+            "saulo-silva": 33,
+            "chbbc": 29,
+            "ranierif": 21,
+            "hpiaia": 14,
+            "IgorDePaula": 5,
+            "emtudo": 3
+        },
+        "json": true,
+        "php": true
+    },
     "id": {
         "name": "Indonesian",
         "complete": 426,
@@ -22,23 +66,6 @@
             "opanegro": 67,
             "Kristories": 20,
             "ezhasyafaat": 2
-        },
-        "json": true,
-        "php": true
-    },
-    "ru": {
-        "name": "Russian",
-        "complete": 426,
-        "contributors": {
-            "hivokas": 363,
-            "sanasol": 32,
-            "den1n": 25,
-            "medvinator": 19,
-            "deadem": 12,
-            "soulshockers": 6,
-            "kongulov": 2,
-            "saundefined": 2,
-            "estim": 1
         },
         "json": true,
         "php": true
@@ -87,22 +114,6 @@
         "complete": 425,
         "contributors": {
             "kakajansh": 419
-        },
-        "json": true,
-        "php": true
-    },
-    "pt-BR": {
-        "name": "Brazilian Portuguese",
-        "complete": 424,
-        "contributors": {
-            "henryavila": 398,
-            "pedrofurtado": 377,
-            "eduardokum": 364,
-            "saulo-silva": 33,
-            "chbbc": 29,
-            "hpiaia": 14,
-            "IgorDePaula": 5,
-            "emtudo": 3
         },
         "json": true,
         "php": true
@@ -169,6 +180,7 @@
             "MohamedMaher5": 14,
             "CaddyDz": 12,
             "i3asm": 10,
+            "moedayraki": 10,
             "Arryan": 3
         },
         "json": true,
@@ -500,11 +512,6 @@
     },
     "sq": {
         "name": "Albanian",
-        "complete": 0,
-        "contributors": []
-    },
-    "az": {
-        "name": "Azerbaijani",
         "complete": 0,
         "contributors": []
     },
