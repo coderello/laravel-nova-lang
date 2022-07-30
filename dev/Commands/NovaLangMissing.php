@@ -53,7 +53,7 @@ class NovaLangMissing extends AbstractDevCommand
         $outputKeys = [];
 
         foreach ($this->sourceKeys as $sourceKey) {
-            $outputKeys[$sourceKey] = $localeTranslations[$sourceKey] ?? static::MISSING_TEXT;
+            $outputKeys[$sourceKey] = $localeTranslations[$sourceKey] ?? ($locale == 'en' ? $sourceKey : static::MISSING_TEXT);
         }
 
         $outputFile = $inputFile;
