@@ -370,7 +370,7 @@
     "resources": "ressources",
     "Choose date": "Choisissez une date",
     "The :resource was created!": "La ressource :resource a été ajoutée !",
-    "The :resource was attached!": "La ressource :resource a été associée !",
+    "The resource was attached!": "La ressource :resource a été associée !",
     "The :resource was updated!": "La ressource :resource a été enregistrée !",
     "The resource was updated!": "La ressource a été enregistrée !",
     "The :resource was deleted!": "La ressource :resource a été supprimée !",
@@ -453,6 +453,5 @@
     "Drop file or click to choose": "Déposez le fichier ou cliquez pour choisir",
     "The image could not be loaded": "L’image n’a pas pu être chargée",
     "Filename": "Nom de fichier",
-    "Type": "Type",
-    "Soft Deleted": "Supprimé"
+    "Type": "Type"
 }
