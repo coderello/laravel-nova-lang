@@ -1,4 +1,4 @@
-<p align="center"><img alt="Laravel Nova Lang" src="https://coderello.com/images/packages/laravel-nova-lang.png" width="450"></p>
+# Laravel Nova Lang
 
 <p align="center">Language files for <b>Laravel Nova</b> translated into 40+ languages.</p>
 
