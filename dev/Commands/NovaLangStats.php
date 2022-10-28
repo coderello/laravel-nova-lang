@@ -196,7 +196,7 @@ class NovaLangStats extends AbstractDevCommand
             return sprintf('* `%s` %s &middot; **%d** (%s%%)', str_replace('-', '‑', $locale), $localeStat['name'], $localeStat['complete'], $percent);
         });
 
-        $totals = sprintf('Current Nova version **%s**  ', $novaVersion) . PHP_EOL .
+        $totals = sprintf('Latest Nova version **%s**  ', $novaVersion) . PHP_EOL .
             sprintf('Total languages **%s**  ', $languagesCount) . PHP_EOL .
             sprintf('Total lines translated **%s** (%s%%)', number_format($translatedCount), $percent);
 

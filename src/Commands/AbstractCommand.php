@@ -19,7 +19,12 @@ abstract class AbstractCommand extends Command
     /**
      * @var string[]
      */
-    public const IGNORED_KEYS = ['*', '—'];
+    public const IGNORED_KEYS = [
+        '*',
+        '—',
+        'CSV (.csv)',
+        'Excel (.xlsx)'
+    ];
 
     /**
      * @var Filesystem
