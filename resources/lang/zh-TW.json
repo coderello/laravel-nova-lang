@@ -454,7 +454,5 @@
     "Drop file or click to choose": "拖放文件或單擊以選擇",
     "The image could not be loaded": "圖片無法加載",
     "Filename": "檔案名稱",
-    "Type": "類型",
-    "CSV (.csv)": "CSV (.csv)",
-    "Excel (.xlsx)": "Excel (.xlsx)"
+    "Type": "類型"
 }
