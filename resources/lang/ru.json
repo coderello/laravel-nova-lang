@@ -453,7 +453,5 @@
     "Drop file or click to choose": "Перетащите файл или нажмите, чтобы выбрать",
     "The image could not be loaded": "Изображение не может быть загружено",
     "Filename": "Название файла",
-    "Type": "Тип",
-    "CSV (.csv)": "CSV (.csv)",
-    "Excel (.xlsx)": "Excel (.xlsx)"
+    "Type": "Тип"
 }
