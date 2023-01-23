@@ -50,6 +50,7 @@
     "Cancel": "Отмена",
     "Choose": "Выбрать",
     "Choose File": "Выбрать файл",
+    "Choose Files": "Выбрать файлы",
     "Choose Type": "Выбрать тип",
     "Choose an option": "Выбрать вариант",
     "Click to choose": "Нажмите, чтобы выбрать",
@@ -95,7 +96,6 @@
     "With Trashed": "С удалёнными",
     "Trashed": "Удалено",
     "Write": "Написать",
-    "could not be found.": "не удалось найти.",
     "total": "всего",
     "January": "январь",
     "February": "февраль",
@@ -442,8 +442,16 @@
     "Light": "Светлая",
     "Dark": "Темная",
     "System": "Системная",
+    "From": "С",
+    "To": "По",
     "There are no fields to display.": "Нет полей для отображения.",
     "Notifications": "Уведомления",
     "Mark all as Read": "Отметить все как прочитанное",
-    "Copy to clipboard": "Копировать в буфер обмена"
+    "Copy to clipboard": "Копировать в буфер обмена",
+    "Are you sure you want to delete this notification?": "Вы уверены, что хотите удалить уведомление?",
+    "Drop files or click to choose": "Перетащите файлы или нажмите, чтобы выбрать",
+    "Drop file or click to choose": "Перетащите файл или нажмите, чтобы выбрать",
+    "The image could not be loaded": "Изображение не может быть загружено",
+    "Filename": "Название файла",
+    "Type": "Тип"
 }
