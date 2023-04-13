@@ -432,7 +432,7 @@
     "Customize": "Pielāgot",
     "Update :resource: :title": "Atjaunināt :resource: :title",
     "Update attached :resource: :title": "Atjaunināt pievienoto :resource: :title",
-    ":resource Details: :title": ":Resource sīkāka informācija: :title",
+    ":resource Details: :title": "Sīkāka informācija :resource: :title",
     "The HasOne relationship has already been filled.": "HasOne relācijas jau ir aizpildīta.",
     "An error occurred while uploading the file.": "Augšupielādējot failu, radās kļūda.",
     "An error occurred while uploading the file: :error": "Augšupielādējot failu, radās kļūda: :error",
