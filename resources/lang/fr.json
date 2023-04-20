@@ -51,6 +51,8 @@
     "Choose": "Choisir",
     "Choose File": "Choisissez un fichier",
     "Choose Files": "Choisissez un ou plusieurs fichiers",
+    "Drop file or click to choose": "Déposez le fichier ou cliquez pour choisir",
+    "Drop files or click to choose": "Déposez des fichiers ou cliquez pour choisir",
     "Choose Type": "Choisissez le type",
     "Choose an option": "Choisissez une option",
     "Click to choose": "Cliquez pour choisir",
@@ -449,8 +451,6 @@
     "Mark all as Read": "Tout marquer comme lu",
     "Copy to clipboard": "Copier dans le presse-papier",
     "Are you sure you want to delete this notification?": "Voulez-vous vraiment supprimer cette notification ?",
-    "Drop files or click to choose": "Déposez des fichiers ou cliquez pour choisir",
-    "Drop file or click to choose": "Déposez le fichier ou cliquez pour choisir",
     "The image could not be loaded": "L’image n’a pas pu être chargée",
     "Filename": "Nom de fichier",
     "Type": "Type"
