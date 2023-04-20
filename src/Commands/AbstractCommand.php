@@ -17,16 +17,6 @@ abstract class AbstractCommand extends Command
     public const SEPARATORS = '-‑_';
 
     /**
-     * @var string[]
-     */
-    public const IGNORED_KEYS = [
-        '*',
-        '—',
-        'CSV (.csv)',
-        'Excel (.xlsx)'
-    ];
-
-    /**
      * @var Filesystem
      */
     protected $filesystem;

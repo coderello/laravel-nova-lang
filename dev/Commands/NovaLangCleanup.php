@@ -42,7 +42,7 @@ class NovaLangCleanup extends AbstractDevCommand
 
         $inputKeys = $this->loadJson($inputFile);
 
-        $outputKeys = array_filter($inputKeys, fn ($text) => ! empty(trim($text)) && $text !== static::MISSING_TEXT && ! empty(preg_replace('/\W+/u', '', $text)));
+        $outputKeys = array_filter($inputKeys, fn ($text) => ! empty(trim($text)) && $text !== static::MISSING_TEXT && ! empty(preg_replace('/\s+/u', '', $text)));
 
         $missingKeys = count($inputKeys) - count($outputKeys);
 

@@ -277,7 +277,7 @@ class NovaLangStats extends AbstractDevCommand
                 throw new \Exception('Invalid JSON file: '.$path);
             }
 
-            return array_diff(array_keys($json), static::IGNORED_KEYS);
+            return array_diff(array_keys($json), $this->getIgnoredNovaKeys());
         }
 
         return [];

@@ -62,7 +62,7 @@ class NovaLangReorder extends AbstractDevCommand
             }
         }
 
-        $localeKeys = array_diff(array_keys($localeTranslations), static::IGNORED_KEYS);
+        $localeKeys = array_diff(array_keys($localeTranslations), $this->getIgnoredNovaKeys());
 
         $extraKeys = count(array_diff($localeKeys, $this->sourceKeys));
 

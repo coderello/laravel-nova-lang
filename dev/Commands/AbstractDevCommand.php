@@ -99,7 +99,7 @@ abstract class AbstractDevCommand extends AbstractCommand
             exit;
         }
 
-        $novaKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), static::IGNORED_KEYS));
+        $novaKeys = array_values(array_diff(array_keys(json_decode($this->filesystem->get($sourceFile), true)), $this->getIgnoredNovaKeys()));
         $sourceKeys = [];
 
         // Workaround for keys that have been forgotten by Nova
@@ -130,6 +130,19 @@ abstract class AbstractDevCommand extends AbstractCommand
             'The action ran successfully!'               => 'The action was executed successfully.',
             'An error occured while uploading the file.' => 'An error occurred while uploading the file.',
             'Select All'                                 => 'Select all',
+            'The image could not be loaded'              => 'The image could not be loaded.',
+        ];
+    }
+
+    protected function getIgnoredNovaKeys(): array
+    {
+        // Keys that do not need to be translated
+        return [
+            '*',
+            '—',
+            'CSV (.csv)',
+            'Excel (.xlsx)',
+            'The image could not be loaded'
         ];
     }
 }
