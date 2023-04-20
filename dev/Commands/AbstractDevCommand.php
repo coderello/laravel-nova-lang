@@ -12,6 +12,7 @@ abstract class AbstractDevCommand extends AbstractCommand
     protected ?Collection $availableLocales = null;
     protected ?Collection $requestedLocales = null;
     protected ?Collection $sourceLocales = null;
+    protected array $sourceKeys = [];
 
     /**
      * Execute the console command.
@@ -127,7 +128,8 @@ abstract class AbstractDevCommand extends AbstractCommand
             'Login'                                      => 'Log In',
             'Remember Me'                                => 'Remember me',
             'The action ran successfully!'               => 'The action was executed successfully.',
-            'An error occured while uploading the file.' => 'An error occurred while uploading the file.'
+            'An error occured while uploading the file.' => 'An error occurred while uploading the file.',
+            'Select All'                                 => 'Select all',
         ];
     }
 }

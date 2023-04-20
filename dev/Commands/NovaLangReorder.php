@@ -7,7 +7,8 @@ use Exception;
 class NovaLangReorder extends AbstractDevCommand
 {
     protected const KEYS_OUT_OF_ORDER = '%d translation keys for "%s" locale were out of order.';
-    protected const RENAMED_KEYS = 'Additionally, %d keys were renamed for Nova 4.0.';
+    protected const RENAMED_KEYS = '%d keys were renamed for Nova 4.0.';
+    protected const EXTRA_KEYS = '%d keys were not present in the Nova source file and have been removed.';
     protected const OUTPUT_FILE = 'The updated file has been output to [%s].';
     protected const NO_KEYS_OUT_OF_ORDER = '"%s" locale has no translation keys out of order.';
     protected const RUN_MISSING_COMMAND = '%d translation keys for "%s" locale were missing. Run the command `php nova-lang missing %2$s` to add them.';
@@ -61,13 +62,17 @@ class NovaLangReorder extends AbstractDevCommand
             }
         }
 
-        $localeKeys = array_values(array_diff(array_keys($localeTranslations), static::IGNORED_KEYS));
+        $localeKeys = array_diff(array_keys($localeTranslations), static::IGNORED_KEYS);
+
+        $extraKeys = count(array_diff($localeKeys, $this->sourceKeys));
+
+        $localeKeys = array_values(array_intersect($localeKeys, $this->sourceKeys));
 
         $commonKeys = array_values(array_intersect($this->sourceKeys, $localeKeys));
 
         $diffs = $this->array_diff_order($commonKeys, $localeKeys);
 
-        if ($diffs > 0 || $renamedKeys > 0) {
+        if ($diffs > 0 || $renamedKeys > 0 || $extraKeys > 0) {
             $missingKeys = 0;
 
             $outputKeys = [];
@@ -86,6 +91,10 @@ class NovaLangReorder extends AbstractDevCommand
 
             if ($renamedKeys > 0) {
                 $this->info(sprintf(static::RENAMED_KEYS, $renamedKeys));
+            }
+
+            if ($extraKeys > 0) {
+                $this->info(sprintf(static::EXTRA_KEYS, $extraKeys, $locale));
             }
 
             $this->info(sprintf(static::OUTPUT_FILE, $outputFile));
