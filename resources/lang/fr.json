@@ -21,6 +21,7 @@
     "Welcome Back!": "Bienvenue à nouveau !",
     "Delete Resource": "Supprimer la ressource",
     "Delete": "Supprimer",
+    "Soft Deleted": "Supprimé",
     "Detach Resource": "Détacher des ressources",
     "Detach": "Détacher",
     "Detach Selected": "Détacher sélectionné",
@@ -408,6 +409,7 @@
     "There are no available options for this resource.": "Il n’y a pas d’options disponibles pour cette ressource.",
     "All resources loaded.": "Toutes les ressources ont été chargées.",
     "Load :perPage More": "Charger :perPage de plus",
+    ":amount selected": ":amount sélectionnés",
     ":amount Total": ":amount au total",
     "Show All Fields": "Voir tous les champs",
     "There was a problem submitting the form.": "Un problème est survenu lors de l’envoi du formulaire.",
@@ -432,6 +434,7 @@
     ":resource Details: :title": "Détails de :resource: :title",
     "The HasOne relationship has already been filled.": "La relation HasOne a déjà été remplie.",
     "An error occurred while uploading the file.": "Un problème est survenu lors du téléchargement du fichier.",
+    "An error occurred while uploading the file: :error": "Un problème est survenu lors du téléchargement du fichier : :error",
     "Previewing": "Prévisualisation",
     "Replicate": "Répliquer",
     "Are you sure you want to log out?": "Voulez-vous vraiment vous déconnecter ?",
@@ -453,5 +456,9 @@
     "Are you sure you want to delete this notification?": "Voulez-vous vraiment supprimer cette notification ?",
     "Filename": "Nom de fichier",
     "Type": "Type",
+    "Attach files by dragging & dropping, selecting or pasting them.": "Attacher des fichiers par glisser-déposer, selectionner ou coller.",
+    "Uploading files... (:current/:total)": "En cours de téléchargement... (:current de :total)",
+    "Remove": "Supprimer",
+    "Uploading": "Téléchargement",
     "The image could not be loaded.": "L’image n’a pas pu être chargée."
 }

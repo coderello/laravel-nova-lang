@@ -21,7 +21,7 @@
     "Welcome Back!": "Willkommen zurück!",
     "Delete Resource": "Ressource löschen",
     "Delete": "Löschen",
-    "Soft Deleted": "<MISSING>",
+    "Soft Deleted": "Im Papierkorb",
     "Detach Resource": "Ressource abkoppeln",
     "Detach": "Abkoppeln",
     "Detach Selected": "Ausgewählte abkoppeln",
@@ -456,9 +456,9 @@
     "Are you sure you want to delete this notification?": "Bist du sicher, dass du diese Benachrichtigung löschen willst?",
     "Filename": "Dateiname",
     "Type": "Dateityp",
-    "Attach files by dragging & dropping, selecting or pasting them.": "<MISSING>",
+    "Attach files by dragging & dropping, selecting or pasting them.": "Dateien ziehen und ablegen, auswählen oder einfügen, um sie anzuhängen.",
     "Uploading files... (:current/:total)": "Dateien werden hochgeladen... (:current von :total)",
-    "Remove": "<MISSING>",
+    "Remove": "Entfernen",
     "Uploading": "Hochladen",
     "The image could not be loaded.": "Das Bild konnte nicht geladen werden."
 }
