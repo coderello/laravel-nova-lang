@@ -451,7 +451,7 @@
     "Mark all as Read": "Marcar todas como leídas",
     "Copy to clipboard": "Copiar al portapapeles",
     "Are you sure you want to delete this notification?": "¿Estás seguro de que quieres borrar esta notificación",
-    "The image could not be loaded": "No se pudo cargar la imagen",
     "Filename": "Nombre de archivo",
-    "Type": "Tipo"
+    "Type": "Tipo",
+    "The image could not be loaded.": "No se pudo cargar la imagen."
 }

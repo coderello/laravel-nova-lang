@@ -439,6 +439,6 @@
     "Mark all as Read": "Markeer alles als gelezen",
     "Copy to clipboard": "Kopieer naar klembord",
     "Are you sure you want to delete this notification?": "Weet u zeker dat u deze notificatie wilt verwijderen?",
-    "The image could not be loaded": "De afbeelding kon niet geladen worden",
-    "Filename": "Bestandsnaam"
+    "Filename": "Bestandsnaam",
+    "The image could not be loaded.": "De afbeelding kon niet geladen worden."
 }

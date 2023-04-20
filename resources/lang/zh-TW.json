@@ -450,7 +450,7 @@
     "Mark all as Read": "標示全部已讀",
     "Copy to clipboard": "複製",
     "Are you sure you want to delete this notification?": "您確定要刪除此通知嗎？",
-    "The image could not be loaded": "圖片無法加載",
     "Filename": "檔案名稱",
-    "Type": "類型"
+    "Type": "類型",
+    "The image could not be loaded.": "圖片無法加載。"
 }

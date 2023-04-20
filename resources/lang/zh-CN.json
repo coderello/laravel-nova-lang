@@ -452,9 +452,9 @@
     "Mark all as Read": "标记全部已读",
     "Copy to clipboard": "复制",
     "Are you sure you want to delete this notification?": "您确定要删除此通知吗？",
-    "The image could not be loaded": "图片无法加载",
     "Filename": "文件名",
     "Type": "类型",
     "Attach files by dragging & dropping, selecting or pasting them.": "通过拖放、选择或粘贴来附加文件。",
-    "Uploading files... (:current/:total)": "文件上传中... (:current/:total)"
+    "Uploading files... (:current/:total)": "文件上传中... (:current/:total)",
+    "The image could not be loaded.": "图片无法加载。"
 }

@@ -21,6 +21,7 @@
     "Welcome Back!": "Willkommen zurück!",
     "Delete Resource": "Ressource löschen",
     "Delete": "Löschen",
+    "Soft Deleted": "<MISSING>",
     "Detach Resource": "Ressource abkoppeln",
     "Detach": "Abkoppeln",
     "Detach Selected": "Ausgewählte abkoppeln",
@@ -408,6 +409,7 @@
     "There are no available options for this resource.": "Für diese Ressource sind keine Optionen verfügbar.",
     "All resources loaded.": "Alle Ressourcen geladen.",
     "Load :perPage More": ":perPage weitere laden",
+    ":amount selected": ":amount ausgewählt",
     ":amount Total": ":amount insgesamt",
     "Show All Fields": "Alle Felder anzeigen",
     "There was a problem submitting the form.": "Beim Senden des Formulars ist ein Fehler aufgetreten.",
@@ -432,6 +434,7 @@
     ":resource Details: :title": ":resource-Details: :title",
     "The HasOne relationship has already been filled.": "Die HasOne-Beziehung wurde bereits ausgefüllt.",
     "An error occurred while uploading the file.": "Beim Hochladen der Datei ist ein Fehler aufgetreten.",
+    "An error occurred while uploading the file: :error": "Beim Hochladen der Datei ist ein Fehler aufgetreten: :error",
     "Previewing": "Vorschau",
     "Replicate": "Klonen",
     "Are you sure you want to log out?": "Bist du sicher, dass du dich abmelden willst?",
@@ -451,7 +454,11 @@
     "Mark all as Read": "Alle als gelesen markieren",
     "Copy to clipboard": "In die Zwischenablage kopieren",
     "Are you sure you want to delete this notification?": "Bist du sicher, dass du diese Benachrichtigung löschen willst?",
-    "The image could not be loaded": "Das Bild konnte nicht geladen werden",
     "Filename": "Dateiname",
-    "Type": "Dateityp"
+    "Type": "Dateityp",
+    "Attach files by dragging & dropping, selecting or pasting them.": "<MISSING>",
+    "Uploading files... (:current/:total)": "Dateien werden hochgeladen... (:current von :total)",
+    "Remove": "<MISSING>",
+    "Uploading": "Hochladen",
+    "The image could not be loaded.": "Das Bild konnte nicht geladen werden."
 }

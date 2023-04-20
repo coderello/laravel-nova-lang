@@ -449,7 +449,7 @@
     "Mark all as Read": "Отметить все как прочитанное",
     "Copy to clipboard": "Копировать в буфер обмена",
     "Are you sure you want to delete this notification?": "Вы уверены, что хотите удалить уведомление?",
-    "The image could not be loaded": "Изображение не может быть загружено",
     "Filename": "Название файла",
-    "Type": "Тип"
+    "Type": "Тип",
+    "The image could not be loaded.": "Изображение не может быть загружено."
 }
