@@ -5,7 +5,7 @@ namespace Coderello\LaravelNovaLang\Commands;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Collection;
 use SplFileInfo;
-use Symfony\Component\Intl\Exception\MethodNotImplementedException;
+use Symfony\Polyfill\Intl\Icu\Exception\MethodNotImplementedException;
 
 class NovaLangStats extends AbstractDevCommand
 {
