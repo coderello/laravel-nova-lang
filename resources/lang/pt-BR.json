@@ -437,5 +437,14 @@
     "Notifications": "Notificações",
     "Mark all as Read": "Marcar tudo como lido",
     "Copy to clipboard": "Copiar para área de transferência",
-    "Are you sure you want to delete this notification?": "Tem certeza de que deseja excluir esta notificação?"
+    "Are you sure you want to delete this notification?": "Tem certeza de que deseja excluir esta notificação?",
+    "Mark Read": "Marcar como lido",
+    "Mark Unread": "Marcar como não lido",
+    "Delete all notifications": "Excluir todas as notificações",
+    "Roles & Permissions": "Funções e permissões",
+    "Roles": "Funções",
+    "Role": "Função",
+    "Permission": "Permissões",
+    "Select this page": "Selecionar esta página",
+    ":amount selected": ":amount Selecionado(s)" 
 }
